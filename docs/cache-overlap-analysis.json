@@ -1,0 +1,1813 @@
+{
+  "moneyhome8_cache_code_count": 65378,
+  "investment_cache_code_count": 102524,
+  "overlap_code_count": 30055,
+  "only_moneyhome8_code_count": 35323,
+  "only_investment_code_count": 72469,
+  "sample_overlap": [
+    {
+      "code": "000001",
+      "moneyhome8_name": "华夏成长",
+      "investment_type": "4",
+      "investment_name": "华夏成长混合\b"
+    },
+    {
+      "code": "000003",
+      "moneyhome8_name": "中海可转换债券A",
+      "investment_type": "4",
+      "investment_name": "中海可转债债券A\b"
+    },
+    {
+      "code": "000004",
+      "moneyhome8_name": "中海可转换债券C",
+      "investment_type": "4",
+      "investment_name": "中海可转债债券C\b"
+    },
+    {
+      "code": "000005",
+      "moneyhome8_name": "嘉实增强信用债",
+      "investment_type": "4",
+      "investment_name": "嘉实增强信用定期债券\b"
+    },
+    {
+      "code": "000006",
+      "moneyhome8_name": "深振业Ａ",
+      "investment_type": "4",
+      "investment_name": "西部利得量化成长混合A\b"
+    },
+    {
+      "code": "000008",
+      "moneyhome8_name": "嘉实中证500ETF链接",
+      "investment_type": "4",
+      "investment_name": "嘉实中证500ETF联接A\b"
+    },
+    {
+      "code": "00001",
+      "moneyhome8_name": "长和",
+      "investment_type": "3",
+      "investment_name": "长和\u0007"
+    },
+    {
+      "code": "000011",
+      "moneyhome8_name": "华夏大盘精选",
+      "investment_type": "4",
+      "investment_name": "华夏大盘精选混合A\b"
+    },
+    {
+      "code": "000014",
+      "moneyhome8_name": "华夏聚利债券",
+      "investment_type": "4",
+      "investment_name": "华夏聚利债券A\b"
+    },
+    {
+      "code": "000015",
+      "moneyhome8_name": "华夏纯债债券A",
+      "investment_type": "4",
+      "investment_name": "华夏纯债债券A\b"
+    },
+    {
+      "code": "000016",
+      "moneyhome8_name": "华夏纯债债券C",
+      "investment_type": "4",
+      "investment_name": "华夏纯债债券C\b"
+    },
+    {
+      "code": "000017",
+      "moneyhome8_name": "财通可持续发展",
+      "investment_type": "4",
+      "investment_name": "财通可持续混合\b"
+    },
+    {
+      "code": "00002",
+      "moneyhome8_name": "中电控股",
+      "investment_type": "3",
+      "investment_name": "中电控股\u0007"
+    },
+    {
+      "code": "000020",
+      "moneyhome8_name": "景顺长城品质投资",
+      "investment_type": "4",
+      "investment_name": "景顺长城品质投资混合A\b"
+    },
+    {
+      "code": "000021",
+      "moneyhome8_name": "华夏优势增长",
+      "investment_type": "4",
+      "investment_name": "华夏优势增长混合\b"
+    },
+    {
+      "code": "000024",
+      "moneyhome8_name": "大摩华鑫双利增强债A",
+      "investment_type": "4",
+      "investment_name": "大摩双利增强债券A\b"
+    },
+    {
+      "code": "000025",
+      "moneyhome8_name": "大摩华鑫双利增强债C",
+      "investment_type": "4",
+      "investment_name": "大摩双利增强债券C\b"
+    },
+    {
+      "code": "000028",
+      "moneyhome8_name": "华富保本混合",
+      "investment_type": "4",
+      "investment_name": "华富安鑫债券A\b"
+    },
+    {
+      "code": "000029",
+      "moneyhome8_name": "富国宏观策略配置",
+      "investment_type": "4",
+      "investment_name": "富国宏观策略灵活配置混合A\b"
+    },
+    {
+      "code": "00003",
+      "moneyhome8_name": "香港中华煤气",
+      "investment_type": "3",
+      "investment_name": "香港中华煤气\u0007"
+    },
+    {
+      "code": "000030",
+      "moneyhome8_name": "长城久利保本",
+      "investment_type": "4",
+      "investment_name": "长城核心优选混合A\b"
+    },
+    {
+      "code": "000031",
+      "moneyhome8_name": "华夏复兴",
+      "investment_type": "4",
+      "investment_name": "华夏复兴混合A\b"
+    },
+    {
+      "code": "000032",
+      "moneyhome8_name": "易方达信用债A",
+      "investment_type": "4",
+      "investment_name": "易方达信用债债券A\b"
+    },
+    {
+      "code": "000033",
+      "moneyhome8_name": "易方达信用债C",
+      "investment_type": "4",
+      "investment_name": "易方达信用债债券C\b"
+    },
+    {
+      "code": "000037",
+      "moneyhome8_name": "深南电Ａ",
+      "investment_type": "4",
+      "investment_name": "广发景宁债券A\b"
+    },
+    {
+      "code": "000039",
+      "moneyhome8_name": "农银汇理高增长股票",
+      "investment_type": "4",
+      "investment_name": "农银高增长混合\b"
+    },
+    {
+      "code": "000041",
+      "moneyhome8_name": "华夏全球",
+      "investment_type": "4",
+      "investment_name": "华夏全球股票\b"
+    },
+    {
+      "code": "000042",
+      "moneyhome8_name": "财通ESG100指数基金",
+      "investment_type": "4",
+      "investment_name": "财通中证ESG100指数增强A\b"
+    },
+    {
+      "code": "000043",
+      "moneyhome8_name": "嘉实成长人民币",
+      "investment_type": "4",
+      "investment_name": "嘉实美国成长股票人民币\b"
+    },
+    {
+      "code": "000044",
+      "moneyhome8_name": "嘉实成长美元",
+      "investment_type": "4",
+      "investment_name": "嘉实美国成长股票美元现汇\b"
+    },
+    {
+      "code": "000045",
+      "moneyhome8_name": "工银瑞信产业债A",
+      "investment_type": "4",
+      "investment_name": "工银产业债债券A\b"
+    },
+    {
+      "code": "000046",
+      "moneyhome8_name": "工银瑞信产业债B",
+      "investment_type": "4",
+      "investment_name": "工银产业债债券B\b"
+    },
+    {
+      "code": "000047",
+      "moneyhome8_name": "华夏双债增强债A",
+      "investment_type": "4",
+      "investment_name": "华夏双债债券A\b"
+    },
+    {
+      "code": "000048",
+      "moneyhome8_name": "华夏双债增强债C",
+      "investment_type": "4",
+      "investment_name": "华夏双债债券C\b"
+    },
+    {
+      "code": "00005",
+      "moneyhome8_name": "汇丰控股",
+      "investment_type": "3",
+      "investment_name": "汇丰控股\u0007"
+    },
+    {
+      "code": "000051",
+      "moneyhome8_name": "华夏沪深300指数",
+      "investment_type": "4",
+      "investment_name": "华夏沪深300ETF联接A\b"
+    },
+    {
+      "code": "000053",
+      "moneyhome8_name": "鹏华实业债债券",
+      "investment_type": "4",
+      "investment_name": "鹏华永诚一年定开债券\b"
+    },
+    {
+      "code": "000054",
+      "moneyhome8_name": "鹏华双债增利",
+      "investment_type": "4",
+      "investment_name": "鹏华双债增利债券A\b"
+    },
+    {
+      "code": "000055",
+      "moneyhome8_name": "广发纳指100美元现汇",
+      "investment_type": "4",
+      "investment_name": "广发纳斯达克100ETF联接美元A\b"
+    },
+    {
+      "code": "000056",
+      "moneyhome8_name": "建信消费升级",
+      "investment_type": "4",
+      "investment_name": "建信消费升级混合\b"
+    },
+    {
+      "code": "000057",
+      "moneyhome8_name": "中银消费主题股票",
+      "investment_type": "4",
+      "investment_name": "中银消费主题混合A\b"
+    },
+    {
+      "code": "000058",
+      "moneyhome8_name": "国联安保本混合",
+      "investment_type": "4",
+      "investment_name": "国联安安泰灵活配置混合A\b"
+    },
+    {
+      "code": "000059",
+      "moneyhome8_name": "国联安中证医药",
+      "investment_type": "4",
+      "investment_name": "国联安中证医药100A\b"
+    },
+    {
+      "code": "00006",
+      "moneyhome8_name": "电能实业",
+      "investment_type": "3",
+      "investment_name": "电能实业\u0007"
+    },
+    {
+      "code": "000061",
+      "moneyhome8_name": "华夏盛世精选",
+      "investment_type": "4",
+      "investment_name": "华夏盛世混合\b"
+    },
+    {
+      "code": "000063",
+      "moneyhome8_name": "上证市值百强ETF联接",
+      "investment_type": "4",
+      "investment_name": "长盛电子信息主题混合A\b"
+    },
+    {
+      "code": "000064",
+      "moneyhome8_name": "大摩18个月定开债C",
+      "investment_type": "4",
+      "investment_name": "大摩18个月定开债C\b"
+    },
+    {
+      "code": "000065",
+      "moneyhome8_name": "富兰克林国海焦点",
+      "investment_type": "4",
+      "investment_name": "国富焦点驱动混合A\b"
+    },
+    {
+      "code": "000066",
+      "moneyhome8_name": "诺安鸿鑫保本混合",
+      "investment_type": "4",
+      "investment_name": "诺安鸿鑫混合A\b"
+    },
+    {
+      "code": "000067",
+      "moneyhome8_name": "民生加银转债A",
+      "investment_type": "4",
+      "investment_name": "民生加银转债优选A\b"
+    },
+    {
+      "code": "000068",
+      "moneyhome8_name": "民生加银转债C",
+      "investment_type": "4",
+      "investment_name": "民生加银转债优选C\b"
+    },
+    {
+      "code": "000069",
+      "moneyhome8_name": "国投瑞银中高等级债A",
+      "investment_type": "4",
+      "investment_name": "国投瑞银中高等级债券A\b"
+    },
+    {
+      "code": "00007",
+      "moneyhome8_name": "凯富能源",
+      "investment_type": "3",
+      "investment_name": "智富资源投资\u0007"
+    },
+    {
+      "code": "000070",
+      "moneyhome8_name": "国投瑞银中高等级债C",
+      "investment_type": "4",
+      "investment_name": "国投瑞银中高等级债券C\b"
+    },
+    {
+      "code": "000071",
+      "moneyhome8_name": "华夏恒生ETF联接",
+      "investment_type": "4",
+      "investment_name": "华夏恒生ETF联接A\b"
+    },
+    {
+      "code": "000072",
+      "moneyhome8_name": "华安保本混合",
+      "investment_type": "4",
+      "investment_name": "华安稳健回报混合A\b"
+    },
+    {
+      "code": "000073",
+      "moneyhome8_name": "上投摩根成长动力",
+      "investment_type": "4",
+      "investment_name": "摩根成长动力混合A\b"
+    },
+    {
+      "code": "000074",
+      "moneyhome8_name": "工银信用纯债一年定开债A",
+      "investment_type": "4",
+      "investment_name": "工银信用纯债一年定开债A\b"
+    },
+    {
+      "code": "000075",
+      "moneyhome8_name": "华夏恒生ETF联接美元",
+      "investment_type": "4",
+      "investment_name": "华夏恒生ETF联接现汇\b"
+    },
+    {
+      "code": "000077",
+      "moneyhome8_name": "工银信用纯债一年定开债C",
+      "investment_type": "4",
+      "investment_name": "工银信用纯债一年定开债C\b"
+    },
+    {
+      "code": "000078",
+      "moneyhome8_name": "海王生物",
+      "investment_type": "4",
+      "investment_name": "工银信用纯债三个月定开债A\b"
+    },
+    {
+      "code": "000079",
+      "moneyhome8_name": "工银信用纯债三个月定开债C",
+      "investment_type": "4",
+      "investment_name": "工银信用纯债三个月定开债C\b"
+    },
+    {
+      "code": "00008",
+      "moneyhome8_name": "电讯盈科",
+      "investment_type": "3",
+      "investment_name": "电讯盈科\u0007"
+    },
+    {
+      "code": "000080",
+      "moneyhome8_name": "天治可转债增强债A",
+      "investment_type": "4",
+      "investment_name": "天治可转债增强债券A\b"
+    },
+    {
+      "code": "000081",
+      "moneyhome8_name": "天治可转债增强债C",
+      "investment_type": "4",
+      "investment_name": "天治可转债增强债券C\b"
+    },
+    {
+      "code": "000082",
+      "moneyhome8_name": "嘉实阿尔法股票",
+      "investment_type": "4",
+      "investment_name": "嘉实研究阿尔法股票A\b"
+    },
+    {
+      "code": "000083",
+      "moneyhome8_name": "汇添富消费行业",
+      "investment_type": "4",
+      "investment_name": "汇添富消费行业混合\b"
+    },
+    {
+      "code": "000084",
+      "moneyhome8_name": "博时安盈债券A",
+      "investment_type": "4",
+      "investment_name": "博时安盈债券A\b"
+    },
+    {
+      "code": "000085",
+      "moneyhome8_name": "博时安盈债券C",
+      "investment_type": "4",
+      "investment_name": "博时安盈债券C\b"
+    },
+    {
+      "code": "000086",
+      "moneyhome8_name": "南方稳利债券A",
+      "investment_type": "4",
+      "investment_name": "南方稳利1年持有期债券A\b"
+    },
+    {
+      "code": "000087",
+      "moneyhome8_name": "中证国债ETF联接A",
+      "investment_type": "4",
+      "investment_name": "嘉实中证金边国债ETF联接A\b"
+    },
+    {
+      "code": "000088",
+      "moneyhome8_name": "中证国债ETF联接C",
+      "investment_type": "4",
+      "investment_name": "嘉实中证金边国债ETF联接C\b"
+    },
+    {
+      "code": "000089",
+      "moneyhome8_name": "深圳机场",
+      "investment_type": "4",
+      "investment_name": "民生加银高等级信用债C\b"
+    },
+    {
+      "code": "00009",
+      "moneyhome8_name": "长和国际实业",
+      "investment_type": "3",
+      "investment_name": "金奥国际\u0007"
+    },
+    {
+      "code": "000090",
+      "moneyhome8_name": "天健集团",
+      "investment_type": "4",
+      "investment_name": "民生加银高等级信用债A\b"
+    },
+    {
+      "code": "00010",
+      "moneyhome8_name": "恒隆集团",
+      "investment_type": "3",
+      "investment_name": "恒隆集团\u0007"
+    },
+    {
+      "code": "000104",
+      "moneyhome8_name": "华宸未来信用增利债",
+      "investment_type": "4",
+      "investment_name": "富国丰泰债券A\b"
+    },
+    {
+      "code": "000105",
+      "moneyhome8_name": "建信安心回报债A",
+      "investment_type": "4",
+      "investment_name": "建信安心回报债券A\b"
+    },
+    {
+      "code": "000106",
+      "moneyhome8_name": "建信安心回报债C",
+      "investment_type": "4",
+      "investment_name": "建信安心回报债券C\b"
+    },
+    {
+      "code": "000107",
+      "moneyhome8_name": "富国信用增强A",
+      "investment_type": "4",
+      "investment_name": "富国稳健增强债券A/B\b"
+    },
+    {
+      "code": "000109",
+      "moneyhome8_name": "富国信用增强C",
+      "investment_type": "4",
+      "investment_name": "富国稳健增强债券C\b"
+    },
+    {
+      "code": "00011",
+      "moneyhome8_name": "恒生银行",
+      "investment_type": "3",
+      "investment_name": "恒生银行\u0007"
+    },
+    {
+      "code": "000110",
+      "moneyhome8_name": "金鹰元安保本",
+      "investment_type": "4",
+      "investment_name": "金鹰元安混合A\b"
+    },
+    {
+      "code": "000111",
+      "moneyhome8_name": "易方达纯债1年定开债A",
+      "investment_type": "4",
+      "investment_name": "易方达纯债1年定开债A\b"
+    },
+    {
+      "code": "000112",
+      "moneyhome8_name": "易方达纯债1年定开债C",
+      "investment_type": "4",
+      "investment_name": "易方达纯债1年定开债C\b"
+    },
+    {
+      "code": "000116",
+      "moneyhome8_name": "嘉实丰益纯债",
+      "investment_type": "4",
+      "investment_name": "嘉实丰益纯债定期债券A\b"
+    },
+    {
+      "code": "000117",
+      "moneyhome8_name": "广发轮动配置",
+      "investment_type": "4",
+      "investment_name": "广发轮动配置混合\b"
+    },
+    {
+      "code": "000118",
+      "moneyhome8_name": "广发聚鑫A",
+      "investment_type": "4",
+      "investment_name": "广发聚鑫债券A\b"
+    },
+    {
+      "code": "000119",
+      "moneyhome8_name": "广发聚鑫C",
+      "investment_type": "4",
+      "investment_name": "广发聚鑫债券C\b"
+    },
+    {
+      "code": "00012",
+      "moneyhome8_name": "恒基地产",
+      "investment_type": "3",
+      "investment_name": "恒基地产\u0007"
+    },
+    {
+      "code": "000120",
+      "moneyhome8_name": "中银美丽中国股票",
+      "investment_type": "4",
+      "investment_name": "中银美丽中国混合A\b"
+    },
+    {
+      "code": "000121",
+      "moneyhome8_name": "华夏永福养老理财",
+      "investment_type": "4",
+      "investment_name": "华夏永福混合A\b"
+    },
+    {
+      "code": "000122",
+      "moneyhome8_name": "汇添富实业债A",
+      "investment_type": "4",
+      "investment_name": "汇添富实业债债券A\b"
+    },
+    {
+      "code": "000123",
+      "moneyhome8_name": "汇添富实业债C",
+      "investment_type": "4",
+      "investment_name": "汇添富实业债债券C\b"
+    },
+    {
+      "code": "000124",
+      "moneyhome8_name": "华宝兴业服务优选",
+      "investment_type": "4",
+      "investment_name": "华宝服务优选混合\b"
+    },
+    {
+      "code": "000126",
+      "moneyhome8_name": "招商安润保本",
+      "investment_type": "4",
+      "investment_name": "招商安润灵活配置混合A\b"
+    },
+    {
+      "code": "000127",
+      "moneyhome8_name": "农银汇理行业领先",
+      "investment_type": "4",
+      "investment_name": "农银行业领先混合\b"
+    },
+    {
+      "code": "000128",
+      "moneyhome8_name": "大成景安短融债A",
+      "investment_type": "4",
+      "investment_name": "大成景安短融债券A\b"
+    },
+    {
+      "code": "000129",
+      "moneyhome8_name": "大成景安短融债B",
+      "investment_type": "4",
+      "investment_name": "大成景安短融债券B\b"
+    },
+    {
+      "code": "00013",
+      "moneyhome8_name": "和黄医药",
+      "investment_type": "3",
+      "investment_name": "和黄医药\u0007"
+    },
+    {
+      "code": "000130",
+      "moneyhome8_name": "大成景兴信用债A",
+      "investment_type": "4",
+      "investment_name": "大成景兴信用债债券A\b"
+    },
+    {
+      "code": "000131",
+      "moneyhome8_name": "大成景兴信用债C",
+      "investment_type": "4",
+      "investment_name": "大成景兴信用债债券C\b"
+    },
+    {
+      "code": "000134",
+      "moneyhome8_name": "中信保诚嘉鸿债券A",
+      "investment_type": "4",
+      "investment_name": "中信保诚嘉鸿债券A\b"
+    },
+    {
+      "code": "000135",
+      "moneyhome8_name": "中信保诚嘉鸿债券C",
+      "investment_type": "4",
+      "investment_name": "中信保诚嘉鸿债券C\b"
+    },
+    {
+      "code": "000136",
+      "moneyhome8_name": "民生加银策略精选",
+      "investment_type": "4",
+      "investment_name": "民生加银策略精选混合A\b"
+    },
+    {
+      "code": "000137",
+      "moneyhome8_name": "民生加银岁岁增利债券",
+      "investment_type": "4",
+      "investment_name": "民生加银岁岁增利债券A\b"
+    },
+    {
+      "code": "000139",
+      "moneyhome8_name": "富国国有企业债A",
+      "investment_type": "4",
+      "investment_name": "富国国有企业债债券A/B\b"
+    },
+    {
+      "code": "00014",
+      "moneyhome8_name": "希慎兴业",
+      "investment_type": "3",
+      "investment_name": "希慎兴业\u0007"
+    },
+    {
+      "code": "000141",
+      "moneyhome8_name": "富国国有企业债C",
+      "investment_type": "4",
+      "investment_name": "富国国有企业债债券C\b"
+    },
+    {
+      "code": "000142",
+      "moneyhome8_name": "融通通泰保本A",
+      "investment_type": "4",
+      "investment_name": "融通增强收益债券A\b"
+    },
+    {
+      "code": "000143",
+      "moneyhome8_name": "鹏华双债加利债券",
+      "investment_type": "4",
+      "investment_name": "鹏华双债加利债券A\b"
+    },
+    {
+      "code": "000147",
+      "moneyhome8_name": "易方达高等级信用债A",
+      "investment_type": "4",
+      "investment_name": "易方达高等级信用债债券A\b"
+    },
+    {
+      "code": "000148",
+      "moneyhome8_name": "易方达高等级信用债C",
+      "investment_type": "4",
+      "investment_name": "易方达高等级信用债债券C\b"
+    },
+    {
+      "code": "000149",
+      "moneyhome8_name": "华安双债添利债券A",
+      "investment_type": "4",
+      "investment_name": "华安双债添利债券A\b"
+    },
+    {
+      "code": "000150",
+      "moneyhome8_name": "华安双债添利债券C",
+      "investment_type": "4",
+      "investment_name": "华安双债添利债券C\b"
+    },
+    {
+      "code": "000152",
+      "moneyhome8_name": "大成景旭纯债A",
+      "investment_type": "4",
+      "investment_name": "大成景旭纯债债券A\b"
+    },
+    {
+      "code": "000153",
+      "moneyhome8_name": "大成景旭纯债C",
+      "investment_type": "4",
+      "investment_name": "大成景旭纯债债券C\b"
+    },
+    {
+      "code": "000165",
+      "moneyhome8_name": "国投瑞银策略精选",
+      "investment_type": "4",
+      "investment_name": "国投瑞银策略精选混合\b"
+    },
+    {
+      "code": "000166",
+      "moneyhome8_name": "中海安鑫保本",
+      "investment_type": "4",
+      "investment_name": "中海信息产业混合A\b"
+    },
+    {
+      "code": "000167",
+      "moneyhome8_name": "广发聚优",
+      "investment_type": "4",
+      "investment_name": "广发聚优灵活配置混合A\b"
+    }
+  ],
+  "sample_only_moneyhome8": [
+    {
+      "code": "000002",
+      "name": "万  科Ａ"
+    },
+    {
+      "code": "000007",
+      "name": "鹏华国有企业债"
+    },
+    {
+      "code": "000009",
+      "name": "中国宝安"
+    },
+    {
+      "code": "000010",
+      "name": "深华新"
+    },
+    {
+      "code": "000012",
+      "name": "南  玻Ａ"
+    },
+    {
+      "code": "000013",
+      "name": "易方达天天理财R"
+    },
+    {
+      "code": "000018",
+      "name": "中冠A"
+    },
+    {
+      "code": "000019",
+      "name": "深深宝Ａ"
+    },
+    {
+      "code": "000022",
+      "name": "南方中票A"
+    },
+    {
+      "code": "000023",
+      "name": "南方中票C"
+    },
+    {
+      "code": "000026",
+      "name": "泰达宏利信用合利债A"
+    },
+    {
+      "code": "000027",
+      "name": "泰达宏利信用合利债B"
+    },
+    {
+      "code": "000034",
+      "name": "深信泰丰"
+    },
+    {
+      "code": "000035",
+      "name": "中国天楹"
+    },
+    {
+      "code": "000036",
+      "name": "华联控股"
+    },
+    {
+      "code": "000038",
+      "name": "深大通"
+    },
+    {
+      "code": "00004",
+      "name": "九龙仓集团"
+    },
+    {
+      "code": "000040",
+      "name": "宝安地产"
+    },
+    {
+      "code": "000049",
+      "name": "中银标普自然资源"
+    },
+    {
+      "code": "000050",
+      "name": "长盛纯债债券A"
+    },
+    {
+      "code": "000052",
+      "name": "长盛纯债债券C"
+    },
+    {
+      "code": "000060",
+      "name": "国联安股债指数"
+    },
+    {
+      "code": "000062",
+      "name": "银华成长30/70指数"
+    },
+    {
+      "code": "000076",
+      "name": "恒生ETF联接美元钞"
+    },
+    {
+      "code": "000091",
+      "name": "信诚新双盈分级债"
+    },
+    {
+      "code": "000092",
+      "name": "信诚新双盈分级债A"
+    },
+    {
+      "code": "000093",
+      "name": "信诚新双盈分级债B"
+    },
+    {
+      "code": "000096",
+      "name": "广聚能源"
+    },
+    {
+      "code": "000099",
+      "name": "中信海直"
+    },
+    {
+      "code": "000100",
+      "name": "TCL 集团"
+    },
+    {
+      "code": "000113",
+      "name": "嘉实如意宝债券A"
+    },
+    {
+      "code": "000115",
+      "name": "嘉实如意宝债券C"
+    },
+    {
+      "code": "000125",
+      "name": "上投摩根天颐年丰"
+    },
+    {
+      "code": "000132",
+      "name": "中银理财21天A"
+    },
+    {
+      "code": "000133",
+      "name": "中银理财21天B"
+    },
+    {
+      "code": "000145",
+      "name": "长盛季季红A"
+    },
+    {
+      "code": "000146",
+      "name": "长盛季季红C"
+    },
+    {
+      "code": "00015",
+      "name": "盈信控股"
+    },
+    {
+      "code": "000151",
+      "name": "中成股份"
+    },
+    {
+      "code": "000156",
+      "name": "华数传媒"
+    },
+    {
+      "code": "000157",
+      "name": "中联重科"
+    },
+    {
+      "code": "000158",
+      "name": "常山股份"
+    },
+    {
+      "code": "000159",
+      "name": "国际实业"
+    },
+    {
+      "code": "00016",
+      "name": "新鸿基地产"
+    },
+    {
+      "code": "000169",
+      "name": "泰达宏利高票息债券A"
+    },
+    {
+      "code": "00017",
+      "name": "新世界发展"
+    },
+    {
+      "code": "000170",
+      "name": "泰达宏利高票息债券B"
+    },
+    {
+      "code": "000177",
+      "name": "嘉实丰益信用债"
+    },
+    {
+      "code": "000178",
+      "name": "博时灵活配置"
+    },
+    {
+      "code": "000193",
+      "name": "国泰美国房地产"
+    },
+    {
+      "code": "000198",
+      "name": "天弘增利宝"
+    },
+    {
+      "code": "000202",
+      "name": "富国两年期纯债"
+    },
+    {
+      "code": "00021",
+      "name": "大中华地产控股"
+    },
+    {
+      "code": "00024",
+      "name": "宝威控股"
+    },
+    {
+      "code": "000256",
+      "name": "上投摩根红利回报"
+    },
+    {
+      "code": "000257",
+      "name": "上投摩根岁岁盈A"
+    },
+    {
+      "code": "000258",
+      "name": "上投摩根岁岁盈C"
+    },
+    {
+      "code": "000260",
+      "name": "信诚季季债券"
+    },
+    {
+      "code": "000278",
+      "name": "融通通泽混合"
+    },
+    {
+      "code": "000280",
+      "name": "博时双债增强债A"
+    },
+    {
+      "code": "000281",
+      "name": "博时双债增强债C"
+    },
+    {
+      "code": "000284",
+      "name": "富安达信用纯债A"
+    },
+    {
+      "code": "000285",
+      "name": "富安达信用纯债C"
+    },
+    {
+      "code": "000287",
+      "name": "银华永利债券A"
+    },
+    {
+      "code": "000288",
+      "name": "银华永利债券C"
+    },
+    {
+      "code": "000291",
+      "name": "鹏华丰信分级债券"
+    },
+    {
+      "code": "000292",
+      "name": "鹏华丰信分级债券A"
+    },
+    {
+      "code": "000293",
+      "name": "鹏华丰信分级债券B"
+    },
+    {
+      "code": "000302",
+      "name": "国泰淘金互联网"
+    },
+    {
+      "code": "000316",
+      "name": "中海惠利纯债分级"
+    },
+    {
+      "code": "000317",
+      "name": "中海惠利纯债分级A"
+    },
+    {
+      "code": "000318",
+      "name": "中海惠利纯债分级B"
+    },
+    {
+      "code": "000323",
+      "name": "农银汇理14天理财B"
+    },
+    {
+      "code": "000343",
+      "name": "华夏财富宝"
+    },
+    {
+      "code": "000348",
+      "name": "广发中债金融债A"
+    },
+    {
+      "code": "000349",
+      "name": "广发中债金融债C"
+    },
+    {
+      "code": "000357",
+      "name": "大成景祥分级债A"
+    },
+    {
+      "code": "000358",
+      "name": "大成景祥分级债B"
+    },
+    {
+      "code": "000360",
+      "name": "信诚年年有余债券A"
+    },
+    {
+      "code": "000361",
+      "name": "信诚年年有余债券C"
+    },
+    {
+      "code": "000366",
+      "name": "汇添富添富通货币A"
+    },
+    {
+      "code": "000382",
+      "name": "富国恒利分级债"
+    },
+    {
+      "code": "000383",
+      "name": "富国恒利分级债A"
+    },
+    {
+      "code": "000384",
+      "name": "富国恒利分级债B"
+    },
+    {
+      "code": "000387",
+      "name": "泰达宏利瑞利分级债A"
+    },
+    {
+      "code": "00039",
+      "name": "中国北大荒"
+    },
+    {
+      "code": "000391",
+      "name": "标普红利人民币"
+    },
+    {
+      "code": "000392",
+      "name": "标普红利美元"
+    },
+    {
+      "code": "000393",
+      "name": "标普红利港币"
+    },
+    {
+      "code": "000400",
+      "name": "许继电气"
+    },
+    {
+      "code": "000401",
+      "name": "冀东水泥"
+    },
+    {
+      "code": "000405",
+      "name": "信诚月月定期支付"
+    },
+    {
+      "code": "000413",
+      "name": "东旭光电"
+    },
+    {
+      "code": "000421",
+      "name": "华泰柏瑞丰汇债券A"
+    },
+    {
+      "code": "000422",
+      "name": "华泰柏瑞丰汇债券C"
+    },
+    {
+      "code": "000426",
+      "name": "大成信用增利债A"
+    },
+    {
+      "code": "000427",
+      "name": "大成信用增利债C"
+    },
+    {
+      "code": "000428",
+      "name": "易方达聚盈分级"
+    },
+    {
+      "code": "000429",
+      "name": "易方达聚盈分级A"
+    },
+    {
+      "code": "00043",
+      "name": "卜蜂国际"
+    },
+    {
+      "code": "000430",
+      "name": "易方达聚盈分级B"
+    },
+    {
+      "code": "000434",
+      "name": "新华壹诺宝"
+    },
+    {
+      "code": "000435",
+      "name": "建信稳定添利债A"
+    },
+    {
+      "code": "000437",
+      "name": "融通月月添利债A"
+    },
+    {
+      "code": "000438",
+      "name": "融通月月添利债B"
+    },
+    {
+      "code": "00044",
+      "name": "香港飞机工程"
+    },
+    {
+      "code": "000440",
+      "name": "大成景祥分级债"
+    },
+    {
+      "code": "000464",
+      "name": "嘉实活期宝"
+    },
+    {
+      "code": "000466",
+      "name": "融通通瑞债券A"
+    },
+    {
+      "code": "00047",
+      "name": "合兴集团"
+    },
+    {
+      "code": "000473",
+      "name": "广发集鑫债A"
+    },
+    {
+      "code": "000474",
+      "name": "广发集鑫债C"
+    },
+    {
+      "code": "000498",
+      "name": "财通纯债分级A"
+    },
+    {
+      "code": "000499",
+      "name": "财通纯债分级B"
+    },
+    {
+      "code": "000501",
+      "name": "鄂武商Ａ"
+    },
+    {
+      "code": "000502",
+      "name": "绿景控股"
+    },
+    {
+      "code": "000509",
+      "name": "华塑控股"
+    },
+    {
+      "code": "000514",
+      "name": "渝 开 发"
+    },
+    {
+      "code": "000518",
+      "name": "四环生物"
+    },
+    {
+      "code": "000519",
+      "name": "江南红箭"
+    }
+  ],
+  "sample_only_investment": [
+    {
+      "code": "000103",
+      "type": "4",
+      "name": "国泰境外高收益债\b"
+    },
+    {
+      "code": "000138",
+      "type": "4",
+      "name": "民生加银岁岁增利债券C\b"
+    },
+    {
+      "code": "00025",
+      "type": "3",
+      "name": "CHEVALIER INT'L\u0007"
+    },
+    {
+      "code": "000265",
+      "type": "4",
+      "name": "易方达恒久添利1年定开债A\b"
+    },
+    {
+      "code": "00042",
+      "type": "3",
+      "name": "东北电气\u0007"
+    },
+    {
+      "code": "000459",
+      "type": "4",
+      "name": "英大领先回报B\b"
+    },
+    {
+      "code": "000659",
+      "type": "9",
+      "name": "银华活钱宝C\b"
+    },
+    {
+      "code": "000677",
+      "type": "9",
+      "name": "工银瑞信现金快线\b"
+    },
+    {
+      "code": "000728",
+      "type": "4",
+      "name": "工银目标收益一年定开C\b"
+    },
+    {
+      "code": "000750",
+      "type": "9",
+      "name": "安信现金增利货币\b"
+    },
+    {
+      "code": "00078",
+      "type": "3",
+      "name": "REGAL INT'L\u0007"
+    },
+    {
+      "code": "000783",
+      "type": "4",
+      "name": "博时季季享持有期A\b"
+    },
+    {
+      "code": "000799",
+      "type": "4",
+      "name": "民生加银半年理财A\b"
+    },
+    {
+      "code": "000815",
+      "type": "4",
+      "name": "鑫元合享纯债A\b"
+    },
+    {
+      "code": "000892",
+      "type": "4",
+      "name": "九泰天宝灵活配置混合A\b"
+    },
+    {
+      "code": "000944",
+      "type": "4",
+      "name": "工银中高等级信用债债券B\b"
+    },
+    {
+      "code": "00120",
+      "type": "3",
+      "name": "COSMOPOL INT'L\u0007"
+    },
+    {
+      "code": "001272",
+      "type": "4",
+      "name": "兴业聚利灵活配置混合A\b"
+    },
+    {
+      "code": "001302",
+      "type": "4",
+      "name": "前海开源金银珠宝混合A\b"
+    },
+    {
+      "code": "001443",
+      "type": "4",
+      "name": "易方达瑞选灵活配置混合I\b"
+    },
+    {
+      "code": "001507",
+      "type": "4",
+      "name": "景顺长城泰和回报混合C\b"
+    },
+    {
+      "code": "001508",
+      "type": "4",
+      "name": "富国新动力灵活配置混合A\b"
+    },
+    {
+      "code": "001523",
+      "type": "4",
+      "name": "博时新策略灵活配置混合C\b"
+    },
+    {
+      "code": "001585",
+      "type": "4",
+      "name": "国投瑞银新活力混合C\b"
+    },
+    {
+      "code": "001602",
+      "type": "4",
+      "name": "鑫元鑫新收益灵活配置混合C\b"
+    },
+    {
+      "code": "001630",
+      "type": "4",
+      "name": "天弘中证计算机ETF联接C\b"
+    },
+    {
+      "code": "001636",
+      "type": "4",
+      "name": "万家瑞益灵活配置混合C\b"
+    },
+    {
+      "code": "001641",
+      "type": "4",
+      "name": "富国绝对收益多策略混合A\b"
+    },
+    {
+      "code": "001644",
+      "type": "4",
+      "name": "汇丰晋信智造先锋股票C\b"
+    },
+    {
+      "code": "001668",
+      "type": "4",
+      "name": "汇添富全球移动互联混合人民币A\b"
+    },
+    {
+      "code": "00167",
+      "type": "3",
+      "name": "IDT INT'L\u0007"
+    },
+    {
+      "code": "001679",
+      "type": "4",
+      "name": "前海开源中国稀缺资产混合A\b"
+    },
+    {
+      "code": "001691",
+      "type": "4",
+      "name": "南方香港成长灵活配置混合\b"
+    },
+    {
+      "code": "001693",
+      "type": "4",
+      "name": "招商招利1个月期理财债券C\b"
+    },
+    {
+      "code": "001716",
+      "type": "4",
+      "name": "工银新趋势灵活配置混合A\b"
+    },
+    {
+      "code": "001724",
+      "type": "4",
+      "name": "申万菱信多策略灵活配置混合C\b"
+    },
+    {
+      "code": "001731",
+      "type": "4",
+      "name": "广发百发大数据价值混合A\b"
+    },
+    {
+      "code": "001734",
+      "type": "4",
+      "name": "广发新锐智选混合A\b"
+    },
+    {
+      "code": "001742",
+      "type": "4",
+      "name": "广发百发大数据精选混合E\b"
+    },
+    {
+      "code": "001746",
+      "type": "4",
+      "name": "易方达瑞富灵活配置混合E\b"
+    },
+    {
+      "code": "001747",
+      "type": "4",
+      "name": "易方达瑞祺混合A\b"
+    },
+    {
+      "code": "001792",
+      "type": "4",
+      "name": "大成绝对收益策略混合C\b"
+    },
+    {
+      "code": "001799",
+      "type": "4",
+      "name": "泰康新回报灵活配置混合C\b"
+    },
+    {
+      "code": "001806",
+      "type": "4",
+      "name": "易方达瑞智灵活配置混合I\b"
+    },
+    {
+      "code": "001818",
+      "type": "4",
+      "name": "易方达瑞兴灵活配置混合E\b"
+    },
+    {
+      "code": "001834",
+      "type": "4",
+      "name": "长盛战略新兴产业混合C\b"
+    },
+    {
+      "code": "001836",
+      "type": "4",
+      "name": "易方达瑞祥混合C\b"
+    },
+    {
+      "code": "001852",
+      "type": "4",
+      "name": "融通中国风1号灵活配置混合A/B\b"
+    },
+    {
+      "code": "001859",
+      "type": "4",
+      "name": "大摩增值18个月开放债券A\b"
+    },
+    {
+      "code": "001860",
+      "type": "4",
+      "name": "大摩增值18个月开放债券C\b"
+    },
+    {
+      "code": "001865",
+      "type": "4",
+      "name": "前海开源事件驱动混合C\b"
+    },
+    {
+      "code": "001876",
+      "type": "4",
+      "name": "鹏华全球高收益债美元现汇\b"
+    },
+    {
+      "code": "001890",
+      "type": "4",
+      "name": "中欧精选定期开放混合E\b"
+    },
+    {
+      "code": "001897",
+      "type": "4",
+      "name": "九泰久盛量化先锋混合A\b"
+    },
+    {
+      "code": "001901",
+      "type": "4",
+      "name": "前海开源沪港深隆鑫混合A\b"
+    },
+    {
+      "code": "001907",
+      "type": "4",
+      "name": "国投瑞银境煊灵活配置混合A\b"
+    },
+    {
+      "code": "001928",
+      "type": "4",
+      "name": "华夏消费升级灵活配置混合C\b"
+    },
+    {
+      "code": "001942",
+      "type": "4",
+      "name": "前海开源沪港深汇鑫混合A\b"
+    },
+    {
+      "code": "001970",
+      "type": "4",
+      "name": "泰信鑫选灵活配置混合A\b"
+    },
+    {
+      "code": "001984",
+      "type": "4",
+      "name": "摩根中国生物医药混合A\b"
+    },
+    {
+      "code": "002015",
+      "type": "4",
+      "name": "南方荣光A\b"
+    },
+    {
+      "code": "00218",
+      "type": "3",
+      "name": "申万宏源香港\u0007"
+    },
+    {
+      "code": "002192",
+      "type": "4",
+      "name": "东方鼎新灵活配置混合C\b"
+    },
+    {
+      "code": "002417",
+      "type": "4",
+      "name": "招商丰盛稳定增长混合C\b"
+    },
+    {
+      "code": "00243",
+      "type": "3",
+      "name": "QPL INT'L\u0007"
+    },
+    {
+      "code": "002633",
+      "type": "4",
+      "name": "鑫元双债增强债券C\b"
+    },
+    {
+      "code": "002736",
+      "type": "4",
+      "name": "泓德裕和纯债债券A\b"
+    },
+    {
+      "code": "002781",
+      "type": "4",
+      "name": "博时聚瑞6个月定开债\b"
+    },
+    {
+      "code": "002793",
+      "type": "4",
+      "name": "景顺长城顺益回报混合C\b"
+    },
+    {
+      "code": "002797",
+      "type": "4",
+      "name": "景顺长城景盈双利债券C\b"
+    },
+    {
+      "code": "002939",
+      "type": "4",
+      "name": "广发创新升级混合\b"
+    },
+    {
+      "code": "00300",
+      "type": "3",
+      "name": "美的集团\u0007"
+    },
+    {
+      "code": "003065",
+      "type": "4",
+      "name": "光大尊富18个月定开债A\b"
+    },
+    {
+      "code": "003066",
+      "type": "4",
+      "name": "光大尊富18个月定开债C\b"
+    },
+    {
+      "code": "003082",
+      "type": "4",
+      "name": "国联银行间1-3年中高等级信用债指数C\b"
+    },
+    {
+      "code": "003153",
+      "type": "4",
+      "name": "华富天鑫灵活配置混合C\b"
+    },
+    {
+      "code": "003160",
+      "type": "4",
+      "name": "万家恒瑞18个月定开债C\b"
+    },
+    {
+      "code": "00317",
+      "type": "3",
+      "name": "中船防务\u0007"
+    },
+    {
+      "code": "003186",
+      "type": "4",
+      "name": "鹏华兴安定期开放混合\b"
+    },
+    {
+      "code": "003191",
+      "type": "4",
+      "name": "创金合信消费主题股票C\b"
+    },
+    {
+      "code": "003231",
+      "type": "4",
+      "name": "创金合信医疗保健股票C\b"
+    },
+    {
+      "code": "003242",
+      "type": "4",
+      "name": "创金合信量化发现混合C\b"
+    },
+    {
+      "code": "003243",
+      "type": "4",
+      "name": "摩根中国世纪混合人民币\b"
+    },
+    {
+      "code": "00325",
+      "type": "3",
+      "name": "布鲁可\u0007"
+    },
+    {
+      "code": "003283",
+      "type": "4",
+      "name": "中信保诚至裕混合C\b"
+    },
+    {
+      "code": "003304",
+      "type": "4",
+      "name": "前海开源沪港深核心资源混合A\b"
+    },
+    {
+      "code": "003321",
+      "type": "4",
+      "name": "易方达原油C类人民币\b"
+    },
+    {
+      "code": "003322",
+      "type": "4",
+      "name": "易方达原油A类美元汇\b"
+    },
+    {
+      "code": "003323",
+      "type": "4",
+      "name": "易方达原油C类美元汇\b"
+    },
+    {
+      "code": "003344",
+      "type": "4",
+      "name": "鹏华弘惠灵活配置混合C\b"
+    },
+    {
+      "code": "003373",
+      "type": "4",
+      "name": "大成景禄灵活配置混合A\b"
+    },
+    {
+      "code": "003377",
+      "type": "4",
+      "name": "广发中债7-10年国开债指数C\b"
+    },
+    {
+      "code": "003385",
+      "type": "4",
+      "name": "工银全球美元债A人民币\b"
+    },
+    {
+      "code": "003386",
+      "type": "4",
+      "name": "工银全球美元债A美元现汇\b"
+    },
+    {
+      "code": "003387",
+      "type": "4",
+      "name": "工银全球美元债C\b"
+    },
+    {
+      "code": "003407",
+      "type": "4",
+      "name": "景顺长城景泰丰利纯债债券A\b"
+    },
+    {
+      "code": "003412",
+      "type": "4",
+      "name": "鹏华弘康灵活配置混合C\b"
+    },
+    {
+      "code": "003434",
+      "type": "4",
+      "name": "博时鑫泽灵活配置混合A\b"
+    },
+    {
+      "code": "00345",
+      "type": "3",
+      "name": "VITASOY INT'L\u0007"
+    },
+    {
+      "code": "00347",
+      "type": "3",
+      "name": "鞍钢股份\u0007"
+    },
+    {
+      "code": "003493",
+      "type": "4",
+      "name": "申万菱信安鑫优选混合A\b"
+    },
+    {
+      "code": "003496",
+      "type": "4",
+      "name": "鹏华弘尚混合C\b"
+    },
+    {
+      "code": "003505",
+      "type": "4",
+      "name": "景顺长城景颐丰利债券C\b"
+    },
+    {
+      "code": "003548",
+      "type": "4",
+      "name": "宏利沪深300指数C\b"
+    },
+    {
+      "code": "003581",
+      "type": "4",
+      "name": "前海联合国民健康混合A\b"
+    },
+    {
+      "code": "003595",
+      "type": "4",
+      "name": "长盛盛崇灵活配置混合C\b"
+    },
+    {
+      "code": "003601",
+      "type": "4",
+      "name": "申万菱信安鑫精选混合A\b"
+    },
+    {
+      "code": "003604",
+      "type": "4",
+      "name": "景顺长城泰安回报混合C\b"
+    },
+    {
+      "code": "003606",
+      "type": "4",
+      "name": "海富通全球收益债券美元\b"
+    },
+    {
+      "code": "003625",
+      "type": "4",
+      "name": "创金合信资源股票发起式C\b"
+    },
+    {
+      "code": "003629",
+      "type": "4",
+      "name": "摩根全球多元配置人民币A\b"
+    },
+    {
+      "code": "003630",
+      "type": "4",
+      "name": "摩根全球多元配置美元现钞\b"
+    },
+    {
+      "code": "003631",
+      "type": "4",
+      "name": "摩根全球多元配置美元现汇\b"
+    },
+    {
+      "code": "003641",
+      "type": "4",
+      "name": "长盛盛丰灵活配置混合A\b"
+    },
+    {
+      "code": "003647",
+      "type": "4",
+      "name": "创金合信中证1000指数增强C\b"
+    },
+    {
+      "code": "003683",
+      "type": "4",
+      "name": "博时安弘一年定开债发起式C\b"
+    },
+    {
+      "code": "003693",
+      "type": "4",
+      "name": "大成景尚灵活配置混合C\b"
+    },
+    {
+      "code": "003718",
+      "type": "4",
+      "name": "易方达标普500指数美元汇A\b"
+    },
+    {
+      "code": "003719",
+      "type": "4",
+      "name": "易方达标普医疗保健美元汇A\b"
+    },
+    {
+      "code": "003720",
+      "type": "4",
+      "name": "易方达标普生物科技美元汇A\b"
+    }
+  ]
+}

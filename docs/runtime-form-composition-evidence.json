@@ -1,0 +1,3307 @@
+{
+  "sources": {
+    "runtime_dfm": "C:\\DCG-SZ\\SZ-System-Docs\\CodexWorkSpace\\Finance-own\\docs\\runtime-dfm-all-forms.json",
+    "form_coverage": "C:\\DCG-SZ\\SZ-System-Docs\\CodexWorkSpace\\Finance-own\\docs\\runtime-form-coverage-audit.json"
+  },
+  "evidence_boundary": {
+    "proved": [
+      "DFM 中直接声明的父窗体到已知窗体或 Frame 根类实例关系",
+      "嵌套 Frame 重复序列化产生的实例与去重后的逻辑直接组合边",
+      "嵌入实例的对象路径、直接父窗体和沿静态组合图得到的最终宿主",
+      "无文案嵌入视图是否存在静态孤立项"
+    ],
+    "not_proved": [
+      "事件处理器在运行时动态创建、替换或销毁的窗体",
+      "嵌入视图的真实查询参数、空状态、有数据结果和交互副作用",
+      "内部或实验入口是否通过菜单、快捷键或条件代码到达"
+    ]
+  },
+  "metrics": {
+    "runtime_form_count": 460,
+    "serialized_composition_occurrence_count": 108,
+    "composition_link_count": 107,
+    "composed_resource_count": 86,
+    "multi_parent_resource_count": 10,
+    "embedded_surface_count": 37,
+    "embedded_surface_with_parent_count": 37,
+    "unresolved_embedded_surface_count": 0,
+    "internal_or_experimental_count": 2,
+    "internal_with_static_parent_count": 0
+  },
+  "embedded_views": [
+    {
+      "resource": "TADVANCESVIEWFRAME",
+      "class": "TAdvancesViewFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TCLAIMSDEBTCONTAINER"
+      ],
+      "ultimate_hosts": [
+        "TCLAIMSTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TCLAIMSDEBTCONTAINER",
+          "parent_title": "",
+          "instance": "AdvancesViewFrame",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet5.AdvancesViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TALIPAYVIEWFRAME",
+      "class": "TAlipayViewFrame",
+      "domain": "transactions",
+      "domain_label": "通用交易、流水与模板",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "AlipayViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.AlipayViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TASSETSCONSTITUTECHARTFRAME",
+      "class": "TAssetsConstituteChartFrame",
+      "domain": "major_tangible_assets",
+      "domain_label": "重大资产与家居物品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TSOFTINDEXCENTERFORM"
+      ],
+      "ultimate_hosts": [
+        "TSOFTINDEXCENTERFORM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TSOFTINDEXCENTERFORM",
+          "parent_title": "概况",
+          "instance": "AssetsConstituteChartFrame",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.AssetsConstituteChartFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TASSETSMARKETCONSTITUTESFRAME",
+      "class": "TAssetsMarketConstitutesFrame",
+      "domain": "major_tangible_assets",
+      "domain_label": "重大资产与家居物品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TASSETTRANSFM",
+        "TPRACTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TASSETTRANSFM",
+        "TPRACTRANSFM"
+      ],
+      "link_count": 2,
+      "instances": [
+        {
+          "parent_resource": "TASSETTRANSFM",
+          "parent_title": "重大资产交易明细",
+          "instance": "AssetsMarketConstitutesFrame",
+          "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.AssetsMarketConstitutesFrame"
+        },
+        {
+          "parent_resource": "TPRACTRANSFM",
+          "parent_title": "物品交易明细",
+          "instance": "AssetsMarketConstitutesFrame",
+          "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.AssetsMarketConstitutesFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TASSETVIEWFRAME",
+      "class": "TAssetViewFrame",
+      "domain": "major_tangible_assets",
+      "domain_label": "重大资产与家居物品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TASSETTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TASSETTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TASSETTRANSFM",
+          "parent_title": "重大资产交易明细",
+          "instance": "AssetViewFrame",
+          "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.AssetViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TBONDSMARKETCONSTITUTESFRAME",
+      "class": "TBondsMarketConstitutesFrame",
+      "domain": "bonds",
+      "domain_label": "债券",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TMARKETDEBTTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TMARKETDEBTTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TMARKETDEBTTRANSFM",
+          "parent_title": "债券交易明细",
+          "instance": "BondsMarketConstitutesFrame",
+          "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.BondsMarketConstitutesFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TBONDSVIEWFRAME",
+      "class": "TBondsViewFrame",
+      "domain": "bonds",
+      "domain_label": "债券",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "BondsViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.BondsViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TCARDVIEWFRAME",
+      "class": "TCardViewFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "CardViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CardViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TCASHVIEWFRAME",
+      "class": "TCashViewFrame",
+      "domain": "transactions",
+      "domain_label": "通用交易、流水与模板",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "CashViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CashViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TCURRDEPOSITSVIEWFRAME",
+      "class": "TCurrDepositsViewFrame",
+      "domain": "financial_products",
+      "domain_label": "存款与银行理财产品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "CurrDepositsViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CurrDepositsViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TCURRFUNDMARKETCONSTITUTESFRAME",
+      "class": "TCurrFundMarketConstitutesFrame",
+      "domain": "funds",
+      "domain_label": "基金与货币基金",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TMONEYTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TMONEYTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TMONEYTRANSFM",
+          "parent_title": "银行理财产品交易明细",
+          "instance": "CurrFundMarketConstitutesFrame",
+          "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.CurrFundMarketConstitutesFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TCURRFUNDVIEWFRAME",
+      "class": "TCurrFundViewFrame",
+      "domain": "funds",
+      "domain_label": "基金与货币基金",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "CurrFundViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CurrFundViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TDEBTINVESTMENTACCTLISTFRAME",
+      "class": "TDebtInvestmentAcctListFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TDEBTINVESTMENTTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TDEBTINVESTMENTTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TDEBTINVESTMENTTRANSFM",
+          "parent_title": "网贷账户交易明细",
+          "instance": "FDebtInvestmentAcctListFrame",
+          "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FDebtInvestmentAcctListFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TDEBTINVESTMENTTRANSFRAME",
+      "class": "TDebtInvestmentTransFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "transaction_history",
+      "role_label": "交易明细与历史",
+      "data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表",
+      "direct_parents": [
+        "TDEBTINVESTMENTTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TDEBTINVESTMENTTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TDEBTINVESTMENTTRANSFM",
+          "parent_title": "网贷账户交易明细",
+          "instance": "FDebtInvestmentTransFrame",
+          "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FDebtInvestmentTransFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TDEBTINVESTMENTVIEWFRAME",
+      "class": "TDebtInvestmentViewFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "DebtInvestmentViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.DebtInvestmentViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TDEFERREDVIEWFRAME",
+      "class": "TDeferredViewFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TCLAIMSDEBTCONTAINER"
+      ],
+      "ultimate_hosts": [
+        "TCLAIMSTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TCLAIMSDEBTCONTAINER",
+          "parent_title": "",
+          "instance": "DeferredViewFrame",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet3.DeferredViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TEXCHANGEMARKETCONSTITUTESFRAME",
+      "class": "TExchangeMarketConstitutesFrame",
+      "domain": "foreign_exchange",
+      "domain_label": "外汇",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TFOREIGNTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TFOREIGNTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TFOREIGNTRANSFM",
+          "parent_title": "外汇交易明细",
+          "instance": "ExchangeMarketConstitutesFrame",
+          "component_path": "ForeignTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.ExchangeMarketConstitutesFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TEXCHANGEVIEWFRAME",
+      "class": "TExchangeViewFrame",
+      "domain": "foreign_exchange",
+      "domain_label": "外汇",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "ExchangeViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.ExchangeViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TFIXDEPOSITSVIEWFRAME",
+      "class": "TFixDepositsViewFrame",
+      "domain": "financial_products",
+      "domain_label": "存款与银行理财产品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TFIXEDDEPOSITTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TFIXEDDEPOSITTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TFIXEDDEPOSITTRANSFM",
+          "parent_title": "定期存单",
+          "instance": "FixDepositsViewFrame",
+          "component_path": "FixedDepositTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FixDepositsViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TFUTURESVIEWFRAME",
+      "class": "TFuturesViewFrame",
+      "domain": "futures_metals",
+      "domain_label": "期货、黄金与贵金属",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "FuturesViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.FuturesViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TINSUREVIEWFRAME",
+      "class": "TInsureViewFrame",
+      "domain": "insurance_social",
+      "domain_label": "保险与社会保障",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM",
+        "TSOCIALSECURITYTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM",
+        "TSOCIALSECURITYTRANSFM"
+      ],
+      "link_count": 2,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "InsureViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.InsureViewFrame"
+        },
+        {
+          "parent_resource": "TSOCIALSECURITYTRANSFM",
+          "parent_title": "社会保险账户交易明细",
+          "instance": "InsureViewFrame",
+          "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.InsureViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TMARGINVIEWFRAME",
+      "class": "TMarginViewFrame",
+      "domain": "margin_financing",
+      "domain_label": "融资融券",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "MarginViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.MarginViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TMARKETCONSTITUTESFRAME",
+      "class": "TMarketConstitutesFrame",
+      "domain": "investment_shared",
+      "domain_label": "投资公共能力",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TGOLDTRANSFM",
+        "TOPENFUNDTRANSFM",
+        "TSECURITYTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TGOLDTRANSFM",
+        "TOPENFUNDTRANSFM",
+        "TSECURITYTRANSFM"
+      ],
+      "link_count": 3,
+      "instances": [
+        {
+          "parent_resource": "TGOLDTRANSFM",
+          "parent_title": "贵金属交易明细",
+          "instance": "MarketConstitutesFrame",
+          "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame"
+        },
+        {
+          "parent_resource": "TOPENFUNDTRANSFM",
+          "parent_title": "开放式基金交易明细",
+          "instance": "MarketConstitutesFrame",
+          "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame"
+        },
+        {
+          "parent_resource": "TSECURITYTRANSFM",
+          "parent_title": "上市证券交易列表",
+          "instance": "MarketConstitutesFrame",
+          "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TMONEYINFOVIEWFRAME",
+      "class": "TMoneyInfoViewFrame",
+      "domain": "financial_products",
+      "domain_label": "存款与银行理财产品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TMONEYTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TMONEYTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TMONEYTRANSFM",
+          "parent_title": "银行理财产品交易明细",
+          "instance": "MoneyInfoViewFrame",
+          "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.MoneyInfoViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TMONEYPRODUCTSVIEWFRAME",
+      "class": "TMoneyProductsViewFrame",
+      "domain": "financial_products",
+      "domain_label": "存款与银行理财产品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "MoneyProductsViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.MoneyProductsViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TOPENFUNDVIEWFRAME",
+      "class": "TOpenFundViewFrame",
+      "domain": "funds",
+      "domain_label": "基金与货币基金",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "OpenFundViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.OpenFundViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TPAYABLESVIEWFRAME",
+      "class": "TPayablesViewFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TCLAIMSDEBTCONTAINER"
+      ],
+      "ultimate_hosts": [
+        "TCLAIMSTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TCLAIMSDEBTCONTAINER",
+          "parent_title": "",
+          "instance": "PayablesViewFrame",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet2.PayablesViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TPRACGROUPVIEWFRAME",
+      "class": "TPracGroupViewFrame",
+      "domain": "major_tangible_assets",
+      "domain_label": "重大资产与家居物品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "PracGroupViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.PracGroupViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TPRACSTATISTICFRAME",
+      "class": "TPracStatisticFrame",
+      "domain": "major_tangible_assets",
+      "domain_label": "重大资产与家居物品",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TPRACTRANSFM"
+      ],
+      "ultimate_hosts": [
+        "TPRACTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TPRACTRANSFM",
+          "parent_title": "物品交易明细",
+          "instance": "PracStatisticFrame",
+          "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.PracStatisticFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TPRECIOUSMETALSTDVIEWFRAME",
+      "class": "TPreciousMetalsTDViewFrame",
+      "domain": "futures_metals",
+      "domain_label": "期货、黄金与贵金属",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "PreciousMetalsTDViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.PreciousMetalsTDViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TPRECIOUSVIEWFRAME",
+      "class": "TPreciousViewFrame",
+      "domain": "futures_metals",
+      "domain_label": "期货、黄金与贵金属",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "PreciousViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.PreciousViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TRECEIVABLESVIEWFRAME",
+      "class": "TReceivablesViewFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TCLAIMSDEBTCONTAINER"
+      ],
+      "ultimate_hosts": [
+        "TCLAIMSTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TCLAIMSDEBTCONTAINER",
+          "parent_title": "",
+          "instance": "ReceivablesViewFrame",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet1.ReceivablesViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TSTOCKVIEWFRAME",
+      "class": "TStockViewFrame",
+      "domain": "securities",
+      "domain_label": "证券",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TACCOUNTOVERVIEWDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+          "parent_title": "账户概况",
+          "instance": "StockViewFrame",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.StockViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TTRANSFERLISTTEMPLATEFRAME",
+      "class": "TTransferListTemplateFrame",
+      "domain": "transactions",
+      "domain_label": "通用交易、流水与模板",
+      "role": "transaction_editor",
+      "role_label": "业务交易录入",
+      "data_flow": "用户输入 -> 领域校验 -> 原子分录/专项扩展事务",
+      "direct_parents": [
+        "TTRANSFERTEMPLATEDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TTRANSFERTEMPLATEDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TTRANSFERTEMPLATEDLGFM",
+          "parent_title": "批量转账",
+          "instance": "FTransferListTemplateFrame",
+          "component_path": "TransferTemplateDlgFm.pnlDlgClient.FTransferListTemplateFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TTRANSLISTTEMPLATEFRAME",
+      "class": "TTransListTemplateFrame",
+      "domain": "transactions",
+      "domain_label": "通用交易、流水与模板",
+      "role": "configuration_editor",
+      "role_label": "配置与调整",
+      "data_flow": "配置/调整输入 -> 领域规则或显示状态持久化",
+      "direct_parents": [
+        "TTEMPLATEDLGFM"
+      ],
+      "ultimate_hosts": [
+        "TTEMPLATEDLGFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TTEMPLATEDLGFM",
+          "parent_title": "批量记账",
+          "instance": "FTransListTemplateFrame",
+          "component_path": "TemplateDlgFm.pnlDlgClient.FTransListTemplateFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TUNEARNEDVIEWFRAME",
+      "class": "TUnearnedViewFrame",
+      "domain": "debts_credit",
+      "domain_label": "债权债务、信用与摊销",
+      "role": "projection_view",
+      "role_label": "统计/图表/嵌入视图",
+      "data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表",
+      "direct_parents": [
+        "TCLAIMSDEBTCONTAINER"
+      ],
+      "ultimate_hosts": [
+        "TCLAIMSTRANSFM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TCLAIMSDEBTCONTAINER",
+          "parent_title": "",
+          "instance": "UnearnedViewFrame",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet4.UnearnedViewFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    },
+    {
+      "resource": "TUSABLEMONEYCHARTFRAME",
+      "class": "TUsableMoneyChartFrame",
+      "domain": "reports",
+      "domain_label": "报表与分析投影",
+      "role": "report_projection",
+      "role_label": "报表查询投影",
+      "data_flow": "SQLite 真相 -> 参数化查询 -> 表格/图表/导出",
+      "direct_parents": [
+        "TSOFTINDEXCENTERFORM"
+      ],
+      "ultimate_hosts": [
+        "TSOFTINDEXCENTERFORM"
+      ],
+      "link_count": 1,
+      "instances": [
+        {
+          "parent_resource": "TSOFTINDEXCENTERFORM",
+          "parent_title": "概况",
+          "instance": "UsableMoneyChartFrame",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.UsableMoneyChartFrame"
+        }
+      ],
+      "composition_status": "direct_dfm_composition_proved",
+      "dynamic_result_status": "pending_empty_and_populated_state_validation"
+    }
+  ],
+  "unresolved_embedded_views": [],
+  "internal_or_experimental_entries": [
+    {
+      "resource": "TAIPANELDLG",
+      "class": "TAIPanelDlg",
+      "title": "AI",
+      "static_composition_references": 0,
+      "direct_parents": [],
+      "status": "no_design_time_composition_reference",
+      "evidence_boundary": "没有设计时父窗体引用不等于不可达，仍可能由事件代码动态创建"
+    },
+    {
+      "resource": "TCONSOLEFM",
+      "class": "TConsoleFm",
+      "title": "控制台",
+      "static_composition_references": 0,
+      "direct_parents": [],
+      "status": "no_design_time_composition_reference",
+      "evidence_boundary": "没有设计时父窗体引用不等于不可达，仍可能由事件代码动态创建"
+    }
+  ],
+  "multi_parent_resources": [
+    {
+      "resource": "TASSETSMARKETCONSTITUTESFRAME",
+      "parents": [
+        "TASSETTRANSFM",
+        "TPRACTRANSFM"
+      ],
+      "parent_count": 2,
+      "surface_kind": "embedded_indirect_surface",
+      "role": "projection_view"
+    },
+    {
+      "resource": "TCASHTRANSFRAME",
+      "parents": [
+        "TCASHTRANSFM",
+        "TCURRENTTRANSFM",
+        "TFIXEDDEPOSITTRANSFM",
+        "TTHIRDDEPOSITSTRANSFM"
+      ],
+      "parent_count": 4,
+      "surface_kind": "business_surface",
+      "role": "transaction_history"
+    },
+    {
+      "resource": "THISTORYPROFITFRAME",
+      "parents": [
+        "TCURRFUNDTRANSFM",
+        "TFUTURESTRANSFM",
+        "TGOLDTRANSFM",
+        "TMARGINTRANSFM",
+        "TMARKETDEBTTRANSFM",
+        "TMONEYTRANSFM",
+        "TOPENFUNDTRANSFM",
+        "TPRECIOUSMETALSTDTRANSFM",
+        "TSECURITYTRANSFM"
+      ],
+      "parent_count": 9,
+      "surface_kind": "business_surface",
+      "role": "projection_view"
+    },
+    {
+      "resource": "TINCEXPEDITFRAME",
+      "parents": [
+        "TINCEXPDLGFM",
+        "TINCEXPINSTALLMENTWIZARDDLG"
+      ],
+      "parent_count": 2,
+      "surface_kind": "business_surface",
+      "role": "transaction_editor"
+    },
+    {
+      "resource": "TINSTALLMENTEDITFRAME",
+      "parents": [
+        "TINCEXPINSTALLMENTWIZARDDLG",
+        "TINSTALLMENTEDITDLG",
+        "TPRACBUYINSTALLMENTWIZARDDLG"
+      ],
+      "parent_count": 3,
+      "surface_kind": "business_surface",
+      "role": "configuration_editor"
+    },
+    {
+      "resource": "TINSURECASHVALUEFRAME",
+      "parents": [
+        "TMISCDIALOGFM",
+        "TSOCIALSECURITYTRANSFM"
+      ],
+      "parent_count": 2,
+      "surface_kind": "business_surface",
+      "role": "configuration_editor"
+    },
+    {
+      "resource": "TINSURETRANSFRAME",
+      "parents": [
+        "TINSURETRANSFM",
+        "TSOCIALSECURITYTRANSFM"
+      ],
+      "parent_count": 2,
+      "surface_kind": "business_surface",
+      "role": "transaction_history"
+    },
+    {
+      "resource": "TINSUREVIEWFRAME",
+      "parents": [
+        "TACCOUNTOVERVIEWDLGFM",
+        "TSOCIALSECURITYTRANSFM"
+      ],
+      "parent_count": 2,
+      "surface_kind": "embedded_indirect_surface",
+      "role": "projection_view"
+    },
+    {
+      "resource": "TMARKETCONSTITUTESFRAME",
+      "parents": [
+        "TGOLDTRANSFM",
+        "TOPENFUNDTRANSFM",
+        "TSECURITYTRANSFM"
+      ],
+      "parent_count": 3,
+      "surface_kind": "embedded_indirect_surface",
+      "role": "projection_view"
+    },
+    {
+      "resource": "TPRACBUYEDITFRAME",
+      "parents": [
+        "TPRACASSETBUYDLGFM",
+        "TPRACBUYINSTALLMENTWIZARDDLG"
+      ],
+      "parent_count": 2,
+      "surface_kind": "business_surface",
+      "role": "transaction_editor"
+    }
+  ],
+  "composition_links": [
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TALIPAYVIEWFRAME",
+      "child_class": "TAlipayViewFrame",
+      "child_instance": "AlipayViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.AlipayViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.AlipayViewFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TBONDSVIEWFRAME",
+      "child_class": "TBondsViewFrame",
+      "child_instance": "BondsViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.BondsViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.BondsViewFrame"
+        }
+      ],
+      "child_domain": "bonds",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TCARDVIEWFRAME",
+      "child_class": "TCardViewFrame",
+      "child_instance": "CardViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.CardViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CardViewFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TCASHVIEWFRAME",
+      "child_class": "TCashViewFrame",
+      "child_instance": "CashViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.CashViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CashViewFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TCURRDEPOSITSVIEWFRAME",
+      "child_class": "TCurrDepositsViewFrame",
+      "child_instance": "CurrDepositsViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.CurrDepositsViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CurrDepositsViewFrame"
+        }
+      ],
+      "child_domain": "financial_products",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TCURRFUNDVIEWFRAME",
+      "child_class": "TCurrFundViewFrame",
+      "child_instance": "CurrFundViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.CurrFundViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.CurrFundViewFrame"
+        }
+      ],
+      "child_domain": "funds",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TDEBTINVESTMENTVIEWFRAME",
+      "child_class": "TDebtInvestmentViewFrame",
+      "child_instance": "DebtInvestmentViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.DebtInvestmentViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.DebtInvestmentViewFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TEXCHANGEVIEWFRAME",
+      "child_class": "TExchangeViewFrame",
+      "child_instance": "ExchangeViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.ExchangeViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.ExchangeViewFrame"
+        }
+      ],
+      "child_domain": "foreign_exchange",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TFUTURESVIEWFRAME",
+      "child_class": "TFuturesViewFrame",
+      "child_instance": "FuturesViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.FuturesViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.FuturesViewFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TINSUREVIEWFRAME",
+      "child_class": "TInsureViewFrame",
+      "child_instance": "InsureViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.InsureViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.InsureViewFrame"
+        }
+      ],
+      "child_domain": "insurance_social",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TMARGINVIEWFRAME",
+      "child_class": "TMarginViewFrame",
+      "child_instance": "MarginViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.MarginViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.MarginViewFrame"
+        }
+      ],
+      "child_domain": "margin_financing",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TMONEYPRODUCTSVIEWFRAME",
+      "child_class": "TMoneyProductsViewFrame",
+      "child_instance": "MoneyProductsViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.MoneyProductsViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.MoneyProductsViewFrame"
+        }
+      ],
+      "child_domain": "financial_products",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TOPENFUNDVIEWFRAME",
+      "child_class": "TOpenFundViewFrame",
+      "child_instance": "OpenFundViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.OpenFundViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.OpenFundViewFrame"
+        }
+      ],
+      "child_domain": "funds",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TPRACGROUPVIEWFRAME",
+      "child_class": "TPracGroupViewFrame",
+      "child_instance": "PracGroupViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.PracGroupViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.PracGroupViewFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TPRECIOUSMETALSTDVIEWFRAME",
+      "child_class": "TPreciousMetalsTDViewFrame",
+      "child_instance": "PreciousMetalsTDViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.PreciousMetalsTDViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.PreciousMetalsTDViewFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TPRECIOUSVIEWFRAME",
+      "child_class": "TPreciousViewFrame",
+      "child_instance": "PreciousViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.PreciousViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.PreciousViewFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TACCOUNTOVERVIEWDLGFM",
+      "parent_title": "账户概况",
+      "parent_domain": "accounts_master_data",
+      "child_resource": "TSTOCKVIEWFRAME",
+      "child_class": "TStockViewFrame",
+      "child_instance": "StockViewFrame",
+      "component_path": "AccountOverviewDlgFm.pnlDlgClient.StockViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TACCOUNTOVERVIEWDLGFM",
+          "component_path": "AccountOverviewDlgFm.pnlDlgClient.StockViewFrame"
+        }
+      ],
+      "child_domain": "securities",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TASSETTRANSFM",
+      "parent_title": "重大资产交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TASSETSMARKETCONSTITUTESFRAME",
+      "child_class": "TAssetsMarketConstitutesFrame",
+      "child_instance": "AssetsMarketConstitutesFrame",
+      "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.AssetsMarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TASSETTRANSFM",
+          "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.AssetsMarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TASSETTRANSFM",
+      "parent_title": "重大资产交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TASSETSSTATISTICFRAME",
+      "child_class": "TAssetsStatisticFrame",
+      "child_instance": "AssetsStatisticFrame",
+      "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.AssetsStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TASSETTRANSFM",
+          "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.AssetsStatisticFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TASSETTRANSFM",
+      "parent_title": "重大资产交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TASSETSTRANSFRAME",
+      "child_class": "TAssetsTransFrame",
+      "child_instance": "AssetsTransFrame",
+      "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.AssetsTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TASSETTRANSFM",
+          "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.AssetsTransFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TASSETTRANSFM",
+      "parent_title": "重大资产交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TASSETSVALUEMANAGEMENTFRAME",
+      "child_class": "TAssetsValueManagementFrame",
+      "child_instance": "AssetsValueManagementFrame",
+      "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.AssetsValueManagementFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TASSETTRANSFM",
+          "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.AssetsValueManagementFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TASSETTRANSFM",
+      "parent_title": "重大资产交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TASSETVIEWFRAME",
+      "child_class": "TAssetViewFrame",
+      "child_instance": "AssetViewFrame",
+      "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.AssetViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TASSETTRANSFM",
+          "component_path": "AssetTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.AssetViewFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCASHTRANSFM",
+      "parent_title": "现金交易列表",
+      "parent_domain": "transactions",
+      "child_resource": "TCASHTRANSFRAME",
+      "child_class": "TCashTransFrame",
+      "child_instance": "CashTransFrame",
+      "component_path": "CashTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CashTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCASHTRANSFM",
+          "component_path": "CashTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CashTransFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TCLAIMSDEBTCONTAINER",
+      "parent_title": "",
+      "parent_domain": "debts_credit",
+      "child_resource": "TADVANCESVIEWFRAME",
+      "child_class": "TAdvancesViewFrame",
+      "child_instance": "AdvancesViewFrame",
+      "component_path": "ClaimsDebtContainer.PgControl.TabSheet5.AdvancesViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSDEBTCONTAINER",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet5.AdvancesViewFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCLAIMSDEBTCONTAINER",
+      "parent_title": "",
+      "parent_domain": "debts_credit",
+      "child_resource": "TDEFERREDVIEWFRAME",
+      "child_class": "TDeferredViewFrame",
+      "child_instance": "DeferredViewFrame",
+      "component_path": "ClaimsDebtContainer.PgControl.TabSheet3.DeferredViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSDEBTCONTAINER",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet3.DeferredViewFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCLAIMSDEBTCONTAINER",
+      "parent_title": "",
+      "parent_domain": "debts_credit",
+      "child_resource": "TPAYABLESVIEWFRAME",
+      "child_class": "TPayablesViewFrame",
+      "child_instance": "PayablesViewFrame",
+      "component_path": "ClaimsDebtContainer.PgControl.TabSheet2.PayablesViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSDEBTCONTAINER",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet2.PayablesViewFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCLAIMSDEBTCONTAINER",
+      "parent_title": "",
+      "parent_domain": "debts_credit",
+      "child_resource": "TRECEIVABLESVIEWFRAME",
+      "child_class": "TReceivablesViewFrame",
+      "child_instance": "ReceivablesViewFrame",
+      "component_path": "ClaimsDebtContainer.PgControl.TabSheet1.ReceivablesViewFrame",
+      "serialized_occurrence_count": 2,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSDEBTCONTAINER",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet1.ReceivablesViewFrame"
+        },
+        {
+          "owner_resource": "TCLAIMSTRANSFM",
+          "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.ClaimsDebtContainer.PgControl.TabSheet1.ReceivablesViewFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCLAIMSDEBTCONTAINER",
+      "parent_title": "",
+      "parent_domain": "debts_credit",
+      "child_resource": "TUNEARNEDVIEWFRAME",
+      "child_class": "TUnearnedViewFrame",
+      "child_instance": "UnearnedViewFrame",
+      "component_path": "ClaimsDebtContainer.PgControl.TabSheet4.UnearnedViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSDEBTCONTAINER",
+          "component_path": "ClaimsDebtContainer.PgControl.TabSheet4.UnearnedViewFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCLAIMSTRANSFM",
+      "parent_title": "债权债务交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TCLAIMSDEBTCONTAINER",
+      "child_class": "TClaimsDebtContainer",
+      "child_instance": "ClaimsDebtContainer",
+      "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.ClaimsDebtContainer",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSTRANSFM",
+          "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.ClaimsDebtContainer"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCLAIMSTRANSFM",
+      "parent_title": "债权债务交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TCLAIMSDEBTSCONSTITUTESFRAME",
+      "child_class": "TClaimsDebtsConstitutesFrame",
+      "child_instance": "ClaimsDebtsConstitutesFrame",
+      "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.ClaimsDebtsConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSTRANSFM",
+          "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.ClaimsDebtsConstitutesFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TCLAIMSTRANSFM",
+      "parent_title": "债权债务交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TCLAIMSDEBTSTATISTICFRAME",
+      "child_class": "TClaimsDebtStatisticFrame",
+      "child_instance": "ClaimsDebtStatisticFrame",
+      "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.ClaimsDebtStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSTRANSFM",
+          "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.ClaimsDebtStatisticFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCLAIMSTRANSFM",
+      "parent_title": "债权债务交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TCLAIMSDEBTTRANSFRAME",
+      "child_class": "TClaimsDebtTransFrame",
+      "child_instance": "ClaimsDebtTransFrame",
+      "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.ClaimsDebtTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSTRANSFM",
+          "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.ClaimsDebtTransFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TCLAIMSTRANSFM",
+      "parent_title": "债权债务交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TREPAYMENTTABLEFRAME",
+      "child_class": "TRepaymentTableFrame",
+      "child_instance": "RepaymentTableFrame",
+      "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.RepaymentTableFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCLAIMSTRANSFM",
+          "component_path": "ClaimsTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.RepaymentTableFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "transaction_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "用户输入 -> 领域校验 -> 原子分录/专项扩展事务"
+    },
+    {
+      "parent_resource": "TCREDITCARDTRANSFM",
+      "parent_title": "信用卡交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TCREDITCARDSTATISTICFRAME",
+      "child_class": "TCreditCardStatisticFrame",
+      "child_instance": "CreditCardStatisticFrame",
+      "component_path": "CreditCardTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CreditCardStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCREDITCARDTRANSFM",
+          "component_path": "CreditCardTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CreditCardStatisticFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCREDITCARDTRANSFM",
+      "parent_title": "信用卡交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TCREDITCARDTRANSFRAME",
+      "child_class": "TCreditCardTransFrame",
+      "child_instance": "CreditCardTransFrame",
+      "component_path": "CreditCardTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.CreditCardTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCREDITCARDTRANSFM",
+          "component_path": "CreditCardTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.CreditCardTransFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TCREDITCARDTRANSFM",
+      "parent_title": "信用卡交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TINSTALLMENTFRAME",
+      "child_class": "TInstallmentFrame",
+      "child_instance": "InstallmentFrame",
+      "component_path": "CreditCardTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.InstallmentFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCREDITCARDTRANSFM",
+          "component_path": "CreditCardTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.InstallmentFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TCURRENTTRANSFM",
+      "parent_title": "活期存款交易明细",
+      "parent_domain": "transactions",
+      "child_resource": "TCASHTRANSFRAME",
+      "child_class": "TCashTransFrame",
+      "child_instance": "CurrTransFrame",
+      "component_path": "CurrentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CurrTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCURRENTTRANSFM",
+          "component_path": "CurrentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CurrTransFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TCURRFUNDTRANSFM",
+      "parent_title": "货币基金交易明细",
+      "parent_domain": "funds",
+      "child_resource": "TCURRFUNDSTATISTICFRAME",
+      "child_class": "TCurrFundStatisticFrame",
+      "child_instance": "CurrFundStatisticFrame",
+      "component_path": "CurrFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CurrFundStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCURRFUNDTRANSFM",
+          "component_path": "CurrFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CurrFundStatisticFrame"
+        }
+      ],
+      "child_domain": "funds",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TCURRFUNDTRANSFM",
+      "parent_title": "货币基金交易明细",
+      "parent_domain": "funds",
+      "child_resource": "TCURRFUNDTRANSFRAME",
+      "child_class": "TCurrFundTransFrame",
+      "child_instance": "CurrFundTransFrame",
+      "component_path": "CurrFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.CurrFundTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCURRFUNDTRANSFM",
+          "component_path": "CurrFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.CurrFundTransFrame"
+        }
+      ],
+      "child_domain": "funds",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TCURRFUNDTRANSFM",
+      "parent_title": "货币基金交易明细",
+      "parent_domain": "funds",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "HistoryProfitFrame",
+      "component_path": "CurrFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.HistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TCURRFUNDTRANSFM",
+          "component_path": "CurrFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.HistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TDEBTINVESTMENTTRANSFM",
+      "parent_title": "网贷账户交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TDEBTINVESTMENTACCTLISTFRAME",
+      "child_class": "TDebtInvestmentAcctListFrame",
+      "child_instance": "FDebtInvestmentAcctListFrame",
+      "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FDebtInvestmentAcctListFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TDEBTINVESTMENTTRANSFM",
+          "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FDebtInvestmentAcctListFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TDEBTINVESTMENTTRANSFM",
+      "parent_title": "网贷账户交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TDEBTINVESTMENTPAYOBJECTFRAME",
+      "child_class": "TDebtInvestmentPayObjectFrame",
+      "child_instance": "FDebtInvestmentPayObjectFrame",
+      "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.FDebtInvestmentPayObjectFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TDEBTINVESTMENTTRANSFM",
+          "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.FDebtInvestmentPayObjectFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TDEBTINVESTMENTTRANSFM",
+      "parent_title": "网贷账户交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TDEBTINVESTMENTSTATISTICFRAME",
+      "child_class": "TDebtInvestmentStatisticFrame",
+      "child_instance": "FDebtInvestmentStatisticFrame",
+      "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FDebtInvestmentStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TDEBTINVESTMENTTRANSFM",
+          "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FDebtInvestmentStatisticFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TDEBTINVESTMENTTRANSFM",
+      "parent_title": "网贷账户交易明细",
+      "parent_domain": "debts_credit",
+      "child_resource": "TDEBTINVESTMENTTRANSFRAME",
+      "child_class": "TDebtInvestmentTransFrame",
+      "child_instance": "FDebtInvestmentTransFrame",
+      "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FDebtInvestmentTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TDEBTINVESTMENTTRANSFM",
+          "component_path": "DebtInvestmentTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FDebtInvestmentTransFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "transaction_history",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TFIXEDDEPOSITTRANSFM",
+      "parent_title": "定期存单",
+      "parent_domain": "financial_products",
+      "child_resource": "TCASHTRANSFRAME",
+      "child_class": "TCashTransFrame",
+      "child_instance": "FixedDepositTransFrame",
+      "component_path": "FixedDepositTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FixedDepositTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFIXEDDEPOSITTRANSFM",
+          "component_path": "FixedDepositTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FixedDepositTransFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TFIXEDDEPOSITTRANSFM",
+      "parent_title": "定期存单",
+      "parent_domain": "financial_products",
+      "child_resource": "TFIXDEPOSITSVIEWFRAME",
+      "child_class": "TFixDepositsViewFrame",
+      "child_instance": "FixDepositsViewFrame",
+      "component_path": "FixedDepositTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FixDepositsViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFIXEDDEPOSITTRANSFM",
+          "component_path": "FixedDepositTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FixDepositsViewFrame"
+        }
+      ],
+      "child_domain": "financial_products",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TFIXEDDEPOSITTRANSFM",
+      "parent_title": "定期存单",
+      "parent_domain": "financial_products",
+      "child_resource": "TFIXEDDEPOSITSTATISTICFRAME",
+      "child_class": "TFixedDepositStatisticFrame",
+      "child_instance": "FFixedDepositStatisticFrame",
+      "component_path": "FixedDepositTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FFixedDepositStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFIXEDDEPOSITTRANSFM",
+          "component_path": "FixedDepositTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FFixedDepositStatisticFrame"
+        }
+      ],
+      "child_domain": "financial_products",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TFOREIGNTRANSFM",
+      "parent_title": "外汇交易明细",
+      "parent_domain": "foreign_exchange",
+      "child_resource": "TEXCHANGEMARKETCONSTITUTESFRAME",
+      "child_class": "TExchangeMarketConstitutesFrame",
+      "child_instance": "ExchangeMarketConstitutesFrame",
+      "component_path": "ForeignTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.ExchangeMarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFOREIGNTRANSFM",
+          "component_path": "ForeignTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.ExchangeMarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "foreign_exchange",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TFOREIGNTRANSFM",
+      "parent_title": "外汇交易明细",
+      "parent_domain": "foreign_exchange",
+      "child_resource": "TFOREIGNSTATISTICFRAME",
+      "child_class": "TForeignStatisticFrame",
+      "child_instance": "ForeignStatisticFrame",
+      "component_path": "ForeignTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.ForeignStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFOREIGNTRANSFM",
+          "component_path": "ForeignTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.ForeignStatisticFrame"
+        }
+      ],
+      "child_domain": "foreign_exchange",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TFOREIGNTRANSFM",
+      "parent_title": "外汇交易明细",
+      "parent_domain": "foreign_exchange",
+      "child_resource": "TFOREIGNTRANSFRAME",
+      "child_class": "TForeignTransFrame",
+      "child_instance": "ForeignTransFrame",
+      "component_path": "ForeignTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.ForeignTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFOREIGNTRANSFM",
+          "component_path": "ForeignTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.ForeignTransFrame"
+        }
+      ],
+      "child_domain": "foreign_exchange",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TFUTURESTRANSFM",
+      "parent_title": "期货账户交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "TFUTURESSTATISTICFRAME",
+      "child_class": "TFuturesStatisticFrame",
+      "child_instance": "FFuturesStatisticFrame",
+      "component_path": "FuturesTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FFuturesStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFUTURESTRANSFM",
+          "component_path": "FuturesTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FFuturesStatisticFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TFUTURESTRANSFM",
+      "parent_title": "期货账户交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "TFUTURESTRANSFRAME",
+      "child_class": "TFuturesTransFrame",
+      "child_instance": "FFuturesTransFrame",
+      "component_path": "FuturesTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FFuturesTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFUTURESTRANSFM",
+          "component_path": "FuturesTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FFuturesTransFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TFUTURESTRANSFM",
+      "parent_title": "期货账户交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "FHistoryProfitFrame",
+      "component_path": "FuturesTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FHistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TFUTURESTRANSFM",
+          "component_path": "FuturesTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FHistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TGOLDTRANSFM",
+      "parent_title": "贵金属交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "TGOLDSTATISTICFRAME",
+      "child_class": "TGoldStatisticFrame",
+      "child_instance": "GoldStatisticFrame",
+      "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.GoldStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TGOLDTRANSFM",
+          "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.GoldStatisticFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TGOLDTRANSFM",
+      "parent_title": "贵金属交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "TGOLDTRANSFRAME",
+      "child_class": "TGoldTransFrame",
+      "child_instance": "GoldTransFrame",
+      "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.GoldTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TGOLDTRANSFM",
+          "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.GoldTransFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TGOLDTRANSFM",
+      "parent_title": "贵金属交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "HistoryProfitFrame",
+      "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TGOLDTRANSFM",
+          "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TGOLDTRANSFM",
+      "parent_title": "贵金属交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "TMARKETCONSTITUTESFRAME",
+      "child_class": "TMarketConstitutesFrame",
+      "child_instance": "MarketConstitutesFrame",
+      "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TGOLDTRANSFM",
+          "component_path": "GoldTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TINCEXPDLGFM",
+      "parent_title": "日常收支",
+      "parent_domain": "transactions",
+      "child_resource": "TINCEXPEDITFRAME",
+      "child_class": "TIncExpEditFrame",
+      "child_instance": "FIncExpEditFrame",
+      "component_path": "IncExpDlgFm.pnlDlgClient.RzPanel1.FIncExpEditFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TINCEXPDLGFM",
+          "component_path": "IncExpDlgFm.pnlDlgClient.RzPanel1.FIncExpEditFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "transaction_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "用户输入 -> 领域校验 -> 原子分录/专项扩展事务"
+    },
+    {
+      "parent_resource": "TINCEXPINSTALLMENTWIZARDDLG",
+      "parent_title": "日常支出分期",
+      "parent_domain": "transactions",
+      "child_resource": "TINCEXPEDITFRAME",
+      "child_class": "TIncExpEditFrame",
+      "child_instance": "FIncExpEditFrame",
+      "component_path": "IncExpInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxIncExp.FIncExpEditFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TINCEXPINSTALLMENTWIZARDDLG",
+          "component_path": "IncExpInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxIncExp.FIncExpEditFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "transaction_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "用户输入 -> 领域校验 -> 原子分录/专项扩展事务"
+    },
+    {
+      "parent_resource": "TINCEXPINSTALLMENTWIZARDDLG",
+      "parent_title": "日常支出分期",
+      "parent_domain": "transactions",
+      "child_resource": "TINSTALLMENTEDITFRAME",
+      "child_class": "TInstallmentEditFrame",
+      "child_instance": "FInstallmentEditFrame",
+      "component_path": "IncExpInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxInstallment.FInstallmentEditFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TINCEXPINSTALLMENTWIZARDDLG",
+          "component_path": "IncExpInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxInstallment.FInstallmentEditFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TINSTALLMENTEDITDLG",
+      "parent_title": "分期付款",
+      "parent_domain": "transactions",
+      "child_resource": "TINSTALLMENTEDITFRAME",
+      "child_class": "TInstallmentEditFrame",
+      "child_instance": "FInstallmentEditFrame",
+      "component_path": "InstallmentEditDlg.pnlDlgClient.FInstallmentEditFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TINSTALLMENTEDITDLG",
+          "component_path": "InstallmentEditDlg.pnlDlgClient.FInstallmentEditFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TINSURETRANSFM",
+      "parent_title": "保险交易明细",
+      "parent_domain": "insurance_social",
+      "child_resource": "TINSURETRANSFRAME",
+      "child_class": "TInsureTransFrame",
+      "child_instance": "InsureTransFrame",
+      "component_path": "InsureTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.InsureTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TINSURETRANSFM",
+          "component_path": "InsureTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.InsureTransFrame"
+        }
+      ],
+      "child_domain": "insurance_social",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TMARGINTRANSFM",
+      "parent_title": "融资融券账户交易明细",
+      "parent_domain": "margin_financing",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "FHistoryProfitFrame",
+      "component_path": "MarginTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FHistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMARGINTRANSFM",
+          "component_path": "MarginTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FHistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMARGINTRANSFM",
+      "parent_title": "融资融券账户交易明细",
+      "parent_domain": "margin_financing",
+      "child_resource": "TMARGINSTATISTICFRAME",
+      "child_class": "TMarginStatisticFrame",
+      "child_instance": "FMarginStatisticFrame",
+      "component_path": "MarginTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FMarginStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMARGINTRANSFM",
+          "component_path": "MarginTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FMarginStatisticFrame"
+        }
+      ],
+      "child_domain": "margin_financing",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMARGINTRANSFM",
+      "parent_title": "融资融券账户交易明细",
+      "parent_domain": "margin_financing",
+      "child_resource": "TMARGINTRANSFRAME",
+      "child_class": "TMarginTransFrame",
+      "child_instance": "FMarginTransFrame",
+      "component_path": "MarginTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FMarginTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMARGINTRANSFM",
+          "component_path": "MarginTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FMarginTransFrame"
+        }
+      ],
+      "child_domain": "margin_financing",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TMARKETDEBTTRANSFM",
+      "parent_title": "债券交易明细",
+      "parent_domain": "bonds",
+      "child_resource": "TBONDSMARKETCONSTITUTESFRAME",
+      "child_class": "TBondsMarketConstitutesFrame",
+      "child_instance": "BondsMarketConstitutesFrame",
+      "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.BondsMarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMARKETDEBTTRANSFM",
+          "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.BondsMarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "bonds",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMARKETDEBTTRANSFM",
+      "parent_title": "债券交易明细",
+      "parent_domain": "bonds",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "HistoryProfitFrame",
+      "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMARKETDEBTTRANSFM",
+          "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMARKETDEBTTRANSFM",
+      "parent_title": "债券交易明细",
+      "parent_domain": "bonds",
+      "child_resource": "TMARKETDEBTSTATISTICFRAME",
+      "child_class": "TMarketDebtStatisticFrame",
+      "child_instance": "MarketDebtStatisticFrame",
+      "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.MarketDebtStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMARKETDEBTTRANSFM",
+          "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.MarketDebtStatisticFrame"
+        }
+      ],
+      "child_domain": "bonds",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMARKETDEBTTRANSFM",
+      "parent_title": "债券交易明细",
+      "parent_domain": "bonds",
+      "child_resource": "TMARKETDEBTTRANSFRAME",
+      "child_class": "TMarketDebtTransFrame",
+      "child_instance": "MarketDebtTransFrame",
+      "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.MarketDebtTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMARKETDEBTTRANSFM",
+          "component_path": "MarketDebtTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.MarketDebtTransFrame"
+        }
+      ],
+      "child_domain": "bonds",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TMISCDIALOGFM",
+      "parent_title": "MiscDialog",
+      "parent_domain": "shared_infrastructure",
+      "child_resource": "TDEBTINVESTMENTPAYTABLEFRAME",
+      "child_class": "TDebtInvestmentPayTableFrame",
+      "child_instance": "DebtInvestmentPayTableFrame",
+      "component_path": "MiscDialogFm.pnlDlgClient.DebtInvestmentPayTableFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMISCDIALOGFM",
+          "component_path": "MiscDialogFm.pnlDlgClient.DebtInvestmentPayTableFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMISCDIALOGFM",
+      "parent_title": "MiscDialog",
+      "parent_domain": "shared_infrastructure",
+      "child_resource": "TINSURECASHVALUEFRAME",
+      "child_class": "TInsureCashValueFrame",
+      "child_instance": "InsureCashValueFrame",
+      "component_path": "MiscDialogFm.pnlDlgClient.InsureCashValueFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMISCDIALOGFM",
+          "component_path": "MiscDialogFm.pnlDlgClient.InsureCashValueFrame"
+        }
+      ],
+      "child_domain": "insurance_social",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TMONEYTRANSFM",
+      "parent_title": "银行理财产品交易明细",
+      "parent_domain": "financial_products",
+      "child_resource": "TCURRFUNDMARKETCONSTITUTESFRAME",
+      "child_class": "TCurrFundMarketConstitutesFrame",
+      "child_instance": "CurrFundMarketConstitutesFrame",
+      "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.CurrFundMarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMONEYTRANSFM",
+          "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.CurrFundMarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "funds",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMONEYTRANSFM",
+      "parent_title": "银行理财产品交易明细",
+      "parent_domain": "financial_products",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "HistoryProfitFrame",
+      "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMONEYTRANSFM",
+          "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMONEYTRANSFM",
+      "parent_title": "银行理财产品交易明细",
+      "parent_domain": "financial_products",
+      "child_resource": "TMONEYINFOVIEWFRAME",
+      "child_class": "TMoneyInfoViewFrame",
+      "child_instance": "MoneyInfoViewFrame",
+      "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.MoneyInfoViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMONEYTRANSFM",
+          "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet4.MoneyInfoViewFrame"
+        }
+      ],
+      "child_domain": "financial_products",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMONEYTRANSFM",
+      "parent_title": "银行理财产品交易明细",
+      "parent_domain": "financial_products",
+      "child_resource": "TMONEYSTATISTICFRAME",
+      "child_class": "TMoneyStatisticFrame",
+      "child_instance": "MoneyStatisticFrame",
+      "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.MoneyStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMONEYTRANSFM",
+          "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.MoneyStatisticFrame"
+        }
+      ],
+      "child_domain": "financial_products",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TMONEYTRANSFM",
+      "parent_title": "银行理财产品交易明细",
+      "parent_domain": "financial_products",
+      "child_resource": "TMONEYTRANSFRAME",
+      "child_class": "TMoneyTransFrame",
+      "child_instance": "MoneyTransFrame",
+      "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.MoneyTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TMONEYTRANSFM",
+          "component_path": "MoneyTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.MoneyTransFrame"
+        }
+      ],
+      "child_domain": "financial_products",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TOPENFUNDTRANSFM",
+      "parent_title": "开放式基金交易明细",
+      "parent_domain": "funds",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "HistoryProfitFrame",
+      "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TOPENFUNDTRANSFM",
+          "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TOPENFUNDTRANSFM",
+      "parent_title": "开放式基金交易明细",
+      "parent_domain": "funds",
+      "child_resource": "TMARKETCONSTITUTESFRAME",
+      "child_class": "TMarketConstitutesFrame",
+      "child_instance": "MarketConstitutesFrame",
+      "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TOPENFUNDTRANSFM",
+          "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TOPENFUNDTRANSFM",
+      "parent_title": "开放式基金交易明细",
+      "parent_domain": "funds",
+      "child_resource": "TOPENFUNDSTATISTICFRAME",
+      "child_class": "TOpenFundStatisticFrame",
+      "child_instance": "OpenFundStatisticFrame",
+      "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.OpenFundStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TOPENFUNDTRANSFM",
+          "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.OpenFundStatisticFrame"
+        }
+      ],
+      "child_domain": "funds",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TOPENFUNDTRANSFM",
+      "parent_title": "开放式基金交易明细",
+      "parent_domain": "funds",
+      "child_resource": "TOPENFUNDTRANSFRAME",
+      "child_class": "TOpenFundTransFrame",
+      "child_instance": "OpenFundTransFrame",
+      "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.OpenFundTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TOPENFUNDTRANSFM",
+          "component_path": "OpenFundTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.OpenFundTransFrame"
+        }
+      ],
+      "child_domain": "funds",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TPRACASSETBUYDLGFM",
+      "parent_title": "物品买入",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TPRACBUYEDITFRAME",
+      "child_class": "TPracBuyEditFrame",
+      "child_instance": "FPracBuyEditFrame",
+      "component_path": "PracAssetBuyDlgFm.pnlDlgClient.RzPanel1.FPracBuyEditFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRACASSETBUYDLGFM",
+          "component_path": "PracAssetBuyDlgFm.pnlDlgClient.RzPanel1.FPracBuyEditFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "transaction_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "用户输入 -> 领域校验 -> 原子分录/专项扩展事务"
+    },
+    {
+      "parent_resource": "TPRACBUYINSTALLMENTWIZARDDLG",
+      "parent_title": "物品买入分期",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TINSTALLMENTEDITFRAME",
+      "child_class": "TInstallmentEditFrame",
+      "child_instance": "FInstallmentEditFrame",
+      "component_path": "PracBuyInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxInstallment.FInstallmentEditFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRACBUYINSTALLMENTWIZARDDLG",
+          "component_path": "PracBuyInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxInstallment.FInstallmentEditFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TPRACBUYINSTALLMENTWIZARDDLG",
+      "parent_title": "物品买入分期",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TPRACBUYEDITFRAME",
+      "child_class": "TPracBuyEditFrame",
+      "child_instance": "FPracBuyEditFrame",
+      "component_path": "PracBuyInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxPracAsset.FPracBuyEditFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRACBUYINSTALLMENTWIZARDDLG",
+          "component_path": "PracBuyInstallmentWizardDlg.pnlDlgClient.pnl1.nbPage.gBoxPracAsset.FPracBuyEditFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "transaction_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "用户输入 -> 领域校验 -> 原子分录/专项扩展事务"
+    },
+    {
+      "parent_resource": "TPRACTRANSFM",
+      "parent_title": "物品交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TASSETSMARKETCONSTITUTESFRAME",
+      "child_class": "TAssetsMarketConstitutesFrame",
+      "child_instance": "AssetsMarketConstitutesFrame",
+      "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.AssetsMarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRACTRANSFM",
+          "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.AssetsMarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TPRACTRANSFM",
+      "parent_title": "物品交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TPRACSTATISTICFRAME",
+      "child_class": "TPracStatisticFrame",
+      "child_instance": "PracStatisticFrame",
+      "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.PracStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRACTRANSFM",
+          "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.PracStatisticFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TPRACTRANSFM",
+      "parent_title": "物品交易明细",
+      "parent_domain": "major_tangible_assets",
+      "child_resource": "TPRACTRANSFRAME",
+      "child_class": "TPracTransFrame",
+      "child_instance": "PracTransFrame",
+      "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.PracTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRACTRANSFM",
+          "component_path": "PracTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.PracTransFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TPRECIOUSMETALSTDTRANSFM",
+      "parent_title": "贵金属TD账户交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "FHistoryProfitFrame",
+      "component_path": "PreciousMetalsTDTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FHistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRECIOUSMETALSTDTRANSFM",
+          "component_path": "PreciousMetalsTDTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.FHistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TPRECIOUSMETALSTDTRANSFM",
+      "parent_title": "贵金属TD账户交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "TPRECIOUSMETALSTDSTATISTICFRAME",
+      "child_class": "TPreciousMetalsTDStatisticFrame",
+      "child_instance": "FPreciousMetalsTDStatisticFrame",
+      "component_path": "PreciousMetalsTDTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FPreciousMetalsTDStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRECIOUSMETALSTDTRANSFM",
+          "component_path": "PreciousMetalsTDTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.FPreciousMetalsTDStatisticFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TPRECIOUSMETALSTDTRANSFM",
+      "parent_title": "贵金属TD账户交易明细",
+      "parent_domain": "futures_metals",
+      "child_resource": "TPRECIOUSMETALSTDTRANSFRAME",
+      "child_class": "TPreciousMetalsTDTransFrame",
+      "child_instance": "FPreciousMetalsTDTransFrame",
+      "component_path": "PreciousMetalsTDTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FPreciousMetalsTDTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TPRECIOUSMETALSTDTRANSFM",
+          "component_path": "PreciousMetalsTDTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.FPreciousMetalsTDTransFrame"
+        }
+      ],
+      "child_domain": "futures_metals",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TREPORTOPTIONDLGFM",
+      "parent_title": "筛选",
+      "parent_domain": "reports",
+      "child_resource": "TAMOUNTSCREENINGFRAME",
+      "child_class": "TAmountScreeningFrame",
+      "child_instance": "AmountScreeningFrame1",
+      "component_path": "ReportOptionDlgFm.pnlDlgClient.mwPageControl1.tabSum.AmountScreeningFrame1",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TREPORTOPTIONDLGFM",
+          "component_path": "ReportOptionDlgFm.pnlDlgClient.mwPageControl1.tabSum.AmountScreeningFrame1"
+        }
+      ],
+      "child_domain": "shared_infrastructure",
+      "child_role": "selector_filter",
+      "child_surface_kind": "technical_support",
+      "child_data_flow": "候选数据 -> 用户范围选择 -> 上游命令或查询参数"
+    },
+    {
+      "parent_resource": "TSECURITYTRANSFM",
+      "parent_title": "上市证券交易列表",
+      "parent_domain": "securities",
+      "child_resource": "THISTORYPROFITFRAME",
+      "child_class": "THistoryProfitFrame",
+      "child_instance": "HistoryProfitFrame",
+      "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSECURITYTRANSFM",
+          "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.HistoryProfitFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSECURITYTRANSFM",
+      "parent_title": "上市证券交易列表",
+      "parent_domain": "securities",
+      "child_resource": "TMARKETCONSTITUTESFRAME",
+      "child_class": "TMarketConstitutesFrame",
+      "child_instance": "MarketConstitutesFrame",
+      "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSECURITYTRANSFM",
+          "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.MarketConstitutesFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSECURITYTRANSFM",
+      "parent_title": "上市证券交易列表",
+      "parent_domain": "securities",
+      "child_resource": "TSECURITYSTATISTICFRAME",
+      "child_class": "TSecurityStatisticFrame",
+      "child_instance": "StatisticFrame",
+      "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.StatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSECURITYTRANSFM",
+          "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.StatisticFrame"
+        }
+      ],
+      "child_domain": "securities",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSECURITYTRANSFM",
+      "parent_title": "上市证券交易列表",
+      "parent_domain": "securities",
+      "child_resource": "TSECURITYTRANSFRAME",
+      "child_class": "TSecurityTransFrame",
+      "child_instance": "SecurityTransFrame",
+      "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.SecurityTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSECURITYTRANSFM",
+          "component_path": "SecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.SecurityTransFrame"
+        }
+      ],
+      "child_domain": "securities",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TSOCIALSECURITYTRANSFM",
+      "parent_title": "社会保险账户交易明细",
+      "parent_domain": "insurance_social",
+      "child_resource": "TINSURECASHVALUEFRAME",
+      "child_class": "TInsureCashValueFrame",
+      "child_instance": "InsureCashValueFrame",
+      "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.InsureCashValueFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOCIALSECURITYTRANSFM",
+          "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet2.InsureCashValueFrame"
+        }
+      ],
+      "child_domain": "insurance_social",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TSOCIALSECURITYTRANSFM",
+      "parent_title": "社会保险账户交易明细",
+      "parent_domain": "insurance_social",
+      "child_resource": "TINSURETRANSFRAME",
+      "child_class": "TInsureTransFrame",
+      "child_instance": "InsureTransFrame",
+      "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.InsureTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOCIALSECURITYTRANSFM",
+          "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet1.InsureTransFrame"
+        }
+      ],
+      "child_domain": "insurance_social",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TSOCIALSECURITYTRANSFM",
+      "parent_title": "社会保险账户交易明细",
+      "parent_domain": "insurance_social",
+      "child_resource": "TINSUREVIEWFRAME",
+      "child_class": "TInsureViewFrame",
+      "child_instance": "InsureViewFrame",
+      "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.InsureViewFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOCIALSECURITYTRANSFM",
+          "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageBottom.FPageContrl.TabSheet3.InsureViewFrame"
+        }
+      ],
+      "child_domain": "insurance_social",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSOCIALSECURITYTRANSFM",
+      "parent_title": "社会保险账户交易明细",
+      "parent_domain": "insurance_social",
+      "child_resource": "TSOCIALSECURITYSTATISTICFRAME",
+      "child_class": "TSocialSecurityStatisticFrame",
+      "child_instance": "SocialSecurityStatisticFrame",
+      "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.SocialSecurityStatisticFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOCIALSECURITYTRANSFM",
+          "component_path": "SocialSecurityTransFm.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.SocialSecurityStatisticFrame"
+        }
+      ],
+      "child_domain": "insurance_social",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSOFTINDEXCENTERFORM",
+      "parent_title": "概况",
+      "parent_domain": "tools_longtail",
+      "child_resource": "TASSETSCONSTITUTECHARTFRAME",
+      "child_class": "TAssetsConstituteChartFrame",
+      "child_instance": "AssetsConstituteChartFrame",
+      "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.AssetsConstituteChartFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOFTINDEXCENTERFORM",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.AssetsConstituteChartFrame"
+        }
+      ],
+      "child_domain": "major_tangible_assets",
+      "child_role": "projection_view",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSOFTINDEXCENTERFORM",
+      "parent_title": "概况",
+      "parent_domain": "tools_longtail",
+      "child_resource": "TCLAIMSDEBTSCHARTFRAME",
+      "child_class": "TClaimsDebtsChartFrame",
+      "child_instance": "ClaimsDebtsChartFrame",
+      "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.ClaimsDebtsChartFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOFTINDEXCENTERFORM",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.ClaimsDebtsChartFrame"
+        }
+      ],
+      "child_domain": "debts_credit",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSOFTINDEXCENTERFORM",
+      "parent_title": "概况",
+      "parent_domain": "tools_longtail",
+      "child_resource": "TCURRENTMONTHINCEXPPIECHARTFRAME",
+      "child_class": "TCurrentMonthIncExpPieChartFrame",
+      "child_instance": "CurrentMonthIncExpPieChartFrame",
+      "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.CurrentMonthIncExpPieChartFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOFTINDEXCENTERFORM",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.CurrentMonthIncExpPieChartFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSOFTINDEXCENTERFORM",
+      "parent_title": "概况",
+      "parent_domain": "tools_longtail",
+      "child_resource": "TINVESTMENTCHARTFRAME",
+      "child_class": "TInvestmentChartFrame",
+      "child_instance": "InvestmentChartFrame",
+      "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.InvestmentChartFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOFTINDEXCENTERFORM",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.InvestmentChartFrame"
+        }
+      ],
+      "child_domain": "investment_shared",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSOFTINDEXCENTERFORM",
+      "parent_title": "概况",
+      "parent_domain": "tools_longtail",
+      "child_resource": "TMONTHINCEXPCOLUMNCHARTFRAME",
+      "child_class": "TMonthIncExpColumnChartFrame",
+      "child_instance": "MonthIncExpColumnChartFrame",
+      "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.MonthIncExpColumnChartFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOFTINDEXCENTERFORM",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.MonthIncExpColumnChartFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "projection_view",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "领域查询 -> 聚合/估值 -> 嵌入式列表、统计或图表"
+    },
+    {
+      "parent_resource": "TSOFTINDEXCENTERFORM",
+      "parent_title": "概况",
+      "parent_domain": "tools_longtail",
+      "child_resource": "TUSABLEMONEYCHARTFRAME",
+      "child_class": "TUsableMoneyChartFrame",
+      "child_instance": "UsableMoneyChartFrame",
+      "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.UsableMoneyChartFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TSOFTINDEXCENTERFORM",
+          "component_path": "SoftIndexCenterForm.pnlChildClient.pnlChildClientArea.sb1.UsableMoneyChartFrame"
+        }
+      ],
+      "child_domain": "reports",
+      "child_role": "report_projection",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "SQLite 真相 -> 参数化查询 -> 表格/图表/导出"
+    },
+    {
+      "parent_resource": "TTEMPLATEDLGFM",
+      "parent_title": "批量记账",
+      "parent_domain": "transactions",
+      "child_resource": "TTRANSLISTTEMPLATEFRAME",
+      "child_class": "TTransListTemplateFrame",
+      "child_instance": "FTransListTemplateFrame",
+      "component_path": "TemplateDlgFm.pnlDlgClient.FTransListTemplateFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TTEMPLATEDLGFM",
+          "component_path": "TemplateDlgFm.pnlDlgClient.FTransListTemplateFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "configuration_editor",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "配置/调整输入 -> 领域规则或显示状态持久化"
+    },
+    {
+      "parent_resource": "TTHIRDDEPOSITSTRANSFM",
+      "parent_title": "支付宝交易明细",
+      "parent_domain": "transactions",
+      "child_resource": "TCASHTRANSFRAME",
+      "child_class": "TCashTransFrame",
+      "child_instance": "CurrTransFrame",
+      "component_path": "ThirdDepositsTransFM.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CurrTransFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TTHIRDDEPOSITSTRANSFM",
+          "component_path": "ThirdDepositsTransFM.pnlChildClient.pnlChildClientArea.RzSplitter1.PnlPageTop.CurrTransFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "transaction_history",
+      "child_surface_kind": "business_surface",
+      "child_data_flow": "已提交交易 -> 查询投影 -> 明细操作与下游报表"
+    },
+    {
+      "parent_resource": "TTRANSFERTEMPLATEDLGFM",
+      "parent_title": "批量转账",
+      "parent_domain": "transactions",
+      "child_resource": "TTRANSFERLISTTEMPLATEFRAME",
+      "child_class": "TTransferListTemplateFrame",
+      "child_instance": "FTransferListTemplateFrame",
+      "component_path": "TransferTemplateDlgFm.pnlDlgClient.FTransferListTemplateFrame",
+      "serialized_occurrence_count": 1,
+      "serialized_instances": [
+        {
+          "owner_resource": "TTRANSFERTEMPLATEDLGFM",
+          "component_path": "TransferTemplateDlgFm.pnlDlgClient.FTransferListTemplateFrame"
+        }
+      ],
+      "child_domain": "transactions",
+      "child_role": "transaction_editor",
+      "child_surface_kind": "embedded_indirect_surface",
+      "child_data_flow": "用户输入 -> 领域校验 -> 原子分录/专项扩展事务"
+    }
+  ]
+}

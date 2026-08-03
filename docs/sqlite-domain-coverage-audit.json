@@ -1,0 +1,687 @@
+{
+  "schema_version": 1,
+  "sources": [
+    "runtime-event-command-dataflow.json",
+    "0001_core.sql",
+    "0002_planning_and_automation.sql",
+    "0003_contracts_exchange_and_sync.sql",
+    "0004_insurance_cash_value.sql",
+    "0005_insurance_cash_value_as_of.sql",
+    "0006_insurance_cash_value_amount_guard.sql",
+    "0007_payroll_income_and_application_identity.sql",
+    "0008_party_profile.sql",
+    "0009_party_list_lifecycle.sql",
+    "0010_prepaid_expenses.sql",
+    "0011_deposit_rate_versions.sql",
+    "0012_financial_goal_progress_baseline.sql",
+    "0013_plan_and_reminder_occurrences.sql"
+  ],
+  "evidence_boundary": "实体候选来自事件静态分类；覆盖状态是新 SQLite 设计审计。partial 或 missing 项不能在对应动态样例和迁移验证前标记为行为兼容。",
+  "metrics": {
+    "entity_candidate_count": 53,
+    "table_count": 63,
+    "view_count": 21,
+    "index_count": 56,
+    "adapter_artifact_count": 2,
+    "status_counts": {
+      "implemented_truth": 24,
+      "adapter_boundary": 3,
+      "implemented_generic_truth": 10,
+      "implemented_contract_boundary": 8,
+      "transient_not_persisted": 4,
+      "implemented_input_projection": 4
+    },
+    "recommended_next_object_count": 0
+  },
+  "recommended_next_objects": [],
+  "entities": [
+    {
+      "entity_candidate": "account",
+      "event_occurrence_count": 448,
+      "status": "implemented_truth",
+      "current_objects": [
+        "accounts"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "账户树与余额投影已落地。"
+    },
+    {
+      "entity_candidate": "account_entry",
+      "event_occurrence_count": 254,
+      "status": "implemented_truth",
+      "current_objects": [
+        "transaction_entries"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "所有余额变化统一由原子分录表达。"
+    },
+    {
+      "entity_candidate": "account_group",
+      "event_occurrence_count": 225,
+      "status": "implemented_truth",
+      "current_objects": [
+        "account_groups",
+        "accounts"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "删除分组只解除账户关系。"
+    },
+    {
+      "entity_candidate": "application_setting",
+      "event_occurrence_count": 260,
+      "status": "implemented_truth",
+      "current_objects": [
+        "application_settings"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "应用级与账簿级设置使用带版本 JSON，并由作用域约束隔离。"
+    },
+    {
+      "entity_candidate": "attachment",
+      "event_occurrence_count": 260,
+      "status": "implemented_truth",
+      "current_objects": [
+        "attachments",
+        "transaction_attachments"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "附件元数据与业务关系分离并受引用保护。"
+    },
+    {
+      "entity_candidate": "backup_snapshot",
+      "event_occurrence_count": 171,
+      "status": "adapter_boundary",
+      "current_objects": [],
+      "next_objects": [],
+      "adapter_artifacts": [
+        "backup-manifest.schema.json",
+        "backup-manifest-template.json"
+      ],
+      "rationale": "备份是文件适配器和校验清单，不进入活动账簿；Schema 明确快照、哈希、模式版本和附件相对路径。"
+    },
+    {
+      "entity_candidate": "bond",
+      "event_occurrence_count": 49,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "investment_instruments",
+        "investment_trades",
+        "market_quotes"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "债券基础交易复用投资真相表，票息细则可由后续类型扩展补充。"
+    },
+    {
+      "entity_candidate": "budget",
+      "event_occurrence_count": 157,
+      "status": "implemented_truth",
+      "current_objects": [
+        "budgets",
+        "budget_items",
+        "v_budget_consumption_inputs"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "预算期间、分类金额和消耗输入已落地。"
+    },
+    {
+      "entity_candidate": "category",
+      "event_occurrence_count": 256,
+      "status": "implemented_truth",
+      "current_objects": [
+        "categories"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "分类树和方向已落地。"
+    },
+    {
+      "entity_candidate": "category_split",
+      "event_occurrence_count": 254,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "transaction_entries"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "分类拆分使用同一交易的多条稳定分录。"
+    },
+    {
+      "entity_candidate": "credit_account",
+      "event_occurrence_count": 156,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "accounts",
+        "transactions",
+        "credit_account_terms"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "账户和流水是真相，账单日、还款日、额度和计息输入由专属条款承载。"
+    },
+    {
+      "entity_candidate": "currency",
+      "event_occurrence_count": 247,
+      "status": "implemented_truth",
+      "current_objects": [
+        "currencies"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "币种精度与启用状态已落地。"
+    },
+    {
+      "entity_candidate": "debt",
+      "event_occurrence_count": 174,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "accounts",
+        "transactions",
+        "transaction_entries",
+        "debt_contracts",
+        "v_debt_contract_inputs"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "资金流由分录表达，借款期限、利率和状态由专属合同表承载。"
+    },
+    {
+      "entity_candidate": "exchange_rate",
+      "event_occurrence_count": 22,
+      "status": "implemented_truth",
+      "current_objects": [
+        "exchange_rate_snapshots"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "历史折算使用不可变汇率快照。"
+    },
+    {
+      "entity_candidate": "export_projection",
+      "event_occurrence_count": 72,
+      "status": "transient_not_persisted",
+      "current_objects": [
+        "v_ledger_entries",
+        "report_presets"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "导出消费查询 DTO，不单独保存复制数据。"
+    },
+    {
+      "entity_candidate": "fee_rule",
+      "event_occurrence_count": 18,
+      "status": "adapter_boundary",
+      "current_objects": [
+        "fee_rule_snapshots"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "旧参考费率以来源快照进入适配器边界，交易仍保存实际费用分录。"
+    },
+    {
+      "entity_candidate": "field_mapping",
+      "event_occurrence_count": 72,
+      "status": "implemented_truth",
+      "current_objects": [
+        "import_field_mappings"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "导入列映射、重复规则和版本已可复用并审计。"
+    },
+    {
+      "entity_candidate": "financial_goal",
+      "event_occurrence_count": 154,
+      "status": "implemented_truth",
+      "current_objects": [
+        "financial_goals",
+        "financial_goal_accounts",
+        "v_goal_account_balance_inputs",
+        "v_goal_progress_inputs"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "目标金额、起止日期、账户范围、初始估值快照和进度输入已落地。"
+    },
+    {
+      "entity_candidate": "financial_plan",
+      "event_occurrence_count": 158,
+      "status": "implemented_truth",
+      "current_objects": [
+        "financial_plan_scenarios",
+        "financial_plan_inputs",
+        "financial_plan_accounts"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "规划输入采用带版本 JSON，公式仍由 Rust 策略校准。"
+    },
+    {
+      "entity_candidate": "financial_product",
+      "event_occurrence_count": 55,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "investment_instruments",
+        "investment_trades",
+        "market_quotes"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "银行理财和货币产品复用投资标的与成交模型。"
+    },
+    {
+      "entity_candidate": "financing_transaction",
+      "event_occurrence_count": 82,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "transactions",
+        "investment_trades",
+        "margin_contracts"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "融资资金流和证券成交复用真相表，额度、期限和利率由合同扩展承载。"
+    },
+    {
+      "entity_candidate": "fund",
+      "event_occurrence_count": 157,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "investment_instruments",
+        "investment_trades",
+        "market_quotes"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "基金通过 kind 和类型化策略复用投资真相表。"
+    },
+    {
+      "entity_candidate": "futures_contract",
+      "event_occurrence_count": 129,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "investment_instruments",
+        "investment_trades",
+        "market_quotes",
+        "futures_contract_terms"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "成交和行情复用投资真相，合约乘数、保证金和交割输入由专属条款承载。"
+    },
+    {
+      "entity_candidate": "fx_transaction",
+      "event_occurrence_count": 22,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "transactions",
+        "transaction_entries",
+        "exchange_rate_snapshots"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "跨币种分录引用明确汇率快照。"
+    },
+    {
+      "entity_candidate": "import_batch",
+      "event_occurrence_count": 72,
+      "status": "implemented_truth",
+      "current_objects": [
+        "import_batches",
+        "v_import_batch_audit"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "导入来源哈希、状态、计数和提交结果已形成批次真相。"
+    },
+    {
+      "entity_candidate": "insurance_policy",
+      "event_occurrence_count": 34,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "insurance_policies",
+        "insurance_events",
+        "insurance_cash_value_snapshots",
+        "insurance_cash_value_history",
+        "v_insurance_cash_value_effective_ranges",
+        "transactions",
+        "transaction_entries"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "保障条款、保险业务事件、可审计现金价值估值与可选资金交易分离；同日估值使用唯一键 upsert，当前值按显式查询日选择生效区间。"
+    },
+    {
+      "entity_candidate": "investment_object",
+      "event_occurrence_count": 18,
+      "status": "implemented_truth",
+      "current_objects": [
+        "investment_instruments"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "所有投资品使用稳定标的标识和 kind。"
+    },
+    {
+      "entity_candidate": "investment_transaction",
+      "event_occurrence_count": 412,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "transactions",
+        "investment_trades"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "投资业务复用交易头并保存专属成交扩展。"
+    },
+    {
+      "entity_candidate": "ledger",
+      "event_occurrence_count": 174,
+      "status": "implemented_truth",
+      "current_objects": [
+        "ledgers"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "SQLite 单文件账簿是真相边界。"
+    },
+    {
+      "entity_candidate": "margin_account",
+      "event_occurrence_count": 82,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "accounts",
+        "margin_account_terms"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "账户主体与融资融券风险条款已经分离落地。"
+    },
+    {
+      "entity_candidate": "metal_position",
+      "event_occurrence_count": 129,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "investment_instruments",
+        "investment_trades",
+        "market_quotes"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "黄金和贵金属持仓复用投资真相表。"
+    },
+    {
+      "entity_candidate": "notification",
+      "event_occurrence_count": 26,
+      "status": "implemented_truth",
+      "current_objects": [
+        "reminders",
+        "reminder_occurrences",
+        "v_today_reminder_inbox",
+        "notification_delivery_log"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "提醒规则、触发实例、统一收件箱与投递重试日志已经分离。"
+    },
+    {
+      "entity_candidate": "person",
+      "event_occurrence_count": 225,
+      "status": "implemented_truth",
+      "current_objects": [
+        "parties"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "人员和机构使用统一参与方模型。"
+    },
+    {
+      "entity_candidate": "position",
+      "event_occurrence_count": 438,
+      "status": "implemented_input_projection",
+      "current_objects": [
+        "v_investment_position_inputs"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "持仓输入已落地，成本和收益率等待动态校准。"
+    },
+    {
+      "entity_candidate": "presentation_state",
+      "event_occurrence_count": 89,
+      "status": "transient_not_persisted",
+      "current_objects": [],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "选择、焦点、加载和展开状态属于展示层。"
+    },
+    {
+      "entity_candidate": "quote",
+      "event_occurrence_count": 368,
+      "status": "implemented_truth",
+      "current_objects": [
+        "market_quotes"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "行情按标的、时点和来源保存。"
+    },
+    {
+      "entity_candidate": "raw_row",
+      "event_occurrence_count": 72,
+      "status": "implemented_truth",
+      "current_objects": [
+        "import_rows",
+        "v_import_batch_audit"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "原始行、规范化结果、字段错误和最终对象标识可逐行追溯。"
+    },
+    {
+      "entity_candidate": "reminder",
+      "event_occurrence_count": 162,
+      "status": "implemented_truth",
+      "current_objects": [
+        "schedules",
+        "schedule_occurrences",
+        "reminders",
+        "reminder_occurrences",
+        "v_schedule_lifecycle",
+        "v_today_reminder_inbox"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "计划定义、逐次执行实例、提醒规则、触发实例和今日收件箱已分层落地。"
+    },
+    {
+      "entity_candidate": "repayment",
+      "event_occurrence_count": 156,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "transactions",
+        "transaction_entries"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "收款和还款均由平衡账户分录表达。"
+    },
+    {
+      "entity_candidate": "report",
+      "event_occurrence_count": 7,
+      "status": "implemented_input_projection",
+      "current_objects": [
+        "report_presets"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "报表定义由代码和预设组成，不复制结果真相。"
+    },
+    {
+      "entity_candidate": "report_filter",
+      "event_occurrence_count": 31,
+      "status": "implemented_truth",
+      "current_objects": [
+        "report_presets"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "筛选和图表序列以校验 JSON 保存。"
+    },
+    {
+      "entity_candidate": "report_projection",
+      "event_occurrence_count": 31,
+      "status": "implemented_input_projection",
+      "current_objects": [
+        "v_ledger_entries",
+        "v_account_balances",
+        "v_investment_position_inputs"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "报表查询输入已落地，专用公式仍由 Rust 计算策略提供。"
+    },
+    {
+      "entity_candidate": "report_query",
+      "event_occurrence_count": 31,
+      "status": "implemented_input_projection",
+      "current_objects": [
+        "report_presets",
+        "v_ledger_entries"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "保存条件与查询投影分离。"
+    },
+    {
+      "entity_candidate": "security",
+      "event_occurrence_count": 151,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "investment_instruments",
+        "investment_trades",
+        "market_quotes"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "证券通过投资标的、成交和行情表达。"
+    },
+    {
+      "entity_candidate": "social_security_account",
+      "event_occurrence_count": 34,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "accounts",
+        "transactions",
+        "social_security_profiles"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "账户和缴费流水是真相，地区、基数和规则快照由专属输入表承载。"
+    },
+    {
+      "entity_candidate": "sync_batch",
+      "event_occurrence_count": 26,
+      "status": "implemented_truth",
+      "current_objects": [
+        "sync_batches",
+        "sync_object_results",
+        "sync_conflicts",
+        "sync_tombstones",
+        "v_open_sync_conflicts"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "同步批次、对象结果、冲突和删除传播已经形成审计真相。"
+    },
+    {
+      "entity_candidate": "tag",
+      "event_occurrence_count": 240,
+      "status": "implemented_truth",
+      "current_objects": [
+        "tags",
+        "transaction_tags",
+        "account_tags"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "标签同时关联流水和账户。"
+    },
+    {
+      "entity_candidate": "tangible_asset",
+      "event_occurrence_count": 111,
+      "status": "implemented_contract_boundary",
+      "current_objects": [
+        "investment_instruments",
+        "market_quotes",
+        "tangible_asset_details"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "资产标识和估值复用投资真相，购置输入和专属属性由扩展表承载。"
+    },
+    {
+      "entity_candidate": "tool_input",
+      "event_occurrence_count": 89,
+      "status": "transient_not_persisted",
+      "current_objects": [],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "工具输入属于临时页面状态。"
+    },
+    {
+      "entity_candidate": "tool_result",
+      "event_occurrence_count": 89,
+      "status": "transient_not_persisted",
+      "current_objects": [],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "计算器和辅助工具结果默认不进入账簿真相。"
+    },
+    {
+      "entity_candidate": "transaction",
+      "event_occurrence_count": 642,
+      "status": "implemented_truth",
+      "current_objects": [
+        "transactions",
+        "transaction_entries",
+        "payroll_income_details",
+        "payroll_category_components",
+        "payroll_social_contributions",
+        "v_payroll_income_reconciliation"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "交易头和原子账户分录是真相来源；工资复合交易使用类型化扩展保存收入、扣款和社保组成。"
+    },
+    {
+      "entity_candidate": "user_identity",
+      "event_occurrence_count": 26,
+      "status": "adapter_boundary",
+      "current_objects": [
+        "sync_profiles"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "登录身份属于可选同步适配器；本地只保存非秘密配置，不阻塞本地账簿。"
+    },
+    {
+      "entity_candidate": "valuation",
+      "event_occurrence_count": 111,
+      "status": "implemented_generic_truth",
+      "current_objects": [
+        "market_quotes"
+      ],
+      "next_objects": [],
+      "adapter_artifacts": [],
+      "rationale": "市场与人工估值统一保存为带来源的时点价格。"
+    }
+  ]
+}

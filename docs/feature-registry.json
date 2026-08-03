@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "generated_on": "2026-07-28",
+    "purpose": "Machine-readable registry of confirmed and inferred MoneyHome8 capabilities for Rust rebuild planning."
+  },
+  "workspaces": [
+    {
+      "name": "财务数据",
+      "status": "verified",
+      "evidence_docs": [
+        "data-page-observations.md",
+        "workspace-map.md",
+        "top-level-navigation-observations.md"
+      ],
+      "subfeatures": [
+        { "name": "概况", "status": "verified" },
+        { "name": "财务记录", "status": "verified" },
+        { "name": "投资一览", "status": "verified" },
+        { "name": "标签", "status": "verified" },
+        { "name": "账户中心", "status": "verified" }
+      ],
+      "gaps": [
+        "概况页面内容未实测",
+        "财务记录页面内容未实测",
+        "投资一览页面内容未实测",
+        "标签页面内容未实测"
+      ]
+    },
+    {
+      "name": "财务报表",
+      "status": "verified",
+      "evidence_docs": [
+        "report-page-observations.md",
+        "workspace-map.md",
+        "top-level-navigation-observations.md"
+      ],
+      "subfeatures": [
+        { "name": "日常收支类", "status": "verified" },
+        { "name": "资产负债类", "status": "verified" },
+        { "name": "投资类", "status": "verified" }
+      ],
+      "gaps": [
+        "投资类子报表真实页面未取得",
+        "查询后真实列/图表未实测"
+      ]
+    },
+    {
+      "name": "财务分析",
+      "status": "verified",
+      "evidence_docs": [
+        "analysis-page-observations.md",
+        "workspace-map.md",
+        "top-level-navigation-observations.md"
+      ],
+      "subfeatures": [
+        { "name": "财务预算", "status": "verified" },
+        { "name": "财务诊断", "status": "verified" },
+        { "name": "财务规划", "status": "verified" },
+        { "name": "财务目标", "status": "verified" }
+      ],
+      "gaps": [
+        "财务诊断真实内容未实测",
+        "财务规划真实内容未实测",
+        "财务目标真实内容未实测",
+        "新增预算输入流程未实测"
+      ]
+    },
+    {
+      "name": "记账",
+      "status": "inferred",
+      "evidence_docs": [
+        "bookkeeping-workspace-hypothesis.md",
+        "workspace-map.md",
+        "feature-catalog.md"
+      ],
+      "subfeatures": [
+        { "name": "收入录入", "status": "inferred" },
+        { "name": "支出录入", "status": "inferred" },
+        { "name": "转账录入", "status": "inferred" },
+        { "name": "现金流水", "status": "inferred" },
+        { "name": "活期流水", "status": "inferred" },
+        { "name": "第三方储值流水", "status": "inferred" },
+        { "name": "定期流水", "status": "inferred" },
+        { "name": "债权债务流水", "status": "inferred" },
+        { "name": "外汇交易", "status": "inferred" },
+        { "name": "证券交易", "status": "inferred" },
+        { "name": "开放式基金交易", "status": "inferred" },
+        { "name": "期货/黄金/贵金属交易", "status": "inferred" },
+        { "name": "保险/社保相关流水", "status": "inferred" },
+        { "name": "流水账/日记账", "status": "inferred" }
+      ],
+      "gaps": [
+        "记账动态菜单、页面跳转和真实写入结果待验证"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "name": "账本与系统",
+      "status": "partial",
+      "evidence_docs": [
+        "function-matrix.md",
+        "feature-catalog.md",
+        "requirement-audit-matrix.md"
+      ],
+      "features": [
+        "新建账簿",
+        "打开账簿",
+        "关闭当前账簿",
+        "备份账簿",
+        "还原账簿",
+        "系统设置",
+        "快捷键管理",
+        "密码校验",
+        "密码修改",
+        "关于页"
+      ]
+    },
+    {
+      "name": "账户与基础资料",
+      "status": "high",
+      "evidence_docs": [
+        "entity-catalog.md",
+        "schema-hypothesis.md",
+        "domain-mapping-spec.md",
+        "data-page-observations.md"
+      ],
+      "entities": [
+        "AccountGroup",
+        "Account",
+        "Category",
+        "Currency",
+        "Person",
+        "ObjectType"
+      ]
+    },
+    {
+      "name": "通用交易与流水",
+      "status": "high",
+      "evidence_docs": [
+        "scenario-data-flows.md",
+        "schema-hypothesis.md",
+        "domain-mapping-spec.md",
+        "bookkeeping-workspace-hypothesis.md"
+      ],
+      "entities": [
+        "Transaction",
+        "TransactionType",
+        "TransactionTheme",
+        "Template",
+        "Schedule"
+      ]
+    },
+    {
+      "name": "债权债务与信用",
+      "status": "partial",
+      "evidence_docs": [
+        "entity-catalog.md",
+        "function-matrix.md",
+        "domain-mapping-spec.md"
+      ],
+      "entities": [
+        "DebtAccount",
+        "DebtObject",
+        "CreditCard",
+        "PayModeHistory"
+      ]
+    },
+    {
+      "name": "投资与扩展资产",
+      "status": "high",
+      "evidence_docs": [
+        "code-type-mapping.md",
+        "cache-semantics.md",
+        "data-source-map.md",
+        "domain-mapping-spec.md",
+        "object-type-enum-hints.md"
+      ],
+      "entities": [
+        "Security",
+        "Fund",
+        "Asset",
+        "InsurancePolicy",
+        "PreciousMetal",
+        "FuturesContract",
+        "FinancingContract",
+        "Quote",
+        "RateRule",
+        "FeeRule",
+        "LookupIndex",
+        "InvestmentCatalog"
+      ]
+    },
+    {
+      "name": "预算、提醒、规划、目标",
+      "status": "high",
+      "evidence_docs": [
+        "analysis-page-observations.md",
+        "field-semantic-evidence.md",
+        "scenario-data-flows.md",
+        "domain-mapping-spec.md"
+      ],
+      "entities": [
+        "Budget",
+        "Reminder",
+        "FinancialPlanning",
+        "Goal"
+      ]
+    },
+    {
+      "name": "导入导出与工具",
+      "status": "partial",
+      "evidence_docs": [
+        "resource-form-family-index.md",
+        "feature-catalog.md",
+        "functional-audit-checklist.md"
+      ],
+      "features": [
+        "导入数据",
+        "导入分类",
+        "导入交割单",
+        "导入预览",
+        "导出数据",
+        "附件",
+        "支票簿/票据",
+        "充值",
+        "工资收入录入",
+        "净价/清洁价格计算",
+        "计算器",
+        "日记"
+      ]
+    },
+    {
+      "name": "同步、通知与认证",
+      "status": "high",
+      "evidence_docs": [
+        "auth-mechanism-evidence.md",
+        "auth-research-plan.md",
+        "requirements-analysis.md",
+        "scenario-data-flows.md"
+      ],
+      "features": [
+        "登录",
+        "注册",
+        "同步用户数据",
+        "同步用户注册",
+        "在线获取数据",
+        "远程通知设置",
+        "更新验证码",
+        "通知开关下载/上传",
+        "提醒/预算/持仓/资产负债上传"
+      ],
+      "gaps": [
+        "test.mh8 正式认证未打通",
+        "user.cfg / UseInformation.cfg 解密逻辑未知"
+      ]
+    }
+  ],
+  "data_sources": [
+    {
+      "name": "test.mh8",
+      "role": "主账本",
+      "status": "auth_blocked",
+      "evidence_docs": [
+        "mh8-storage-investigation.md",
+        "mh8-structure-evidence.md",
+        "mh8-semantic-summary.md",
+        "linked-table-evidence.md"
+      ]
+    },
+    {
+      "name": "mhlink.mdb",
+      "role": "共享参考库",
+      "status": "readable",
+      "evidence_docs": [
+        "data-source-map.md",
+        "code-type-mapping.md"
+      ]
+    },
+    {
+      "name": "MoneyHome8.data",
+      "role": "压缩封装的受控 Jet 内置库",
+      "status": "decompressed_but_auth_blocked",
+      "evidence_docs": [
+        "cache-and-package-investigation.md",
+        "moneyhome8-data-object-summary.md",
+        "inner-table-field-map-summary.md"
+      ]
+    },
+    {
+      "name": "MoneyHome8.cache",
+      "role": "名称/代码/拼音检索缓存",
+      "status": "semantics_partially_understood",
+      "evidence_docs": [
+        "cache-semantics.md"
+      ]
+    },
+    {
+      "name": "Investment.cache",
+      "role": "投资品分类与名称缓存",
+      "status": "semantics_partially_understood",
+      "evidence_docs": [
+        "cache-semantics.md",
+        "investment-cache-type-stats.json"
+      ]
+    },
+    {
+      "name": "mh.mdw",
+      "role": "工作组认证文件",
+      "status": "identified_not_decoded",
+      "evidence_docs": [
+        "auth-mechanism-evidence.md",
+        "auth-research-plan.md"
+      ]
+    }
+  ],
+  "critical_open_gaps": [
+    "主账本正式表结构与样例数据",
+    "记账动态菜单、页面跳转和真实写入结果",
+    "财务分析诊断/规划/目标公式与真实结果",
+    "财务报表真实列、聚合口径和导出格式"
+  ]
+}

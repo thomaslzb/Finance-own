@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "runtime-observation-record.schema.json",
+  "title": "MoneyHome8 动态观察记录",
+  "description": "记录单个运行时窗体的入口、页面状态、命令行为、数据流和证据。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "execution_id",
+    "resource",
+    "observed_at",
+    "application",
+    "ledger",
+    "navigation",
+    "states",
+    "commands",
+    "data_flow",
+    "evidence",
+    "result"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "execution_id": {
+      "type": "string",
+      "pattern": "^RT-[0-9]{2}-[0-9]{3}$"
+    },
+    "resource": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "application": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["executable", "version", "window_title"],
+      "properties": {
+        "executable": { "type": "string", "minLength": 1 },
+        "version": { "type": "string" },
+        "window_title": { "type": "string" }
+      }
+    },
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256_before", "sha256_after"],
+      "properties": {
+        "path": {
+          "const": "C:\\DCG-SZ\\IT Manage\\Private\\Personal-Docs\\test.mh8"
+        },
+        "sha256_before": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "sha256_after": {
+          "description": "操作后文件仍被旧程序占用时允许为空；条目完成前必须补齐。",
+          "type": ["string", "null"],
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "backup_artifact": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "navigation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entry_point", "steps", "reachable"],
+      "properties": {
+        "entry_point": { "type": "string" },
+        "steps": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reachable": { "type": "boolean" },
+        "unreachable_reason": { "type": ["string", "null"] }
+      }
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "status", "observations"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": {
+            "enum": ["observed", "not_applicable", "blocked", "pending"]
+          },
+          "observations": { "type": "string" },
+          "evidence_paths": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "label",
+          "initial_state",
+          "trigger",
+          "confirmation",
+          "outcome",
+          "status"
+        ],
+        "properties": {
+          "component": { "type": "string" },
+          "label": { "type": "string" },
+          "event_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "initial_state": { "type": "object" },
+          "trigger": { "type": "string" },
+          "confirmation": { "type": ["string", "null"] },
+          "outcome": { "type": "string" },
+          "status": {
+            "enum": ["pass", "fail", "partial", "blocked", "not_applicable", "pending"]
+          }
+        }
+      }
+    },
+    "data_flow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs", "reads", "writes", "derived_results", "side_effects", "rollback"],
+      "properties": {
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "reads": { "type": "array", "items": { "type": "string" } },
+        "writes": { "type": "array", "items": { "type": "string" } },
+        "derived_results": { "type": "array", "items": { "type": "string" } },
+        "side_effects": { "type": "array", "items": { "type": "string" } },
+        "rollback": { "type": "string" }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "path", "description"],
+        "properties": {
+          "kind": {
+            "enum": ["screenshot", "export", "log", "file", "hash", "manual_note"]
+          },
+          "path": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "requirements_update": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "summary", "remaining_gaps"],
+      "properties": {
+        "status": {
+          "enum": ["pass", "fail", "partial", "blocked", "unreachable", "excluded"]
+        },
+        "summary": { "type": "string" },
+        "remaining_gaps": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

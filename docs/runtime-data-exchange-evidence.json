@@ -1,0 +1,5883 @@
+{
+  "source": "C:\\DCG-SZ\\SZ-System-Docs\\CodexWorkSpace\\Finance-own\\docs\\runtime-dfm-all-forms.json",
+  "evidence_scope": {
+    "direct": [
+      "窗体标题、控件标题和提示",
+      "设计时选中、启用、可见和只读状态",
+      "事件处理器名称",
+      "整账簿导入导出的可选数据集",
+      "交割单分隔符、交易类型、字段映射和预览步骤",
+      "备份扩展名、还原覆盖警告、附件路径警告和同步方式说明"
+    ],
+    "architecture_decisions": [
+      "SQLite 是 Rust 版唯一账簿真相源",
+      "导入采用批次、预览、逐行校验和幂等提交",
+      "备份使用 SQLite 一致性备份机制，不复制活跃数据库文件",
+      "附件使用账簿相对路径、内容哈希和独立关系表",
+      "同步是可选适配器，不能阻塞本地记账"
+    ],
+    "not_recovered": [
+      "通用导入导出文件的实际扩展名、编码和序列化格式",
+      "旧同步服务协议、冲突算法和服务端字段",
+      "备份压缩算法、保留数量默认值和文件命名规则",
+      "信用卡账单支持的来源格式与字段映射",
+      "报表导出的实际文件格式和排版结果"
+    ]
+  },
+  "metrics": {
+    "focused_form_count": 15,
+    "control_evidence_count": 524,
+    "import_dataset_count": 21,
+    "export_dataset_count": 21,
+    "common_dataset_count": 21,
+    "delivery_transaction_type_count": 12,
+    "delivery_field_count": 10
+  },
+  "flows": {
+    "ledger_data_exchange": {
+      "import_datasets": [
+        "账户信息",
+        "人员机构",
+        "货币信息",
+        "收支项目",
+        "收支预算",
+        "计划日记",
+        "证券列表",
+        "基金列表",
+        "债券列表",
+        "交易信息",
+        "物品信息",
+        "交易费率",
+        "提醒设置",
+        "记账模板",
+        "生活主题",
+        "理财产品",
+        "贵金属",
+        "货币基金",
+        "历史汇率",
+        "物品历史价格",
+        "理财目标"
+      ],
+      "export_datasets": [
+        "账户信息",
+        "交易信息",
+        "交易费率",
+        "记账模板",
+        "证券列表",
+        "提醒设置",
+        "物品历史价格",
+        "物品信息",
+        "计划日记",
+        "人员机构",
+        "贵金属",
+        "生活主题",
+        "理财目标",
+        "基金列表",
+        "历史汇率",
+        "债券列表",
+        "货币基金",
+        "货币信息",
+        "收支项目",
+        "收支预算",
+        "理财产品"
+      ],
+      "common_datasets": [
+        "账户信息",
+        "交易信息",
+        "交易费率",
+        "记账模板",
+        "证券列表",
+        "提醒设置",
+        "物品历史价格",
+        "物品信息",
+        "计划日记",
+        "人员机构",
+        "贵金属",
+        "生活主题",
+        "理财目标",
+        "基金列表",
+        "历史汇率",
+        "债券列表",
+        "货币基金",
+        "货币信息",
+        "收支项目",
+        "收支预算",
+        "理财产品"
+      ],
+      "export_only_datasets": [],
+      "import_only_datasets": [],
+      "export_options": [
+        {
+          "component": "chkUpdateAcctBala",
+          "label": "导入时更新账户余额",
+          "checked": false,
+          "visible": false,
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/chkUpdateAcctBala"
+        },
+        {
+          "component": "rbAdd",
+          "label": "增加",
+          "checked": false,
+          "visible": true,
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/rbAdd"
+        },
+        {
+          "component": "rbCover",
+          "label": "删除并覆盖",
+          "checked": false,
+          "visible": true,
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/rbCover"
+        }
+      ],
+      "import_commands": [
+        {
+          "component": "BtnOk",
+          "path": "ImportDataFm/pnlDlgClient/BtnOk",
+          "class": "TRzBitBtn",
+          "label": "BtnOk",
+          "events": {
+            "OnClick": "BtnOkClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnBrowser",
+          "path": "ImportDataFm/pnlDlgClient/btnBrowser",
+          "class": "TRzBitBtn",
+          "label": "浏览...",
+          "events": {
+            "OnClick": "btnBrowserClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "OptionsGroup",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup",
+          "class": "TRzPanel",
+          "label": "OptionsGroup",
+          "events": {
+            "OnDblClick": "OptionsGroupDblClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "RzBitBtn1",
+          "path": "ImportDataFm/pnlDlgClient/pnlBottomBar/RzBitBtn1",
+          "class": "TRzBitBtn",
+          "label": "确定",
+          "events": {
+            "OnClick": "BtnOkClick"
+          },
+          "state": {}
+        }
+      ],
+      "export_commands": [
+        {
+          "component": "BtnOk",
+          "path": "ExportDataFm/pnlDlgClient/BtnOk",
+          "class": "TRzBitBtn",
+          "label": "BtnOk",
+          "events": {
+            "OnClick": "BtnOkClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "RzBitBtn1",
+          "path": "ExportDataFm/pnlDlgClient/pnlBottomBar/RzBitBtn1",
+          "class": "TRzBitBtn",
+          "label": "确定",
+          "events": {
+            "OnClick": "BtnOkClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnBrowser",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/btnBrowser",
+          "class": "TRzBitBtn",
+          "label": "浏览...",
+          "events": {
+            "OnClick": "btnBrowserClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "tsOptions",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions",
+          "class": "TRzTabSheet",
+          "label": "数据选项",
+          "events": {
+            "OnDblClick": "tsOptionsDblClick"
+          },
+          "state": {}
+        }
+      ],
+      "format_status": "unverified"
+    },
+    "delivery_note_import": {
+      "transaction_types": [
+        "证券买入",
+        "证券卖出",
+        "新股申购",
+        "申购中签",
+        "申购返款",
+        "送股",
+        "配股",
+        "红利",
+        "利息收入",
+        "其它费用",
+        "资金转入",
+        "资金转出"
+      ],
+      "mapped_fields": [
+        "日期",
+        "证券代码",
+        "证券名称",
+        "价格",
+        "数量",
+        "金额",
+        "印花税",
+        "佣金",
+        "过户费",
+        "其它费用"
+      ],
+      "options": [
+        {
+          "component": "chkShowProgramDetailed",
+          "label": "显示方案详细内容",
+          "checked": false,
+          "visible": true,
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/chkShowProgramDetailed"
+        },
+        {
+          "component": "rbTab",
+          "label": "制表符Tab",
+          "checked": true,
+          "visible": true,
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbTab"
+        },
+        {
+          "component": "rbSpace",
+          "label": "空格",
+          "checked": false,
+          "visible": true,
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbSpace"
+        },
+        {
+          "component": "rbOther",
+          "label": "其它",
+          "checked": false,
+          "visible": true,
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbOther"
+        },
+        {
+          "component": "rbMode_Name",
+          "label": "以“列头文字”匹配",
+          "checked": true,
+          "visible": true,
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/rbMode_Name"
+        },
+        {
+          "component": "rbMode_No",
+          "label": "以“列序号(第几列)”匹配",
+          "checked": false,
+          "visible": true,
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/rbMode_No"
+        },
+        {
+          "component": "chkIncludedFee",
+          "label": "金额已包含后面的费用项",
+          "checked": false,
+          "visible": true,
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/chkIncludedFee"
+        }
+      ],
+      "commands": [
+        {
+          "component": "btnPasteData",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep1/pnlStep1Tool/btnPasteData",
+          "class": "TRzBitBtn",
+          "label": "粘贴",
+          "events": {
+            "OnClick": "btnPasteDataClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnProgramDelete",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/btnProgramDelete",
+          "class": "TRzBitBtn",
+          "label": "删除方案",
+          "events": {
+            "OnClick": "btnProgramDeleteClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnProgramSave",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/btnProgramSave",
+          "class": "TRzBitBtn",
+          "label": "方案另存为",
+          "events": {
+            "OnClick": "btnProgramSaveClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "chkShowProgramDetailed",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/chkShowProgramDetailed",
+          "class": "TRzCheckBox",
+          "label": "显示方案详细内容",
+          "events": {
+            "OnClick": "chkShowProgramDetailedClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "rbTab",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbTab",
+          "class": "TRzRadioButton",
+          "label": "制表符Tab",
+          "events": {
+            "OnClick": "rbOnClick"
+          },
+          "state": {
+            "Checked": true
+          }
+        },
+        {
+          "component": "rbSpace",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbSpace",
+          "class": "TRzRadioButton",
+          "label": "空格",
+          "events": {
+            "OnClick": "rbOnClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "rbOther",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbOther",
+          "class": "TRzRadioButton",
+          "label": "其它",
+          "events": {
+            "OnClick": "rbOnClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnAutoDiscern",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/btnAutoDiscern",
+          "class": "TRzBitBtn",
+          "label": "自动识别",
+          "events": {
+            "OnClick": "btnAutoDiscernClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnBegin",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlToolBar1/btnBegin",
+          "class": "TRzBitBtn",
+          "label": "下一步",
+          "events": {
+            "OnClick": "btnBeginClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "tl1",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1",
+          "class": "TMHTreeList",
+          "label": "tl1",
+          "events": {
+            "OnKeyDown": "tl1KeyDown"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnImport",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlToolBar2/btnImport",
+          "class": "TRzBitBtn",
+          "label": "确认导入",
+          "events": {
+            "OnClick": "btnImportClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnBack",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlToolBar2/btnBack",
+          "class": "TRzBitBtn",
+          "label": "上一步",
+          "events": {
+            "OnClick": "btnBackClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnUpdate",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Tool/btnUpdate",
+          "class": "TRzMenuButton",
+          "label": "批量修改",
+          "events": {
+            "OnClick": "btnUpdateClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnSign",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Tool/btnSign",
+          "class": "TRzMenuButton",
+          "label": "关联新股申购",
+          "events": {
+            "OnClick": "btnSignClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miUpdateTransType",
+          "path": "ImportJiaoGedanDlgFm/pmUpdate/miUpdateTransType",
+          "class": "TMenuItem",
+          "label": "修改交易类型",
+          "events": {
+            "OnClick": "miUpdateTransTypeClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miUpdateCode",
+          "path": "ImportJiaoGedanDlgFm/pmUpdate/miUpdateCode",
+          "class": "TMenuItem",
+          "label": "修改证券代码",
+          "events": {
+            "OnClick": "miUpdateCodeClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miUpdateTag",
+          "path": "ImportJiaoGedanDlgFm/pmUpdate/miUpdateTag",
+          "class": "TMenuItem",
+          "label": "修改标签",
+          "events": {
+            "OnClick": "miUpdateTagClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miSign",
+          "path": "ImportJiaoGedanDlgFm/pmSign/miSign",
+          "class": "TMenuItem",
+          "label": "关联新股申购",
+          "events": {
+            "OnClick": "miSignClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miCancelSign",
+          "path": "ImportJiaoGedanDlgFm/pmSign/miCancelSign",
+          "class": "TMenuItem",
+          "label": "取消关联",
+          "events": {
+            "OnClick": "miCancelSignClick"
+          },
+          "state": {}
+        }
+      ],
+      "preview_columns": [
+        "行号",
+        "日期",
+        "交易类型",
+        "证券代码",
+        "证券名称",
+        "价格",
+        "数量",
+        "金额",
+        "印花税",
+        "佣金",
+        "过户费",
+        "其它费用",
+        "标签",
+        "申购关联标记"
+      ]
+    },
+    "import_preview": {
+      "source_commands": [
+        {
+          "component": "mwIconList",
+          "path": "ImportSelectDlgFm/pnlDlgClient/mwIconList",
+          "class": "TmwIconList",
+          "label": "mwIconList",
+          "events": {
+            "OnClick": "mwIconListClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnImport",
+          "path": "ImportSelectDlgFm/pnlDlgClient/pnlToolBar/btnImport",
+          "class": "TRzBitBtn",
+          "label": "从文件导入",
+          "events": {
+            "OnClick": "btnImportClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnImportFromClipboard",
+          "path": "ImportSelectDlgFm/pnlDlgClient/pnlToolBar/btnImportFromClipboard",
+          "class": "TRzBitBtn",
+          "label": "从剪贴板导入",
+          "events": {
+            "OnClick": "btnImportFromClipboardClick"
+          },
+          "state": {
+            "Enabled": false
+          }
+        }
+      ],
+      "preview_commands": [
+        {
+          "component": "pcPreview",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview",
+          "class": "TmwPageControl",
+          "label": "pcPreview",
+          "events": {
+            "OnChange": "pcPreviewChange"
+          },
+          "state": {}
+        },
+        {
+          "component": "gridRecords",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview/tsRecords/gridRecords",
+          "class": "TAdvStringGrid",
+          "label": "gridRecords",
+          "events": {
+            "OnKeyDown": "gridRecordsKeyDown"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnImport",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview/tsRecords/pnlToolBar/btnImport",
+          "class": "TRzBitBtn",
+          "label": "导入选中的记录",
+          "events": {
+            "OnClick": "btnImportClick"
+          },
+          "state": {
+            "Enabled": false
+          }
+        }
+      ],
+      "tabs": [
+        "原始数据",
+        "准备导入的记录"
+      ]
+    },
+    "backup_restore": {
+      "backup_extensions": [
+        ".mh8"
+      ],
+      "backup_commands": [
+        {
+          "component": "BtnOk",
+          "path": "BackupBookFm/pnlDlgClient/BtnOk",
+          "class": "TRzBitBtn",
+          "label": "备份",
+          "events": {
+            "OnClick": "BtnOkClick"
+          },
+          "state": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "BtnDBrowse",
+          "path": "BackupBookFm/pnlDlgClient/BtnDBrowse",
+          "class": "TRzBitBtn",
+          "label": "更改",
+          "events": {
+            "OnClick": "BtnDBrowseClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "RzButtonOk",
+          "path": "BackupBookFm/pnlDlgClient/pnlBottomBar/RzButtonOk",
+          "class": "TRzBitBtn",
+          "label": "确定",
+          "events": {
+            "OnClick": "BtnOkClick"
+          },
+          "state": {}
+        }
+      ],
+      "restore_commands": [
+        {
+          "component": "btnOther",
+          "path": "RestoreBookFm/pnlDlgClient/btnOther",
+          "class": "TRzBitBtn",
+          "label": "选择",
+          "events": {
+            "OnClick": "btnOtherClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "RzButtonOk",
+          "path": "RestoreBookFm/pnlDlgClient/pnlBottomBar/RzButtonOk",
+          "class": "TRzBitBtn",
+          "label": "确定",
+          "events": {
+            "OnClick": "RzButtonOkClick"
+          },
+          "state": {}
+        }
+      ],
+      "restore_warnings": [
+        "还原操作将覆盖当前账簿数据，请谨慎操作。建议选择还原至新建的账簿。"
+      ],
+      "backup_options": [
+        {
+          "component": "cbCompactBackupBook",
+          "label": "备份账簿前优化账簿",
+          "checked": false,
+          "visible": true,
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/cbCompactBackupBook"
+        },
+        {
+          "component": "cbCompressBackupBook",
+          "label": "备份账簿时压缩账簿",
+          "checked": false,
+          "visible": true,
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/cbCompressBackupBook"
+        }
+      ]
+    },
+    "attachments": {
+      "descriptions": [
+        "您可将各类财务凭证（如发票、收银条、存折等）扫描存档，同时支持添加家庭成员照片、视频、网页截图及文档等附件。",
+        "建议您在添加附件后，避免修改账簿名称、附件文件夹名称及其存储路径，以免影响系统的正常调用。"
+      ],
+      "commands": [
+        {
+          "component": "FileViewList",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/RzPanel4/FileViewList",
+          "class": "TRzListView",
+          "label": "FileViewList",
+          "events": {
+            "OnDblClick": "btnViewClick",
+            "OnChange": "FileViewListChange"
+          },
+          "state": {
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "btnDelete",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/btnDelete",
+          "class": "TRzBitBtn",
+          "label": "删除",
+          "events": {
+            "OnClick": "btnDeleteClick"
+          },
+          "state": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "btnView",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/btnView",
+          "class": "TRzBitBtn",
+          "label": "打开附件",
+          "events": {
+            "OnClick": "btnViewClick"
+          },
+          "state": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "btnAdd",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/btnAdd",
+          "class": "TRzBitBtn",
+          "label": "添加",
+          "events": {
+            "OnClick": "btnAddClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnOpen",
+          "path": "AccessoriesDlg/pnlDlgClient/btnOpen",
+          "class": "TRzBitBtn",
+          "label": "打开附件文件夹",
+          "events": {
+            "OnClick": "btnOpenClick"
+          },
+          "state": {
+            "Enabled": false
+          }
+        }
+      ]
+    },
+    "sync": {
+      "modes": [
+        {
+          "component": "rbTwoWay",
+          "label": "双向同步",
+          "checked": true,
+          "visible": true,
+          "path": "SyncUserDataFm/pnlDlgClient/rbTwoWay"
+        },
+        {
+          "component": "rbOneWay",
+          "label": "单向上传",
+          "checked": false,
+          "visible": true,
+          "path": "SyncUserDataFm/pnlDlgClient/rbOneWay"
+        }
+      ],
+      "descriptions": [
+        "(将合并本地账簿与财智在线理财的数据)",
+        "(以当前本地账簿数据为准，覆盖财智在线理财的数据)"
+      ],
+      "commands": [
+        {
+          "component": "lblProvision",
+          "path": "SyncUserDataFm/pnlDlgClient/lblProvision",
+          "class": "TRzLabel",
+          "label": "同步条款",
+          "events": {
+            "OnClick": "lblProvisionClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "chkAgree",
+          "path": "SyncUserDataFm/pnlDlgClient/chkAgree",
+          "class": "TRzCheckBox",
+          "label": "我同意",
+          "events": {
+            "OnClick": "chkAgreeClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnRegister",
+          "path": "SyncUserDataFm/pnlDlgClient/btnRegister",
+          "class": "TRzButton",
+          "label": "注册账号",
+          "events": {
+            "OnClick": "btnRegisterClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnSyncStart",
+          "path": "SyncUserDataFm/pnlDlgClient/pnlToolBar/btnSyncStart",
+          "class": "TRzBitBtn",
+          "label": "开始同步",
+          "events": {
+            "OnClick": "btnSyncStartClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnSyncCancel",
+          "path": "SyncUserDataFm/pnlDlgClient/pnlToolBar/btnSyncCancel",
+          "class": "TRzBitBtn",
+          "label": "取消同步",
+          "events": {
+            "OnClick": "btnSyncCancelClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "chkSyncByCloseBook",
+          "path": "SyncUserDataFm/pnlDlgClient/chkSyncByCloseBook",
+          "class": "TRzCheckBox",
+          "label": "关闭账簿时自动同步",
+          "events": {
+            "OnClick": "chkSyncByCloseBookClick"
+          },
+          "state": {}
+        }
+      ],
+      "settings": [
+        {
+          "component": "cbSyncCompress",
+          "label": "同步时压缩传输数据",
+          "checked": false,
+          "visible": true,
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork/pnlNetwork/cbSyncCompress"
+        }
+      ]
+    },
+    "secondary_import_export": {
+      "credit_card_statement_commands": [
+        {
+          "component": "miImport",
+          "path": "CreditCardStatisticFrame/pmOperate/miImport",
+          "class": "TMenuItem",
+          "label": "导入",
+          "events": {
+            "OnClick": "miImportClick"
+          },
+          "state": {}
+        }
+      ],
+      "report_commands": [
+        {
+          "component": "sbOption",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/sbOption",
+          "class": "TRzBitBtn",
+          "label": "筛选|已更改",
+          "events": {
+            "OnClick": "sbOptionClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnReportOrChart",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnReportOrChart",
+          "class": "TRzBitBtn",
+          "label": "图表",
+          "events": {
+            "OnClick": "btnReportOrChartClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnOther",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnOther",
+          "class": "TRzMenuButton",
+          "label": "操作",
+          "events": {
+            "OnClick": "btnOtherClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnCloseTransList",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/PageControl/tsReport/PnlView/spTransList/pnlClose/btnCloseTransList",
+          "class": "TMHBmpButton",
+          "label": "btnCloseTransList",
+          "events": {
+            "OnClick": "btnCloseTransListClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miModify",
+          "path": "ReportFm/pmRightbtn/miModify",
+          "class": "TMenuItem",
+          "label": "修改",
+          "events": {
+            "OnClick": "miModifyClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miDelete",
+          "path": "ReportFm/pmRightbtn/miDelete",
+          "class": "TMenuItem",
+          "label": "删除",
+          "events": {
+            "OnClick": "miDeleteClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miExportToFile",
+          "path": "ReportFm/pmRightbtn/miExportToFile",
+          "class": "TMenuItem",
+          "label": "导出到文件",
+          "events": {
+            "OnClick": "miExportToFileClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miRptSave",
+          "path": "ReportFm/pmPrint/miRptSave",
+          "class": "TMenuItem",
+          "label": "报表另存为",
+          "events": {
+            "OnClick": "miRptSaveClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miRptDelete",
+          "path": "ReportFm/pmPrint/miRptDelete",
+          "class": "TMenuItem",
+          "label": "删除报表",
+          "events": {
+            "OnClick": "miRptDeleteClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miExport",
+          "path": "ReportFm/pmPrint/miExport",
+          "class": "TMenuItem",
+          "label": "导出报表",
+          "events": {
+            "OnClick": "ActionExportRpt"
+          },
+          "state": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "miPrint",
+          "path": "ReportFm/pmPrint/miPrint",
+          "class": "TMenuItem",
+          "label": "打印预览",
+          "events": {
+            "OnClick": "ActionPrintRpt"
+          },
+          "state": {
+            "Enabled": false
+          }
+        }
+      ],
+      "ledger_commands": [
+        {
+          "component": "WasteBookFm",
+          "path": "WasteBookFm",
+          "class": "TWasteBookFm",
+          "label": "财务记录",
+          "events": {
+            "OnShow": "FormShow"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnFind",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnFind",
+          "class": "TRzMenuButton",
+          "label": "查找",
+          "events": {
+            "OnClick": "btnFindClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnAction",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnAction",
+          "class": "TRzMenuButton",
+          "label": "操作",
+          "events": {
+            "OnClick": "btnActionClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "btnDataType",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnDataType",
+          "class": "TRzMenuButton",
+          "label": "收支|流水",
+          "events": {
+            "OnClick": "btnDataTypeClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "Grid",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid",
+          "class": "TMHBrowseGrid",
+          "label": "Grid",
+          "events": {
+            "OnDblClick": "actModifyExecute",
+            "OnKeyDown": "GridKeyDown"
+          },
+          "state": {}
+        },
+        {
+          "component": "miBatchModePop",
+          "path": "WasteBookFm/pmRightbtn/miBatchModePop",
+          "class": "TMenuItem",
+          "label": "批量操作模式",
+          "events": {
+            "OnClick": "miBatchModeClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miCopyRec",
+          "path": "WasteBookFm/pmRightbtn/miCopyRec",
+          "class": "TMenuItem",
+          "label": "复制记录",
+          "events": {
+            "OnClick": "miCopyRecClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miPasteRec",
+          "path": "WasteBookFm/pmRightbtn/miPasteRec",
+          "class": "TMenuItem",
+          "label": "粘贴记录",
+          "events": {
+            "OnClick": "miPasteRecClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miPasteToday",
+          "path": "WasteBookFm/pmRightbtn/miPasteToday",
+          "class": "TMenuItem",
+          "label": "粘贴记录到今天",
+          "events": {
+            "OnClick": "miPasteTodayClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miUpTrans",
+          "path": "WasteBookFm/pmRightbtn/miUpTrans",
+          "class": "TMenuItem",
+          "label": "同日期记录上移",
+          "events": {
+            "OnClick": "miUpTransClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miDownTrans",
+          "path": "WasteBookFm/pmRightbtn/miDownTrans",
+          "class": "TMenuItem",
+          "label": "同日期记录下移",
+          "events": {
+            "OnClick": "miDownTransClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miRefund",
+          "path": "WasteBookFm/pmRightbtn/miRefund",
+          "class": "TMenuItem",
+          "label": "退款",
+          "events": {
+            "OnClick": "miRefundClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miIntoPlan",
+          "path": "WasteBookFm/pmRightbtn/miIntoPlan",
+          "class": "TMenuItem",
+          "label": "转为计划",
+          "events": {
+            "OnClick": "miIntoPlanClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miChangeTrans",
+          "path": "WasteBookFm/pmRightbtn/miChangeTrans",
+          "class": "TMenuItem",
+          "label": "活动类型更改为",
+          "events": {
+            "OnClick": "miChangeTransClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miAccessories",
+          "path": "WasteBookFm/pmRightbtn/miAccessories",
+          "class": "TMenuItem",
+          "label": "查看附件",
+          "events": {
+            "OnClick": "miAccessoriesClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "mmiAddAccess",
+          "path": "WasteBookFm/pmRightbtn/miAccessories/mmiAddAccess",
+          "class": "TMenuItem",
+          "label": "添加删除附件",
+          "events": {
+            "OnClick": "mmiAddAccessClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "actModify",
+          "path": "WasteBookFm/ActionList1/actModify",
+          "class": "TAction",
+          "label": "修改",
+          "events": {
+            "OnExecute": "actModifyExecute"
+          },
+          "state": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "actDelete",
+          "path": "WasteBookFm/ActionList1/actDelete",
+          "class": "TAction",
+          "label": "删除",
+          "events": {
+            "OnExecute": "actDeleteExecute"
+          },
+          "state": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "actFind",
+          "path": "WasteBookFm/ActionList1/actFind",
+          "class": "TAction",
+          "label": "查找",
+          "events": {
+            "OnExecute": "actFindExecute"
+          },
+          "state": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "actExport",
+          "path": "WasteBookFm/ActionList1/actExport",
+          "class": "TAction",
+          "label": "导出到文件",
+          "events": {
+            "OnExecute": "actExportExecute"
+          },
+          "state": {}
+        },
+        {
+          "component": "actPrint",
+          "path": "WasteBookFm/ActionList1/actPrint",
+          "class": "TAction",
+          "label": "打印",
+          "events": {
+            "OnExecute": "actPrintExecute"
+          },
+          "state": {}
+        },
+        {
+          "component": "actFilter",
+          "path": "WasteBookFm/ActionList1/actFilter",
+          "class": "TAction",
+          "label": "筛选",
+          "events": {
+            "OnExecute": "actFilterExecute"
+          },
+          "state": {}
+        },
+        {
+          "component": "actClearFilter",
+          "path": "WasteBookFm/ActionList1/actClearFilter",
+          "class": "TAction",
+          "label": "放弃筛选",
+          "events": {
+            "OnExecute": "actClearFilterExecute"
+          },
+          "state": {}
+        },
+        {
+          "component": "miReplaceCategory",
+          "path": "WasteBookFm/pmActive/miReplaceCategory",
+          "class": "TMenuItem",
+          "label": "替换收支项目",
+          "events": {
+            "OnClick": "miReplaceCategoryClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miGroup",
+          "path": "WasteBookFm/pmActive/miGroup",
+          "class": "TMenuItem",
+          "label": "记录分组显示",
+          "events": {
+            "OnClick": "miGroupClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miBatchMode",
+          "path": "WasteBookFm/pmActive/miBatchMode",
+          "class": "TMenuItem",
+          "label": "批量操作模式",
+          "events": {
+            "OnClick": "miBatchModeClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "N7",
+          "path": "WasteBookFm/pmActive/N7",
+          "class": "TMenuItem",
+          "label": "设为软件首页",
+          "events": {
+            "OnClick": "N7Click"
+          },
+          "state": {}
+        },
+        {
+          "component": "miSetTag",
+          "path": "WasteBookFm/pmBatchOperation/miSetTag",
+          "class": "TMenuItem",
+          "label": "设置标签",
+          "events": {
+            "OnClick": "miSetTagClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miSetDescription",
+          "path": "WasteBookFm/pmBatchOperation/miSetDescription",
+          "class": "TMenuItem",
+          "label": "设置备注",
+          "events": {
+            "OnClick": "miSetDescriptionClick"
+          },
+          "state": {}
+        },
+        {
+          "component": "miQuitBatchMode",
+          "path": "WasteBookFm/pmBatchOperation/miQuitBatchMode",
+          "class": "TMenuItem",
+          "label": "退出批量操作模式",
+          "events": {
+            "OnClick": "miQuitBatchModeClick"
+          },
+          "state": {}
+        }
+      ]
+    }
+  },
+  "forms": [
+    {
+      "resource": "TACCESSORIESDLG",
+      "domain": "附件",
+      "title": "添加删除附件",
+      "controls": [
+        {
+          "component": "AccessoriesDlg",
+          "path": "AccessoriesDlg",
+          "class": "TAccessoriesDlg",
+          "properties": {
+            "Caption": "添加删除附件"
+          }
+        },
+        {
+          "component": "FileViewList",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/RzPanel4/FileViewList",
+          "class": "TRzListView",
+          "properties": {
+            "ReadOnly": true,
+            "OnDblClick": "btnViewClick",
+            "OnChange": "FileViewListChange"
+          }
+        },
+        {
+          "component": "btnDelete",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/btnDelete",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "删除",
+            "Enabled": false,
+            "OnClick": "btnDeleteClick"
+          }
+        },
+        {
+          "component": "btnView",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/btnView",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "打开附件",
+            "Enabled": false,
+            "OnClick": "btnViewClick"
+          }
+        },
+        {
+          "component": "btnAdd",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel2/btnAdd",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "添加",
+            "OnClick": "btnAddClick"
+          }
+        },
+        {
+          "component": "RMRead",
+          "path": "AccessoriesDlg/pnlDlgClient/RzPanel1/RzPanel3/RzPanel9/RMRead",
+          "class": "TRzMemo",
+          "properties": {
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "lbDescription",
+          "path": "AccessoriesDlg/pnlDlgClient/pnlHint/lbDescription",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "您可将各类财务凭证（如发票、收银条、存折等）扫描存档，同时支持添加家庭成员照片、视频、网页截图及文档等附件。"
+          }
+        },
+        {
+          "component": "Label1",
+          "path": "AccessoriesDlg/pnlDlgClient/pnlHint/Label1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "建议您在添加附件后，避免修改账簿名称、附件文件夹名称及其存储路径，以免影响系统的正常调用。"
+          }
+        },
+        {
+          "component": "btnOpen",
+          "path": "AccessoriesDlg/pnlDlgClient/btnOpen",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "打开附件文件夹",
+            "Enabled": false,
+            "OnClick": "btnOpenClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TBACKUPBOOKFM",
+      "domain": "备份",
+      "title": "备份账簿",
+      "controls": [
+        {
+          "component": "BackupBookFm",
+          "path": "BackupBookFm",
+          "class": "TBackupBookFm",
+          "properties": {
+            "Caption": "备份账簿"
+          }
+        },
+        {
+          "component": "RzLabel1",
+          "path": "BackupBookFm/pnlDlgClient/RzLabel1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "当前账簿"
+          }
+        },
+        {
+          "component": "RzLabel3",
+          "path": "BackupBookFm/pnlDlgClient/RzLabel3",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "备份到"
+          }
+        },
+        {
+          "component": "lblBookName",
+          "path": "BackupBookFm/pnlDlgClient/lblBookName",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "lblBookName"
+          }
+        },
+        {
+          "component": "lblBookPath",
+          "path": "BackupBookFm/pnlDlgClient/lblBookPath",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "lblBookPath"
+          }
+        },
+        {
+          "component": "RzLabel2",
+          "path": "BackupBookFm/pnlDlgClient/RzLabel2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "备份名称"
+          }
+        },
+        {
+          "component": "lblExt",
+          "path": "BackupBookFm/pnlDlgClient/lblExt",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": ".mh8"
+          }
+        },
+        {
+          "component": "BtnCancel",
+          "path": "BackupBookFm/pnlDlgClient/BtnCancel",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Visible": false,
+            "Tag": 1
+          }
+        },
+        {
+          "component": "BtnHelp",
+          "path": "BackupBookFm/pnlDlgClient/BtnHelp",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "BtnOk",
+          "path": "BackupBookFm/pnlDlgClient/BtnOk",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "备份",
+            "Visible": false,
+            "OnClick": "BtnOkClick"
+          }
+        },
+        {
+          "component": "Panel1",
+          "path": "BackupBookFm/pnlDlgClient/Panel1",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "BtnDBrowse",
+          "path": "BackupBookFm/pnlDlgClient/BtnDBrowse",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "更改",
+            "OnClick": "BtnDBrowseClick"
+          }
+        },
+        {
+          "component": "AdvProgressBar",
+          "path": "BackupBookFm/pnlDlgClient/pnlBottomBar/AdvProgressBar",
+          "class": "TAdvProgressBar",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "RzButtonOk",
+          "path": "BackupBookFm/pnlDlgClient/pnlBottomBar/RzButtonOk",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "确定",
+            "OnClick": "BtnOkClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TRESTOREBOOKFM",
+      "domain": "还原",
+      "title": "还原账簿",
+      "controls": [
+        {
+          "component": "RestoreBookFm",
+          "path": "RestoreBookFm",
+          "class": "TRestoreBookFm",
+          "properties": {
+            "Caption": "还原账簿"
+          }
+        },
+        {
+          "component": "RzLabel2",
+          "path": "RestoreBookFm/pnlDlgClient/RzLabel2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "备份账簿"
+          }
+        },
+        {
+          "component": "lblBookPath",
+          "path": "RestoreBookFm/pnlDlgClient/lblBookPath",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "lblBookPath"
+          }
+        },
+        {
+          "component": "lblBookName",
+          "path": "RestoreBookFm/pnlDlgClient/lblBookName",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "lblBookName"
+          }
+        },
+        {
+          "component": "RzLabel1",
+          "path": "RestoreBookFm/pnlDlgClient/RzLabel1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "还原到"
+          }
+        },
+        {
+          "component": "lblBookExt",
+          "path": "RestoreBookFm/pnlDlgClient/lblBookExt",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "lblBookExt"
+          }
+        },
+        {
+          "component": "BtnCancel",
+          "path": "RestoreBookFm/pnlDlgClient/BtnCancel",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "BtnHelp",
+          "path": "RestoreBookFm/pnlDlgClient/BtnHelp",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "BtnOk",
+          "path": "RestoreBookFm/pnlDlgClient/BtnOk",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "关闭",
+            "Visible": false
+          }
+        },
+        {
+          "component": "Panel1",
+          "path": "RestoreBookFm/pnlDlgClient/Panel1",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "btnOther",
+          "path": "RestoreBookFm/pnlDlgClient/btnOther",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "选择",
+            "OnClick": "btnOtherClick"
+          }
+        },
+        {
+          "component": "AdvProgressBar",
+          "path": "RestoreBookFm/pnlDlgClient/pnlBottomBar/AdvProgressBar",
+          "class": "TAdvProgressBar",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "RzButtonOk",
+          "path": "RestoreBookFm/pnlDlgClient/pnlBottomBar/RzButtonOk",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "确定",
+            "OnClick": "RzButtonOkClick"
+          }
+        },
+        {
+          "component": "pnlHint",
+          "path": "RestoreBookFm/pnlDlgClient/pnlHint",
+          "class": "TRzPanel",
+          "properties": {
+            "Caption": "还原操作将覆盖当前账簿数据，请谨慎操作。建议选择还原至新建的账簿。"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TEXPORTDATAFM",
+      "domain": "整账簿数据导出",
+      "title": "数据导出",
+      "controls": [
+        {
+          "component": "ExportDataFm",
+          "path": "ExportDataFm",
+          "class": "TExportDataFm",
+          "properties": {
+            "Caption": "数据导出"
+          }
+        },
+        {
+          "component": "btnCaptionClose",
+          "path": "ExportDataFm/pnlTopBorder/btnCaptionClose",
+          "class": "TMHBmpButton",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "btnCaptionHelp",
+          "path": "ExportDataFm/pnlTopBorder/btnCaptionHelp",
+          "class": "TMHBmpButton",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "BtnCancel",
+          "path": "ExportDataFm/pnlDlgClient/BtnCancel",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "BtnHelp",
+          "path": "ExportDataFm/pnlDlgClient/BtnHelp",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Visible": false,
+            "Tag": 9
+          }
+        },
+        {
+          "component": "BtnOk",
+          "path": "ExportDataFm/pnlDlgClient/BtnOk",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Tag": 9,
+            "OnClick": "BtnOkClick"
+          }
+        },
+        {
+          "component": "Panel1",
+          "path": "ExportDataFm/pnlDlgClient/Panel1",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "AdvProgressBar",
+          "path": "ExportDataFm/pnlDlgClient/pnlBottomBar/AdvProgressBar",
+          "class": "TAdvProgressBar",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "RzBitBtn1",
+          "path": "ExportDataFm/pnlDlgClient/pnlBottomBar/RzBitBtn1",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "确定",
+            "OnClick": "BtnOkClick"
+          }
+        },
+        {
+          "component": "tsBase",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "基本选项"
+          }
+        },
+        {
+          "component": "RzLabel6",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/RzLabel6",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "导入时间段内数据："
+          }
+        },
+        {
+          "component": "RzLabel5",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/RzLabel5",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "到"
+          }
+        },
+        {
+          "component": "RzLabel3",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/RzLabel3",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "导出数据起止日期："
+          }
+        },
+        {
+          "component": "RzLabel2",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/RzLabel2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "导出数据账户："
+          }
+        },
+        {
+          "component": "RzLabel1",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/RzLabel1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "导出文件名称："
+          }
+        },
+        {
+          "component": "btnBrowser",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/btnBrowser",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "浏览...",
+            "OnClick": "btnBrowserClick"
+          }
+        },
+        {
+          "component": "edName",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/edName",
+          "class": "TRzEdit",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "dpkEndDate",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/dpkEndDate",
+          "class": "TMHDatetimePicker",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "dpkBeginDate",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/dpkBeginDate",
+          "class": "TMHDatetimePicker",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkUpdateAcctBala",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/chkUpdateAcctBala",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "导入时更新账户余额",
+            "Visible": false,
+            "Tag": 9
+          }
+        },
+        {
+          "component": "rbAdd",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/rbAdd",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "增加",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "rbCover",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/rbCover",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "删除并覆盖",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "mwSelectAcct",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsBase/mwSelectAcct",
+          "class": "TmwSelectTag",
+          "properties": {
+            "ReadOnly": true,
+            "Tag": 9
+          }
+        },
+        {
+          "component": "tsOptions",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "数据选项",
+            "Hint": "双击此处全选/取消全选",
+            "OnDblClick": "tsOptionsDblClick"
+          }
+        },
+        {
+          "component": "chkAcctInfo",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkAcctInfo",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "账户信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkTransInfo",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkTransInfo",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "交易信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkTransFee",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkTransFee",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "交易费率",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkTemplate",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkTemplate",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "记账模板"
+          }
+        },
+        {
+          "component": "chkSecurity",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkSecurity",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "证券列表",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkRemindSet",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkRemindSet",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "提醒设置",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkPracHistoryPrice",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkPracHistoryPrice",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "物品历史价格"
+          }
+        },
+        {
+          "component": "chkPrac",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkPrac",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "物品信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkPlanDiary",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkPlanDiary",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "计划日记",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkPersons",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkPersons",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "人员机构",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkMetals",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkMetals",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "贵金属"
+          }
+        },
+        {
+          "component": "chkLifeTheme",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkLifeTheme",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "生活主题"
+          }
+        },
+        {
+          "component": "chkGoalSetting",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkGoalSetting",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "理财目标"
+          }
+        },
+        {
+          "component": "chkFund",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkFund",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "基金列表",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkExchangePrice",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkExchangePrice",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "历史汇率"
+          }
+        },
+        {
+          "component": "chkDebt",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkDebt",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "债券列表",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkCurrFund",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkCurrFund",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "货币基金"
+          }
+        },
+        {
+          "component": "chkCurrency",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkCurrency",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "货币信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkCategory",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkCategory",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "收支项目",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkBudget",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkBudget",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "收支预算",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkBankFiscal",
+          "path": "ExportDataFm/pnlDlgClient/mwPageControl1/tsOptions/chkBankFiscal",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "理财产品"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TIMPORTDATAFM",
+      "domain": "整账簿数据导入",
+      "title": "导入数据",
+      "controls": [
+        {
+          "component": "ImportDataFm",
+          "path": "ImportDataFm",
+          "class": "TImportDataFm",
+          "properties": {
+            "Caption": "导入数据"
+          }
+        },
+        {
+          "component": "btnCaptionClose",
+          "path": "ImportDataFm/pnlTopBorder/btnCaptionClose",
+          "class": "TMHBmpButton",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "btnCaptionHelp",
+          "path": "ImportDataFm/pnlTopBorder/btnCaptionHelp",
+          "class": "TMHBmpButton",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "RzLabel1",
+          "path": "ImportDataFm/pnlDlgClient/RzLabel1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "导入文件名"
+          }
+        },
+        {
+          "component": "RzLabel2",
+          "path": "ImportDataFm/pnlDlgClient/RzLabel2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "导入数据选项"
+          }
+        },
+        {
+          "component": "BtnCancel",
+          "path": "ImportDataFm/pnlDlgClient/BtnCancel",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "BtnHelp",
+          "path": "ImportDataFm/pnlDlgClient/BtnHelp",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Visible": false,
+            "Tag": 9
+          }
+        },
+        {
+          "component": "BtnOk",
+          "path": "ImportDataFm/pnlDlgClient/BtnOk",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Tag": 9,
+            "OnClick": "BtnOkClick"
+          }
+        },
+        {
+          "component": "Panel1",
+          "path": "ImportDataFm/pnlDlgClient/Panel1",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "btnBrowser",
+          "path": "ImportDataFm/pnlDlgClient/btnBrowser",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "浏览...",
+            "OnClick": "btnBrowserClick"
+          }
+        },
+        {
+          "component": "edName",
+          "path": "ImportDataFm/pnlDlgClient/edName",
+          "class": "TRzEdit",
+          "properties": {
+            "Tag": 9
+          }
+        },
+        {
+          "component": "OptionsGroup",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup",
+          "class": "TRzPanel",
+          "properties": {
+            "Hint": "双击此处全选/取消全选",
+            "OnDblClick": "OptionsGroupDblClick"
+          }
+        },
+        {
+          "component": "chkAcctInfo",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkAcctInfo",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "账户信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkPersons",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkPersons",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "人员机构",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkCurrency",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkCurrency",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "货币信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkCategory",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkCategory",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "收支项目",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkBudget",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkBudget",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "收支预算",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkPlanDiary",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkPlanDiary",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "计划日记",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkSecurity",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkSecurity",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "证券列表",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkFund",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkFund",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "基金列表",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkDebt",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkDebt",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "债券列表",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkTransInfo",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkTransInfo",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "交易信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkPrac",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkPrac",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "物品信息",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkTransFee",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkTransFee",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "交易费率",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkRemindSet",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkRemindSet",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "提醒设置",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkTemplate",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkTemplate",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "记账模板",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkLifeTheme",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkLifeTheme",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "生活主题",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkBankFiscal",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkBankFiscal",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "理财产品",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkMetals",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkMetals",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "贵金属",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkCurrFund",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkCurrFund",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "货币基金",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkExchangePrice",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkExchangePrice",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "历史汇率",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkPracHistoryPrice",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkPracHistoryPrice",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "物品历史价格",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "chkGoalSetting",
+          "path": "ImportDataFm/pnlDlgClient/OptionsGroup/chkGoalSetting",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "理财目标",
+            "Tag": 9
+          }
+        },
+        {
+          "component": "AdvProgressBar",
+          "path": "ImportDataFm/pnlDlgClient/pnlBottomBar/AdvProgressBar",
+          "class": "TAdvProgressBar",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "RzBitBtn1",
+          "path": "ImportDataFm/pnlDlgClient/pnlBottomBar/RzBitBtn1",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "确定",
+            "OnClick": "BtnOkClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TIMPORTSELECTDLGFM",
+      "domain": "导入来源选择",
+      "title": "导入数据",
+      "controls": [
+        {
+          "component": "ImportSelectDlgFm",
+          "path": "ImportSelectDlgFm",
+          "class": "TImportSelectDlgFm",
+          "properties": {
+            "Caption": "导入数据"
+          }
+        },
+        {
+          "component": "mwIconList",
+          "path": "ImportSelectDlgFm/pnlDlgClient/mwIconList",
+          "class": "TmwIconList",
+          "properties": {
+            "OnClick": "mwIconListClick"
+          }
+        },
+        {
+          "component": "btnImport",
+          "path": "ImportSelectDlgFm/pnlDlgClient/pnlToolBar/btnImport",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "从文件导入",
+            "OnClick": "btnImportClick"
+          }
+        },
+        {
+          "component": "btnImportFromClipboard",
+          "path": "ImportSelectDlgFm/pnlDlgClient/pnlToolBar/btnImportFromClipboard",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "从剪贴板导入",
+            "Enabled": false,
+            "OnClick": "btnImportFromClipboardClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TIMPORTPREVIEWFM",
+      "domain": "导入预览",
+      "title": "导入预览",
+      "controls": [
+        {
+          "component": "ImportPreviewFm",
+          "path": "ImportPreviewFm",
+          "class": "TImportPreviewFm",
+          "properties": {
+            "Caption": "导入预览"
+          }
+        },
+        {
+          "component": "pcPreview",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview",
+          "class": "TmwPageControl",
+          "properties": {
+            "OnChange": "pcPreviewChange"
+          }
+        },
+        {
+          "component": "tsData",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview/tsData",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "原始数据"
+          }
+        },
+        {
+          "component": "gridData",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview/tsData/gridData",
+          "class": "TAdvStringGrid",
+          "properties": {
+            "Filter": []
+          }
+        },
+        {
+          "component": "tsRecords",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview/tsRecords",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "准备导入的记录"
+          }
+        },
+        {
+          "component": "gridRecords",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview/tsRecords/gridRecords",
+          "class": "TAdvStringGrid",
+          "properties": {
+            "Filter": [],
+            "OnKeyDown": "gridRecordsKeyDown"
+          }
+        },
+        {
+          "component": "btnImport",
+          "path": "ImportPreviewFm/pnlDlgClient/pcPreview/tsRecords/pnlToolBar/btnImport",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "导入选中的记录",
+            "Enabled": false,
+            "OnClick": "btnImportClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TIMPORTJIAOGEDANDLGFM",
+      "domain": "股票交割单导入",
+      "title": "导入股票交割单",
+      "controls": [
+        {
+          "component": "ImportJiaoGedanDlgFm",
+          "path": "ImportJiaoGedanDlgFm",
+          "class": "TImportJiaoGedanDlgFm",
+          "properties": {
+            "Caption": "导入股票交割单"
+          }
+        },
+        {
+          "component": "ts1",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "ts1"
+          }
+        },
+        {
+          "component": "btnPasteData",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep1/pnlStep1Tool/btnPasteData",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "粘贴",
+            "OnClick": "btnPasteDataClick"
+          }
+        },
+        {
+          "component": "lbl1",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/lbl1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "匹配方案"
+          }
+        },
+        {
+          "component": "btnProgramDelete",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/btnProgramDelete",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "删除方案",
+            "OnClick": "btnProgramDeleteClick"
+          }
+        },
+        {
+          "component": "btnProgramSave",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/btnProgramSave",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "方案另存为",
+            "OnClick": "btnProgramSaveClick"
+          }
+        },
+        {
+          "component": "chkShowProgramDetailed",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/chkShowProgramDetailed",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "显示方案详细内容",
+            "OnClick": "chkShowProgramDetailedClick"
+          }
+        },
+        {
+          "component": "ddlProgramList",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/pnlStep2Tool/ddlProgramList",
+          "class": "TmwSelect",
+          "properties": {
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "lblDelimiterCaption",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/lblDelimiterCaption",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "   各列之间分隔符"
+          }
+        },
+        {
+          "component": "lblDelimiterHint",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/lblDelimiterHint",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "单个半角字符",
+            "Visible": false
+          }
+        },
+        {
+          "component": "rbTab",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbTab",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "制表符Tab",
+            "Checked": true,
+            "OnClick": "rbOnClick"
+          }
+        },
+        {
+          "component": "rbSpace",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbSpace",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "空格",
+            "OnClick": "rbOnClick"
+          }
+        },
+        {
+          "component": "rbOther",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/rbOther",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "其它",
+            "OnClick": "rbOnClick"
+          }
+        },
+        {
+          "component": "edtDelimiter",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/edtDelimiter",
+          "class": "TRzEdit",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "btnAutoDiscern",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDelimiter/btnAutoDiscern",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "自动识别",
+            "OnClick": "btnAutoDiscernClick"
+          }
+        },
+        {
+          "component": "lblTransTypeCaption",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/lblTransTypeCaption",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "   匹配交易类型"
+          }
+        },
+        {
+          "component": "lbl11",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/lbl11",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "证券买入"
+          }
+        },
+        {
+          "component": "Label2",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "证券卖出"
+          }
+        },
+        {
+          "component": "Label3",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label3",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "新股申购"
+          }
+        },
+        {
+          "component": "Label4",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label4",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "申购中签"
+          }
+        },
+        {
+          "component": "Label5",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label5",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "申购返款"
+          }
+        },
+        {
+          "component": "Label6",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label6",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "送股"
+          }
+        },
+        {
+          "component": "Label7",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label7",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "配股"
+          }
+        },
+        {
+          "component": "Label8",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label8",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "红利"
+          }
+        },
+        {
+          "component": "Label9",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label9",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "利息收入"
+          }
+        },
+        {
+          "component": "Label10",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/Label10",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "其它费用"
+          }
+        },
+        {
+          "component": "lbl2",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/lbl2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "资金转入"
+          }
+        },
+        {
+          "component": "lbl4",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxTransType/lbl4",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "资金转出"
+          }
+        },
+        {
+          "component": "lblDataColCaption",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/lblDataColCaption",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "   匹配交易数据项"
+          }
+        },
+        {
+          "component": "Label11",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label11",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "日期"
+          }
+        },
+        {
+          "component": "lblCode",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/lblCode",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "证券代码"
+          }
+        },
+        {
+          "component": "Label13",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label13",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "证券名称"
+          }
+        },
+        {
+          "component": "Label14",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label14",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "价格"
+          }
+        },
+        {
+          "component": "Label15",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label15",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "数量"
+          }
+        },
+        {
+          "component": "Label16",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label16",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "金额"
+          }
+        },
+        {
+          "component": "Label17",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label17",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "印花税"
+          }
+        },
+        {
+          "component": "Label18",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label18",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "佣金"
+          }
+        },
+        {
+          "component": "Label19",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label19",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "过户费"
+          }
+        },
+        {
+          "component": "Label20",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/Label20",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "其它费用"
+          }
+        },
+        {
+          "component": "rbMode_Name",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/rbMode_Name",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "以“列头文字”匹配",
+            "Checked": true
+          }
+        },
+        {
+          "component": "rbMode_No",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/rbMode_No",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "以“列序号(第几列)”匹配"
+          }
+        },
+        {
+          "component": "chkIncludedFee",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlStep2/gBoxDataCol/chkIncludedFee",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "金额已包含后面的费用项"
+          }
+        },
+        {
+          "component": "btnBegin",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts1/pnlToolBar1/btnBegin",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "下一步",
+            "OnClick": "btnBeginClick"
+          }
+        },
+        {
+          "component": "ts2",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "ts2"
+          }
+        },
+        {
+          "component": "tl1",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1",
+          "class": "TMHTreeList",
+          "properties": {
+            "Tag": 100,
+            "OnKeyDown": "tl1KeyDown"
+          }
+        },
+        {
+          "component": "tl1ColumnNo",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnNo",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "行号"
+          }
+        },
+        {
+          "component": "tl1ColumnDate",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnDate",
+          "class": "TdxTreeListButtonColumn",
+          "properties": {
+            "Caption": "日期"
+          }
+        },
+        {
+          "component": "tl1ColumnTransType",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnTransType",
+          "class": "TdxTreeListButtonColumn",
+          "properties": {
+            "Caption": "交易类型",
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "tl1ColumnSecuCode",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnSecuCode",
+          "class": "TdxTreeListButtonColumn",
+          "properties": {
+            "Caption": "证券代码",
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "tl1ColumnSecuName",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnSecuName",
+          "class": "TdxTreeListColumn",
+          "properties": {
+            "Caption": "证券名称"
+          }
+        },
+        {
+          "component": "tl1ColumnPrice",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnPrice",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "价格"
+          }
+        },
+        {
+          "component": "tl1ColumnQuantity",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnQuantity",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "数量"
+          }
+        },
+        {
+          "component": "tl1ColumnAmount",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnAmount",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "金额"
+          }
+        },
+        {
+          "component": "tl1ColumnYHS",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnYHS",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "印花税"
+          }
+        },
+        {
+          "component": "tl1ColumnYJ",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnYJ",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "佣金"
+          }
+        },
+        {
+          "component": "tl1ColumnGHF",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnGHF",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "过户费"
+          }
+        },
+        {
+          "component": "tl1ColumnFee",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnFee",
+          "class": "TdxTreeListCurrencyColumn",
+          "properties": {
+            "Caption": "其它费用"
+          }
+        },
+        {
+          "component": "tl1ColumnTag",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnTag",
+          "class": "TdxTreeListButtonColumn",
+          "properties": {
+            "Caption": "标签",
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "tl1ColumnSign",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnSign",
+          "class": "TdxTreeListColumn",
+          "properties": {
+            "Caption": "申购关联标记"
+          }
+        },
+        {
+          "component": "tl1ColumnTransTypeID",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnTransTypeID",
+          "class": "TdxTreeListColumn",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "tl1ColumnObjectID",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnObjectID",
+          "class": "TdxTreeListColumn",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "tl1ColumnTagKey",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/tl1/tl1ColumnTagKey",
+          "class": "TdxTreeListColumn",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "btnImport",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlToolBar2/btnImport",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "确认导入",
+            "OnClick": "btnImportClick"
+          }
+        },
+        {
+          "component": "btnBack",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlToolBar2/btnBack",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "上一步",
+            "OnClick": "btnBackClick"
+          }
+        },
+        {
+          "component": "btnUpdate",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Tool/btnUpdate",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "批量修改",
+            "Tag": 1,
+            "OnClick": "btnUpdateClick"
+          }
+        },
+        {
+          "component": "btnSign",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Tool/btnSign",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "关联新股申购",
+            "Tag": 1,
+            "OnClick": "btnSignClick"
+          }
+        },
+        {
+          "component": "SelTag",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Tool/SelTag",
+          "class": "TmwSelectTag",
+          "properties": {
+            "Visible": false,
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "tcddlTransType",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Tool/tcddlTransType",
+          "class": "TmwSelect",
+          "properties": {
+            "Visible": false,
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "tcddlSecu",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Tool/tcddlSecu",
+          "class": "TmwSelect",
+          "properties": {
+            "Visible": false,
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "lbl12",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/lbl12",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "卖出和红利盈亏记为"
+          }
+        },
+        {
+          "component": "lbl6",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/lbl6",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "导入到证券账户"
+          }
+        },
+        {
+          "component": "lbl3",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/lbl3",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "交易资金账户"
+          }
+        },
+        {
+          "component": "lblTransferCAcct",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/lblTransferCAcct",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "转账资金账户"
+          }
+        },
+        {
+          "component": "btnGainsLossesType",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/btnGainsLossesType",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "btnGainsLossesType"
+          }
+        },
+        {
+          "component": "ddlCurrAcct",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/ddlCurrAcct",
+          "class": "TmwSelectAccount",
+          "properties": {
+            "Hint": "<无>",
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "ddlSecuAcct",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/ddlSecuAcct",
+          "class": "TmwSelectAccount",
+          "properties": {
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "ddlTransferCAcct",
+          "path": "ImportJiaoGedanDlgFm/pnlDlgClient/RzPageControl1/ts2/pnlStep3Input/ddlTransferCAcct",
+          "class": "TmwSelectAccount",
+          "properties": {
+            "Hint": "<无>",
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "miUpdateTransType",
+          "path": "ImportJiaoGedanDlgFm/pmUpdate/miUpdateTransType",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "修改交易类型",
+            "OnClick": "miUpdateTransTypeClick"
+          }
+        },
+        {
+          "component": "miUpdateCode",
+          "path": "ImportJiaoGedanDlgFm/pmUpdate/miUpdateCode",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "修改证券代码",
+            "OnClick": "miUpdateCodeClick"
+          }
+        },
+        {
+          "component": "miUpdateTag",
+          "path": "ImportJiaoGedanDlgFm/pmUpdate/miUpdateTag",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "修改标签",
+            "OnClick": "miUpdateTagClick"
+          }
+        },
+        {
+          "component": "miSign",
+          "path": "ImportJiaoGedanDlgFm/pmSign/miSign",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "关联新股申购",
+            "OnClick": "miSignClick"
+          }
+        },
+        {
+          "component": "miCancelSign",
+          "path": "ImportJiaoGedanDlgFm/pmSign/miCancelSign",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "取消关联",
+            "OnClick": "miCancelSignClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TSYNCUSERDATAFM",
+      "domain": "同步",
+      "title": "同步",
+      "controls": [
+        {
+          "component": "SyncUserDataFm",
+          "path": "SyncUserDataFm",
+          "class": "TSyncUserDataFm",
+          "properties": {
+            "Caption": "同步"
+          }
+        },
+        {
+          "component": "pnlDlgClient",
+          "path": "SyncUserDataFm/pnlDlgClient",
+          "class": "TRzPanel",
+          "properties": {
+            "Tag": 8701
+          }
+        },
+        {
+          "component": "lbl2",
+          "path": "SyncUserDataFm/pnlDlgClient/lbl2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "密码"
+          }
+        },
+        {
+          "component": "lbl1",
+          "path": "SyncUserDataFm/pnlDlgClient/lbl1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "电子邮箱"
+          }
+        },
+        {
+          "component": "lblProvision",
+          "path": "SyncUserDataFm/pnlDlgClient/lblProvision",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "同步条款",
+            "OnClick": "lblProvisionClick"
+          }
+        },
+        {
+          "component": "lbl5",
+          "path": "SyncUserDataFm/pnlDlgClient/lbl5",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "上次同步时间"
+          }
+        },
+        {
+          "component": "lblLastSyncTime",
+          "path": "SyncUserDataFm/pnlDlgClient/lblLastSyncTime",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "lblLastSyncTime"
+          }
+        },
+        {
+          "component": "lbl6",
+          "path": "SyncUserDataFm/pnlDlgClient/lbl6",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "同步方式"
+          }
+        },
+        {
+          "component": "lbl7",
+          "path": "SyncUserDataFm/pnlDlgClient/lbl7",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "(将合并本地账簿与财智在线理财的数据)"
+          }
+        },
+        {
+          "component": "lblOneWayDesc",
+          "path": "SyncUserDataFm/pnlDlgClient/lblOneWayDesc",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "(以当前本地账簿数据为准，覆盖财智在线理财的数据)"
+          }
+        },
+        {
+          "component": "chkAgree",
+          "path": "SyncUserDataFm/pnlDlgClient/chkAgree",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "我同意",
+            "OnClick": "chkAgreeClick"
+          }
+        },
+        {
+          "component": "btnRegister",
+          "path": "SyncUserDataFm/pnlDlgClient/btnRegister",
+          "class": "TRzButton",
+          "properties": {
+            "Caption": "注册账号",
+            "OnClick": "btnRegisterClick"
+          }
+        },
+        {
+          "component": "rbTwoWay",
+          "path": "SyncUserDataFm/pnlDlgClient/rbTwoWay",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "双向同步",
+            "Checked": true
+          }
+        },
+        {
+          "component": "rbOneWay",
+          "path": "SyncUserDataFm/pnlDlgClient/rbOneWay",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "单向上传"
+          }
+        },
+        {
+          "component": "lblProgress",
+          "path": "SyncUserDataFm/pnlDlgClient/pnlToolBar/lblProgress",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "lblProgress"
+          }
+        },
+        {
+          "component": "btnSyncStart",
+          "path": "SyncUserDataFm/pnlDlgClient/pnlToolBar/btnSyncStart",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "开始同步",
+            "OnClick": "btnSyncStartClick"
+          }
+        },
+        {
+          "component": "btnSyncCancel",
+          "path": "SyncUserDataFm/pnlDlgClient/pnlToolBar/btnSyncCancel",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "取消同步",
+            "OnClick": "btnSyncCancelClick"
+          }
+        },
+        {
+          "component": "chkSyncByCloseBook",
+          "path": "SyncUserDataFm/pnlDlgClient/chkSyncByCloseBook",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "关闭账簿时自动同步",
+            "OnClick": "chkSyncByCloseBookClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TSYNCUSERREGISTERFM",
+      "domain": "同步账号注册",
+      "title": "注册同步账号",
+      "controls": [
+        {
+          "component": "SyncUserRegisterFm",
+          "path": "SyncUserRegisterFm",
+          "class": "TSyncUserRegisterFm",
+          "properties": {
+            "Caption": "注册同步账号"
+          }
+        },
+        {
+          "component": "lbl1",
+          "path": "SyncUserRegisterFm/pnlDlgClient/lbl1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "电子邮箱"
+          }
+        },
+        {
+          "component": "Label1",
+          "path": "SyncUserRegisterFm/pnlDlgClient/Label1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "密码"
+          }
+        },
+        {
+          "component": "Label2",
+          "path": "SyncUserRegisterFm/pnlDlgClient/Label2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "确认密码"
+          }
+        },
+        {
+          "component": "Label3",
+          "path": "SyncUserRegisterFm/pnlDlgClient/Label3",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "昵称"
+          }
+        },
+        {
+          "component": "btnRegister",
+          "path": "SyncUserRegisterFm/pnlDlgClient/pnlToolBar/btnRegister",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "注册",
+            "OnClick": "btnRegisterClick"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TSYSTEMSETTINGSFM",
+      "domain": "备份与同步设置",
+      "title": "系统设置",
+      "controls": [
+        {
+          "component": "SystemSettingsFm",
+          "path": "SystemSettingsFm",
+          "class": "TSystemSettingsFm",
+          "properties": {
+            "Caption": "系统设置"
+          }
+        },
+        {
+          "component": "tvSection",
+          "path": "SystemSettingsFm/pnlDlgClient/tvSection",
+          "class": "TMWTreeView",
+          "properties": {
+            "OnDblClick": "tvSectionDblClick"
+          }
+        },
+        {
+          "component": "pcOptions",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions",
+          "class": "TmwPageControl",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "tsSystem",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "系统"
+          }
+        },
+        {
+          "component": "pnlSystem",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem",
+          "class": "TRzPanel",
+          "properties": {
+            "Tag": 8701
+          }
+        },
+        {
+          "component": "lblSoftwareStart",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/lblSoftwareStart",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "软件启动后:"
+          }
+        },
+        {
+          "component": "cbOnlyOneInstance",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/cbOnlyOneInstance",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "只允许运行一个财智8实例",
+            "Visible": false
+          }
+        },
+        {
+          "component": "cbStartuoCheckVersionUpdate",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/cbStartuoCheckVersionUpdate",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "启动时检查软件更新"
+          }
+        },
+        {
+          "component": "cbSound",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/cbSound",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "启用软件音效"
+          }
+        },
+        {
+          "component": "cbForceIE11",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/cbForceIE11",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "强制网银插件使用Internet Explorer 11",
+            "Hint": "NeedReboot",
+            "Visible": false
+          }
+        },
+        {
+          "component": "rbTaskbar",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/rbTaskbar",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "显示在任务栏",
+            "Hint": "NeedReboot"
+          }
+        },
+        {
+          "component": "rbTrayIcon",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/rbTrayIcon",
+          "class": "TRzRadioButton",
+          "properties": {
+            "Caption": "显示在系统托盘",
+            "Tag": 1
+          }
+        },
+        {
+          "component": "cbMinimizeProtect",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsSystem/pnlSystem/cbMinimizeProtect",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "启用最小化保护",
+            "Hint": "当软件从最小化状态恢复时，系统将要求重新验证账簿密码。"
+          }
+        },
+        {
+          "component": "tsNetwork",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "网络"
+          }
+        },
+        {
+          "component": "pnlNetwork",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork/pnlNetwork",
+          "class": "TRzPanel",
+          "properties": {
+            "Tag": 8701
+          }
+        },
+        {
+          "component": "lblProxyIP",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork/pnlNetwork/lblProxyIP",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "代理服务器IP"
+          }
+        },
+        {
+          "component": "lblProxyPort",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork/pnlNetwork/lblProxyPort",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "代理服务器端口"
+          }
+        },
+        {
+          "component": "cbOffline",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork/pnlNetwork/cbOffline",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "网络离线模式",
+            "Hint": "NeedReboot"
+          }
+        },
+        {
+          "component": "edtProxyPort",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork/pnlNetwork/edtProxyPort",
+          "class": "TRzEdit",
+          "properties": {
+            "Text": "0"
+          }
+        },
+        {
+          "component": "cbSyncCompress",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsNetwork/pnlNetwork/cbSyncCompress",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "同步时压缩传输数据"
+          }
+        },
+        {
+          "component": "tsBackup",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "账簿备份"
+          }
+        },
+        {
+          "component": "pnlBackup",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup",
+          "class": "TRzPanel",
+          "properties": {
+            "Tag": 8701
+          }
+        },
+        {
+          "component": "lblBackupPath",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/lblBackupPath",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "默认保存备份账簿到此文件夹中:"
+          }
+        },
+        {
+          "component": "lblBackupBookCount1",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/lblBackupBookCount1",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "保留最近"
+          }
+        },
+        {
+          "component": "lblBackupBookCount2",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/lblBackupBookCount2",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "的账簿备份文件"
+          }
+        },
+        {
+          "component": "edtBackupPath",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/edtBackupPath",
+          "class": "TRzEdit",
+          "properties": {
+            "ReadOnly": true
+          }
+        },
+        {
+          "component": "btnChangeDir",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/btnChangeDir",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "更改目录",
+            "OnClick": "btnChangeDirClick"
+          }
+        },
+        {
+          "component": "btnResetDir",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/btnResetDir",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "恢复默认",
+            "OnClick": "btnResetDirClick"
+          }
+        },
+        {
+          "component": "cbCompactBackupBook",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/cbCompactBackupBook",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "备份账簿前优化账簿",
+            "Hint": "优化账簿将执行完整性校验，建议保持该选项处于启用状态。"
+          }
+        },
+        {
+          "component": "cbCompressBackupBook",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/cbCompressBackupBook",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "备份账簿时压缩账簿",
+            "Hint": "启用压缩可有效缩减账簿备份文件体积，显著降低磁盘存储空间的占用。"
+          }
+        },
+        {
+          "component": "btnOpenDir",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsBackup/pnlBackup/btnOpenDir",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "打开文件夹",
+            "OnClick": "btnOpenDirClick"
+          }
+        },
+        {
+          "component": "tsLicense",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "授权"
+          }
+        },
+        {
+          "component": "pnlLicense",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense/pnlLicense",
+          "class": "TRzPanel",
+          "properties": {
+            "Tag": 8701
+          }
+        },
+        {
+          "component": "lblSerialNo",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense/pnlLicense/lblSerialNo",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "序列号:"
+          }
+        },
+        {
+          "component": "edtSerialNo",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense/pnlLicense/edtSerialNo",
+          "class": "TRzEdit",
+          "properties": {
+            "Hint": "请妥善保管您的序列号，这是您享受正版软件售后服务的凭证。|双击复制序列号到剪贴板",
+            "ReadOnly": true,
+            "OnDblClick": "edtSerialNoDblClick"
+          }
+        },
+        {
+          "component": "btnRegisterInfo",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense/pnlLicense/btnRegisterInfo",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "查看注册资料",
+            "Enabled": false,
+            "OnClick": "btnRegisterInfoClick"
+          }
+        },
+        {
+          "component": "btnChangeSerialPass",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense/pnlLicense/btnChangeSerialPass",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "修改序列号保护信息",
+            "Enabled": false,
+            "OnClick": "btnChangeSerialPassClick"
+          }
+        },
+        {
+          "component": "btnForgotSerialPass",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense/pnlLicense/btnForgotSerialPass",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "找回序列号保护信息",
+            "OnClick": "btnForgotSerialPassClick"
+          }
+        },
+        {
+          "component": "btnMergeSerialNo",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsLicense/pnlLicense/btnMergeSerialNo",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "合并序列号使用期",
+            "OnClick": "btnMergeSerialNoClick"
+          }
+        },
+        {
+          "component": "tsAdvanced",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "高级"
+          }
+        },
+        {
+          "component": "pnlAdvanced",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced",
+          "class": "TRzPanel",
+          "properties": {
+            "Tag": 8701
+          }
+        },
+        {
+          "component": "cbInterfaceCache",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/cbInterfaceCache",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "启用显示缓存",
+            "Hint": "如遇界面显示乱码问题，可尝试通过重置系统界面缓存修复。"
+          }
+        },
+        {
+          "component": "cbHighlightRecord",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/cbHighlightRecord",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "交易记录高亮",
+            "Hint": "高亮记录以标记特定的交易记录，高亮快捷键为空格键。"
+          }
+        },
+        {
+          "component": "cbHideStatsAmount",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/cbHideStatsAmount",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "双击隐藏统计金额"
+          }
+        },
+        {
+          "component": "cbReportAutoQuery",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/cbReportAutoQuery",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "打开报表时自动查询"
+          }
+        },
+        {
+          "component": "cbCustomReportCell",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/cbCustomReportCell",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "双击定制报表单元格"
+          }
+        },
+        {
+          "component": "csHighlightColor",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/csHighlightColor",
+          "class": "TAdvColorSelector",
+          "properties": {
+            "Hint": "选择高亮颜色",
+            "OnSelect": "csHighlightColorSelect"
+          }
+        },
+        {
+          "component": "btnResetCache",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/btnResetCache",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "重置显示缓存",
+            "OnClick": "btnResetCacheClick"
+          }
+        },
+        {
+          "component": "btnSetLanguage",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/btnSetLanguage",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "设置非 Unicode 程序的语言",
+            "OnClick": "btnSetLanguageClick"
+          }
+        },
+        {
+          "component": "cbAsyncRefresh",
+          "path": "SystemSettingsFm/pnlDlgClient/sbClient/pcOptions/tsAdvanced/pnlAdvanced/cbAsyncRefresh",
+          "class": "TRzCheckBox",
+          "properties": {
+            "Caption": "异步刷新模式"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TMAINFORM",
+      "domain": "入口命令",
+      "title": "MainForm",
+      "controls": [
+        {
+          "component": "MainForm",
+          "path": "MainForm",
+          "class": "TMainForm",
+          "properties": {
+            "Caption": "MainForm",
+            "OnShow": "FormShow"
+          }
+        },
+        {
+          "component": "pnlTopAd",
+          "path": "MainForm/pnlContent/pnlContentClient/pnlTopAd",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "pnlToolsBar",
+          "path": "MainForm/pnlContent/pnlToolsBar",
+          "class": "TRzPanel",
+          "properties": {
+            "OnDblClick": "pnlToolsBarDblClick"
+          }
+        },
+        {
+          "component": "btnMainPopupMenuCenter",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnMainPopupMenuCenter",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnMainPopupMenuCenterClick"
+          }
+        },
+        {
+          "component": "btnMainPopupMenuRight",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnMainPopupMenuRight",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnMainPopupMenuCenterClick"
+          }
+        },
+        {
+          "component": "sbClose",
+          "path": "MainForm/pnlContent/pnlToolsBar/sbClose",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "sbCloseClick"
+          }
+        },
+        {
+          "component": "sbStoreMax",
+          "path": "MainForm/pnlContent/pnlToolsBar/sbStoreMax",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "pnlToolsBarDblClick"
+          }
+        },
+        {
+          "component": "sbMin",
+          "path": "MainForm/pnlContent/pnlToolsBar/sbMin",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "sbMinClick"
+          }
+        },
+        {
+          "component": "sbMax",
+          "path": "MainForm/pnlContent/pnlToolsBar/sbMax",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "pnlToolsBarDblClick"
+          }
+        },
+        {
+          "component": "btnCustomerService",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnCustomerService",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnCustomerServiceClick"
+          }
+        },
+        {
+          "component": "imgTitle",
+          "path": "MainForm/pnlContent/pnlToolsBar/imgTitle",
+          "class": "TMHImage",
+          "properties": {
+            "Tag": 1,
+            "OnClick": "btnMainPopupMenuCenterClick"
+          }
+        },
+        {
+          "component": "btnBack",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnBack",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnBackClick"
+          }
+        },
+        {
+          "component": "btnNext",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnNext",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnNextClick"
+          }
+        },
+        {
+          "component": "btnCenter",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnCenter",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnCenterClick"
+          }
+        },
+        {
+          "component": "btnAddTrans",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnAddTrans",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnAddTransClick"
+          }
+        },
+        {
+          "component": "btnSync",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnSync",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnSyncClick"
+          }
+        },
+        {
+          "component": "btnRemind",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnRemind",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnRemindClick"
+          }
+        },
+        {
+          "component": "btnTheme",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnTheme",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnThemeClick"
+          }
+        },
+        {
+          "component": "btnFinancialTools",
+          "path": "MainForm/pnlContent/pnlToolsBar/btnFinancialTools",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnFinancialToolsClick"
+          }
+        },
+        {
+          "component": "AppCaption",
+          "path": "MainForm/pnlContent/pnlToolsBar/AppCaption",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "财智8",
+            "OnClick": "btnMainPopupMenuCenterClick"
+          }
+        },
+        {
+          "component": "pnlOpenClose",
+          "path": "MainForm/pnlContent/pnlOpenClose",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "AdvProgressBar",
+          "path": "MainForm/pnlContent/pnlOpenClose/AdvProgressBar",
+          "class": "TAdvProgressBar",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "btnHideNavigation2",
+          "path": "MainForm/pnlContent/pnlContentLeft2/pnlLeftBar2/btnHideNavigation2",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnHideNavigation2Click"
+          }
+        },
+        {
+          "component": "tsAssets",
+          "path": "MainForm/pnlContent/pnlContentLeft/pcLeft/tsAssets",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "资产"
+          }
+        },
+        {
+          "component": "tsAnalysis",
+          "path": "MainForm/pnlContent/pnlContentLeft/pcLeft/tsAnalysis",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "分析"
+          }
+        },
+        {
+          "component": "tsGoals",
+          "path": "MainForm/pnlContent/pnlContentLeft/pcLeft/tsGoals",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "目标"
+          }
+        },
+        {
+          "component": "pnlRegister",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlRegister",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "bmpbtnRegister",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlRegister/bmpbtnRegister",
+          "class": "TRzPanel",
+          "properties": {
+            "OnClick": "bmpbtnRegisterClick"
+          }
+        },
+        {
+          "component": "imgReg",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlRegister/bmpbtnRegister/imgReg",
+          "class": "TImage",
+          "properties": {
+            "OnClick": "bmpbtnRegisterClick"
+          }
+        },
+        {
+          "component": "lbReg",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlRegister/bmpbtnRegister/lbReg",
+          "class": "TRzLabel",
+          "properties": {
+            "Caption": "激活高级功能",
+            "OnClick": "bmpbtnRegisterClick"
+          }
+        },
+        {
+          "component": "pnlLeftBar",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlLeftBar",
+          "class": "TRzPanel",
+          "properties": {
+            "OnDblClick": "pnlLeftBarDblClick"
+          }
+        },
+        {
+          "component": "btnAddAcct",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlLeftBar/btnAddAcct",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnAddAcctClick"
+          }
+        },
+        {
+          "component": "btnHideNavigation",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlLeftBar/btnHideNavigation",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnHideNavigationClick"
+          }
+        },
+        {
+          "component": "pnlLeftAd",
+          "path": "MainForm/pnlContent/pnlContentLeft/pnlLeftAd",
+          "class": "TRzPanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "imgPNG",
+          "path": "MainForm/pnlMask/imgPNG",
+          "class": "TMHImage",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "mwTimer",
+          "path": "MainForm/mwTimer",
+          "class": "TTimer",
+          "properties": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "ActEscCloseForm",
+          "path": "MainForm/Action/ActEscCloseForm",
+          "class": "TAction",
+          "properties": {
+            "Caption": "ActEscCloseForm",
+            "OnExecute": "ActEscCloseFormExecute"
+          }
+        },
+        {
+          "component": "mmiAcctListAllNotExpanded",
+          "path": "MainForm/ViewBarMenu/mmiAcctListAllNotExpanded",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "全部收起",
+            "OnClick": "mmiAcctListAllNotExpandedClick"
+          }
+        },
+        {
+          "component": "mmiAcctListAllExpanded",
+          "path": "MainForm/ViewBarMenu/mmiAcctListAllExpanded",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "全部展开",
+            "OnClick": "mmiAcctListAllExpandedClick"
+          }
+        },
+        {
+          "component": "N37",
+          "path": "MainForm/ViewBarMenu/N37",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiAcctOrderByType",
+          "path": "MainForm/ViewBarMenu/mmiAcctOrderByType",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "按[类型]显示",
+            "OnClick": "mmiAcctOrderByTypeClick"
+          }
+        },
+        {
+          "component": "mmiAcctOrderByCustom",
+          "path": "MainForm/ViewBarMenu/mmiAcctOrderByCustom",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "按[自定义]显示",
+            "OnClick": "mmiAcctOrderByCustomClick"
+          }
+        },
+        {
+          "component": "N22",
+          "path": "MainForm/ViewBarMenu/N22",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiCustomAcct",
+          "path": "MainForm/ViewBarMenu/mmiCustomAcct",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "设置[自定义]显示",
+            "OnClick": "mmiCustomAcctClick"
+          }
+        },
+        {
+          "component": "N32",
+          "path": "MainForm/ViewBarMenu/N32",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiShowAcctTreeAmount",
+          "path": "MainForm/ViewBarMenu/mmiShowAcctTreeAmount",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "显示金额",
+            "OnClick": "mmiShowAcctTreeAmountClick"
+          }
+        },
+        {
+          "component": "mmiShowFinishedAcct",
+          "path": "MainForm/ViewBarMenu/mmiShowFinishedAcct",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "显示到期账户",
+            "OnClick": "mmiShowFinishedAcctClick"
+          }
+        },
+        {
+          "component": "mmiShowHideAcct",
+          "path": "MainForm/ViewBarMenu/mmiShowHideAcct",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "显示隐藏账户",
+            "OnClick": "mmiShowHideAcctClick"
+          }
+        },
+        {
+          "component": "miFinanceData",
+          "path": "MainForm/pmCenter/miFinanceData",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "财务数据",
+            "OnClick": "miFinanceDataClick"
+          }
+        },
+        {
+          "component": "miFinanceReport",
+          "path": "MainForm/pmCenter/miFinanceReport",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "财务报表",
+            "OnClick": "miFinanceReportClick"
+          }
+        },
+        {
+          "component": "miFinanceAnalysis",
+          "path": "MainForm/pmCenter/miFinanceAnalysis",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "财务分析",
+            "OnClick": "miFinanceAnalysisClick"
+          }
+        },
+        {
+          "component": "miDivider",
+          "path": "MainForm/pmCenter/miDivider",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-",
+            "Visible": false
+          }
+        },
+        {
+          "component": "miSync",
+          "path": "MainForm/pmCenter/miSync",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "同步数据",
+            "Visible": false,
+            "OnClick": "btnSyncClick"
+          }
+        },
+        {
+          "component": "miRemind",
+          "path": "MainForm/pmCenter/miRemind",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "今日提醒",
+            "Visible": false,
+            "OnClick": "btnRemindClick"
+          }
+        },
+        {
+          "component": "miShowWindow",
+          "path": "MainForm/pmMainPopupMenu/miShowWindow",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "打开财智8",
+            "Visible": false,
+            "Tag": -1,
+            "OnClick": "miShowWindowClick"
+          }
+        },
+        {
+          "component": "miBook",
+          "path": "MainForm/pmMainPopupMenu/miBook",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "账簿",
+            "Tag": -1,
+            "OnClick": "miBookClick"
+          }
+        },
+        {
+          "component": "mmiNewbook",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiNewbook",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "新建账簿",
+            "OnClick": "mmiNewbookClick"
+          }
+        },
+        {
+          "component": "mmiOpen_New",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiOpen_New",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "打开账簿",
+            "OnClick": "mmiOpen_NewClick"
+          }
+        },
+        {
+          "component": "mmiRecalc",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiRecalc",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "结算账簿",
+            "OnClick": "mmiRecalcClick"
+          }
+        },
+        {
+          "component": "mmiSetBookPassword",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiSetBookPassword",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "设置账簿密码",
+            "OnClick": "mmiSetBookPasswordClick"
+          }
+        },
+        {
+          "component": "mmiCloseBook",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiCloseBook",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "关闭当前打开的账簿",
+            "Visible": false,
+            "OnClick": "mmiCloseBookClick"
+          }
+        },
+        {
+          "component": "miDivide1",
+          "path": "MainForm/pmMainPopupMenu/miBook/miDivide1",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiBackup",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiBackup",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "备份账簿",
+            "OnClick": "mmiBackupClick"
+          }
+        },
+        {
+          "component": "mmiRestore",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiRestore",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "还原账簿",
+            "OnClick": "mmiRestoreClick"
+          }
+        },
+        {
+          "component": "miDivide2",
+          "path": "MainForm/pmMainPopupMenu/miBook/miDivide2",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiImport",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiImport",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "导入账簿数据",
+            "OnClick": "mmiImportClick"
+          }
+        },
+        {
+          "component": "mmiExport",
+          "path": "MainForm/pmMainPopupMenu/miBook/mmiExport",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "导出账簿数据",
+            "OnClick": "mmiExportClick"
+          }
+        },
+        {
+          "component": "miDivide3",
+          "path": "MainForm/pmMainPopupMenu/miBook/miDivide3",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miBaseData",
+          "path": "MainForm/pmMainPopupMenu/miBaseData",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "资料管理",
+            "Tag": -1
+          }
+        },
+        {
+          "component": "miCategory",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miCategory",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "收支项目",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miDivide4",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miDivide4",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miPerson",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miPerson",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "人员与机构",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miDivide5",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miDivide5",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miSecurity",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miSecurity",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "上市证券",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miOpenFund",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miOpenFund",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "开放式基金",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miCurrFund",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miCurrFund",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "货币基金",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miBond",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miBond",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "债券",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miPreciousMetal",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miPreciousMetal",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "贵金属",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miBankProduct",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miBankProduct",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "银行理财产品",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miFuturesContract",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miFuturesContract",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "期货合约",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miFuturesType",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miFuturesType",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "期货品种",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miMetalDeferredType",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miMetalDeferredType",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "贵金属TD品种",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miMajorAssets",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miMajorAssets",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "重大资产",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miHouseItems",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miHouseItems",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "家居物品",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miSecurityFeeRate",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miSecurityFeeRate",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "证券交易费率",
+            "Visible": false,
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miOtherProduct",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miOtherProduct",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "其它金融产品",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miDivide6",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miDivide6",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miCurrency",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miCurrency",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "币种与汇率",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miSavingRates",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miSavingRates",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "存款利率",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miDivide7",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miDivide7",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miTransactionNote",
+          "path": "MainForm/pmMainPopupMenu/miBaseData/miTransactionNote",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "常用备注",
+            "OnClick": "miInformationClick"
+          }
+        },
+        {
+          "component": "miPlan",
+          "path": "MainForm/pmMainPopupMenu/miPlan",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "计划提醒",
+            "Tag": -1
+          }
+        },
+        {
+          "component": "mmiFinancialCalendar",
+          "path": "MainForm/pmMainPopupMenu/miPlan/mmiFinancialCalendar",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "财务日历",
+            "OnClick": "mmiFinancialCalendarClick"
+          }
+        },
+        {
+          "component": "mmiPlan",
+          "path": "MainForm/pmMainPopupMenu/miPlan/mmiPlan",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "计划与提醒",
+            "OnClick": "mmiPlanClick"
+          }
+        },
+        {
+          "component": "mmiLimitRemind",
+          "path": "MainForm/pmMainPopupMenu/miPlan/mmiLimitRemind",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "限额提醒",
+            "OnClick": "mmiLimitRemindClick"
+          }
+        },
+        {
+          "component": "miTools",
+          "path": "MainForm/pmMainPopupMenu/miTools",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "财务工具",
+            "Tag": -1
+          }
+        },
+        {
+          "component": "mmiUpdateRate",
+          "path": "MainForm/pmMainPopupMenu/miTools/mmiUpdateRate",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "更新行情数据",
+            "OnClick": "mmiUpdateRateClick"
+          }
+        },
+        {
+          "component": "mmiImportJGD",
+          "path": "MainForm/pmMainPopupMenu/miTools/mmiImportJGD",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "导入股票交割单",
+            "OnClick": "mmiImportJGDClick"
+          }
+        },
+        {
+          "component": "miDivide8",
+          "path": "MainForm/pmMainPopupMenu/miTools/miDivide8",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiDiray",
+          "path": "MainForm/pmMainPopupMenu/miTools/mmiDiray",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "日记",
+            "OnClick": "mmiDirayClick"
+          }
+        },
+        {
+          "component": "miDivide9",
+          "path": "MainForm/pmMainPopupMenu/miTools/miDivide9",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiJRCalculator",
+          "path": "MainForm/pmMainPopupMenu/miTools/mmiJRCalculator",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "金融计算器",
+            "OnClick": "mmiJRCalculatorClick"
+          }
+        },
+        {
+          "component": "mmiCalculator",
+          "path": "MainForm/pmMainPopupMenu/miTools/mmiCalculator",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "Windows计算器",
+            "Tag": -1,
+            "OnClick": "mmiCalculatorClick"
+          }
+        },
+        {
+          "component": "miSettings",
+          "path": "MainForm/pmMainPopupMenu/miSettings",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "设置",
+            "Tag": -1
+          }
+        },
+        {
+          "component": "miSystemSettings",
+          "path": "MainForm/pmMainPopupMenu/miSettings/miSystemSettings",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "系统设置",
+            "OnClick": "miSystemSettingsClick"
+          }
+        },
+        {
+          "component": "miTransShortcutManagn",
+          "path": "MainForm/pmMainPopupMenu/miSettings/miTransShortcutManagn",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "快捷键设置",
+            "OnClick": "miTransShortcutManagnClick"
+          }
+        },
+        {
+          "component": "miDivide10",
+          "path": "MainForm/pmMainPopupMenu/miSettings/miDivide10",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiSync",
+          "path": "MainForm/pmMainPopupMenu/miSettings/mmiSync",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "同步设置",
+            "OnClick": "mmiSyncClick"
+          }
+        },
+        {
+          "component": "mmiRemoteNotificationSetting",
+          "path": "MainForm/pmMainPopupMenu/miSettings/mmiRemoteNotificationSetting",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "手机提醒设置",
+            "OnClick": "mmiRemoteNotificationSettingClick"
+          }
+        },
+        {
+          "component": "miModifySyncUserPassword",
+          "path": "MainForm/pmMainPopupMenu/miSettings/miModifySyncUserPassword",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "修改同步账号密码",
+            "Tag": -1,
+            "OnClick": "miModifySyncUserPasswordClick"
+          }
+        },
+        {
+          "component": "miDeleteSyncUserPassword",
+          "path": "MainForm/pmMainPopupMenu/miSettings/miDeleteSyncUserPassword",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "删除同步账号密码",
+            "OnClick": "miDeleteSyncUserPasswordClick"
+          }
+        },
+        {
+          "component": "miHelp",
+          "path": "MainForm/pmMainPopupMenu/miHelp",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "帮助",
+            "Tag": -1
+          }
+        },
+        {
+          "component": "miFAQ",
+          "path": "MainForm/pmMainPopupMenu/miHelp/miFAQ",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "财智8常见问题解答",
+            "Tag": -1,
+            "OnClick": "miFAQClick"
+          }
+        },
+        {
+          "component": "mmiHelp",
+          "path": "MainForm/pmMainPopupMenu/miHelp/mmiHelp",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "客户服务",
+            "OnClick": "mmiHelpClick"
+          }
+        },
+        {
+          "component": "miDivide11",
+          "path": "MainForm/pmMainPopupMenu/miHelp/miDivide11",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiSoftUpdate",
+          "path": "MainForm/pmMainPopupMenu/miHelp/mmiSoftUpdate",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "检查软件更新",
+            "Tag": -1,
+            "OnClick": "mmiSoftUpdateClick"
+          }
+        },
+        {
+          "component": "miDivide12",
+          "path": "MainForm/pmMainPopupMenu/miHelp/miDivide12",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiRegister",
+          "path": "MainForm/pmMainPopupMenu/miHelp/mmiRegister",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "软件许可",
+            "OnClick": "mmiRegisterClick"
+          }
+        },
+        {
+          "component": "mmiLastUseSerialNumber",
+          "path": "MainForm/pmMainPopupMenu/miHelp/mmiLastUseSerialNumber",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "最近使用的序列号",
+            "OnClick": "mmiLastUseSerialNumberClick"
+          }
+        },
+        {
+          "component": "miDivide13",
+          "path": "MainForm/pmMainPopupMenu/miHelp/miDivide13",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "mmiMHOnlineURL",
+          "path": "MainForm/pmMainPopupMenu/miHelp/mmiMHOnlineURL",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "访问财智在线理财",
+            "Tag": -1,
+            "OnClick": "mmiMHOnlineURLClick"
+          }
+        },
+        {
+          "component": "mmiSoftWareURL",
+          "path": "MainForm/pmMainPopupMenu/miHelp/mmiSoftWareURL",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "访问财智公司官网",
+            "Tag": -1,
+            "OnClick": "mmiSoftWareURLClick"
+          }
+        },
+        {
+          "component": "mmiAbout",
+          "path": "MainForm/pmMainPopupMenu/miHelp/mmiAbout",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "关于",
+            "OnClick": "mmiAboutClick"
+          }
+        },
+        {
+          "component": "miClose",
+          "path": "MainForm/pmMainPopupMenu/miClose",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "退出",
+            "Tag": -1,
+            "OnClick": "miCloseClick"
+          }
+        },
+        {
+          "component": "tmrShowLeftContent",
+          "path": "MainForm/tmrShowLeftContent",
+          "class": "TTimer",
+          "properties": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "tmrHideLeftContent",
+          "path": "MainForm/tmrHideLeftContent",
+          "class": "TTimer",
+          "properties": {
+            "Enabled": false
+          }
+        },
+        {
+          "component": "ADTimer",
+          "path": "MainForm/ADTimer",
+          "class": "TTimer",
+          "properties": {
+            "Enabled": false
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TCREDITCARDSTATISTICFRAME",
+      "domain": "信用卡账单导入",
+      "title": "",
+      "controls": [
+        {
+          "component": "BrowseGridBillDate",
+          "path": "CreditCardStatisticFrame/PnlBackGroud/PnlGrid/BrowseGrid/BrowseGridBillDate",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "账单记录时间段",
+            "FieldName": "BillDate"
+          }
+        },
+        {
+          "component": "BrowseGridNBillDate",
+          "path": "CreditCardStatisticFrame/PnlBackGroud/PnlGrid/BrowseGrid/BrowseGridNBillDate",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "账单日",
+            "FieldName": "NBillDate"
+          }
+        },
+        {
+          "component": "BrowseGridLastPayDate",
+          "path": "CreditCardStatisticFrame/PnlBackGroud/PnlGrid/BrowseGrid/BrowseGridLastPayDate",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "还款日",
+            "FieldName": "LastPayDate"
+          }
+        },
+        {
+          "component": "BrowseGridInc",
+          "path": "CreditCardStatisticFrame/PnlBackGroud/PnlGrid/BrowseGrid/BrowseGridInc",
+          "class": "TdxDBGridCurrencyColumn",
+          "properties": {
+            "Caption": "流入金额",
+            "FieldName": "Inc"
+          }
+        },
+        {
+          "component": "BrowseGridExp",
+          "path": "CreditCardStatisticFrame/PnlBackGroud/PnlGrid/BrowseGrid/BrowseGridExp",
+          "class": "TdxDBGridCurrencyColumn",
+          "properties": {
+            "Caption": "流出金额",
+            "FieldName": "Exp"
+          }
+        },
+        {
+          "component": "BrowseGridBillAmount",
+          "path": "CreditCardStatisticFrame/PnlBackGroud/PnlGrid/BrowseGrid/BrowseGridBillAmount",
+          "class": "TdxDBGridCurrencyColumn",
+          "properties": {
+            "Caption": "账单金额",
+            "FieldName": "BillAmount"
+          }
+        },
+        {
+          "component": "N8",
+          "path": "CreditCardStatisticFrame/pmRight/N8",
+          "class": "TMenuItem",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "MenuItem2",
+          "path": "CreditCardStatisticFrame/pmOperate/MenuItem2",
+          "class": "TMenuItem",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "miImport",
+          "path": "CreditCardStatisticFrame/pmOperate/miImport",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "导入",
+            "OnClick": "miImportClick"
+          }
+        },
+        {
+          "component": "miPartObjectList",
+          "path": "CreditCardStatisticFrame/pmAllOrPartObjectList/miPartObjectList",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "显示最近3期已出账单"
+          }
+        },
+        {
+          "component": "miAllObjectList",
+          "path": "CreditCardStatisticFrame/pmAllOrPartObjectList/miAllObjectList",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "显示所有已出账单"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TREPORTFM",
+      "domain": "报表导出",
+      "title": "ReportFm",
+      "controls": [
+        {
+          "component": "ReportFm",
+          "path": "ReportFm",
+          "class": "TReportFm",
+          "properties": {
+            "Caption": "ReportFm"
+          }
+        },
+        {
+          "component": "sbOption",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/sbOption",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "筛选|已更改",
+            "OnClick": "sbOptionClick"
+          }
+        },
+        {
+          "component": "btnReportOrChart",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnReportOrChart",
+          "class": "TRzBitBtn",
+          "properties": {
+            "Caption": "图表",
+            "OnClick": "btnReportOrChartClick"
+          }
+        },
+        {
+          "component": "btnOther",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnOther",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "操作",
+            "OnClick": "btnOtherClick"
+          }
+        },
+        {
+          "component": "tsReport",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/PageControl/tsReport",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "tsReport"
+          }
+        },
+        {
+          "component": "spTransList",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/PageControl/tsReport/PnlView/spTransList",
+          "class": "TRzSizePanel",
+          "properties": {
+            "Visible": false
+          }
+        },
+        {
+          "component": "btnCloseTransList",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/PageControl/tsReport/PnlView/spTransList/pnlClose/btnCloseTransList",
+          "class": "TMHBmpButton",
+          "properties": {
+            "OnClick": "btnCloseTransListClick"
+          }
+        },
+        {
+          "component": "pnlDataChangeHint",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/PageControl/tsReport/PnlView/spTransList/pnlDataChangeHint",
+          "class": "TRzPanel",
+          "properties": {
+            "Caption": "报表数据已更新，请按F5键刷新报表。",
+            "Visible": false
+          }
+        },
+        {
+          "component": "tsChart",
+          "path": "ReportFm/pnlChildClient/pnlChildClientArea/PageControl/tsChart",
+          "class": "TRzTabSheet",
+          "properties": {
+            "Caption": "tsChart"
+          }
+        },
+        {
+          "component": "miModify",
+          "path": "ReportFm/pmRightbtn/miModify",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "修改",
+            "OnClick": "miModifyClick"
+          }
+        },
+        {
+          "component": "miDelete",
+          "path": "ReportFm/pmRightbtn/miDelete",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "删除",
+            "OnClick": "miDeleteClick"
+          }
+        },
+        {
+          "component": "N1",
+          "path": "ReportFm/pmRightbtn/N1",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miExportToFile",
+          "path": "ReportFm/pmRightbtn/miExportToFile",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "导出到文件",
+            "OnClick": "miExportToFileClick"
+          }
+        },
+        {
+          "component": "miRptSave",
+          "path": "ReportFm/pmPrint/miRptSave",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "报表另存为",
+            "OnClick": "miRptSaveClick"
+          }
+        },
+        {
+          "component": "miRptDelete",
+          "path": "ReportFm/pmPrint/miRptDelete",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "删除报表",
+            "OnClick": "miRptDeleteClick"
+          }
+        },
+        {
+          "component": "miN1",
+          "path": "ReportFm/pmPrint/miN1",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miExport",
+          "path": "ReportFm/pmPrint/miExport",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "导出报表",
+            "Enabled": false,
+            "OnClick": "ActionExportRpt"
+          }
+        },
+        {
+          "component": "miPrint",
+          "path": "ReportFm/pmPrint/miPrint",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "打印预览",
+            "Enabled": false,
+            "OnClick": "ActionPrintRpt"
+          }
+        }
+      ]
+    },
+    {
+      "resource": "TWASTEBOOKFM",
+      "domain": "财务记录导出与附件入口",
+      "title": "财务记录",
+      "controls": [
+        {
+          "component": "WasteBookFm",
+          "path": "WasteBookFm",
+          "class": "TWasteBookFm",
+          "properties": {
+            "Caption": "财务记录",
+            "OnShow": "FormShow"
+          }
+        },
+        {
+          "component": "btnFind",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnFind",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "查找",
+            "Tag": 1,
+            "OnClick": "btnFindClick"
+          }
+        },
+        {
+          "component": "btnAction",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnAction",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "操作",
+            "Tag": 1,
+            "OnClick": "btnActionClick"
+          }
+        },
+        {
+          "component": "btnDataType",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnDataType",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "收支|流水",
+            "Tag": 1,
+            "OnClick": "btnDataTypeClick"
+          }
+        },
+        {
+          "component": "btnBatchOperation",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/pnlChildToolBar/btnBatchOperation",
+          "class": "TRzMenuButton",
+          "properties": {
+            "Caption": "批量操作",
+            "Tag": 1
+          }
+        },
+        {
+          "component": "Grid",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid",
+          "class": "TMHBrowseGrid",
+          "properties": {
+            "Tag": 2,
+            "OnDblClick": "actModifyExecute",
+            "OnKeyDown": "GridKeyDown"
+          }
+        },
+        {
+          "component": "GridTransID",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridTransID",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "FieldName": "TransID",
+            "Visible": false,
+            "Tag": -1
+          }
+        },
+        {
+          "component": "GridTransType",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridTransType",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "FieldName": "TransType",
+            "Visible": false,
+            "Tag": -1
+          }
+        },
+        {
+          "component": "GridCheck",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridCheck",
+          "class": "TdxDBGridCheckColumn",
+          "properties": {
+            "FieldName": "TransCheck",
+            "Tag": -1
+          }
+        },
+        {
+          "component": "GridRealTransDate",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridRealTransDate",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "真日期",
+            "FieldName": "TransDate",
+            "Visible": false,
+            "Tag": -1
+          }
+        },
+        {
+          "component": "GridTransDate",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridTransDate",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "日期",
+            "FieldName": "FakeTransDate"
+          }
+        },
+        {
+          "component": "GridTransName",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridTransName",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "活动类型",
+            "FieldName": "CategoryName"
+          }
+        },
+        {
+          "component": "GridInc",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridInc",
+          "class": "TdxDBGridCurrencyColumn",
+          "properties": {
+            "Caption": "流入",
+            "FieldName": "IncAmount"
+          }
+        },
+        {
+          "component": "GridExp",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridExp",
+          "class": "TdxDBGridCurrencyColumn",
+          "properties": {
+            "Caption": "流出",
+            "FieldName": "ExpAmount"
+          }
+        },
+        {
+          "component": "GridAccount",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridAccount",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "资产账户",
+            "FieldName": "AcctName"
+          }
+        },
+        {
+          "component": "GridTag",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridTag",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "标签",
+            "FieldName": "TransTheme",
+            "Tag": 100
+          }
+        },
+        {
+          "component": "GridDescription",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridDescription",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "备注",
+            "FieldName": "sDesc",
+            "Tag": 100
+          }
+        },
+        {
+          "component": "GridCurrencyName",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridCurrencyName",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "Caption": "币种",
+            "FieldName": "ObjName",
+            "Tag": 100
+          }
+        },
+        {
+          "component": "GridAccessories",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridAccessories",
+          "class": "TdxDBGridImageColumn",
+          "properties": {
+            "Caption": "附件",
+            "FieldName": "AccessoriesID",
+            "Tag": 100
+          }
+        },
+        {
+          "component": "GridIncLocal",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridIncLocal",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "FieldName": "IncLocal",
+            "Visible": false,
+            "Tag": -1
+          }
+        },
+        {
+          "component": "GridExpLocal",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridExpLocal",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "FieldName": "ExpLocal",
+            "Visible": false,
+            "Tag": -1
+          }
+        },
+        {
+          "component": "GridTransAmount",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridTransAmount",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "FieldName": "TransAmount",
+            "Visible": false,
+            "Tag": -1
+          }
+        },
+        {
+          "component": "GridUserMark",
+          "path": "WasteBookFm/pnlChildClient/pnlChildClientArea/Grid/GridUserMark",
+          "class": "TdxDBGridColumn",
+          "properties": {
+            "FieldName": "UserMark",
+            "Visible": false,
+            "Tag": -1
+          }
+        },
+        {
+          "component": "NSp1",
+          "path": "WasteBookFm/pmRightbtn/NSp1",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miBatchModePop",
+          "path": "WasteBookFm/pmRightbtn/miBatchModePop",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "批量操作模式",
+            "OnClick": "miBatchModeClick"
+          }
+        },
+        {
+          "component": "NSp3",
+          "path": "WasteBookFm/pmRightbtn/NSp3",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miCopyRec",
+          "path": "WasteBookFm/pmRightbtn/miCopyRec",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "复制记录",
+            "OnClick": "miCopyRecClick"
+          }
+        },
+        {
+          "component": "miPasteRec",
+          "path": "WasteBookFm/pmRightbtn/miPasteRec",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "粘贴记录",
+            "OnClick": "miPasteRecClick"
+          }
+        },
+        {
+          "component": "miPasteToday",
+          "path": "WasteBookFm/pmRightbtn/miPasteToday",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "粘贴记录到今天",
+            "OnClick": "miPasteTodayClick"
+          }
+        },
+        {
+          "component": "miUpTrans",
+          "path": "WasteBookFm/pmRightbtn/miUpTrans",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "同日期记录上移",
+            "OnClick": "miUpTransClick"
+          }
+        },
+        {
+          "component": "miDownTrans",
+          "path": "WasteBookFm/pmRightbtn/miDownTrans",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "同日期记录下移",
+            "OnClick": "miDownTransClick"
+          }
+        },
+        {
+          "component": "NSp2",
+          "path": "WasteBookFm/pmRightbtn/NSp2",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miRefund",
+          "path": "WasteBookFm/pmRightbtn/miRefund",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "退款",
+            "OnClick": "miRefundClick"
+          }
+        },
+        {
+          "component": "miIntoPlan",
+          "path": "WasteBookFm/pmRightbtn/miIntoPlan",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "转为计划",
+            "OnClick": "miIntoPlanClick"
+          }
+        },
+        {
+          "component": "miChangeTrans",
+          "path": "WasteBookFm/pmRightbtn/miChangeTrans",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "活动类型更改为",
+            "OnClick": "miChangeTransClick"
+          }
+        },
+        {
+          "component": "Nps3",
+          "path": "WasteBookFm/pmRightbtn/miChangeTrans/Nps3",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miSpear",
+          "path": "WasteBookFm/pmRightbtn/miSpear",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miAccessories",
+          "path": "WasteBookFm/pmRightbtn/miAccessories",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "查看附件",
+            "OnClick": "miAccessoriesClick"
+          }
+        },
+        {
+          "component": "mmiAddAccess",
+          "path": "WasteBookFm/pmRightbtn/miAccessories/mmiAddAccess",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "添加删除附件",
+            "OnClick": "mmiAddAccessClick"
+          }
+        },
+        {
+          "component": "actModify",
+          "path": "WasteBookFm/ActionList1/actModify",
+          "class": "TAction",
+          "properties": {
+            "Caption": "修改",
+            "Enabled": false,
+            "OnExecute": "actModifyExecute"
+          }
+        },
+        {
+          "component": "actDelete",
+          "path": "WasteBookFm/ActionList1/actDelete",
+          "class": "TAction",
+          "properties": {
+            "Caption": "删除",
+            "Enabled": false,
+            "OnExecute": "actDeleteExecute"
+          }
+        },
+        {
+          "component": "actFind",
+          "path": "WasteBookFm/ActionList1/actFind",
+          "class": "TAction",
+          "properties": {
+            "Caption": "查找",
+            "Enabled": false,
+            "OnExecute": "actFindExecute"
+          }
+        },
+        {
+          "component": "actExport",
+          "path": "WasteBookFm/ActionList1/actExport",
+          "class": "TAction",
+          "properties": {
+            "Caption": "导出到文件",
+            "OnExecute": "actExportExecute"
+          }
+        },
+        {
+          "component": "actPrint",
+          "path": "WasteBookFm/ActionList1/actPrint",
+          "class": "TAction",
+          "properties": {
+            "Caption": "打印",
+            "OnExecute": "actPrintExecute"
+          }
+        },
+        {
+          "component": "actFilter",
+          "path": "WasteBookFm/ActionList1/actFilter",
+          "class": "TAction",
+          "properties": {
+            "Caption": "筛选",
+            "OnExecute": "actFilterExecute"
+          }
+        },
+        {
+          "component": "actClearFilter",
+          "path": "WasteBookFm/ActionList1/actClearFilter",
+          "class": "TAction",
+          "properties": {
+            "Caption": "放弃筛选",
+            "OnExecute": "actClearFilterExecute"
+          }
+        },
+        {
+          "component": "GridDBQueryID",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryID",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "TransID"
+          }
+        },
+        {
+          "component": "GridDBQueryTransDate",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryTransDate",
+          "class": "TDateTimeField",
+          "properties": {
+            "FieldName": "TransDate"
+          }
+        },
+        {
+          "component": "GridDBQueryTransType",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryTransType",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "TransType"
+          }
+        },
+        {
+          "component": "GridDBQueryTransName",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryTransName",
+          "class": "TStringField",
+          "properties": {
+            "FieldName": "CategoryName"
+          }
+        },
+        {
+          "component": "GridDBQueryAmount",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryAmount",
+          "class": "TFloatField",
+          "properties": {
+            "FieldName": "TransAmount"
+          }
+        },
+        {
+          "component": "GridDBQueryAccount",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryAccount",
+          "class": "TStringField",
+          "properties": {
+            "FieldName": "AcctName"
+          }
+        },
+        {
+          "component": "GridDBQueryTheme",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryTheme",
+          "class": "TStringField",
+          "properties": {
+            "FieldName": "TransTheme"
+          }
+        },
+        {
+          "component": "GridDBQueryDescription",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryDescription",
+          "class": "TStringField",
+          "properties": {
+            "FieldName": "sDesc"
+          }
+        },
+        {
+          "component": "GridDBQueryAccessoriesID",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryAccessoriesID",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "AccessoriesID"
+          }
+        },
+        {
+          "component": "GridDBQueryObjName",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryObjName",
+          "class": "TStringField",
+          "properties": {
+            "FieldName": "ObjName"
+          }
+        },
+        {
+          "component": "GridDBQueryCateID",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryCateID",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "CateID"
+          }
+        },
+        {
+          "component": "GridDBQueryCType",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryCType",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "CType"
+          }
+        },
+        {
+          "component": "GridDBQueryAcctNo1",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryAcctNo1",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "AcctNo1"
+          }
+        },
+        {
+          "component": "GridDBQueryAcctNo2",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryAcctNo2",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "AcctNo2"
+          }
+        },
+        {
+          "component": "GridDBQueryStateID",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryStateID",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "StateID"
+          }
+        },
+        {
+          "component": "GridDBQueryTransObjectID",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryTransObjectID",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "TransObjectID"
+          }
+        },
+        {
+          "component": "GridDBQueryIncAmount",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryIncAmount",
+          "class": "TFloatField",
+          "properties": {
+            "FieldName": "IncAmount"
+          }
+        },
+        {
+          "component": "GridDBQueryExpAmount",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryExpAmount",
+          "class": "TFloatField",
+          "properties": {
+            "FieldName": "ExpAmount"
+          }
+        },
+        {
+          "component": "GridDBQueryIncCurrency",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryIncCurrency",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "IncCurrency"
+          }
+        },
+        {
+          "component": "GridDBQueryExpCurrency",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryExpCurrency",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "ExpCurrency"
+          }
+        },
+        {
+          "component": "GridDBQueryCreateTime",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryCreateTime",
+          "class": "TFloatField",
+          "properties": {
+            "FieldName": "CreateTime"
+          }
+        },
+        {
+          "component": "GridDBQueryFakeTransDate",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryFakeTransDate",
+          "class": "TStringField",
+          "properties": {
+            "FieldName": "FakeTransDate"
+          }
+        },
+        {
+          "component": "GridDBQueryIncLocal",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryIncLocal",
+          "class": "TFloatField",
+          "properties": {
+            "FieldName": "IncLocal"
+          }
+        },
+        {
+          "component": "GridDBQueryExpLocal",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryExpLocal",
+          "class": "TFloatField",
+          "properties": {
+            "FieldName": "ExpLocal"
+          }
+        },
+        {
+          "component": "GridDBQueryTransCheck",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryTransCheck",
+          "class": "TBooleanField",
+          "properties": {
+            "FieldName": "TransCheck"
+          }
+        },
+        {
+          "component": "GridDBQueryUserMark",
+          "path": "WasteBookFm/GridDBQuery/GridDBQueryUserMark",
+          "class": "TIntegerField",
+          "properties": {
+            "FieldName": "UserMark"
+          }
+        },
+        {
+          "component": "miN5",
+          "path": "WasteBookFm/pmActive/miN5",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miReplaceCategory",
+          "path": "WasteBookFm/pmActive/miReplaceCategory",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "替换收支项目",
+            "OnClick": "miReplaceCategoryClick"
+          }
+        },
+        {
+          "component": "N12",
+          "path": "WasteBookFm/pmActive/N12",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miGroup",
+          "path": "WasteBookFm/pmActive/miGroup",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "记录分组显示",
+            "OnClick": "miGroupClick"
+          }
+        },
+        {
+          "component": "miBatchMode",
+          "path": "WasteBookFm/pmActive/miBatchMode",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "批量操作模式",
+            "OnClick": "miBatchModeClick"
+          }
+        },
+        {
+          "component": "miN1",
+          "path": "WasteBookFm/pmActive/miN1",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "N3",
+          "path": "WasteBookFm/pmActive/N3",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "N7",
+          "path": "WasteBookFm/pmActive/N7",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "设为软件首页",
+            "OnClick": "N7Click"
+          }
+        },
+        {
+          "component": "miSetTag",
+          "path": "WasteBookFm/pmBatchOperation/miSetTag",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "设置标签",
+            "OnClick": "miSetTagClick"
+          }
+        },
+        {
+          "component": "miSetDescription",
+          "path": "WasteBookFm/pmBatchOperation/miSetDescription",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "设置备注",
+            "OnClick": "miSetDescriptionClick"
+          }
+        },
+        {
+          "component": "N1",
+          "path": "WasteBookFm/pmBatchOperation/N1",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "-"
+          }
+        },
+        {
+          "component": "miQuitBatchMode",
+          "path": "WasteBookFm/pmBatchOperation/miQuitBatchMode",
+          "class": "TMenuItem",
+          "properties": {
+            "Caption": "退出批量操作模式",
+            "OnClick": "miQuitBatchModeClick"
+          }
+        }
+      ]
+    }
+  ]
+}

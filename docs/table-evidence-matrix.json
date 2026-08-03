@@ -1,0 +1,954 @@
+[
+  {
+    "table": "TBAcctDetail",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29869,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAcctDetail_AcctID",
+    "domain": "accounts",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 70259,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAcctGroup",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29808,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAcctGroupType",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9148570,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAcctGroup_PK",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 90220,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBAcctRelation",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29742,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAcctTransFee",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9128379,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAcctType",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29620,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAssetAcct",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29559,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBAssetType",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29495,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBBankFiscal",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9158348,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBBudget",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29435,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBBudgetI",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 192715,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBBudgetItem",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 192715,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBBudgetItem_INDEX_BudgetID_CategoryID_AmountBeginDate",
+    "domain": "planning",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 192715,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBBudgetItem_PK",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 192770,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBCategory",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29370,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBCategoryStored",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9129322,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBCategory_PK",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 201108,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBCreditCardAcct",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29304,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBCurrency",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29243,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBCurrency_CashOrBill4IDX_TBCurrency_ChineseName4IDX_TBCurrenc",
+    "domain": "master_data",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 233936,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBCurrency_TransObjID",
+    "domain": "master_data",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 234016,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBCurrency_uuid",
+    "domain": "master_data",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 234042,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBCurrentAcct",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29177,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBCustom",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29117,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBDebtAcct",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9129721,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBDebtCAcct",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 29051,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBDebtInvestmentAcct",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 28978,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBDebtObject",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 28914,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBDebtObject_PK",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 330187,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBDebtRate",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 28851,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBDepositAcct",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9130120,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBDiary",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 364395,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFPAssetPurchasePlan",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 364320,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFPAssetPurchasePlan_PK",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 379269,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBFPExpensesInformation",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 364244,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFPExpensesInformation_PK",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 385259,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBFPKeyValue",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 364177,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFinancingContract",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9191157,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFuturesContractObj",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 364104,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFuturesContractObj_Code",
+    "domain": "investment_assets",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 403723,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFuturesContractObj_IsBuy",
+    "domain": "investment_assets",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 403753,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFuturesContractObj_PKVTBFuturesContractObj_UNIQUEINDEX_Code_",
+    "domain": "investment_assets",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 403780,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBFuturesGoods",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 416004,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBFuturesGoods_PKBTBFuturesGoods_UNIQUEINDEX_EnName",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 416004,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBGoalAcctRelation",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 364031,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBGoalSetting",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363966,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBHistory",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9130652,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBInstallment",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363898,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBInsure",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363840,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBInsureAcctInfo",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 469348,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBInsureAcctInfoCSTR",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 469348,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBInsure_PK",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 461174,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBInventory",
+    "domain": "other",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363774,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBInventory_TransDate",
+    "domain": "other",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 475540,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBLifeTheme",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363710,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBLifeTheme_uuid",
+    "domain": "master_data",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 501935,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBMarginAcct",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9210174,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBMemoTemp",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363645,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBMortgage_PK",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 151831,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBObjectType",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363583,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBOldStatement",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9131462,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBOldTransaction",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9131595,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBOpenFund",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9131728,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPayModeHistory",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363512,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPayModeHistory_AcctID",
+    "domain": "debt_credit",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 1789551,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPayModeHistory_ChangeDate",
+    "domain": "debt_credit",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 1789579,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPayModeHistory_PK",
+    "domain": "debt_credit",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 1789607,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBPerson",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 1869083,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPerson_1",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9140158,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPerson_2",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9140442,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPerson_PK",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 1869083,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBPlanInventory",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363443,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPlanStateTheme",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9217124,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPlanStatement",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363374,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPlanStatement6",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363374,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPlanTransTheme",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363236,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPlanTransaction",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363305,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPracObj",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 1959237,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPracObj_PK",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 1959237,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBPracType",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363176,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPreciousMetals",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362947,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPreciousMetalsTDAcct",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9228836,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPreciousMetalsTDContractObj",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 363023,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPreciousMetalsTDContractObj_CodeNIDX_TBPreciousMetalsTDContr",
+    "domain": "investment_assets",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 1996061,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPreciousMetalsTDContractObj_PKhTBPreciousMetalsTDContractObj",
+    "domain": "investment_assets",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 1996136,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBPreciousMetalsTDGoods",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362947,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBPreciousMetalsTDGoods_PKTTBPreciousMetalsTDGoods_UNIQUEINDEX",
+    "domain": "investment_assets",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 2008287,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBRemindSetting",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9132526,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBRemindTypeSet",
+    "domain": "planning",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362880,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBReportSettings",
+    "domain": "sync_system",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362811,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBReportSettings_PK",
+    "domain": "sync_system",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 2036853,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBSchedule",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9132792,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSectIndex",
+    "domain": "other",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9132925,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSecuPrice",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362542,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSecuType",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362618,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSecurities",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362744,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSecuritiesLendingContract",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9228632,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSecurityAcct",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 362678,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSecurityAcct_PK",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4069272,
+    "is_pk_or_index_like": true
+  },
+  {
+    "table": "TBStateTheme",
+    "domain": "master_data",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9228502,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBStatement",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9133602,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBStatement6",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9228567,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBStdAcct",
+    "domain": "accounts",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369694,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBStdPrice",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369631,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBStdPriceOther",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9228434,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBStdTransObject",
+    "domain": "investment_assets",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369560,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBStdTransObject_ObjName",
+    "domain": "investment_assets",
+    "in_shared_model_core": false,
+    "also_in_inner_db": false,
+    "first_offset_utf16": 5245126,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSyncDefaultData",
+    "domain": "sync_system",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369496,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSyncRecord",
+    "domain": "sync_system",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9228369,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBSystem",
+    "domain": "sync_system",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369433,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBTemplate",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369370,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBTransFee",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 28776,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBTransTheme",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 9228241,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBTransType",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369238,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBTransaction",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 1927140,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBTransactionB",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 4369301,
+    "is_pk_or_index_like": false
+  },
+  {
+    "table": "TBTransaction_PK",
+    "domain": "transactions",
+    "in_shared_model_core": true,
+    "also_in_inner_db": true,
+    "first_offset_utf16": 1927140,
+    "is_pk_or_index_like": true
+  }
+]

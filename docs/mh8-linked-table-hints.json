@@ -1,0 +1,41 @@
+{
+  "connect_block": [
+    "Connect\u0010Database\u0014DateCreate\u0014DateUpdate",
+    "Connect\bIcon\u0010HideFlag\buuidރ\u0000\u0000！擿￿＀旿￿＀淿￿＃Ͽ￿＀￿頂\u0003Λ\u0000\u0000\u0000\u0000\u0000ރ\u0000",
+    "Connection File.Default Connection File\u0012Row Limit\u001eANSI Query Mode®\u0000\u0000\u0006\u0000\u0000\u0012਀\u0000",
+    "Connect\u0000\u0000\u0000粮퇏䬞熁哉ᒣ\u0007\u0000༁ꄯ瘚䱧뒭捶돡廡Icon\u0000\u0000\u0000Ѽ遳銫䅇늿榽沌┥\u0007\u0000༁ꄯ瘚䱧뒭捶돡廡HideFlag\u0000\u0000\u0000㐹拤髎䉓粷貦푺趄\u0007\u0000༁ꄯ瘚䱧뒭捶돡廡uuid\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\f\u0000\u0003\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\tȀ\u0004\u0001᠂ĀဉကĀ⼏᪡杶굌皴硞\u0000Ā਀\u0000Ѐ䤀䐀ऀĀԁĀ＀&ਁ\u0000\u001e唯一标识符 标识 人员/机构表\f̀\u0006\u0004￿￿\f̀\u0007\u0004\u0000\u0000\tĀ\b\u0001᠀Āဉက伀棆쑾苙땎駻媱鏘\u0000Ā฀\u0000ࠀ吀礀瀀攀ऀĀԁĀĀ ਁ\u0000\u0018类型 属于 人员/机构表\f̀\u0006\u0004￿￿\f̀\u0007\u0004\u0000\u0000\tĀ\b\u0001ऀĀंĀ＀",
+    "Connect\f̀\u0006\u0004￿￿\f̀\u0007\u0004\u0000\u0000\tĀ\b\u0001∀Ā"
+  ],
+  "database_block": [
+    "Database\u0014DateCreate\u0014DateUpdate"
+  ],
+  "linked_tables": [
+    "TBTransFee",
+    "TBCurrency",
+    "TBCategory",
+    "TBCategory",
+    "TBCurrency",
+    "TBCurrency",
+    "TBCurrency",
+    "TBCurrency",
+    "TBCurrency",
+    "HBRate",
+    "TBSecuPrice",
+    "TBSecuType",
+    "TBObjectType",
+    "HBRate",
+    "TBTransType",
+    "TBCategory",
+    "TBCategory",
+    "TBCurrency",
+    "TBObjectType",
+    "TBSecuPrice",
+    "TBSecuType",
+    "TBTransType",
+    "TBCurrency",
+    "TBObjectType",
+    "TBSecuType",
+    "TBTransType",
+    "TBTransType"
+  ]
+}

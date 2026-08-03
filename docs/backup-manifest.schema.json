@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://finance-own.local/schemas/backup-manifest.schema.json",
+  "title": "Finance Own 备份清单",
+  "description": "描述一致 SQLite 快照及其受管附件；不得包含源机器绝对路径、密码、令牌或其它凭据。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "backup_id",
+    "created_at",
+    "application_version",
+    "ledger",
+    "archive",
+    "attachments"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "清单协议版本，与 SQLite user_version 分开演进。"
+    },
+    "backup_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "一次备份的稳定标识。"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "一致快照完成并通过校验的时间。"
+    },
+    "application_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "生成备份的 Finance Own 应用版本。"
+    },
+    "ledger": {
+      "$ref": "#/$defs/ledger_snapshot"
+    },
+    "archive": {
+      "$ref": "#/$defs/archive"
+    },
+    "attachments": {
+      "type": "array",
+      "description": "包含在备份中的受管附件；路径相对于备份根目录。",
+      "items": {
+        "$ref": "#/$defs/file_entry"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?![\\\\/])(?!.*(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)).+",
+      "description": "相对于备份根目录的路径；禁止盘符、根路径和 .. 路径段。"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "file_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relative_path", "byte_size", "sha256"],
+      "properties": {
+        "relative_path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "ledger_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ledger_id",
+        "display_name",
+        "snapshot_file",
+        "sqlite_user_version",
+        "byte_size",
+        "sha256",
+        "snapshot_method",
+        "integrity_check",
+        "foreign_key_violations"
+      ],
+      "properties": {
+        "ledger_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "snapshot_file": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "sqlite_user_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "byte_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "snapshot_method": {
+          "type": "string",
+          "enum": ["online_backup", "vacuum_into"]
+        },
+        "integrity_check": {
+          "type": "string",
+          "const": "ok"
+        },
+        "foreign_key_violations": {
+          "type": "integer",
+          "const": 0
+        }
+      }
+    },
+    "archive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "compression", "attachments_included"],
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["directory", "zip"]
+        },
+        "compression": {
+          "type": "string",
+          "enum": ["none", "deflate", "zstd"]
+        },
+        "attachments_included": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "format": {
+                "const": "directory"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "compression": {
+                "const": "none"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

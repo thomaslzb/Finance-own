@@ -1,0 +1,554 @@
+[
+  {
+    "label": "贵金属",
+    "offset": 147150
+  },
+  {
+    "label": "第三方储值",
+    "offset": 147197
+  },
+  {
+    "label": "待摊费用",
+    "offset": 147223
+  },
+  {
+    "label": "应收款",
+    "offset": 147246
+  },
+  {
+    "label": "银行理财产品",
+    "offset": 147269
+  },
+  {
+    "label": "重大资产",
+    "offset": 147363
+  },
+  {
+    "label": "定期",
+    "offset": 147386
+  },
+  {
+    "label": "活期",
+    "offset": 147408
+  },
+  {
+    "label": "应付款",
+    "offset": 167597
+  },
+  {
+    "label": "集合理财",
+    "offset": 167674
+  },
+  {
+    "label": "贵金属",
+    "offset": 167701
+  },
+  {
+    "label": "国债",
+    "offset": 167723
+  },
+  {
+    "label": "货币基金",
+    "offset": 167744
+  },
+  {
+    "label": "上市证券",
+    "offset": 167770
+  },
+  {
+    "label": "待摊费用",
+    "offset": 167795
+  },
+  {
+    "label": "应收款",
+    "offset": 167818
+  },
+  {
+    "label": "实物资产",
+    "offset": 167865
+  },
+  {
+    "label": "现金",
+    "offset": 167890
+  },
+  {
+    "label": "重大资产",
+    "offset": 534245
+  },
+  {
+    "label": "银行理财产品",
+    "offset": 534266
+  },
+  {
+    "label": "非上市债券",
+    "offset": 534280
+  },
+  {
+    "label": "国债",
+    "offset": 2474148
+  },
+  {
+    "label": "国债",
+    "offset": 2503537
+  },
+  {
+    "label": "国债",
+    "offset": 2503560
+  },
+  {
+    "label": "国债",
+    "offset": 2973299
+  },
+  {
+    "label": "国债",
+    "offset": 2994084
+  },
+  {
+    "label": "国债",
+    "offset": 3111522
+  },
+  {
+    "label": "国债",
+    "offset": 3114419
+  },
+  {
+    "label": "国债",
+    "offset": 3114442
+  },
+  {
+    "label": "国债",
+    "offset": 3114465
+  },
+  {
+    "label": "国债",
+    "offset": 3114488
+  },
+  {
+    "label": "国债",
+    "offset": 3114511
+  },
+  {
+    "label": "货币基金",
+    "offset": 5476205
+  },
+  {
+    "label": "国债",
+    "offset": 5767983
+  },
+  {
+    "label": "国债",
+    "offset": 5771829
+  },
+  {
+    "label": "国债",
+    "offset": 5794431
+  },
+  {
+    "label": "国债",
+    "offset": 5794468
+  },
+  {
+    "label": "国债",
+    "offset": 5794486
+  },
+  {
+    "label": "国债",
+    "offset": 5796385
+  },
+  {
+    "label": "国债",
+    "offset": 5796422
+  },
+  {
+    "label": "国债",
+    "offset": 5796459
+  },
+  {
+    "label": "国债",
+    "offset": 5796496
+  },
+  {
+    "label": "国债",
+    "offset": 5796533
+  },
+  {
+    "label": "国债",
+    "offset": 5796570
+  },
+  {
+    "label": "国债",
+    "offset": 5796607
+  },
+  {
+    "label": "国债",
+    "offset": 5796644
+  },
+  {
+    "label": "国债",
+    "offset": 5796681
+  },
+  {
+    "label": "国债",
+    "offset": 5796718
+  },
+  {
+    "label": "国债",
+    "offset": 5796755
+  },
+  {
+    "label": "国债",
+    "offset": 5796792
+  },
+  {
+    "label": "国债",
+    "offset": 5796829
+  },
+  {
+    "label": "国债",
+    "offset": 5796866
+  },
+  {
+    "label": "国债",
+    "offset": 5796903
+  },
+  {
+    "label": "国债",
+    "offset": 5796940
+  },
+  {
+    "label": "国债",
+    "offset": 5796977
+  },
+  {
+    "label": "国债",
+    "offset": 5797014
+  },
+  {
+    "label": "国债",
+    "offset": 5797051
+  },
+  {
+    "label": "国债",
+    "offset": 5797088
+  },
+  {
+    "label": "国债",
+    "offset": 5797125
+  },
+  {
+    "label": "国债",
+    "offset": 5797162
+  },
+  {
+    "label": "国债",
+    "offset": 5797199
+  },
+  {
+    "label": "国债",
+    "offset": 5797236
+  },
+  {
+    "label": "国债",
+    "offset": 5797273
+  },
+  {
+    "label": "国债",
+    "offset": 5797310
+  },
+  {
+    "label": "国债",
+    "offset": 5797347
+  },
+  {
+    "label": "国债",
+    "offset": 5797384
+  },
+  {
+    "label": "国债",
+    "offset": 5797421
+  },
+  {
+    "label": "国债",
+    "offset": 5797458
+  },
+  {
+    "label": "国债",
+    "offset": 5797495
+  },
+  {
+    "label": "国债",
+    "offset": 5797532
+  },
+  {
+    "label": "国债",
+    "offset": 5797569
+  },
+  {
+    "label": "国债",
+    "offset": 5797606
+  },
+  {
+    "label": "国债",
+    "offset": 5797643
+  },
+  {
+    "label": "国债",
+    "offset": 5797680
+  },
+  {
+    "label": "国债",
+    "offset": 5797717
+  },
+  {
+    "label": "国债",
+    "offset": 5797754
+  },
+  {
+    "label": "国债",
+    "offset": 5797791
+  },
+  {
+    "label": "国债",
+    "offset": 5797828
+  },
+  {
+    "label": "国债",
+    "offset": 5797865
+  },
+  {
+    "label": "国债",
+    "offset": 5797902
+  },
+  {
+    "label": "国债",
+    "offset": 5797939
+  },
+  {
+    "label": "国债",
+    "offset": 5797976
+  },
+  {
+    "label": "国债",
+    "offset": 5798013
+  },
+  {
+    "label": "国债",
+    "offset": 5798785
+  },
+  {
+    "label": "国债",
+    "offset": 5798822
+  },
+  {
+    "label": "国债",
+    "offset": 5798859
+  },
+  {
+    "label": "国债",
+    "offset": 5798896
+  },
+  {
+    "label": "国债",
+    "offset": 5798933
+  },
+  {
+    "label": "国债",
+    "offset": 5798970
+  },
+  {
+    "label": "国债",
+    "offset": 5799007
+  },
+  {
+    "label": "国债",
+    "offset": 5799044
+  },
+  {
+    "label": "国债",
+    "offset": 5799081
+  },
+  {
+    "label": "国债",
+    "offset": 5799118
+  },
+  {
+    "label": "国债",
+    "offset": 5799155
+  },
+  {
+    "label": "国债",
+    "offset": 5799192
+  },
+  {
+    "label": "国债",
+    "offset": 5799229
+  },
+  {
+    "label": "国债",
+    "offset": 5799266
+  },
+  {
+    "label": "国债",
+    "offset": 5799303
+  },
+  {
+    "label": "国债",
+    "offset": 5799340
+  },
+  {
+    "label": "国债",
+    "offset": 5799377
+  },
+  {
+    "label": "国债",
+    "offset": 5799414
+  },
+  {
+    "label": "国债",
+    "offset": 5799451
+  },
+  {
+    "label": "国债",
+    "offset": 5799488
+  },
+  {
+    "label": "国债",
+    "offset": 5799525
+  },
+  {
+    "label": "国债",
+    "offset": 5799562
+  },
+  {
+    "label": "国债",
+    "offset": 5799599
+  },
+  {
+    "label": "国债",
+    "offset": 5799636
+  },
+  {
+    "label": "国债",
+    "offset": 5799673
+  },
+  {
+    "label": "国债",
+    "offset": 5799710
+  },
+  {
+    "label": "国债",
+    "offset": 5799747
+  },
+  {
+    "label": "国债",
+    "offset": 5799784
+  },
+  {
+    "label": "国债",
+    "offset": 5799821
+  },
+  {
+    "label": "国债",
+    "offset": 5799858
+  },
+  {
+    "label": "国债",
+    "offset": 5799895
+  },
+  {
+    "label": "国债",
+    "offset": 5799932
+  },
+  {
+    "label": "国债",
+    "offset": 5799969
+  },
+  {
+    "label": "国债",
+    "offset": 5800005
+  },
+  {
+    "label": "国债",
+    "offset": 5800041
+  },
+  {
+    "label": "国债",
+    "offset": 5800077
+  },
+  {
+    "label": "国债",
+    "offset": 5800113
+  },
+  {
+    "label": "国债",
+    "offset": 5800150
+  },
+  {
+    "label": "国债",
+    "offset": 5800187
+  },
+  {
+    "label": "国债",
+    "offset": 5800224
+  },
+  {
+    "label": "国债",
+    "offset": 5800261
+  },
+  {
+    "label": "国债",
+    "offset": 6484813
+  },
+  {
+    "label": "国债",
+    "offset": 6549413
+  },
+  {
+    "label": "国债",
+    "offset": 6549487
+  },
+  {
+    "label": "国债",
+    "offset": 6549561
+  },
+  {
+    "label": "国债",
+    "offset": 6549672
+  },
+  {
+    "label": "国债",
+    "offset": 6612157
+  },
+  {
+    "label": "国债",
+    "offset": 6615238
+  },
+  {
+    "label": "国债",
+    "offset": 6615275
+  },
+  {
+    "label": "国债",
+    "offset": 6615312
+  },
+  {
+    "label": "贵金属",
+    "offset": 9121689
+  },
+  {
+    "label": "贵金属",
+    "offset": 9138526
+  },
+  {
+    "label": "贵金属",
+    "offset": 9138570
+  },
+  {
+    "label": "贵金属",
+    "offset": 9138614
+  },
+  {
+    "label": "外汇",
+    "offset": 9254864
+  }
+]

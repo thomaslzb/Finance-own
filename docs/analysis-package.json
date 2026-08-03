@@ -1,0 +1,1980 @@
+{
+  "generated_on": "2026-08-03",
+  "summary": {
+    "feature_counts": {
+      "verified": 51,
+      "high_confidence": 184,
+      "pending": 10
+    },
+    "documents": 158,
+    "runtime_form_coverage": {
+      "runtime_forms": 460,
+      "classified_forms": 460,
+      "unclassified_forms": 0,
+      "business_surfaces": 400,
+      "embedded_indirect_surfaces": 37,
+      "internal_or_experimental": 2,
+      "technical_support": 21,
+      "commands": 1407,
+      "capability_signals": 1822
+    },
+    "runtime_form_composition": {
+      "serialized_occurrences": 108,
+      "logical_composition_links": 107,
+      "composed_resources": 86,
+      "multi_parent_resources": 10,
+      "embedded_surfaces": 37,
+      "embedded_surfaces_with_parent": 37,
+      "unresolved_embedded_surfaces": 0
+    },
+    "runtime_internal_surfaces": {
+      "experimental_surfaces": 1,
+      "internal_diagnostics": 1,
+      "technical_helpers": 1,
+      "calculator_edits": 429,
+      "calculator_edit_forms": 160,
+      "web_browsers": 78,
+      "web_browser_forms": 43,
+      "external_dfm_entry_clues": 1
+    },
+    "runtime_method_evidence": {
+      "target_classes": 4,
+      "published_methods": 31,
+      "named_routines": 19,
+      "console_command_classes": 25,
+      "focused_strings": 19
+    },
+    "runtime_event_handler_evidence": {
+      "event_bindings": 2332,
+      "unique_form_handlers": 2000,
+      "located_handlers": 1951,
+      "same_name_candidates": 8,
+      "unresolved_handlers": 41,
+      "resource_only_forms": 3,
+      "resource_only_handlers": 48,
+      "noop_handlers": 8
+    },
+    "runtime_event_command_dataflow": {
+      "commands": 2000,
+      "high_risk_candidates": 502,
+      "known_call_edges": 159,
+      "commands_with_strings": 436,
+      "unlocated_code_commands": 49,
+      "resource_only_commands": 48
+    },
+    "runtime_execution_queue": {
+      "batches": 20,
+      "forms": 460,
+      "actionable_commands": 1407,
+      "event_handlers": 2000,
+      "high_risk_events": 502,
+      "embedded_forms_with_hosts": 37,
+      "pending_forms": 0,
+      "partial_forms": 437,
+      "blocked_forms": 0,
+      "unreachable_forms": 6
+    },
+    "target_ui_consolidation": {
+      "legacy_forms": 460,
+      "target_sections": 11,
+      "target_surface_families": 40,
+      "actionable_commands": 1407,
+      "event_handlers": 2000,
+      "high_risk_events": 502,
+      "investment_source_forms": 197
+    },
+    "sqlite_domain_coverage": {
+      "entity_candidates": 53,
+      "tables": 63,
+      "views": 21,
+      "indexes": 56,
+      "adapter_artifacts": 2,
+      "status_counts": {
+        "implemented_truth": 24,
+        "adapter_boundary": 3,
+        "implemented_generic_truth": 10,
+        "implemented_contract_boundary": 8,
+        "transient_not_persisted": 4,
+        "implemented_input_projection": 4
+      },
+      "recommended_next_objects": 0
+    }
+  },
+  "features": [
+    {
+      "section": "1. 顶层工作区",
+      "status": "实测",
+      "name": "财务数据"
+    },
+    {
+      "section": "1. 顶层工作区",
+      "status": "实测",
+      "name": "财务报表"
+    },
+    {
+      "section": "1. 顶层工作区",
+      "status": "实测",
+      "name": "财务分析"
+    },
+    {
+      "section": "1. 顶层工作区",
+      "status": "高可信",
+      "name": "记账"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "新建账簿"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "打开账簿"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "关闭当前账簿"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "备份账簿"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "还原账簿"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "系统设置"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "快捷键管理"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "密码校验"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "密码修改"
+    },
+    {
+      "section": "2. 账本与系统",
+      "status": "高可信",
+      "name": "关于页"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "概况"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "财务记录"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "投资一览"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "标签"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "账户中心"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "账户组树结构"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "新增账户组"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "新增账户"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "所有账户类型筛选"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "按账户类型查看"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "底部资产/负债/净资产汇总"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "现金"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "活期（卡折）"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "定期"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "第三方储值"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "上市证券"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "开放式基金"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "外汇"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "重大资产"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "应付款"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "预收款"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "实测",
+      "name": "应收款"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "现金账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "活期账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "定期账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "第三方储值账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "外汇账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "证券账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "开放式基金账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "债权投资账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "国债/债券账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "货币理财账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "信用账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "双币信用账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "保险账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "社保账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "黄金账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "期货账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "融资融券账户向导"
+    },
+    {
+      "section": "3. 财务数据工作区",
+      "status": "高可信",
+      "name": "标准贵金属账户向导"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "日常收支类"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "资产负债类"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "投资类"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "日常收支表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "日常收支明细表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "账户日常收支表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "标签日常收支表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "两段时间收支对比表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "收支统计表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "收支走势图"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "月平均收支表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "现金流表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "资产负债表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "可用资金表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "债权债务表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "月资产走势图"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "高可信",
+      "name": "证券投资类报表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "高可信",
+      "name": "基金投资类报表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "高可信",
+      "name": "投资收益报表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "高可信",
+      "name": "投资表现统计报表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "高可信",
+      "name": "股票趋势报表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "高可信",
+      "name": "基金趋势报表"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "待验证",
+      "name": "投资类左侧具体子项页面截图"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "查询"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "筛选"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "操作"
+    },
+    {
+      "section": "4. 财务报表工作区",
+      "status": "实测",
+      "name": "日期范围选择"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "实测",
+      "name": "财务预算"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "实测",
+      "name": "财务诊断"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "实测",
+      "name": "财务规划"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "实测",
+      "name": "财务目标"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "实测",
+      "name": "预算空状态"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "实测",
+      "name": "新增预算入口"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "预算列表"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "创建预算"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "复制预算"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "编辑预算金额"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "编辑预算分类"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "财务诊断中心"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "待验证",
+      "name": "财务诊断真实页面内容"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "财务规划中心"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "规划基础信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "年收入信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "资产收入信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "资产支出信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "资产购置计划"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "每日支出信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "教育支出信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "其它收入信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "其它支出信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "支出调整信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "通货膨胀率信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "退休信息"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "年度数据输入"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "规划资产选择"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "待验证",
+      "name": "财务规划真实页面内容"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "目标中心"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "目标储蓄"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "高可信",
+      "name": "目标账户选择"
+    },
+    {
+      "section": "5. 财务分析工作区",
+      "status": "待验证",
+      "name": "财务目标真实页面内容"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "收入录入"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "支出录入"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "转账录入"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "现金流水"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "活期流水"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "第三方储值流水"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "流水账/日记账"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "交易模板"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "转账模板"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "交易计划"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "转账计划"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "高可信",
+      "name": "过滤/查找/日期范围"
+    },
+    {
+      "section": "6. 记账工作区",
+      "status": "已确认结构",
+      "name": "记账动态菜单、页面跳转和真实写入结果待验证"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "债权债务流水"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "债权债务统计"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "借入"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "借出"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "收款"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "还款"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "坏账"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "债转股/权益互换"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "利率设置"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "信用卡流水"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "信用卡统计"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "信用提醒"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "账单日/还款日管理"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "应付款视图"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "应付款预支/高级处理"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "应付款资金流转"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "应收款视图"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "预付费用"
+    },
+    {
+      "section": "7. 债权债务与信用",
+      "status": "高可信",
+      "name": "预付费用收支联动"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "外汇流水"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "外汇统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "外汇兑换"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "汇兑转账"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "证券列表"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "普通买入"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "市价买入"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "委托买入"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "卖出"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "分红"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "利息"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "配额/配售"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "证券统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "证券提醒"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "证券代码转换"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "新股关联记录"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "开放式基金列表"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "申购"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "赎回"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "转换"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "红利再投"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "利息"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "基金统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "基金提醒"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "定期流水"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "定期统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "到期处理"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "货币/金融产品列表"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "买入"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "赎回"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "到期"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "理财统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "国债/债券列表"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "买入"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "卖出"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "提前支取"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "到期"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "利息"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "期货列表"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "期货买入/卖出"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "期货统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "黄金列表"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "黄金买入/卖出"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "黄金统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "标准贵金属列表"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "标准贵金属买入/卖出"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "标准贵金属统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "融资"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "融券"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "利息还款"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "融资融券统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "保险流水"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "缴费"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "领取"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "保费转入"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "保费转出"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "现金价值维护"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "分红"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "结清/结束"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "社保流水"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "社保统计"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "重大资产买入"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "重大资产变现"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "重大资产增值"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "重大资产投资"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "重大资产其它费用"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "重大资产价格维护"
+    },
+    {
+      "section": "8. 投资与扩展资产",
+      "status": "高可信",
+      "name": "重大资产估值管理"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "导入数据"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "导入分类"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "导入交割单"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "导入预览"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "导入主题"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "导出数据"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "附件对话框"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "支票簿/票据相关对话框"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "充值"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "工资收入专用录入"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "净价/清洁价格计算"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "计算器"
+    },
+    {
+      "section": "9. 导入导出与辅助工具",
+      "status": "高可信",
+      "name": "日记/日记单位相关页"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "登录"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "注册"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "同步用户数据"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "同步用户注册"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "在线获取数据"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "远程通知设置"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "更新验证码"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "财务日历"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "计划与提醒"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "限额提醒"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "今日提醒"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "日记入口"
+    },
+    {
+      "section": "10. 同步、提醒、外围入口",
+      "status": "高可信",
+      "name": "更新行情数据"
+    },
+    {
+      "section": "11. 仍未完全打通的关键缺口",
+      "status": "待验证",
+      "name": "`test.mh8` 正式表结构、样例数据与迁移映射"
+    },
+    {
+      "section": "11. 仍未完全打通的关键缺口",
+      "status": "待验证",
+      "name": "`记账` 动态菜单、页面跳转和真实写入结果"
+    },
+    {
+      "section": "11. 仍未完全打通的关键缺口",
+      "status": "待验证",
+      "name": "`财务分析` 诊断/规划/目标公式与真实结果"
+    },
+    {
+      "section": "11. 仍未完全打通的关键缺口",
+      "status": "待验证",
+      "name": "`财务报表` 精确公式、排序钻取、筛选边界、导出和打印结果"
+    },
+    {
+      "section": "11. 仍未完全打通的关键缺口",
+      "status": "待验证",
+      "name": "通用 XML 的完整导入语义、信用卡账单、备份压缩、附件目录、真实同步冲突/删除传播/断点续传、移动端结果和其余行情源协议"
+    }
+  ],
+  "docs_manifest": [
+    {
+      "name": "acceptance-criteria.md",
+      "size": 101767
+    },
+    {
+      "name": "access-com-behavior.md",
+      "size": 3082
+    },
+    {
+      "name": "analysis-dashboard.md",
+      "size": 4333
+    },
+    {
+      "name": "analysis-index.md",
+      "size": 21285
+    },
+    {
+      "name": "analysis-metrics.json",
+      "size": 1890
+    },
+    {
+      "name": "analysis-page-observations.md",
+      "size": 7395
+    },
+    {
+      "name": "auth-mechanism-evidence.md",
+      "size": 13315
+    },
+    {
+      "name": "auth-research-plan.md",
+      "size": 8712
+    },
+    {
+      "name": "auth-state-machine.md",
+      "size": 5805
+    },
+    {
+      "name": "backup-manifest-template.json",
+      "size": 815
+    },
+    {
+      "name": "backup-manifest.schema.json",
+      "size": 4261
+    },
+    {
+      "name": "bookkeeping-workspace-hypothesis.md",
+      "size": 5183
+    },
+    {
+      "name": "cache-and-package-investigation.md",
+      "size": 3384
+    },
+    {
+      "name": "cache-overlap-analysis.json",
+      "size": 43916
+    },
+    {
+      "name": "cache-semantics.md",
+      "size": 3835
+    },
+    {
+      "name": "code-type-mapping.md",
+      "size": 4954
+    },
+    {
+      "name": "coverage-status.md",
+      "size": 16943
+    },
+    {
+      "name": "cross-domain-dataflow-catalog.md",
+      "size": 16166
+    },
+    {
+      "name": "data-exchange-and-persistence-contract.md",
+      "size": 15414
+    },
+    {
+      "name": "data-page-observations.md",
+      "size": 90782
+    },
+    {
+      "name": "data-source-map.md",
+      "size": 7453
+    },
+    {
+      "name": "decision-log.md",
+      "size": 6564
+    },
+    {
+      "name": "domain-mapping-spec.md",
+      "size": 9355
+    },
+    {
+      "name": "dotnet-backend-structure.md",
+      "size": 7450
+    },
+    {
+      "name": "entity-catalog.md",
+      "size": 7820
+    },
+    {
+      "name": "entity-flow-map.md",
+      "size": 3314
+    },
+    {
+      "name": "execution-limitations.md",
+      "size": 2588
+    },
+    {
+      "name": "feature-catalog.md",
+      "size": 17332
+    },
+    {
+      "name": "feature-inventory.md",
+      "size": 9526
+    },
+    {
+      "name": "feature-registry.json",
+      "size": 8886
+    },
+    {
+      "name": "field-semantic-evidence.md",
+      "size": 3510
+    },
+    {
+      "name": "final-synthesis.md",
+      "size": 6155
+    },
+    {
+      "name": "flutter-dotnet-interface-architecture.md",
+      "size": 7462
+    },
+    {
+      "name": "flutter-frontend-structure.md",
+      "size": 7839
+    },
+    {
+      "name": "function-matrix.md",
+      "size": 11935
+    },
+    {
+      "name": "functional-audit-checklist.md",
+      "size": 17642
+    },
+    {
+      "name": "functional-ledger.md",
+      "size": 53320
+    },
+    {
+      "name": "implementation-backlog.md",
+      "size": 22210
+    },
+    {
+      "name": "inner-table-field-map-summary.md",
+      "size": 3978
+    },
+    {
+      "name": "inner-table-field-map.json",
+      "size": 5633
+    },
+    {
+      "name": "investment-cache-type-stats.json",
+      "size": 11048
+    },
+    {
+      "name": "linked-table-evidence.md",
+      "size": 3003
+    },
+    {
+      "name": "local-database-selection.md",
+      "size": 14443
+    },
+    {
+      "name": "local-storage-and-ledger-architecture.md",
+      "size": 8287
+    },
+    {
+      "name": "master-analysis-report.md",
+      "size": 9186
+    },
+    {
+      "name": "mh8-chinese-definition-hints.json",
+      "size": 2053
+    },
+    {
+      "name": "mh8-focused-table-excerpts.json",
+      "size": 211152
+    },
+    {
+      "name": "mh8-linked-table-hints.json",
+      "size": 1877
+    },
+    {
+      "name": "mh8-phrase-evidence.json",
+      "size": 107526
+    },
+    {
+      "name": "mh8-semantic-hints.json",
+      "size": 95103
+    },
+    {
+      "name": "mh8-semantic-summary.md",
+      "size": 3393
+    },
+    {
+      "name": "mh8-storage-investigation.md",
+      "size": 6463
+    },
+    {
+      "name": "mh8-structure-evidence.md",
+      "size": 4735
+    },
+    {
+      "name": "mh8-table-description-hints.json",
+      "size": 66770
+    },
+    {
+      "name": "migration-strategy.md",
+      "size": 4371
+    },
+    {
+      "name": "moneyhome8-data-object-map.json",
+      "size": 5509
+    },
+    {
+      "name": "moneyhome8-data-object-summary.md",
+      "size": 3882
+    },
+    {
+      "name": "mvp-phase1-interface-list.md",
+      "size": 7854
+    },
+    {
+      "name": "next-step-checklist.md",
+      "size": 1711
+    },
+    {
+      "name": "object-type-enum-hints.md",
+      "size": 3085
+    },
+    {
+      "name": "object-type-label-hints.json",
+      "size": 8109
+    },
+    {
+      "name": "objective-coverage-matrix.md",
+      "size": 16951
+    },
+    {
+      "name": "open-gaps-register.md",
+      "size": 35166
+    },
+    {
+      "name": "payroll-income-domain-contract.md",
+      "size": 4016
+    },
+    {
+      "name": "phase1-build-spec.md",
+      "size": 4218
+    },
+    {
+      "name": "phase1-requirements-analysis.md",
+      "size": 12922
+    },
+    {
+      "name": "phase2-build-spec.md",
+      "size": 5677
+    },
+    {
+      "name": "provider-behavior-comparison.md",
+      "size": 4049
+    },
+    {
+      "name": "README-ANALYSIS.md",
+      "size": 16940
+    },
+    {
+      "name": "rebuild-prd.md",
+      "size": 41744
+    },
+    {
+      "name": "report-page-observations.md",
+      "size": 5636
+    },
+    {
+      "name": "requirement-audit-matrix.md",
+      "size": 9752
+    },
+    {
+      "name": "requirements-analysis.md",
+      "size": 139904
+    },
+    {
+      "name": "resource-binary-evidence.md",
+      "size": 3614
+    },
+    {
+      "name": "resource-domain-summary.md",
+      "size": 3737
+    },
+    {
+      "name": "resource-form-family-index.md",
+      "size": 9634
+    },
+    {
+      "name": "resource-form-index.md",
+      "size": 3997
+    },
+    {
+      "name": "resource-forms.json",
+      "size": 30072
+    },
+    {
+      "name": "resource-string-hints.md",
+      "size": 4235
+    },
+    {
+      "name": "roadmap.md",
+      "size": 1084
+    },
+    {
+      "name": "runtime-accounts-and-master-data-contract.md",
+      "size": 30578
+    },
+    {
+      "name": "runtime-ai-console-calculator-contract.md",
+      "size": 9204
+    },
+    {
+      "name": "runtime-automation-boundaries.md",
+      "size": 14338
+    },
+    {
+      "name": "runtime-birthday-calendar-contract.md",
+      "size": 5071
+    },
+    {
+      "name": "runtime-bonds-ledger-and-maturity-contract.md",
+      "size": 6617
+    },
+    {
+      "name": "runtime-budget-contract.md",
+      "size": 6597
+    },
+    {
+      "name": "runtime-calculation-and-report-projections.md",
+      "size": 21978
+    },
+    {
+      "name": "runtime-calculation-evidence.json",
+      "size": 916111
+    },
+    {
+      "name": "runtime-command-and-state-evidence.md",
+      "size": 25131
+    },
+    {
+      "name": "runtime-command-state-evidence.json",
+      "size": 1502640
+    },
+    {
+      "name": "runtime-component-inventory.md",
+      "size": 6242
+    },
+    {
+      "name": "runtime-data-exchange-evidence.json",
+      "size": 178937
+    },
+    {
+      "name": "runtime-debts-credit-and-amortization-contract.md",
+      "size": 9217
+    },
+    {
+      "name": "runtime-deposits-and-bank-wealth-contract.md",
+      "size": 8259
+    },
+    {
+      "name": "runtime-destructive-and-file-operation-contract.md",
+      "size": 10816
+    },
+    {
+      "name": "runtime-dfm-all-forms.json",
+      "size": 7821224
+    },
+    {
+      "name": "runtime-dfm-control-catalog.md",
+      "size": 138332
+    },
+    {
+      "name": "runtime-dfm-forms.json",
+      "size": 689437
+    },
+    {
+      "name": "runtime-dfm-functional-evidence.md",
+      "size": 15437
+    },
+    {
+      "name": "runtime-diary-contract.md",
+      "size": 5975
+    },
+    {
+      "name": "runtime-event-command-dataflow.json",
+      "size": 3817894
+    },
+    {
+      "name": "runtime-event-command-dataflow.md",
+      "size": 75136
+    },
+    {
+      "name": "runtime-event-handler-evidence.json",
+      "size": 3971586
+    },
+    {
+      "name": "runtime-event-handler-evidence.md",
+      "size": 17873
+    },
+    {
+      "name": "runtime-execution-queue.json",
+      "size": 2806452
+    },
+    {
+      "name": "runtime-execution-queue.md",
+      "size": 4365
+    },
+    {
+      "name": "runtime-form-composition-evidence.json",
+      "size": 138486
+    },
+    {
+      "name": "runtime-form-composition-evidence.md",
+      "size": 40288
+    },
+    {
+      "name": "runtime-form-coverage-audit.json",
+      "size": 466845
+    },
+    {
+      "name": "runtime-form-coverage-audit.md",
+      "size": 99559
+    },
+    {
+      "name": "runtime-insurance-and-social-security-contract.md",
+      "size": 14901
+    },
+    {
+      "name": "runtime-internal-surface-evidence.json",
+      "size": 16442
+    },
+    {
+      "name": "runtime-internal-surface-evidence.md",
+      "size": 2907
+    },
+    {
+      "name": "runtime-investment-shared-projections-contract.md",
+      "size": 5947
+    },
+    {
+      "name": "runtime-ledger-lifecycle-and-settings-contract.md",
+      "size": 9714
+    },
+    {
+      "name": "runtime-limit-reminder-contract.md",
+      "size": 5176
+    },
+    {
+      "name": "runtime-major-and-tangible-assets-contract.md",
+      "size": 18827
+    },
+    {
+      "name": "runtime-margin-financing-contract.md",
+      "size": 5397
+    },
+    {
+      "name": "runtime-method-evidence.json",
+      "size": 528076
+    },
+    {
+      "name": "runtime-method-evidence.md",
+      "size": 7262
+    },
+    {
+      "name": "runtime-observation-record-template.md",
+      "size": 1649
+    },
+    {
+      "name": "runtime-observation-record.schema.json",
+      "size": 5284
+    },
+    {
+      "name": "runtime-open-and-money-market-funds-contract.md",
+      "size": 7632
+    },
+    {
+      "name": "runtime-reminder-calendar-contract.md",
+      "size": 5435
+    },
+    {
+      "name": "runtime-securities-ledger-and-valuation-contract.md",
+      "size": 8169
+    },
+    {
+      "name": "runtime-shared-ui-contract.md",
+      "size": 4479
+    },
+    {
+      "name": "runtime-transactions-and-ledger-contract.md",
+      "size": 21881
+    },
+    {
+      "name": "runtime-validation-scenarios.md",
+      "size": 24342
+    },
+    {
+      "name": "runtime-window-tree-evidence.md",
+      "size": 6319
+    },
+    {
+      "name": "rust-module-plan.md",
+      "size": 7527
+    },
+    {
+      "name": "scenario-data-flows.md",
+      "size": 86942
+    },
+    {
+      "name": "schema-hypothesis.md",
+      "size": 9670
+    },
+    {
+      "name": "shared-field-core.json",
+      "size": 3351
+    },
+    {
+      "name": "shared-model-core.json",
+      "size": 2411
+    },
+    {
+      "name": "shared-model-summary.md",
+      "size": 3131
+    },
+    {
+      "name": "similar-systems-benchmark.md",
+      "size": 16387
+    },
+    {
+      "name": "sqlite-domain-coverage-audit.json",
+      "size": 21504
+    },
+    {
+      "name": "sqlite-domain-coverage-audit.md",
+      "size": 9321
+    },
+    {
+      "name": "sqlite-schema-and-query-contract.md",
+      "size": 29537
+    },
+    {
+      "name": "sync-protocol-draft.md",
+      "size": 8006
+    },
+    {
+      "name": "table-cluster-evidence.md",
+      "size": 3349
+    },
+    {
+      "name": "table-domain-map.md",
+      "size": 3679
+    },
+    {
+      "name": "table-domain-stats.md",
+      "size": 1061
+    },
+    {
+      "name": "table-evidence-matrix-summary.md",
+      "size": 2402
+    },
+    {
+      "name": "table-evidence-matrix.json",
+      "size": 25229
+    },
+    {
+      "name": "table-semantic-map.json",
+      "size": 67044
+    },
+    {
+      "name": "target-ui-consolidation-map.json",
+      "size": 552517
+    },
+    {
+      "name": "target-ui-consolidation-map.md",
+      "size": 9780
+    },
+    {
+      "name": "technical-architecture-proposal.md",
+      "size": 9062
+    },
+    {
+      "name": "test-mh8-index-field-hints.json",
+      "size": 4055
+    },
+    {
+      "name": "test-mh8-object-map.json",
+      "size": 7165
+    },
+    {
+      "name": "test-mh8-object-summary.md",
+      "size": 4204
+    },
+    {
+      "name": "top-level-navigation-observations.md",
+      "size": 17715
+    },
+    {
+      "name": "traceability-matrix.md",
+      "size": 29421
+    },
+    {
+      "name": "ui-entity-source-map.md",
+      "size": 4128
+    },
+    {
+      "name": "ui-verification-plan.md",
+      "size": 2263
+    },
+    {
+      "name": "verified-vs-pending-index.md",
+      "size": 70017
+    },
+    {
+      "name": "workspace-map.md",
+      "size": 4341
+    }
+  ],
+  "critical_open_gaps": [
+    "主账本正式表结构与样例数据",
+    "通用记账、债权债务、信用卡账单、分期摊还、网贷、定期续存和银行理财生命周期的真实写入、精确公式、并发保护与失败回滚",
+    "投资持仓调整、成本批次分配、实现盈亏、跨币种估值、市值变动和有数据输出的精确口径与失败回滚",
+    "上市证券账户级费率、新股记录关系、证券选择、费用舍入、成本批次、代码迁移和失败回滚",
+    "开放式基金与货币基金的金额/份额换算、申赎费率、收益结转、成本分配、认购、拆分和失败回滚",
+    "债券净价/全价、应计利息、费用舍入、成本批次、到期/提前兑取损益、税务和失败回滚",
+    "融资融券真实合同形成、单笔直接还款/还券、合同编辑、计息、偿还分配、风险指标和失败回滚",
+    "保险现金价值删除/多日期、缴费/返还/分红异常、退保边界/损益/回滚、六类社保写入及旧价值增减事实迁移",
+    "重大资产与家居物品的有持仓估值、卖出成本、分期完成、成本市值构成和失败回滚",
+    "财务分析诊断完整公式、规划逐年算法、目标边界值与失败回滚",
+    "报表精确 SQL、收益率公式、排序钻取、筛选边界、导出格式和打印结果",
+    "通用 XML 的完整导入语义、信用卡账单、备份压缩、附件目录、真实同步冲突/删除传播/断点续传、移动端结果和其余行情源协议",
+    "AI 动态入口、控制台命令语法与副作用、金额计算器回填行为，以及嵌入视图的空数据、有数据、筛选和交互结果；特殊表面方法合同已确认",
+    "共享 UI 的日期/金额边界、键盘焦点、统计快照一致性、任务取消和 WebView 隔离；无 VMT 资源均已有范围决策"
+  ]
+}

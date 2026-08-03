@@ -1,0 +1,1862 @@
+[
+  {
+    "name": "TABOUTFORM",
+    "size": 1525
+  },
+  {
+    "name": "TACCESSORIESDLG",
+    "size": 3820
+  },
+  {
+    "name": "TACCOUNTDLGFM",
+    "size": 3154
+  },
+  {
+    "name": "TACCOUNTFEESETFM",
+    "size": 7726
+  },
+  {
+    "name": "TACCOUNTMANAGERFM",
+    "size": 6919
+  },
+  {
+    "name": "TACCOUNTOVERVIEWDLGFM",
+    "size": 5217
+  },
+  {
+    "name": "TACCTBALAREMINDDLG",
+    "size": 1808
+  },
+  {
+    "name": "TACCTDETAILDLG",
+    "size": 4030
+  },
+  {
+    "name": "TACCTGUIDEMAIN",
+    "size": 1840
+  },
+  {
+    "name": "TADJUSTHELDDLGFM",
+    "size": 2205
+  },
+  {
+    "name": "TADVANCEACCTDLGFM",
+    "size": 1237
+  },
+  {
+    "name": "TADVANCESVIEWFRAME",
+    "size": 44
+  },
+  {
+    "name": "TADVANCETRANSDLGFM",
+    "size": 2525
+  },
+  {
+    "name": "TAGACTIVE",
+    "size": 3055
+  },
+  {
+    "name": "TAGFOCUSEDDARK",
+    "size": 3041
+  },
+  {
+    "name": "TAGFOCUSEDGREY",
+    "size": 3016
+  },
+  {
+    "name": "TAGNORMAL",
+    "size": 3034
+  },
+  {
+    "name": "TAGSELECTED",
+    "size": 3053
+  },
+  {
+    "name": "TAIPANELDLG",
+    "size": 1249
+  },
+  {
+    "name": "TALIPAYVIEWFRAME",
+    "size": 195
+  },
+  {
+    "name": "TALSOCOUPONSDIRECTLYDLGFM",
+    "size": 2353
+  },
+  {
+    "name": "TAMOUNTSCREENINGFRAME",
+    "size": 1967
+  },
+  {
+    "name": "TASSETBUYFM",
+    "size": 7606
+  },
+  {
+    "name": "TASSETENCASHDLGFM",
+    "size": 6056
+  },
+  {
+    "name": "TASSETINCREMENTDLGFM",
+    "size": 1967
+  },
+  {
+    "name": "TASSETINVESTDLGFM",
+    "size": 5868
+  },
+  {
+    "name": "TASSETOTHERFEEDLGFM",
+    "size": 2185
+  },
+  {
+    "name": "TASSETPRICEFM",
+    "size": 6287
+  },
+  {
+    "name": "TASSETSCONSTITUTECHARTFRAME",
+    "size": 329
+  },
+  {
+    "name": "TASSETSDLGFM",
+    "size": 1865
+  },
+  {
+    "name": "TASSETSMARKETCONSTITUTESFRAME",
+    "size": 822
+  },
+  {
+    "name": "TASSETSSTATISTICFRAME",
+    "size": 1613
+  },
+  {
+    "name": "TASSETSTRANSFRAME",
+    "size": 1255
+  },
+  {
+    "name": "TASSETSVALUEMANAGEMENTFRAME",
+    "size": 2009
+  },
+  {
+    "name": "TASSETTRANSFM",
+    "size": 3626
+  },
+  {
+    "name": "TASSETVIEWFRAME",
+    "size": 38
+  },
+  {
+    "name": "TBACKUPBOOKFM",
+    "size": 4789
+  },
+  {
+    "name": "TBATCHALSOCOUPONSDIRECTLYDLGFM",
+    "size": 4098
+  },
+  {
+    "name": "TBATCHDIRECTPAYMENTSDLGFM",
+    "size": 4088
+  },
+  {
+    "name": "TBLOCKUPDLGFM",
+    "size": 2751
+  },
+  {
+    "name": "TBONDSMARKETCONSTITUTESFRAME",
+    "size": 1544
+  },
+  {
+    "name": "TBONDSVIEWFRAME",
+    "size": 38
+  },
+  {
+    "name": "TBUDGETCOPYDLGFM",
+    "size": 4245
+  },
+  {
+    "name": "TBUDGETLISTFM",
+    "size": 9480
+  },
+  {
+    "name": "TBUYFUNDPLANDLGFM",
+    "size": 3260
+  },
+  {
+    "name": "TCALCUFM",
+    "size": 680
+  },
+  {
+    "name": "TCALCULATORDLG",
+    "size": 27331
+  },
+  {
+    "name": "TCARDVIEWFRAME",
+    "size": 5227
+  },
+  {
+    "name": "TCASHACCTDLGFM",
+    "size": 1269
+  },
+  {
+    "name": "TCASHCARDDLGFM",
+    "size": 2158
+  },
+  {
+    "name": "TCASHTRANSFM",
+    "size": 1769
+  },
+  {
+    "name": "TCASHTRANSFRAME",
+    "size": 1722
+  },
+  {
+    "name": "TCASHVIEWFRAME",
+    "size": 116
+  },
+  {
+    "name": "TCASHWITHDRAWDLGFM",
+    "size": 3471
+  },
+  {
+    "name": "TCASHXFERDLGFM",
+    "size": 5806
+  },
+  {
+    "name": "TCATEGORYLISTFM",
+    "size": 5895
+  },
+  {
+    "name": "TCHANGEPAYMODEDLGFM",
+    "size": 2320
+  },
+  {
+    "name": "TCHECKBOOKDLG",
+    "size": 2969
+  },
+  {
+    "name": "TCHILDFORM",
+    "size": 2827
+  },
+  {
+    "name": "TCLAIMSDEBTCONTAINER",
+    "size": 2808
+  },
+  {
+    "name": "TCLAIMSDEBTSCHARTFRAME",
+    "size": 1283
+  },
+  {
+    "name": "TCLAIMSDEBTSCONSTITUTESFRAME",
+    "size": 1246
+  },
+  {
+    "name": "TCLAIMSDEBTSTATISTICFRAME",
+    "size": 1716
+  },
+  {
+    "name": "TCLAIMSDEBTTRANSFRAME",
+    "size": 2117
+  },
+  {
+    "name": "TCLAIMSTRANSFM",
+    "size": 4240
+  },
+  {
+    "name": "TCLEANPRICEFM",
+    "size": 5919
+  },
+  {
+    "name": "TCOLLATERALINDLGFM",
+    "size": 2186
+  },
+  {
+    "name": "TCONSOLEFM",
+    "size": 2657
+  },
+  {
+    "name": "TCOSTDETAILSDLGFM",
+    "size": 2918
+  },
+  {
+    "name": "TCOUPONSALSOBUYCOUPONSDLGFM",
+    "size": 5607
+  },
+  {
+    "name": "TCREATEBUDGETDLGFM",
+    "size": 13692
+  },
+  {
+    "name": "TCREDITACCTDLGFM",
+    "size": 7590
+  },
+  {
+    "name": "TCREDITCARDSTATISTICFRAME",
+    "size": 1538
+  },
+  {
+    "name": "TCREDITCARDTRANSFM",
+    "size": 2976
+  },
+  {
+    "name": "TCREDITCARDTRANSFRAME",
+    "size": 1774
+  },
+  {
+    "name": "TCREDITREMINDDLG",
+    "size": 1546
+  },
+  {
+    "name": "TCURRCHGXFERDLGFM",
+    "size": 2414
+  },
+  {
+    "name": "TCURRDEPOSITSVIEWFRAME",
+    "size": 372
+  },
+  {
+    "name": "TCURRDLG",
+    "size": 2364
+  },
+  {
+    "name": "TCURRENTACCTDLGFM",
+    "size": 2246
+  },
+  {
+    "name": "TCURRENTMONTHINCEXPPIECHARTFRAME",
+    "size": 1232
+  },
+  {
+    "name": "TCURRENTTRANSFM",
+    "size": 1779
+  },
+  {
+    "name": "TCURREXCHANGEDLGFM",
+    "size": 3419
+  },
+  {
+    "name": "TCURRFUNDACCTDLGFM",
+    "size": 3167
+  },
+  {
+    "name": "TCURRFUNDBUYDLGFM",
+    "size": 2228
+  },
+  {
+    "name": "TCURRFUNDCONVERTFM",
+    "size": 7297
+  },
+  {
+    "name": "TCURRFUNDMARKETCONSTITUTESFRAME",
+    "size": 977
+  },
+  {
+    "name": "TCURRFUNDREINVESTDLGFM",
+    "size": 2205
+  },
+  {
+    "name": "TCURRFUNDSELLDLGFM",
+    "size": 2733
+  },
+  {
+    "name": "TCURRFUNDSLISTFM",
+    "size": 4290
+  },
+  {
+    "name": "TCURRFUNDSTATISTICFRAME",
+    "size": 1465
+  },
+  {
+    "name": "TCURRFUNDTRANSFM",
+    "size": 3016
+  },
+  {
+    "name": "TCURRFUNDTRANSFRAME",
+    "size": 1291
+  },
+  {
+    "name": "TCURRFUNDVIEWFRAME",
+    "size": 172
+  },
+  {
+    "name": "TCURRLISTFM",
+    "size": 10225
+  },
+  {
+    "name": "TCUSTCOLUMNFM",
+    "size": 453
+  },
+  {
+    "name": "TCUSTOMERDLGFM",
+    "size": 36636
+  },
+  {
+    "name": "TCUSTOMNAVIGATIONACCTDLGFM",
+    "size": 16690
+  },
+  {
+    "name": "TDCURRCREDITACCTDLGFM",
+    "size": 6208
+  },
+  {
+    "name": "TDEBTADJUSTDLGFM",
+    "size": 1873
+  },
+  {
+    "name": "TDEBTBORROWDLGFM",
+    "size": 2172
+  },
+  {
+    "name": "TDEBTEQUITYSWAPTRANSDLGFM",
+    "size": 3308
+  },
+  {
+    "name": "TDEBTINVESTMENTACCTDLGFM",
+    "size": 1737
+  },
+  {
+    "name": "TDEBTINVESTMENTACCTLISTFRAME",
+    "size": 1248
+  },
+  {
+    "name": "TDEBTINVESTMENTBADTRANSDLGFM",
+    "size": 2030
+  },
+  {
+    "name": "TDEBTINVESTMENTLOANDLGFM",
+    "size": 8778
+  },
+  {
+    "name": "TDEBTINVESTMENTPAYOBJECTFRAME",
+    "size": 1783
+  },
+  {
+    "name": "TDEBTINVESTMENTPAYTABLEFRAME",
+    "size": 3491
+  },
+  {
+    "name": "TDEBTINVESTMENTREWARDTRANSDLGFM",
+    "size": 2192
+  },
+  {
+    "name": "TDEBTINVESTMENTSELLTRANSDLGFM",
+    "size": 2827
+  },
+  {
+    "name": "TDEBTINVESTMENTSTATISTICFRAME",
+    "size": 1838
+  },
+  {
+    "name": "TDEBTINVESTMENTTRANSFM",
+    "size": 3025
+  },
+  {
+    "name": "TDEBTINVESTMENTTRANSFRAME",
+    "size": 1439
+  },
+  {
+    "name": "TDEBTINVESTMENTVIEWFRAME",
+    "size": 150
+  },
+  {
+    "name": "TDEBTINVESTMENTWITHDRAWTRANSDLGFM",
+    "size": 2794
+  },
+  {
+    "name": "TDEBTLENDDLGFM",
+    "size": 2168
+  },
+  {
+    "name": "TDEBTRATESETDLG",
+    "size": 2270
+  },
+  {
+    "name": "TDEBTRECDLGFM",
+    "size": 2644
+  },
+  {
+    "name": "TDEBTRETURNDLGFM",
+    "size": 2648
+  },
+  {
+    "name": "TDEBTSACCTDLGFM",
+    "size": 5290
+  },
+  {
+    "name": "TDEFERREDVIEWFRAME",
+    "size": 44
+  },
+  {
+    "name": "TDIALOGFORM",
+    "size": 2905
+  },
+  {
+    "name": "TDIARYDLGFM",
+    "size": 36887
+  },
+  {
+    "name": "TDIARYUNTFM",
+    "size": 2869
+  },
+  {
+    "name": "TDIRECTPAYMENTSDLGFM",
+    "size": 2339
+  },
+  {
+    "name": "TDRAWALCARDDLGFM",
+    "size": 2605
+  },
+  {
+    "name": "TDROPDOWNDATE",
+    "size": 455
+  },
+  {
+    "name": "TDROPFM",
+    "size": 2840
+  },
+  {
+    "name": "TEDITACCOUNTGROUPFM",
+    "size": 1755
+  },
+  {
+    "name": "TEDITASSETBUYDLGFM",
+    "size": 5671
+  },
+  {
+    "name": "TEDITBANKMONEYPRODUCTDLGFM",
+    "size": 4989
+  },
+  {
+    "name": "TEDITBUDGETAMOUNTDLGFM",
+    "size": 7665
+  },
+  {
+    "name": "TEDITBUDGETCATEGORYDLGFM",
+    "size": 2316
+  },
+  {
+    "name": "TEDITCATEGORYFM",
+    "size": 2257
+  },
+  {
+    "name": "TEDITCATGORYORDERDLGFM",
+    "size": 1265
+  },
+  {
+    "name": "TEDITCURRFUNDFM",
+    "size": 1769
+  },
+  {
+    "name": "TEDITFUTURESGOODSFM",
+    "size": 3202
+  },
+  {
+    "name": "TEDITGOLDFM",
+    "size": 1434
+  },
+  {
+    "name": "TEDITMARGINCONTRACTDLGFM",
+    "size": 2291
+  },
+  {
+    "name": "TEDITNMARKETBONDFM",
+    "size": 5542
+  },
+  {
+    "name": "TEDITOPENFUNDFM",
+    "size": 2342
+  },
+  {
+    "name": "TEDITPRECIOUSMETALSTDGOODSFM",
+    "size": 2263
+  },
+  {
+    "name": "TEDITSECURITYFM",
+    "size": 2061
+  },
+  {
+    "name": "TEDITSECURITYPRICEFM",
+    "size": 2600
+  },
+  {
+    "name": "TEDITTAGORDERDLGFM",
+    "size": 1236
+  },
+  {
+    "name": "TEDTACCTGRPDLGFM",
+    "size": 1393
+  },
+  {
+    "name": "TEQUITYFINANCINGDLGFM",
+    "size": 2452
+  },
+  {
+    "name": "TEQUITYSECURITIESLENDINGDLGFM",
+    "size": 2753
+  },
+  {
+    "name": "TEXCHANGEACCTFM",
+    "size": 1779
+  },
+  {
+    "name": "TEXCHANGEMARKETCONSTITUTESFRAME",
+    "size": 363
+  },
+  {
+    "name": "TEXCHANGERATEDLG",
+    "size": 2831
+  },
+  {
+    "name": "TEXCHANGEVIEWFRAME",
+    "size": 172
+  },
+  {
+    "name": "TEXERTIONRIGHTSDLGFM",
+    "size": 3307
+  },
+  {
+    "name": "TEXPENSEDLGFM",
+    "size": 3785
+  },
+  {
+    "name": "TEXPORTDATAFM",
+    "size": 10272
+  },
+  {
+    "name": "TFEESETFORM",
+    "size": 10280
+  },
+  {
+    "name": "TFILTERDLGFM",
+    "size": 5209
+  },
+  {
+    "name": "TFILTERTRANSFRAME",
+    "size": 1219
+  },
+  {
+    "name": "TFINANCIALCALENDARDLG",
+    "size": 52594
+  },
+  {
+    "name": "TFINANCIALDIAGNOSISFM",
+    "size": 4259
+  },
+  {
+    "name": "TFINANCIALPLANNINGCENTERFM",
+    "size": 39807
+  },
+  {
+    "name": "TFINANCINGBIDDLGFM",
+    "size": 5941
+  },
+  {
+    "name": "TFINDDLGFM",
+    "size": 1676
+  },
+  {
+    "name": "TFINDFORM",
+    "size": 1368
+  },
+  {
+    "name": "TFIXDEPMATUREDLGFM",
+    "size": 2734
+  },
+  {
+    "name": "TFIXDEPOSITSVIEWFRAME",
+    "size": 347
+  },
+  {
+    "name": "TFIXEDACCTDLGFM",
+    "size": 5461
+  },
+  {
+    "name": "TFIXEDDEPOSITSTATISTICFRAME",
+    "size": 1790
+  },
+  {
+    "name": "TFIXEDDEPOSITTRANSFM",
+    "size": 2829
+  },
+  {
+    "name": "TFMCUSTOMDIALOG",
+    "size": 1609
+  },
+  {
+    "name": "TFMINCEXPCAPTIONFORM",
+    "size": 1889
+  },
+  {
+    "name": "TFOREIGNSTATISTICFRAME",
+    "size": 1698
+  },
+  {
+    "name": "TFOREIGNTRANSFM",
+    "size": 2832
+  },
+  {
+    "name": "TFOREIGNTRANSFRAME",
+    "size": 2131
+  },
+  {
+    "name": "TFPANNUALSALARYINFODLGFM",
+    "size": 4058
+  },
+  {
+    "name": "TFPASSETEXPENSESINFODLGFM",
+    "size": 3268
+  },
+  {
+    "name": "TFPASSETGROWTHINFODLGFM",
+    "size": 1583
+  },
+  {
+    "name": "TFPASSETINCOMEINFODLGFM",
+    "size": 3308
+  },
+  {
+    "name": "TFPASSETPURCHASEPLANINFOFM",
+    "size": 6778
+  },
+  {
+    "name": "TFPBASEDLGFM",
+    "size": 98
+  },
+  {
+    "name": "TFPBASEINFODLGFM",
+    "size": 3584
+  },
+  {
+    "name": "TFPDAILYEXPENSESINFODLGFM",
+    "size": 1260
+  },
+  {
+    "name": "TFPEDUCATIONEXPENSESINFODLGFM",
+    "size": 3848
+  },
+  {
+    "name": "TFPEXPENSESADJUSTMENTINFODLGFM",
+    "size": 2742
+  },
+  {
+    "name": "TFPINFLATIONRATEINFODLGFM",
+    "size": 1260
+  },
+  {
+    "name": "TFPOTHEREXPENSESINFODLGFM",
+    "size": 2994
+  },
+  {
+    "name": "TFPOTHERINCOMEINFODLGFM",
+    "size": 3090
+  },
+  {
+    "name": "TFPRETIREMENTINFODLGFM",
+    "size": 5458
+  },
+  {
+    "name": "TFPSELECTASSETSDLGFM",
+    "size": 2238
+  },
+  {
+    "name": "TFPYEARDATAINFODLGFM",
+    "size": 1713
+  },
+  {
+    "name": "TFUNDBUYDLGFM",
+    "size": 3991
+  },
+  {
+    "name": "TFUNDCONVERTDLGFM",
+    "size": 9339
+  },
+  {
+    "name": "TFUNDINTERESTDLGFM",
+    "size": 2504
+  },
+  {
+    "name": "TFUNDMARKBUYDLGFM",
+    "size": 6117
+  },
+  {
+    "name": "TFUNDORDERBUYDLGFM",
+    "size": 3219
+  },
+  {
+    "name": "TFUNDREINVESTDLGFM",
+    "size": 2827
+  },
+  {
+    "name": "TFUNDSELLDLGFM",
+    "size": 4595
+  },
+  {
+    "name": "TFUNDSPLITDLGFM",
+    "size": 2559
+  },
+  {
+    "name": "TFUTURESACCTDLGFM",
+    "size": 1546
+  },
+  {
+    "name": "TFUTURESBUYDLGFM",
+    "size": 4387
+  },
+  {
+    "name": "TFUTURESCONTRACTLISTFM",
+    "size": 8869
+  },
+  {
+    "name": "TFUTURESGOODSLISTFM",
+    "size": 5901
+  },
+  {
+    "name": "TFUTURESSELLDLGFM",
+    "size": 3794
+  },
+  {
+    "name": "TFUTURESSTATISTICFRAME",
+    "size": 2641
+  },
+  {
+    "name": "TFUTURESTRANSFM",
+    "size": 2736
+  },
+  {
+    "name": "TFUTURESTRANSFRAME",
+    "size": 1956
+  },
+  {
+    "name": "TFUTURESVIEWFRAME",
+    "size": 42
+  },
+  {
+    "name": "TGOALACCTLISTDLG",
+    "size": 2107
+  },
+  {
+    "name": "TGOALCENTERFM",
+    "size": 4043
+  },
+  {
+    "name": "TGOALSAVEFM",
+    "size": 4140
+  },
+  {
+    "name": "TGOLDACCTDLGFM",
+    "size": 2443
+  },
+  {
+    "name": "TGOLDBUYDLGFM",
+    "size": 3350
+  },
+  {
+    "name": "TGOLDLISTFM",
+    "size": 9273
+  },
+  {
+    "name": "TGOLDSELLDLGFM",
+    "size": 3148
+  },
+  {
+    "name": "TGOLDSTATISTICFRAME",
+    "size": 2434
+  },
+  {
+    "name": "TGOLDTRANSFM",
+    "size": 3526
+  },
+  {
+    "name": "TGOLDTRANSFRAME",
+    "size": 1650
+  },
+  {
+    "name": "TGUIDEDLG",
+    "size": 417
+  },
+  {
+    "name": "THISTORYPROFITFRAME",
+    "size": 4661
+  },
+  {
+    "name": "TIMPORTCATEGORYDLGFM",
+    "size": 5120
+  },
+  {
+    "name": "TIMPORTDATAFM",
+    "size": 7464
+  },
+  {
+    "name": "TIMPORTJIAOGEDANDLGFM",
+    "size": 21514
+  },
+  {
+    "name": "TIMPORTPREVIEWFM",
+    "size": 9464
+  },
+  {
+    "name": "TIMPORTSELECTDLGFM",
+    "size": 1734
+  },
+  {
+    "name": "TIMPORTTHEMEDLGFM",
+    "size": 5327
+  },
+  {
+    "name": "TINCEXPCAPIONDLGFM",
+    "size": 1261
+  },
+  {
+    "name": "TINCEXPDLGFM",
+    "size": 1264
+  },
+  {
+    "name": "TINCEXPEDITFRAME",
+    "size": 2348
+  },
+  {
+    "name": "TINCEXPINSTALLMENTWIZARDDLG",
+    "size": 10482
+  },
+  {
+    "name": "TINCEXPPLANDLGFM",
+    "size": 2864
+  },
+  {
+    "name": "TINFORMATIONDLGFM",
+    "size": 18336
+  },
+  {
+    "name": "TINPUTTEXTDLGFM",
+    "size": 1251
+  },
+  {
+    "name": "TINSTALLMENTEDITDLG",
+    "size": 1267
+  },
+  {
+    "name": "TINSTALLMENTEDITFRAME",
+    "size": 6424
+  },
+  {
+    "name": "TINSTALLMENTFRAME",
+    "size": 5526
+  },
+  {
+    "name": "TINSUREACCTDLGFM",
+    "size": 6254
+  },
+  {
+    "name": "TINSUREBALAINDLGFM",
+    "size": 1493
+  },
+  {
+    "name": "TINSUREBALAOUTDLGFM",
+    "size": 1171
+  },
+  {
+    "name": "TINSURECASHVALUEEDITDLGFM",
+    "size": 2149
+  },
+  {
+    "name": "TINSURECASHVALUEFRAME",
+    "size": 2694
+  },
+  {
+    "name": "TINSUREDIVIDENDFM",
+    "size": 1969
+  },
+  {
+    "name": "TINSUREGETFEEDLGFM",
+    "size": 1892
+  },
+  {
+    "name": "TINSUREOVERDLGFM",
+    "size": 2041
+  },
+  {
+    "name": "TINSUREPAYFEEDLGFM",
+    "size": 1825
+  },
+  {
+    "name": "TINSURETRANSFM",
+    "size": 1843
+  },
+  {
+    "name": "TINSURETRANSFRAME",
+    "size": 1335
+  },
+  {
+    "name": "TINSUREVIEWFRAME",
+    "size": 135
+  },
+  {
+    "name": "TINVESTFEEDLGFM",
+    "size": 2361
+  },
+  {
+    "name": "TINVESTMENTCHARTFRAME",
+    "size": 762
+  },
+  {
+    "name": "TINVESTMENTLISTFM",
+    "size": 2992
+  },
+  {
+    "name": "TLIFETHEMEFM",
+    "size": 14827
+  },
+  {
+    "name": "TLIMITREMINDDLG",
+    "size": 3356
+  },
+  {
+    "name": "TLOGINDIALOG",
+    "size": 1172
+  },
+  {
+    "name": "TLZCASHDEPDLGFM",
+    "size": 1940
+  },
+  {
+    "name": "TMAINFORM",
+    "size": 146713
+  },
+  {
+    "name": "TMANAGEBILLDATEDLGFM",
+    "size": 1783
+  },
+  {
+    "name": "TMARGINACCTDLGFM",
+    "size": 2153
+  },
+  {
+    "name": "TMARGININTERESTREPAYMENTSDLGFM",
+    "size": 1965
+  },
+  {
+    "name": "TMARGINSTATISTICFRAME",
+    "size": 3127
+  },
+  {
+    "name": "TMARGINTRANSFM",
+    "size": 2734
+  },
+  {
+    "name": "TMARGINTRANSFRAME",
+    "size": 2251
+  },
+  {
+    "name": "TMARGINVIEWFRAME",
+    "size": 40
+  },
+  {
+    "name": "TMARKETCONSTITUTESFRAME",
+    "size": 3803
+  },
+  {
+    "name": "TMARKETDEBTSTATISTICFRAME",
+    "size": 1486
+  },
+  {
+    "name": "TMARKETDEBTTRANSFM",
+    "size": 3388
+  },
+  {
+    "name": "TMARKETDEBTTRANSFRAME",
+    "size": 2119
+  },
+  {
+    "name": "TMHFRAME",
+    "size": 250
+  },
+  {
+    "name": "TMISCDIALOGFM",
+    "size": 1279
+  },
+  {
+    "name": "TMODIFYBILLDATEDLGFM",
+    "size": 2647
+  },
+  {
+    "name": "TMONEYACCTDLGFM",
+    "size": 2445
+  },
+  {
+    "name": "TMONEYBUYDLGFM",
+    "size": 2236
+  },
+  {
+    "name": "TMONEYINFOVIEWFRAME",
+    "size": 2573
+  },
+  {
+    "name": "TMONEYLISTFM",
+    "size": 6084
+  },
+  {
+    "name": "TMONEYMATUREDLGFM",
+    "size": 2302
+  },
+  {
+    "name": "TMONEYPRODUCTSVIEWFRAME",
+    "size": 54
+  },
+  {
+    "name": "TMONEYREDEEMDLGFM",
+    "size": 2916
+  },
+  {
+    "name": "TMONEYSTATISTICFRAME",
+    "size": 1469
+  },
+  {
+    "name": "TMONEYTRANSFM",
+    "size": 3691
+  },
+  {
+    "name": "TMONEYTRANSFRAME",
+    "size": 1168
+  },
+  {
+    "name": "TMONTHDAYFM",
+    "size": 652
+  },
+  {
+    "name": "TMONTHINCEXPCOLUMNCHARTFRAME",
+    "size": 813
+  },
+  {
+    "name": "TMWADJUSTBUTTONDROP",
+    "size": 1218
+  },
+  {
+    "name": "TMWSELECTACCOUNTDROP",
+    "size": 3208
+  },
+  {
+    "name": "TMWSELECTCATEGORYDROP",
+    "size": 2719
+  },
+  {
+    "name": "TMWSELECTTAGDROP",
+    "size": 2157
+  },
+  {
+    "name": "TNEWACCTTYPEDLGFM",
+    "size": 6424
+  },
+  {
+    "name": "TNEWACCTWIZARDCASHDLGFM",
+    "size": 3588
+  },
+  {
+    "name": "TNEWACCTWIZARDCREDITCARDDLGFM",
+    "size": 6611
+  },
+  {
+    "name": "TNEWACCTWIZARDCURRENCYONECARDDLGFM",
+    "size": 4382
+  },
+  {
+    "name": "TNEWACCTWIZARDCURRENTDLGFM",
+    "size": 3806
+  },
+  {
+    "name": "TNEWACCTWIZARDCURRFUNDDLGFM",
+    "size": 4855
+  },
+  {
+    "name": "TNEWACCTWIZARDDEBTINVESTMENTDLGFM",
+    "size": 4298
+  },
+  {
+    "name": "TNEWACCTWIZARDDEPOSITONECARDDLGFM",
+    "size": 7093
+  },
+  {
+    "name": "TNEWACCTWIZARDDLGFM",
+    "size": 1225
+  },
+  {
+    "name": "TNEWACCTWIZARDEXCHANGEDLGFM",
+    "size": 6015
+  },
+  {
+    "name": "TNEWACCTWIZARDFIXEDDEPOSITDLGFM",
+    "size": 6335
+  },
+  {
+    "name": "TNEWACCTWIZARDFUTURESDLGFM",
+    "size": 3810
+  },
+  {
+    "name": "TNEWACCTWIZARDGOLDDLGFM",
+    "size": 4348
+  },
+  {
+    "name": "TNEWACCTWIZARDINSURECOMMERCEDLGFM",
+    "size": 9655
+  },
+  {
+    "name": "TNEWACCTWIZARDINSURESOCIALDLGFM",
+    "size": 6694
+  },
+  {
+    "name": "TNEWACCTWIZARDMARGINDLGFM",
+    "size": 4129
+  },
+  {
+    "name": "TNEWACCTWIZARDMONEYDLGFM",
+    "size": 4386
+  },
+  {
+    "name": "TNEWACCTWIZARDNMARKETDEBTDLGFM",
+    "size": 4340
+  },
+  {
+    "name": "TNEWACCTWIZARDONECARDDLGFM",
+    "size": 3779
+  },
+  {
+    "name": "TNEWACCTWIZARDOPENFUNDDLGFM",
+    "size": 4340
+  },
+  {
+    "name": "TNEWACCTWIZARDPRACDLGFM",
+    "size": 2824
+  },
+  {
+    "name": "TNEWACCTWIZARDPRECIOUSMETALSTDDLGFM",
+    "size": 4735
+  },
+  {
+    "name": "TNEWACCTWIZARDSECURITYDLGFM",
+    "size": 4688
+  },
+  {
+    "name": "TNEWACCTWIZARDTHIRDDEPOSITSDLGFM",
+    "size": 3881
+  },
+  {
+    "name": "TNEWACCTWIZARDTWOCURRCREDITDLGFM",
+    "size": 7610
+  },
+  {
+    "name": "TNEWBLOCKUPDLG",
+    "size": 4159
+  },
+  {
+    "name": "TNEWBOOKFM",
+    "size": 2034
+  },
+  {
+    "name": "TNEWDEBTBORROWDLGFM",
+    "size": 8142
+  },
+  {
+    "name": "TNEWRECTRANSDLGFM",
+    "size": 2388
+  },
+  {
+    "name": "TNEWREMINDDLGFM",
+    "size": 4695
+  },
+  {
+    "name": "TNEWTHEMEDLGFM",
+    "size": 1668
+  },
+  {
+    "name": "TNMARKETBONDBUYDLGFM",
+    "size": 3473
+  },
+  {
+    "name": "TNMARKETBONDCASHAHEADDLGFM",
+    "size": 3109
+  },
+  {
+    "name": "TNMARKETBONDINTERESTDLGFM",
+    "size": 2154
+  },
+  {
+    "name": "TNMARKETBONDLISTFM",
+    "size": 5454
+  },
+  {
+    "name": "TNMARKETBONDMATUREDLGFM",
+    "size": 2799
+  },
+  {
+    "name": "TNMARKETBONDSELLDLGFM",
+    "size": 3448
+  },
+  {
+    "name": "TNMARKETDEBTACCTDLGFM",
+    "size": 2664
+  },
+  {
+    "name": "TNODEWRAPFORM",
+    "size": 417
+  },
+  {
+    "name": "TNORMALPLANDLGFM",
+    "size": 756
+  },
+  {
+    "name": "TOKCANCELDIALOGFM",
+    "size": 1186
+  },
+  {
+    "name": "TONLINEGETDATAFM",
+    "size": 8118
+  },
+  {
+    "name": "TOPENFUNDACCTDLGFM",
+    "size": 2657
+  },
+  {
+    "name": "TOPENFUNDREMINDDLG",
+    "size": 1958
+  },
+  {
+    "name": "TOPENFUNDSLISTFM",
+    "size": 10208
+  },
+  {
+    "name": "TOPENFUNDSTATISTICFRAME",
+    "size": 2659
+  },
+  {
+    "name": "TOPENFUNDTRANSFM",
+    "size": 3556
+  },
+  {
+    "name": "TOPENFUNDTRANSFRAME",
+    "size": 2038
+  },
+  {
+    "name": "TOPENFUNDVIEWFRAME",
+    "size": 172
+  },
+  {
+    "name": "TPAGECONTRLFM",
+    "size": 1938
+  },
+  {
+    "name": "TPARENTPLANDLGFM",
+    "size": 3891
+  },
+  {
+    "name": "TPASSWORDDIALOG",
+    "size": 964
+  },
+  {
+    "name": "TPAYABLEADVANCEDLGFM",
+    "size": 3970
+  },
+  {
+    "name": "TPAYABLEMONEYTRANSDLGFM",
+    "size": 2514
+  },
+  {
+    "name": "TPAYABLESVIEWFRAME",
+    "size": 138
+  },
+  {
+    "name": "TPAYROLLINCOMEDLGFM",
+    "size": 6320
+  },
+  {
+    "name": "TPERSONDLG",
+    "size": 5378
+  },
+  {
+    "name": "TPERSONLISTFM",
+    "size": 10195
+  },
+  {
+    "name": "TPLANINSUREPAYFEEDLGFM",
+    "size": 1938
+  },
+  {
+    "name": "TPLANLISTDLG",
+    "size": 4761
+  },
+  {
+    "name": "TPRACACCTDLGFM",
+    "size": 2067
+  },
+  {
+    "name": "TPRACASSETBUYDLGFM",
+    "size": 1371
+  },
+  {
+    "name": "TPRACASSETSELLDLGFM",
+    "size": 3310
+  },
+  {
+    "name": "TPRACBUYEDITFRAME",
+    "size": 3901
+  },
+  {
+    "name": "TPRACBUYINSTALLMENTWIZARDDLG",
+    "size": 10493
+  },
+  {
+    "name": "TPRACCHANGEVALUEDLGFM",
+    "size": 2403
+  },
+  {
+    "name": "TPRACDLG",
+    "size": 2348
+  },
+  {
+    "name": "TPRACGROUPVIEWFRAME",
+    "size": 46
+  },
+  {
+    "name": "TPRACINCDLGFM",
+    "size": 2173
+  },
+  {
+    "name": "TPRACLISTFM",
+    "size": 14493
+  },
+  {
+    "name": "TPRACSTATISTICFRAME",
+    "size": 912
+  },
+  {
+    "name": "TPRACTRANSFM",
+    "size": 2826
+  },
+  {
+    "name": "TPRACTRANSFRAME",
+    "size": 1784
+  },
+  {
+    "name": "TPRACTYPEDLG",
+    "size": 1260
+  },
+  {
+    "name": "TPRECIOUSMETALSTDACCTDLGFM",
+    "size": 2588
+  },
+  {
+    "name": "TPRECIOUSMETALSTDBUYDLGFM",
+    "size": 4337
+  },
+  {
+    "name": "TPRECIOUSMETALSTDGOODSLISTFM",
+    "size": 5303
+  },
+  {
+    "name": "TPRECIOUSMETALSTDSELLDLGFM",
+    "size": 4034
+  },
+  {
+    "name": "TPRECIOUSMETALSTDSTATISTICFRAME",
+    "size": 2742
+  },
+  {
+    "name": "TPRECIOUSMETALSTDTRANSFM",
+    "size": 2802
+  },
+  {
+    "name": "TPRECIOUSMETALSTDTRANSFRAME",
+    "size": 1974
+  },
+  {
+    "name": "TPRECIOUSMETALSTDVIEWFRAME",
+    "size": 60
+  },
+  {
+    "name": "TPRECIOUSVIEWFRAME",
+    "size": 44
+  },
+  {
+    "name": "TPREPAIDEXPENSESDLGFM",
+    "size": 5537
+  },
+  {
+    "name": "TPREPAIDEXPENSESINCEXPDLGFM",
+    "size": 4175
+  },
+  {
+    "name": "TPREPAYMENTFM",
+    "size": 3587
+  },
+  {
+    "name": "TPREPEXPEACCTDLGFM",
+    "size": 3417
+  },
+  {
+    "name": "TPROGRESSFORM",
+    "size": 1226
+  },
+  {
+    "name": "TPWDCHANGEFM",
+    "size": 2168
+  },
+  {
+    "name": "TPWDCHECKFM",
+    "size": 1320
+  },
+  {
+    "name": "TQUITEXERTIONRIGHTFM",
+    "size": 1656
+  },
+  {
+    "name": "TRATEFM",
+    "size": 7375
+  },
+  {
+    "name": "TRECEIVABLESVIEWFRAME",
+    "size": 50
+  },
+  {
+    "name": "TRECHARGEDLGFM",
+    "size": 2223
+  },
+  {
+    "name": "TREGISTERFORM",
+    "size": 51376
+  },
+  {
+    "name": "TRELATIONNEWSTOCKRECORDSDLGFM",
+    "size": 1741
+  },
+  {
+    "name": "TREMOTENOTIFICATIONDLGFM",
+    "size": 2114
+  },
+  {
+    "name": "TREPAYMENTTABLEFRAME",
+    "size": 7239
+  },
+  {
+    "name": "TREPORTFM",
+    "size": 4307
+  },
+  {
+    "name": "TREPORTOPTIONDLGFM",
+    "size": 7019
+  },
+  {
+    "name": "TRESTOREBOOKFM",
+    "size": 2591
+  },
+  {
+    "name": "TRPTACCOUNTINCOMESTATFRM",
+    "size": 559
+  },
+  {
+    "name": "TRPTBSSTATFRM",
+    "size": 2440
+  },
+  {
+    "name": "TRPTCASHWASTEFM",
+    "size": 2266
+  },
+  {
+    "name": "TRPTCREDITDEBTSTATFM",
+    "size": 1252
+  },
+  {
+    "name": "TRPTDEBTINVESTMENTINVESTYKFORM",
+    "size": 570
+  },
+  {
+    "name": "TRPTEXCHANGE6FM",
+    "size": 683
+  },
+  {
+    "name": "TRPTFINANCIALPRODUCTSFM",
+    "size": 221
+  },
+  {
+    "name": "TRPTFUNDSAVAILABLEFM",
+    "size": 1676
+  },
+  {
+    "name": "TRPTFUNDTRENDFM",
+    "size": 2237
+  },
+  {
+    "name": "TRPTINCEXPCOMPAREFM",
+    "size": 2357
+  },
+  {
+    "name": "TRPTINCEXPZSTOVFM",
+    "size": 2222
+  },
+  {
+    "name": "TRPTINCOMELISTFM",
+    "size": 543
+  },
+  {
+    "name": "TRPTINCOMESTATFRM",
+    "size": 2332
+  },
+  {
+    "name": "TRPTINVESTINCOMEFM",
+    "size": 1466
+  },
+  {
+    "name": "TRPTINVESTMENTPERFORMANCESTATFM",
+    "size": 785
+  },
+  {
+    "name": "TRPTINVESTVIEWFM",
+    "size": 1553
+  },
+  {
+    "name": "TRPTMONTHASSETFM",
+    "size": 1864
+  },
+  {
+    "name": "TRPTMONTHAVERAGEINCEXPFM",
+    "size": 2306
+  },
+  {
+    "name": "TRPTOPENFUNDINVESTFM",
+    "size": 2036
+  },
+  {
+    "name": "TRPTOPENFUNDINVESTLOSSFM",
+    "size": 1474
+  },
+  {
+    "name": "TRPTSECURITINVESTFM",
+    "size": 2005
+  },
+  {
+    "name": "TRPTSECURITINVESTLOSSFM",
+    "size": 1488
+  },
+  {
+    "name": "TRPTSTOCKTRENDFM",
+    "size": 2708
+  },
+  {
+    "name": "TRPTTAGINCOMESTATFRM",
+    "size": 551
+  },
+  {
+    "name": "TRPTYEARINCEXPFORM",
+    "size": 2511
+  },
+  {
+    "name": "TRZFRMCUSTOMIZETOOLBAR",
+    "size": 4778
+  },
+  {
+    "name": "TSECURITYACCTDLGFM",
+    "size": 3463
+  },
+  {
+    "name": "TSECURITYCODECONVERTFM",
+    "size": 2986
+  },
+  {
+    "name": "TSECURITYLISTFM",
+    "size": 11079
+  },
+  {
+    "name": "TSECURITYREMINDDLG",
+    "size": 1956
+  },
+  {
+    "name": "TSECURITYSTATISTICFRAME",
+    "size": 3155
+  },
+  {
+    "name": "TSECURITYTRANSFM",
+    "size": 3546
+  },
+  {
+    "name": "TSECURITYTRANSFRAME",
+    "size": 2058
+  },
+  {
+    "name": "TSELECTDATERANGEDLGFM",
+    "size": 4656
+  },
+  {
+    "name": "TSELECTREPETITIONFREQUENCYDLGFM",
+    "size": 1547
+  },
+  {
+    "name": "TSELECTSECURITIESCODEDLGFM",
+    "size": 1371
+  },
+  {
+    "name": "TSELECTTAGDLGFM",
+    "size": 1225
+  },
+  {
+    "name": "TSELECTTHEMEDLGFM",
+    "size": 1430
+  },
+  {
+    "name": "TSELECTTRANSTYPEDLGFM",
+    "size": 1262
+  },
+  {
+    "name": "TSELLCOUPONSREPAYMENTDLGFM",
+    "size": 5637
+  },
+  {
+    "name": "TSHORTCUTMANAGEDLGFM",
+    "size": 6028
+  },
+  {
+    "name": "TSHORTSELLINGDLGFM",
+    "size": 5634
+  },
+  {
+    "name": "TSOCIALSECURITYSTATISTICFRAME",
+    "size": 627
+  },
+  {
+    "name": "TSOCIALSECURITYTRANSFM",
+    "size": 2427
+  },
+  {
+    "name": "TSOFTINDEXCENTERFORM",
+    "size": 47585
+  },
+  {
+    "name": "TSORTSOFTINDEXCENTERDLGFM",
+    "size": 1263
+  },
+  {
+    "name": "TSPLASHFORM",
+    "size": 370
+  },
+  {
+    "name": "TSPLITINCEXPDLGFM",
+    "size": 6340
+  },
+  {
+    "name": "TSTATISTICFRAME",
+    "size": 3133
+  },
+  {
+    "name": "TSTATISTICGRIDFRAME",
+    "size": 1160
+  },
+  {
+    "name": "TSTATISTICTREEFRMAE",
+    "size": 1001
+  },
+  {
+    "name": "TSTOCKBONDMATUREDLGFM",
+    "size": 2863
+  },
+  {
+    "name": "TSTOCKBUYDLGFM",
+    "size": 7265
+  },
+  {
+    "name": "TSTOCKDIVIDDLGFM",
+    "size": 1972
+  },
+  {
+    "name": "TSTOCKINTERESTDLGFM",
+    "size": 2572
+  },
+  {
+    "name": "TSTOCKMARKBUYDLGFM",
+    "size": 6320
+  },
+  {
+    "name": "TSTOCKORDERBUYDLGFM",
+    "size": 3295
+  },
+  {
+    "name": "TSTOCKQUOTADLGFM",
+    "size": 2880
+  },
+  {
+    "name": "TSTOCKSELLDLGFM",
+    "size": 6163
+  },
+  {
+    "name": "TSTOCKVIEWFRAME",
+    "size": 166
+  },
+  {
+    "name": "TSYNCUSERDATAFM",
+    "size": 4586
+  },
+  {
+    "name": "TSYNCUSERREGISTERFM",
+    "size": 1876
+  },
+  {
+    "name": "TSYSTEMSETTINGSFM",
+    "size": 22681
+  },
+  {
+    "name": "TTEMPLATEDLGFM",
+    "size": 28406
+  },
+  {
+    "name": "TTHEMEUIFM",
+    "size": 614746
+  },
+  {
+    "name": "TTHIRDDEPOSITSACCTDLGFM",
+    "size": 1804
+  },
+  {
+    "name": "TTHIRDDEPOSITSTRANSFM",
+    "size": 1749
+  },
+  {
+    "name": "TTRANSACTIONPLANDLGFM",
+    "size": 749
+  },
+  {
+    "name": "TTRANSDLGFM",
+    "size": 2920
+  },
+  {
+    "name": "TTRANSFERLISTTEMPLATEFRAME",
+    "size": 5213
+  },
+  {
+    "name": "TTRANSFERTEMPLATEDLGFM",
+    "size": 28406
+  },
+  {
+    "name": "TTRANSFRAME",
+    "size": 9728
+  },
+  {
+    "name": "TTRANSLISTTEMPLATEFRAME",
+    "size": 4500
+  },
+  {
+    "name": "TUNEARNEDVIEWFRAME",
+    "size": 44
+  },
+  {
+    "name": "TUPDATEVERIFYCODEFM",
+    "size": 1702
+  },
+  {
+    "name": "TUSABLEMONEYCHARTFRAME",
+    "size": 319
+  },
+  {
+    "name": "TVIEWFRAME",
+    "size": 27675
+  },
+  {
+    "name": "TWASTEBOOKFM",
+    "size": 11603
+  },
+  {
+    "name": "TXFERPLANDLGFM",
+    "size": 2904
+  }
+]
