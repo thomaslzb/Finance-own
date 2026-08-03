@@ -721,7 +721,7 @@ PC 本地可以保存：
 13. `docs/workplans/account-device-ledger-membership-plan.md`：账号、设备、账本成员、角色变化、权限错误和跨端待上传数据处理边界。状态：已创建第一版需求计划。
 14. `docs/workplans/amount-currency-exchange-rate-plan.md`：金额、币种、本位币、汇率快照、本币折算、余额和跨端展示同步口径。状态：已创建第一版需求计划。
 15. `docs/workplans/list-query-filter-pagination-plan.md`：三端列表查询、筛选、排序、查找、分页、缓存、导出和打印前置状态。状态：已创建第一版需求计划。
-16. `docs/workplans/settings-preferences-notification-plan.md`：设置、偏好、快捷入口、通知状态、设备状态、生效范围和安全边界。状态：已创建第一版需求计划。
+16. `docs/workplans/settings-preferences-notification-plan.md`：设置作用域、批量保存逐项结果、生效时机、偏好、快捷入口、通知状态、设备状态、生效范围和安全边界。状态：已创建第一版需求计划。
 17. `docs/workplans/command-form-lifecycle-plan.md`：命令、表单草稿、提交状态、批量操作、模板、复制粘贴、导入预览、幂等和审计。状态：已创建第一版需求计划。
 18. `docs/workplans/master-data-lifecycle-plan.md`：账户组、账户、分类、标签、往来方、币种和汇率快照的生命周期、权限、同步和冲突边界。状态：已创建第一版需求计划。
 19. `docs/workplans/ledger-lifecycle-storage-plan.md`：账本创建、临时库初始化、完整性检查、原子改名、同名/磁盘失败、打开、关闭、删除、云端绑定、本地文件、备份恢复和三端可见性边界。状态：已创建第一版需求计划。
@@ -749,7 +749,7 @@ PC 本地可以保存：
 41. `docs/workplans/ledger-lifecycle-storage-plan.md`：补充账簿创建临时库、完整性检查、原子改名、账簿结算、PC 本地恢复点、结算预览、失败回滚和旧结算校准证据只保存在 PC 本地。状态：已补充第一版需求计划。
 42. `docs/workplans/auth-session-secret-storage-plan.md`：补充 PC 本地账本密码、创建后密码设置、KDF、失败冷却、换密钥中断恢复和密钥材料 PC 本地安全边界。状态：已补充第一版需求计划。
 43. `docs/workplans/reporting-planning-plan.md` 与 `docs/workplans/list-query-filter-pagination-plan.md`：补充报表和列表导出/打印快照、查询参数追溯、公式状态和旧报表校准证据只保存在 PC 本地。状态：已补充第一版需求计划。
-44. `docs/workplans/settings-preferences-notification-plan.md`：补充旧设置、窗口状态、快捷键、最近账簿和授权协议校准证据只保存在 PC 本地；同步时只保存新系统设置值。状态：已补充第一版需求计划。
+44. `docs/workplans/settings-preferences-notification-plan.md`：补充旧设置、窗口状态、快捷键、最近账簿、授权协议校准证据、设置快照版本、快捷键冲突和作用域隔离；旧证据只保存在 PC 本地，同步时只保存新系统设置值。状态：已补充第一版需求计划。
 45. `docs/workplans/master-data-lifecycle-plan.md`：补充标签设为首页、拖放排序、批量关系、选择器候选版本、组合账户原子提交、期初分录和资料入口草稿策略。状态：已补充第一版需求计划。
 46. `docs/workplans/amount-currency-exchange-rate-plan.md`：补充本位币切换影响预览、自定义币种规范化、在线牌价暂存批次、汇率重复键和旧牌价诊断证据 PC 本地保存边界。状态：已补充第一版需求计划。
 47. `docs/workplans/command-form-lifecycle-plan.md`：补充保存并继续、批量模板逐行策略、复制粘贴、改变类型、转计划、退款、冲销、分期和陈旧草稿保护。状态：已补充第一版需求计划。

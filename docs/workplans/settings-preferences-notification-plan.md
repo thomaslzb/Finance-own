@@ -62,6 +62,40 @@
 4. 批量保存必须返回逐项结果。
 5. 权限不足时返回 `ledger_readonly`、`ledger_forbidden` 或等价错误。
 
+`SettingsSaveRequestDto` 字段：
+
+| 字段 | 说明 |
+| --- | --- |
+| `scope` | device、account、ledger、license、security 或 peripheral |
+| `ledger_id` | 账本级设置必填；设备级、账号级和授权级可为空 |
+| `settings_snapshot_version` | 打开设置页时读取的快照版本 |
+| `changes` | 待保存设置项列表，每项包含稳定设置键、目标值、预期版本和生效时机 |
+| `migration_preview_id` | 从旧设置迁移时的 PC 本地预览 ID，不上传旧配置原文 |
+| `idempotency_key` | 防止重复点击保存造成重复写入或重复通知 |
+
+`SettingsSaveResultDto` 字段：
+
+| 字段 | 说明 |
+| --- | --- |
+| `saved_items` | 已成功保存的设置项、版本和生效时机 |
+| `failed_items` | 逐项失败原因，例如权限不足、快捷键冲突、版本冲突或安全存储不可用 |
+| `effective_now_items` | 已立即生效并需要刷新页面的设置项 |
+| `pending_restart_items` | 需要重启、重开账本或重新认证后生效的设置项 |
+| `suppressed_items` | 因设备撤销、账本关闭、Viewer 权限或命令不可用被抑制的设置项 |
+| `audit_ref` | 脱敏审计引用，不包含旧配置原文、完整路径、令牌或密码 |
+
+设置错误码至少包括：
+
+| 错误码 | 含义 |
+| --- | --- |
+| `settings_scope_invalid` | 设置项写入了错误作用域 |
+| `settings_snapshot_stale` | 保存基于过期设置快照 |
+| `settings_item_failed` | 单项保存失败，查看逐项结果 |
+| `settings_shortcut_conflict` | 快捷键与已有命令或系统保留组合冲突 |
+| `settings_window_bounds_invalid` | 窗口坐标不可见或跨屏无效 |
+| `settings_license_storage_failed` | 授权级设置保存失败 |
+| `settings_secret_storage_unavailable` | 安全存储不可用 |
+
 ## 4. 三端设置边界
 
 ### 4.1 PC

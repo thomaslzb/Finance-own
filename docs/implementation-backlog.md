@@ -398,7 +398,7 @@
 10. 使用 `docs/workplans/account-device-ledger-membership-plan.md` 作为账号、设备、账本成员、角色变化和权限错误需求索引
 11. 使用 `docs/workplans/amount-currency-exchange-rate-plan.md` 作为金额、币种、汇率、本币折算和余额展示需求索引
 12. 使用 `docs/workplans/list-query-filter-pagination-plan.md` 作为列表查询、筛选、排序、查找、分页、缓存和导出打印状态需求索引
-13. 使用 `docs/workplans/settings-preferences-notification-plan.md` 作为设置、偏好、通知状态、手机快查、外围入口、快捷入口和设备状态需求索引
+13. 使用 `docs/workplans/settings-preferences-notification-plan.md` 作为设置作用域、批量保存逐项结果、生效时机、偏好、通知状态、手机快查、外围入口、快捷入口和设备状态需求索引
 14. 使用 `docs/workplans/command-form-lifecycle-plan.md` 作为命令、表单草稿、批量操作、模板、复制粘贴、导入预览、幂等和审计需求索引
 15. 使用 `docs/workplans/master-data-lifecycle-plan.md` 作为账户组、账户、分类、标签、往来方、币种和汇率快照生命周期需求索引
 16. 使用 `docs/workplans/ledger-lifecycle-storage-plan.md` 作为账本创建、临时库初始化、完整性检查、原子改名、同名/磁盘失败、打开、关闭、删除、云端绑定和本地存储边界需求索引
@@ -428,7 +428,7 @@
 40. 使用 `docs/workplans/ledger-lifecycle-storage-plan.md` 的账簿创建和结算补充规则作为临时库初始化、完整性检查、原子改名、PC 本地恢复点、结算预览、失败回滚和旧结算证据 PC 本地保存需求索引
 41. 使用 `docs/workplans/auth-session-secret-storage-plan.md` 的 PC 本地密码/KDF 补充规则作为创建后密码设置、两次密码确认、失败冷却、换密钥中断恢复和密钥材料不入云需求索引
 42. 使用 `docs/workplans/reporting-planning-plan.md` 与 `docs/workplans/list-query-filter-pagination-plan.md` 作为报表/列表导出打印快照、查询追溯和旧报表证据 PC 本地保存需求索引
-43. 使用 `docs/workplans/settings-preferences-notification-plan.md` 作为旧设置、窗口状态、快捷键、最近账簿和授权协议证据 PC 本地保存需求索引
+43. 使用 `docs/workplans/settings-preferences-notification-plan.md` 作为旧设置、窗口状态、快捷键、最近账簿、授权协议证据、设置快照版本、快捷键冲突和作用域隔离需求索引
 44. 使用 `docs/workplans/master-data-lifecycle-plan.md` 作为标签设为首页、拖放排序、批量关系、选择器候选版本失效和旧标签校准证据 PC 本地保存需求索引
 45. 使用 `docs/workplans/master-data-lifecycle-plan.md` 作为组合账户、一本通、多成员账户、账户组迁移、期初资金分录和资料入口草稿策略需求索引
 46. 使用 `docs/workplans/amount-currency-exchange-rate-plan.md` 作为本位币切换、自定义币种、在线牌价更新批次、汇率重复键和旧牌价诊断证据 PC 本地保存需求索引

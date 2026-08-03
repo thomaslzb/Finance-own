@@ -62,7 +62,7 @@
 | `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的账簿创建、结算、恢复点和失败回滚条目 | `ledger-lifecycle-storage-plan.md` | PC 本地新建临时库、同名/磁盘失败、完整性检查、原子改名、结算预览、截止日、恢复点、幂等、防半写和旧结算校准证据 PC 本地保存 |
 | `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的旧密码、KDF、换密钥、创建后密码设置和连续失败条目 | `auth-session-secret-storage-plan.md` | PC 本地账本密码/KDF、创建后密码设置、安全失败冷却、换密钥中断恢复和密钥材料不入云 |
 | `coverage-status.md`、`functional-audit-checklist.md` 中的报表导出、打印、排序和筛选边界条目 | `reporting-planning-plan.md`、`list-query-filter-pagination-plan.md` | 报表/列表快照、查询参数、排序、对象版本、公式状态和旧报表证据 PC 本地保存 |
-| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的系统设置、快捷键、窗口状态、最近账簿和授权协议条目 | `settings-preferences-notification-plan.md` | 旧设置迁移预览、快捷键冲突、窗口边界校验、授权级设置和旧配置证据 PC 本地保存 |
+| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的系统设置、快捷键、窗口状态、最近账簿和授权协议条目 | `settings-preferences-notification-plan.md` | 设置作用域、批量保存逐项结果、生效时机、旧设置迁移预览、快捷键冲突、窗口边界校验、授权级设置和旧配置证据 PC 本地保存 |
 | `coverage-status.md`、`functional-audit-checklist.md` 中的标签设为首页、拖放排序、批量关系和选择器候选失效条目 | `master-data-lifecycle-plan.md`、`command-form-lifecycle-plan.md` | 标签显示偏好、排序版本、批量关系影响预览、选择器候选版本和失败回滚 |
 | `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的组合账户、账户组迁移、期初分录和资料入口草稿条目 | `master-data-lifecycle-plan.md`、`command-form-lifecycle-plan.md` | 组合账户原子提交、组成员版本、期初来源类型、无账本状态和跨类型未保存草稿 |
 | `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的本位币切换、自定义币种、在线牌价和汇率边界条目 | `amount-currency-exchange-rate-plan.md`、`master-data-lifecycle-plan.md` | 本位币影响预览、自定义币种规范化、汇率暂存批次、重复业务键和旧牌价诊断 PC 本地保存 |

@@ -1330,7 +1330,7 @@
   "docs_manifest": [
     {
       "name": "acceptance-criteria.md",
-      "size": 101767
+      "size": 101976
     },
     {
       "name": "access-com-behavior.md",
@@ -1394,7 +1394,7 @@
     },
     {
       "name": "coverage-status.md",
-      "size": 16943
+      "size": 17119
     },
     {
       "name": "cross-domain-dataflow-catalog.md",
@@ -1438,7 +1438,7 @@
     },
     {
       "name": "feature-catalog.md",
-      "size": 17332
+      "size": 17473
     },
     {
       "name": "feature-inventory.md",
@@ -1474,11 +1474,11 @@
     },
     {
       "name": "functional-ledger.md",
-      "size": 53320
+      "size": 53543
     },
     {
       "name": "implementation-backlog.md",
-      "size": 22210
+      "size": 24406
     },
     {
       "name": "inner-table-field-map-summary.md",
@@ -1618,7 +1618,7 @@
     },
     {
       "name": "requirements-analysis.md",
-      "size": 139904
+      "size": 140169
     },
     {
       "name": "resource-binary-evidence.md",
@@ -1662,7 +1662,7 @@
     },
     {
       "name": "runtime-birthday-calendar-contract.md",
-      "size": 5071
+      "size": 5092
     },
     {
       "name": "runtime-bonds-ledger-and-maturity-contract.md",
@@ -1746,7 +1746,7 @@
     },
     {
       "name": "runtime-execution-queue.json",
-      "size": 2806452
+      "size": 2806480
     },
     {
       "name": "runtime-execution-queue.md",
@@ -1822,7 +1822,7 @@
     },
     {
       "name": "runtime-reminder-calendar-contract.md",
-      "size": 5435
+      "size": 6615
     },
     {
       "name": "runtime-securities-ledger-and-valuation-contract.md",
@@ -1850,7 +1850,7 @@
     },
     {
       "name": "scenario-data-flows.md",
-      "size": 86942
+      "size": 87131
     },
     {
       "name": "schema-hypothesis.md",
@@ -1882,7 +1882,7 @@
     },
     {
       "name": "sqlite-schema-and-query-contract.md",
-      "size": 29537
+      "size": 29981
     },
     {
       "name": "sync-protocol-draft.md",
@@ -1954,7 +1954,7 @@
     },
     {
       "name": "verified-vs-pending-index.md",
-      "size": 70017
+      "size": 70226
     },
     {
       "name": "workspace-map.md",
