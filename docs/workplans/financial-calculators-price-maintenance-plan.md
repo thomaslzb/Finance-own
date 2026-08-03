@@ -108,6 +108,23 @@
 | `protected_record_count` | 被交易、持仓、报表快照或同步版本保护的记录数 |
 | `can_execute` | 是否可执行 |
 | `blocked_reasons` | 阻断原因 |
+| `preview_version` | 预览版本 |
+| `affected_snapshot_refs` | 被估值、报表、限额或同步引用的快照摘要 |
+
+`PriceMaintenanceExecutionDto` 字段：
+
+| 字段 | 说明 |
+| --- | --- |
+| `execution_id` | 执行任务 ID |
+| `preview_id` | 来源预览 ID |
+| `ledger_id` | 账本 ID |
+| `expected_preview_version` | 用户确认的预览版本 |
+| `delete_mode` | tombstone、archive、physical_after_retention |
+| `deleted_record_count` | 已处理价格记录数 |
+| `skipped_record_count` | 跳过记录数 |
+| `rollback_snapshot_id` | 执行前恢复点或快照引用 |
+| `state` | pending、executing、completed、failed、rolled_back |
+| `client_request_id` | 幂等请求 ID |
 
 规则：
 
@@ -117,6 +134,10 @@
 4. 被交易、持仓、估值快照、报表冻结或同步版本引用的价格不得被无提示物理删除。
 5. 删除结果必须刷新价格列表、持仓估值、报表状态和审计记录。
 6. 大范围价格整理属于高风险命令，必须二次确认。
+7. 预览确认必须携带 `preview_version`；预览后新增价格、行情批次发布或报表冻结变化时，必须返回版本冲突并要求重新预览。
+8. 第一版优先使用墓碑或归档表达价格整理结果；物理删除只能在保留策略允许且无引用时由后续清理任务处理。
+9. 执行结果必须记录跳过记录、受保护记录、删除模式、恢复点和审计摘要。
+10. 价格整理不得重写历史交易采用的价格、汇率、净值或费用快照。
 
 ## 6. 三端职责
 
@@ -148,6 +169,8 @@
 | `price_cleanup_preview_required` | 未预览直接执行 | 阻止执行 |
 | `price_cleanup_protected_records` | 存在受保护价格记录 | 阻止或要求缩小范围 |
 | `price_cleanup_version_conflict` | 价格版本冲突 | 重新生成预览 |
+| `price_cleanup_snapshot_stale` | 预览后估值、报表或同步快照变化 | 重新生成预览 |
+| `price_cleanup_rollback_failed` | 执行失败后回滚失败 | 进入受控恢复流程 |
 | `price_cleanup_permission_denied` | 权限不足 | 阻止执行 |
 
 ## 9. 验收场景
@@ -159,8 +182,10 @@
 5. 净价/清洁价格计算只回填债券交易草稿的净价、全价或应计利息字段，不能直接生成债券交易或资金分录。
 6. 执行价格整理前必须展示价格类型、对象数、记录数、保护记录数和二次确认。
 7. 取消价格整理不改变价格记录、持仓估值或报表。
-8. 删除执行失败时整体回滚，价格列表、持仓估值和报表状态保持旧版本。
-9. 旧公式校准证据、旧净价计算证据、旧价格整理证据、迁移审计、迁移报告、脱敏摘要、旧路径和旧原始行只保存在 PC 本地。
+8. 预览后价格、行情批次、估值或报表快照变化时，确认执行必须被拒绝并要求重新预览。
+9. 删除执行失败时整体回滚，价格列表、持仓估值、报表状态和审计保持旧版本。
+10. 价格整理结果使用墓碑或归档，不重写历史交易采用的价格、汇率、净值或费用快照。
+11. 旧公式校准证据、旧净价计算证据、旧价格整理证据、迁移审计、迁移报告、脱敏摘要、旧路径和旧原始行只保存在 PC 本地。
 
 ## 10. 当前无需人工确认
 

@@ -108,13 +108,14 @@ SQLite 不承担隐式浮点舍入。Rust 领域层必须使用定点值并统�
 
 ### 1.8 普通提醒与日历投影
 
-动态样例确认普通提醒定义、待处理实例和财务日历投影是三个边界。一次性实例在 `pending` 时按应发生日进入日历；跳过后日历来源立即消失，但定义仍保留在已完成范围，真实动作必须是 `skipped` 而不是执行。
+动态样例确认普通提醒定义、发生实例和旧版兼容日历投影是三个边界。一次性样例因开始日、唯一发生日和定义完成日重合，只能证明完成后标记消失；未来每天重复 2 次样例进一步证明：今日提醒按提前资格窗口和实例推进，而旧日历把活动定义固定投影在 `start_date`，不随 `next_occurrence_date` 迁移，并在定义完成后消失。
 
-- 下一版日历查询应按 `ledger_id + occurrence_date + status` 读取普通提醒实例，并输出稳定 `occurrence_id`、定义与规则版本、摘要、来源类型和 `can_open`；不能用提醒名称作为关联键。
-- 应发生日与提前提醒资格窗口必须分列或以等价的类型化结构保存。`v_today_reminder_inbox` 可按资格窗口读取，日历则按应发生日读取；未来实例的旧版日历规则尚未校准，不能把两个查询合并。
-- 跳过命令原子写入实例状态、动作时间、操作者和幂等键；成功提交后今日提醒与日历从同一提交版本刷新，不生成交易、不删除定义，也不影响同日其它来源。
-- `pending` 普通提醒进入当前兼容日历，`skipped` 不进入。`executed`、`dismissed`、`failed`、`archived`、重复实例和定义修改后的日历行为仍待动态验证。
-- 查询索引至少覆盖 `ledger_id + occurrence_date + status`；历史审计查询仍按定义 ID 和状态读取全部实例，不能为当前投影性能物理删除已处理行。
+- `v_today_reminder_inbox` 按 `ledger_id + eligible_from_date + occurrence_date + occurrence_status` 读取实例，输出稳定 `occurrence_id`、定义与规则版本以及实例命令能力。
+- `LegacyReminderCalendarProjection` 按 `ledger_id + schedule.start_date + schedule_state` 读取活动普通提醒定义，输出稳定 `schedule_id`、定义版本、摘要、来源类型和 `can_open`；不能用提醒名称作为关联键，也不能按下一实例日期移动标记。
+- `start_date`、`occurrence_date` 与 `eligible_from_date` 必须分列或以等价的类型化结构保存，两个查询不得合并。
+- 跳过命令原子写入实例状态、动作时间、操作者和幂等键并推进定义；非最终实例处理后开始日兼容投影保持，最终实例处理使定义完成后兼容投影退出。不生成交易、不删除定义，也不影响同日其它来源。
+- 索引至少分别覆盖定义的 `ledger_id + start_date + state`、实例的 `ledger_id + eligible_from_date + occurrence_date + status`，以及实例的定义 ID 与状态历史查询；不能为当前投影性能物理删除已处理行。
+- 每周、每月、每年、自定义规则以及定义修改、暂停、停用、归档后的日历行为仍待动态验证。目标产品若提供逐实例日历，应作为独立规则，不得替换旧版兼容查询。
 
 详细运行证据和待验证边界见 [runtime-reminder-calendar-contract.md](C:\DCG-SZ\SZ-System-Docs\CodexWorkSpace\Finance-own\docs\runtime-reminder-calendar-contract.md)。
 

@@ -1,4 +1,4 @@
-"""生成普通提醒实例到财务日历投影的补充运行记录。"""
+"""生成普通提醒在今日提醒与财务日历中的补充运行记录。"""
 
 from __future__ import annotations
 
@@ -8,11 +8,22 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "artifacts" / "runtime-validation"
-OBSERVED_AT = "2026-08-03T15:30:00+08:00"
-FILE_SUFFIX = "20260803T153000+0800"
+OBSERVED_AT = "2026-08-03T16:10:00+08:00"
+FILE_SUFFIX = "20260803T161000+0800"
 LEDGER_PATH = r"C:\DCG-SZ\IT Manage\Private\Personal-Docs\test.mh8"
 BASELINE_HASH = "D8E4AE302231A7A9B99B06D28C4D83500F8CD32D95F003814039E91EB0E165AC"
-BACKUP_ARTIFACT = "artifacts/runtime-validation/backups/RT-15-009-reminder-projection-before-20260803T-current.mh8"
+BACKUP_ARTIFACT = (
+    "artifacts/runtime-validation/backups/"
+    "RT-15-009-future-recurring-reminder-before-20260803T-current.mh8"
+)
+FIRST_SKIP_ARTIFACT = (
+    "artifacts/runtime-validation/backups/"
+    "RT-15-009-future-recurring-reminder-after-first-skip-20260803T1601+0800.mh8"
+)
+AFTER_DELETE_ARTIFACT = (
+    "artifacts/runtime-validation/backups/"
+    "RT-15-009-future-recurring-reminder-after-delete-20260803T1610+0800.mh8"
+)
 CONTRACT = "docs/runtime-reminder-calendar-contract.md"
 
 
@@ -29,7 +40,7 @@ def evidence(path: str, description: str, kind: str = "screenshot") -> dict:
 
 
 def build_record() -> dict:
-    """生成包含日记、生日和普通提醒结论的最新版日历记录。"""
+    """生成包含日记、生日和两类普通提醒样例的最新版日历记录。"""
 
     return {
         "schema_version": 1,
@@ -50,11 +61,11 @@ def build_record() -> dict:
         "navigation": {
             "entry_point": "财智8 -> 计划提醒 -> 计划与提醒 / 今日提醒 / 财务日历",
             "steps": [
-                "创建当天一次性普通提醒并核对计划列表",
-                "核对待处理实例的今日提醒能力",
-                "核对同日日历提醒图标、名称摘要和交易标记",
-                "跳过实例并重新打开财务日历",
-                "显示已完成定义并确认兼容完成态",
+                "创建开始日为次日、每天重复2次、提前3天的普通提醒",
+                "核对今日提醒资格日、计划列表和开始日日历投影",
+                "跳过第一期并核对今日提醒推进与两个发生日的日历状态",
+                "完整冷启动后重复核对中间状态",
+                "跳过第二期并核对定义完成后的日历状态",
                 "删除临时定义并恢复test.mh8精确基线",
             ],
             "reachable": True,
@@ -81,88 +92,124 @@ def build_record() -> dict:
                 ],
             },
             {
-                "name": "普通提醒待处理投影",
+                "name": "一次性提醒完成后投影消失",
                 "status": "observed",
-                "observations": "CodexRT15CalendarReminder待处理时，日期格显示独立勾选图标，摘要显示提醒名称；同日账务图标和有账务记录保持。",
+                "observations": "一次性提醒在开始日显示，跳过后定义完成且标记消失；因开始日、唯一发生日和完成日重合，该样例不能单独证明实例投影。",
                 "evidence_paths": [
-                    shot("rt15-calendar-reminder-plan-list-after-save-20260803T1518.png"),
                     shot("rt15-calendar-reminder-pending-projection-20260803T1519.png"),
-                    shot("rt15-calendar-reminder-today-before-skip-20260803T1521.png"),
-                ],
-            },
-            {
-                "name": "跳过后投影消失",
-                "status": "observed",
-                "observations": "跳过后今日提醒清空，日历提醒图标和摘要消失，交易来源保持；定义仍在已完成范围并显示执行完毕。",
-                "evidence_paths": [
-                    shot("rt15-calendar-reminder-today-after-skip-20260803T1522.png"),
                     shot("rt15-calendar-reminder-after-skip-20260803T1523.png"),
                     shot("rt15-calendar-reminder-completed-plan-list-20260803T1526.png"),
                 ],
             },
             {
-                "name": "临时定义删除与基线恢复",
+                "name": "提前资格只进入今日提醒",
                 "status": "observed",
-                "observations": "确认删除后临时定义退出已完成列表；指定测试账簿恢复到运行前精确指纹。",
+                "observations": "2026-08-03今日提醒显示第一期2026-08-04和1天后；同日财务日历没有提醒，开始日2026-08-04才显示勾选图标和名称。",
                 "evidence_paths": [
-                    shot("rt15-calendar-reminder-delete-confirm-20260803T1529.png"),
-                    shot("rt15-calendar-reminder-after-delete-20260803T1529.png"),
+                    shot("rt15-future-daily-plan-list-after-save-20260803T1550.png"),
+                    shot("rt15-future-daily-today-before-first-skip-20260803T1551.png"),
+                    shot("rt15-future-daily-calendar-eligibility-day-20260803T1556.png"),
+                    shot("rt15-future-daily-calendar-first-occurrence-20260804T1557.png"),
+                ],
+            },
+            {
+                "name": "首次跳过后日历仍锚定开始日",
+                "status": "observed",
+                "observations": "第一期跳过后今日提醒和计划下次日期推进到2026-08-05；日历仍只在2026-08-04显示，2026-08-05为空。",
+                "evidence_paths": [
+                    shot("rt15-future-daily-today-after-first-skip-20260803T1558.png"),
+                    shot("rt15-future-daily-plan-list-after-first-skip-20260803T1600.png"),
+                    shot("rt15-future-daily-calendar-first-after-skip-20260804T1559.png"),
+                    shot("rt15-future-daily-calendar-second-occurrence-20260805T1559.png"),
+                ],
+            },
+            {
+                "name": "中间状态冷启动保持",
+                "status": "observed",
+                "observations": "完整重启后今日提醒仍显示第二期，财务日历仍只在定义开始日显示，排除单纯页面缓存。",
+                "evidence_paths": [
+                    shot("rt15-future-daily-today-cold-after-first-skip-20260803T1604.png"),
+                    shot("rt15-future-daily-calendar-cold-first-after-skip-20260804T1605.png"),
+                    shot("rt15-future-daily-calendar-cold-second-after-skip-20260805T1605.png"),
+                ],
+            },
+            {
+                "name": "定义完成、删除与基线恢复",
+                "status": "observed",
+                "observations": "第二期跳过后定义完成，开始日和第二发生日均无标记；删除临时定义后指定测试账簿恢复精确指纹。",
+                "evidence_paths": [
+                    shot("rt15-future-daily-today-after-second-skip-20260803T1606.png"),
+                    shot("rt15-future-daily-calendar-first-after-complete-20260804T1607.png"),
+                    shot("rt15-future-daily-calendar-second-after-complete-20260805T1607.png"),
+                    shot("rt15-future-daily-plan-list-completed-20260803T1608.png"),
+                    shot("rt15-future-daily-plan-list-after-delete-20260803T1609.png"),
                 ],
             },
         ],
         "commands": [
             {
-                "component": "reminderOccurrenceProjection",
-                "label": "提醒摘要",
-                "initial_state": {"status": "pending", "visible": True},
-                "trigger": "选择提醒应发生日2026-08-03",
+                "component": "legacyReminderCalendarProjection",
+                "label": "普通提醒兼容日历摘要",
+                "initial_state": {"schedule_state": "active", "visible_on_start_date": True},
+                "trigger": "分别选择资格日、定义开始日和第二发生日",
                 "confirmation": None,
-                "outcome": "显示CodexRT15CalendarReminder和独立提醒图标；未观察到查看入口。",
+                "outcome": "只在活动定义的开始日显示；不按提前资格日或下一发生日迁移。",
                 "status": "pass",
             },
             {
-                "component": "todayReminder/reminderOccurrenceProjection",
-                "label": "跳过提醒实例",
+                "component": "todayReminder/reminderOccurrence",
+                "label": "跳过重复提醒实例",
                 "initial_state": {"can_execute": False, "can_skip": True},
-                "trigger": "今日提醒点击跳过后重新打开财务日历",
+                "trigger": "依次跳过两期并在第一期后完整冷启动",
                 "confirmation": None,
-                "outcome": "本期实例退出今日提醒和日历，定义保留为兼容完成态，同日交易标记保持。",
+                "outcome": "第一期后实例推进但开始日投影保持；最终定义完成后兼容日历投影消失。",
                 "status": "pass",
             },
         ],
         "data_flow": {
-            "inputs": ["账簿ID", "选中自然日", "提醒实例ID和版本"],
-            "reads": ["pending普通提醒实例", "同日交易存在性", "同日日记和生日来源"],
-            "writes": ["跳过命令写实例动作、处理时间和审计；日历查询本身无写入"],
-            "derived_results": ["按来源类型分组的日期图标和摘要", "提醒实例当前可见性", "来源命令能力"],
-            "side_effects": ["跳过不生成交易、不删除提醒定义或同日其它来源"],
-            "rollback": "跳过提交失败时实例保持待处理；成功后今日提醒和日历从同一提交版本刷新。",
+            "inputs": ["账簿ID", "当前业务日", "选中自然日", "提醒定义或实例ID和版本"],
+            "reads": [
+                "今日提醒读取提前资格窗口内的pending普通提醒实例",
+                "旧日历读取开始日等于选中日期的活动普通提醒定义",
+                "同日交易、日记和生日来源",
+            ],
+            "writes": ["跳过命令写实例动作、处理时间和审计并推进定义；日历查询本身无写入"],
+            "derived_results": [
+                "按occurrence_id生成的今日提醒项",
+                "按schedule_id和start_date生成的旧日历兼容项",
+                "来源命令能力",
+            ],
+            "side_effects": ["跳过不生成交易、不删除定义或同日其它来源"],
+            "rollback": "跳过提交失败时实例和定义推进均不生效；成功后今日提醒与兼容日历从同一提交版本刷新。",
         },
         "evidence": [
             evidence(CONTRACT, "普通提醒与财务日历运行合同。", "manual_note"),
             evidence("artifacts/runtime-validation/RT15-financial-calendar-notes.md", "财务日历运行笔记。", "manual_note"),
             evidence("artifacts/runtime-validation/RT15-plans-and-reminders-notes.md", "计划与提醒运行笔记。", "manual_note"),
             evidence(BACKUP_ARTIFACT, "运行前精确基线。", "file"),
-            evidence("artifacts/runtime-validation/backups/RT-15-009-reminder-projection-after-delete-20260803T1530+0800.mh8", "删除临时定义后的业务副本。", "file"),
-            evidence("artifacts/runtime-validation/backups/RT-15-009-reminder-projection-recovery-side-after-delete-20260803T1530+0800", "关闭进程后的恢复侧文件。", "file"),
+            evidence(FIRST_SKIP_ARTIFACT, "首次跳过后的冷启动中间业务状态。", "file"),
+            evidence(AFTER_DELETE_ARTIFACT, "删除临时定义后的业务副本。", "file"),
+            evidence("artifacts/runtime-validation/backups/RT-15-009-future-recurring-reminder-side-after-first-skip-20260803T1601+0800", "首次跳过并关闭进程后的恢复侧文件。", "file"),
+            evidence("artifacts/runtime-validation/backups/RT-15-009-future-recurring-reminder-side-after-delete-20260803T1610+0800", "删除临时定义并关闭进程后的恢复侧文件。", "file"),
         ],
         "requirements_update": [
-            "普通提醒定义与每次发生实例分层，日历使用occurrence_id而不是定义名称作为来源键。",
-            "当前兼容投影只返回应发生日在选中日期且状态为pending的普通提醒实例。",
-            "跳过原子保存skipped动作和审计，随后移出今日提醒和日历，但保留定义与历史实例。",
-            "应发生日与提前提醒资格窗口分别保存，未来日期日历口径在验证前不得合并。",
+            "ReminderSchedule、ReminderOccurrence和LegacyReminderCalendarProjection必须分层。",
+            "今日提醒按eligible_from_date到occurrence_date的资格窗口读取实例，并在跳过后推进下一实例。",
+            "旧版兼容日历只在活动普通提醒定义的start_date返回schedule_id来源，不跟随next_occurrence_date。",
+            "最终实例处理使定义完成后，开始日兼容标记退出；历史skipped动作和实例审计继续保留。",
+            "start_date、occurrence_date和eligible_from_date分别保存，不能互相覆盖。",
+            "目标产品如增加逐实例日历，必须与MoneyHome8兼容投影明确区分。",
             "同日提醒、交易、日记和生日独立聚合，任一来源状态变化不得覆盖其它来源。",
-            "摘要下钻使用明确can_open能力；旧版未观察到查看入口，不能臆造兼容行为。",
         ],
         "result": {
             "status": "partial",
-            "summary": "已验证普通提醒待处理实例进入财务日历、与交易独立共存，并在跳过后立即退出日历而定义保留为已完成。",
+            "summary": "已验证今日提醒按发生实例和提前资格窗口推进；MoneyHome8旧财务日历则把活动普通提醒定义锚定在开始日，并在定义完成后移除。",
             "remaining_gaps": [
-                "未来提醒的提前窗口与日历应发生日口径",
-                "重复提醒多期投影和冷启动保持",
+                "每周、每月、每年和自定义重复规则的开始日投影",
+                "定义修改开始日以及暂停、停用、归档和删除后的投影",
                 "同日多提醒及跨来源稳定排序",
                 "提醒摘要点击、下钻和详情提示",
-                "执行、失败、停用、归档和修改后的日历状态",
+                "执行、失败和并发提交的一致性",
                 "历史公历生日周年、农历规则和日记查看下钻",
             ],
         },

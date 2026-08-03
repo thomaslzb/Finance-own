@@ -724,13 +724,13 @@ PC 本地可以保存：
 16. `docs/workplans/settings-preferences-notification-plan.md`：设置、偏好、快捷入口、通知状态、设备状态、生效范围和安全边界。状态：已创建第一版需求计划。
 17. `docs/workplans/command-form-lifecycle-plan.md`：命令、表单草稿、提交状态、批量操作、模板、复制粘贴、导入预览、幂等和审计。状态：已创建第一版需求计划。
 18. `docs/workplans/master-data-lifecycle-plan.md`：账户组、账户、分类、标签、往来方、币种和汇率快照的生命周期、权限、同步和冲突边界。状态：已创建第一版需求计划。
-19. `docs/workplans/ledger-lifecycle-storage-plan.md`：账本创建、打开、关闭、删除、云端绑定、本地文件、备份恢复和三端可见性边界。状态：已创建第一版需求计划。
+19. `docs/workplans/ledger-lifecycle-storage-plan.md`：账本创建、临时库初始化、完整性检查、原子改名、同名/磁盘失败、打开、关闭、删除、云端绑定、本地文件、备份恢复和三端可见性边界。状态：已创建第一版需求计划。
 20. `docs/workplans/investment-advanced-assets-calibration-plan.md`：投资、证券、基金、债券、外汇、期货、贵金属、保险和重大资产的输入、校准状态、三端展示和旧迁移隐私边界。状态：已创建第一版需求计划。
 21. `docs/workplans/data-retention-deletion-recovery-plan.md`：数据删除、归档、保留、恢复、物理清理、墓碑同步和三端权限边界。状态：已创建第一版需求计划。
 22. `docs/workplans/date-time-period-semantics-plan.md`：业务日期、发生时间、审计时间、账本时区、账期、预算周期、提醒周期和三端展示同步口径。状态：已创建第一版需求计划。
 23. `docs/workplans/domain-validation-invariants-plan.md`：三端输入、Rust 本地核心、.NET API、手机离线队列、导入迁移和存储约束的领域校验与业务不变量。状态：已创建第一版需求计划。
 24. `docs/workplans/localization-accessibility-display-plan.md`：金额日期显示、本地化消息、稳定命令键、字段错误、基础可访问性和旧中文字段解析边界。状态：已创建第一版需求计划。
-25. `docs/workplans/auth-session-secret-storage-plan.md`：账号登录、会话、访问令牌、刷新令牌、退出登录、设备撤销、秘密存储和三端降级行为。状态：已创建第一版需求计划。
+25. `docs/workplans/auth-session-secret-storage-plan.md`：账号登录、会话、访问令牌、刷新令牌、退出登录、设备撤销、创建后账本密码设置、秘密存储和三端降级行为。状态：已创建第一版需求计划。
 26. `docs/workplans/operations-observability-support-plan.md`：云端运行监控、诊断 ID、告警、客户服务入口、支持入口、数据修复、日志保留和运维隐私边界。状态：已创建第一版需求计划。
 27. `docs/workplans/testing-acceptance-release-gates-plan.md`：三端测试、验收证据、隐私安全门禁、财务数据门禁、运维门禁和发布说明边界。状态：已创建第一版需求计划。
 28. `docs/workplans/schedule-reminder-occurrence-plan.md`：计划模板、提醒、发生实例、今日待办、执行/跳过能力标志、自动入账后置和三端同步边界。状态：已创建第一版需求计划。
@@ -739,15 +739,15 @@ PC 本地可以保存：
 31. `docs/workplans/deposits-debts-credit-amortization-plan.md`：存款、银行理财、债权债务、信用卡账单、账单日/还款日规则、短月份策略、账单生成幂等、分期摊还、分录平衡、敏感信息保护和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
 32. `docs/workplans/insurance-social-security-tangible-assets-plan.md`：保险、社保、现金价值、重大资产、家居物品、估值、分期、敏感信息保护和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
 33. `docs/workplans/market-instruments-trading-valuation-plan.md`：证券、基金、债券、融资融券、证券代码转换、新股关联、费率快照、行情净值、估值批次、成本批次、合同偿还和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
-34. `docs/workplans/shared-ui-ai-diagnostics-automation-plan.md`：共享 UI、金额计算器、Web 内容宿主、AI 适配器默认关闭、内部诊断控制台隔离、旧程序自动化证据和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
+34. `docs/workplans/shared-ui-ai-diagnostics-automation-plan.md`：共享 UI、金额计算器、Web 内容宿主来源/脚本桥限制、AI 适配器默认关闭、内部诊断控制台命令描述符、风险等级、审计隔离、旧程序自动化证据和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
 35. `docs/workplans/payroll-income-tax-social-contribution-plan.md`：工资收入、税务计算快照、社保缴费组成、原子提交、三端同步和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
 36. `docs/workplans/source-document-traceability-plan.md`：根目录 PRD、架构、同步草案、验收标准、覆盖矩阵和证据文档到 workplans 的承接规则。状态：已创建第一版追溯计划。
-37. `docs/workplans/diary-calendar-richtext-plan.md`：日记、富文本正文、搜索、导出、财务日历投影、人员生日投影、三端同步和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
-38. `docs/workplans/financial-calculators-price-maintenance-plan.md`：财务计算器、公式版本、结果回填、价格整理预览、高风险删除和旧证据 PC 本地保存边界。状态：已创建第一版需求计划。
+37. `docs/workplans/diary-calendar-richtext-plan.md`：日记、富文本正文、搜索、导出清单、导出快照、HTML/PDF 安全、财务日历投影、人员生日投影、三端同步和旧迁移证据 PC 本地保存边界。状态：已创建第一版需求计划。
+38. `docs/workplans/financial-calculators-price-maintenance-plan.md`：财务计算器、公式版本、结果回填、价格整理预览版本、受影响快照、墓碑/归档、回滚、高风险删除和旧证据 PC 本地保存边界。状态：已创建第一版需求计划。
 39. `docs/workplans/wallet-recharge-withdrawal-plan.md`：第三方钱包充值、提现、本金手续费组成、保存并继续、修改删除、内联账户新建和旧验证证据 PC 本地保存边界。状态：已创建第一版需求计划。
 40. `docs/workplans/prepaid-expenses-amortization-plan.md`：待摊费用主体、初始资金事实、确定金额期次、幂等摊销、计划重算、删除影响和旧验证证据 PC 本地保存边界。状态：已创建第一版需求计划。
-41. `docs/workplans/ledger-lifecycle-storage-plan.md`：补充账簿结算、PC 本地恢复点、结算预览、失败回滚和旧结算校准证据只保存在 PC 本地。状态：已补充第一版需求计划。
-42. `docs/workplans/auth-session-secret-storage-plan.md`：补充 PC 本地账本密码、KDF、失败冷却、换密钥中断恢复和密钥材料 PC 本地安全边界。状态：已补充第一版需求计划。
+41. `docs/workplans/ledger-lifecycle-storage-plan.md`：补充账簿创建临时库、完整性检查、原子改名、账簿结算、PC 本地恢复点、结算预览、失败回滚和旧结算校准证据只保存在 PC 本地。状态：已补充第一版需求计划。
+42. `docs/workplans/auth-session-secret-storage-plan.md`：补充 PC 本地账本密码、创建后密码设置、KDF、失败冷却、换密钥中断恢复和密钥材料 PC 本地安全边界。状态：已补充第一版需求计划。
 43. `docs/workplans/reporting-planning-plan.md` 与 `docs/workplans/list-query-filter-pagination-plan.md`：补充报表和列表导出/打印快照、查询参数追溯、公式状态和旧报表校准证据只保存在 PC 本地。状态：已补充第一版需求计划。
 44. `docs/workplans/settings-preferences-notification-plan.md`：补充旧设置、窗口状态、快捷键、最近账簿和授权协议校准证据只保存在 PC 本地；同步时只保存新系统设置值。状态：已补充第一版需求计划。
 45. `docs/workplans/master-data-lifecycle-plan.md`：补充标签设为首页、拖放排序、批量关系、选择器候选版本、组合账户原子提交、期初分录和资料入口草稿策略。状态：已补充第一版需求计划。
@@ -759,7 +759,7 @@ PC 本地可以保存：
 51. `docs/workplans/financial-goals-planning-input-plan.md`：补充规划推演起始余额组成、通胀/退休/资产增长/分期展开公式版本、清空确认、多币种错误状态和旧规划证据 PC 本地保存边界。状态：已补充第一版需求计划。
 52. `docs/workplans/reporting-planning-plan.md`：补充预算期间、退款冲销、多币种预算、滚动导入、财务诊断指标边界和目标进度多账户估值口径。状态：已补充第一版需求计划。
 53. `docs/workplans/reporting-planning-plan.md` 与 `docs/workplans/list-query-filter-pagination-plan.md`：补充报表排序、分组小计、页脚合计、趋势图、概况可用资金图表、钻取版本和旧 SQL/旧查询证据 PC 本地保存边界。状态：已补充第一版需求计划。
-54. `docs/workplans/attachment-privacy-plan.md`：补充多附件引用、最后引用待清理、物理清理幂等、哈希校验、扫描/配额/大文件错误和票据凭证生命周期。状态：已补充第一版需求计划。
+54. `docs/workplans/attachment-privacy-plan.md`：补充多附件引用、最后引用待清理、隔离区、恢复校验、物理清理幂等、重试耗尽、哈希校验、扫描/配额/大文件错误、云端不得远程删除 PC 本地未同步附件和票据凭证生命周期。状态：已补充第一版需求计划。
 55. `docs/workplans/dotnet-sync-api-plan.md`、`docs/workplans/mobile-offline-queue-plan.md` 和 `docs/workplans/settings-preferences-notification-plan.md`：补充同步批次幂等、分片断点续传、取消、墓碑传播、下载续拉、手机快查失败分类和远程通知幂等。状态：已补充第一版需求计划。
 56. `docs/workplans/backup-import-export-plan.md`：补充旧 XML 21 类数据集选择、分区预览、覆盖/去重策略、银行/信用卡/券商专用账单适配、旧 `.mh8k` 隔离探测、恢复为新账本和旧迁移证据 PC 本地保存边界。状态：已补充第一版需求计划。
 57. `docs/workplans/cache-reference-lookup-plan.md`：补充旧缓存只读候选、`_PY/_LIST/_3/_4/_9` 语义、候选版本、未确认中文片段保护、三端旧缓存隔离和旧缓存诊断 PC 本地保存边界。状态：已创建第一版需求计划。

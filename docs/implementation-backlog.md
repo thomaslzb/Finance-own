@@ -401,32 +401,32 @@
 13. 使用 `docs/workplans/settings-preferences-notification-plan.md` 作为设置、偏好、通知状态、手机快查、外围入口、快捷入口和设备状态需求索引
 14. 使用 `docs/workplans/command-form-lifecycle-plan.md` 作为命令、表单草稿、批量操作、模板、复制粘贴、导入预览、幂等和审计需求索引
 15. 使用 `docs/workplans/master-data-lifecycle-plan.md` 作为账户组、账户、分类、标签、往来方、币种和汇率快照生命周期需求索引
-16. 使用 `docs/workplans/ledger-lifecycle-storage-plan.md` 作为账本创建、打开、关闭、删除、云端绑定和本地存储边界需求索引
+16. 使用 `docs/workplans/ledger-lifecycle-storage-plan.md` 作为账本创建、临时库初始化、完整性检查、原子改名、同名/磁盘失败、打开、关闭、删除、云端绑定和本地存储边界需求索引
 17. 使用 `docs/workplans/investment-advanced-assets-calibration-plan.md` 作为投资、高级资产、公式校准状态和旧迁移隐私边界需求索引
 18. 使用 `docs/workplans/data-retention-deletion-recovery-plan.md` 作为删除、归档、保留、恢复、物理清理和墓碑同步需求索引
 19. 使用 `docs/workplans/date-time-period-semantics-plan.md` 作为业务日期、发生时间、审计时间、账本时区、账期、预算周期和提醒周期需求索引
 20. 使用 `docs/workplans/domain-validation-invariants-plan.md` 作为三端输入、Rust 本地核心、.NET API、手机队列、导入迁移和存储约束的领域校验需求索引
 21. 使用 `docs/workplans/localization-accessibility-display-plan.md` 作为金额日期显示、本地化消息、稳定命令键、字段错误、基础可访问性和旧中文字段解析边界需求索引
-22. 使用 `docs/workplans/auth-session-secret-storage-plan.md` 作为账号登录、会话、访问令牌、刷新令牌、退出登录、设备撤销和秘密存储需求索引
+22. 使用 `docs/workplans/auth-session-secret-storage-plan.md` 作为账号登录、会话、访问令牌、刷新令牌、退出登录、设备撤销、创建后账本密码设置和秘密存储需求索引
 23. 使用 `docs/workplans/operations-observability-support-plan.md` 作为云端运行监控、诊断 ID、告警、客户服务入口、支持入口、数据修复和运维隐私边界需求索引
 24. 使用 `docs/workplans/testing-acceptance-release-gates-plan.md` 作为三端测试、验收证据、隐私安全门禁、财务数据门禁、运维门禁和发布说明边界需求索引
-25. 使用 `docs/workplans/schedule-reminder-occurrence-plan.md` 作为计划模板、提醒、发生实例、今日待办、财务日历待处理投影、执行/跳过能力标志和自动入账后置需求索引
+25. 使用 `docs/workplans/schedule-reminder-occurrence-plan.md` 作为计划模板、提醒、发生实例、今日待办、财务日历活动定义开始日兼容投影、执行/跳过能力标志和自动入账后置需求索引
 26. 使用 `docs/workplans/financial-goals-planning-input-plan.md` 作为财务目标、规划输入、进度公式版本、引用影响预览和旧迁移证据 PC 本地保存需求索引
 27. 使用 `docs/workplans/limit-alert-budget-rule-evaluation-plan.md` 作为限额提醒、预算提示、条件版本、幂等评估、今日提醒投影和引用影响预览需求索引
-28. 使用 `docs/workplans/deposits-debts-credit-amortization-plan.md` 作为存款、银行理财、债权债务、信用卡账单、账单日规则、分期摊还、分录平衡和敏感信息保护需求索引
+28. 使用 `docs/workplans/deposits-debts-credit-amortization-plan.md` 作为存款、银行理财、债权债务、信用卡账单、账单日/还款日规则、短月份策略、账单生成幂等、分期摊还、分录平衡和敏感信息保护需求索引
 29. 使用 `docs/workplans/insurance-social-security-tangible-assets-plan.md` 作为保险、社保、现金价值、重大资产、家居物品、估值、分期和敏感信息保护需求索引
 30. 使用 `docs/workplans/market-instruments-trading-valuation-plan.md` 作为证券、基金、债券、融资融券、证券代码转换、新股关联、行情更新批次、费率快照、行情净值、估值批次、成本批次和合同偿还需求索引
-31. 使用 `docs/workplans/shared-ui-ai-diagnostics-automation-plan.md` 作为共享 UI、金额计算器、Web 内容宿主、AI 适配器默认关闭、内部诊断控制台隔离和旧程序自动化证据本地化需求索引
+31. 使用 `docs/workplans/shared-ui-ai-diagnostics-automation-plan.md` 作为共享 UI、金额计算器、Web 内容宿主来源/脚本桥限制、AI 适配器默认关闭、内部诊断控制台命令描述符、风险等级、审计隔离和旧程序自动化证据本地化需求索引
 32. 使用 `docs/workplans/payroll-income-tax-social-contribution-plan.md` 作为工资收入、税务计算快照、社保缴费组成、原子提交和旧迁移证据 PC 本地保存需求索引
 33. 使用 `docs/workplans/source-document-traceability-plan.md` 作为根目录 PRD、架构、同步草案、验收标准、覆盖矩阵和证据文档到 workplans 的承接索引
-34. 使用 `docs/workplans/diary-calendar-richtext-plan.md` 作为日记、富文本正文、搜索、导出、财务日历投影、人员生日投影和旧迁移证据 PC 本地保存需求索引
-35. 使用 `docs/workplans/financial-calculators-price-maintenance-plan.md` 作为财务计算器、净价/清洁价格计算、公式版本、结果回填、价格整理预览和旧证据 PC 本地保存需求索引
+34. 使用 `docs/workplans/diary-calendar-richtext-plan.md` 作为日记、富文本正文、搜索、导出清单、导出快照、HTML/PDF 安全、财务日历投影、人员生日投影和旧迁移证据 PC 本地保存需求索引
+35. 使用 `docs/workplans/financial-calculators-price-maintenance-plan.md` 作为财务计算器、净价/清洁价格计算、公式版本、结果回填、价格整理预览版本、受影响快照、墓碑/归档、回滚和旧证据 PC 本地保存需求索引
 36. 使用 `docs/workplans/wallet-recharge-withdrawal-plan.md` 作为第三方钱包充值、提现、本金手续费组成、保存并继续和旧验证证据 PC 本地保存需求索引
 37. 使用 `docs/workplans/prepaid-expenses-amortization-plan.md` 作为待摊费用主体、初始资金事实、确定金额期次、幂等摊销、计划重算和旧验证证据 PC 本地保存需求索引
 38. 继续运行原程序页面并用最小样例校准余额、本币折算和投资公式
 39. 将 `test001.mh8` 外层封装、裸 Jet 副本认证与结构枚举保留为 PC 本地只读迁移工作，不阻塞 Flutter 三端与云同步主线
-40. 使用 `docs/workplans/ledger-lifecycle-storage-plan.md` 的账簿结算补充规则作为 PC 本地恢复点、结算预览、失败回滚和旧结算证据 PC 本地保存需求索引
-41. 使用 `docs/workplans/auth-session-secret-storage-plan.md` 的 PC 本地密码/KDF 补充规则作为失败冷却、换密钥中断恢复和密钥材料不入云需求索引
+40. 使用 `docs/workplans/ledger-lifecycle-storage-plan.md` 的账簿创建和结算补充规则作为临时库初始化、完整性检查、原子改名、PC 本地恢复点、结算预览、失败回滚和旧结算证据 PC 本地保存需求索引
+41. 使用 `docs/workplans/auth-session-secret-storage-plan.md` 的 PC 本地密码/KDF 补充规则作为创建后密码设置、两次密码确认、失败冷却、换密钥中断恢复和密钥材料不入云需求索引
 42. 使用 `docs/workplans/reporting-planning-plan.md` 与 `docs/workplans/list-query-filter-pagination-plan.md` 作为报表/列表导出打印快照、查询追溯和旧报表证据 PC 本地保存需求索引
 43. 使用 `docs/workplans/settings-preferences-notification-plan.md` 作为旧设置、窗口状态、快捷键、最近账簿和授权协议证据 PC 本地保存需求索引
 44. 使用 `docs/workplans/master-data-lifecycle-plan.md` 作为标签设为首页、拖放排序、批量关系、选择器候选版本失效和旧标签校准证据 PC 本地保存需求索引
@@ -439,7 +439,7 @@
 51. 使用 `docs/workplans/financial-goals-planning-input-plan.md` 作为规划推演起始余额组成、通胀/退休/资产增长/分期展开公式版本、清空确认、多币种错误状态和旧规划证据 PC 本地保存需求索引
 52. 使用 `docs/workplans/reporting-planning-plan.md` 作为预算期间、退款冲销、多币种预算、滚动导入、财务诊断指标边界和目标进度多账户估值需求索引
 53. 使用 `docs/workplans/reporting-planning-plan.md` 与 `docs/workplans/list-query-filter-pagination-plan.md` 作为报表排序、分组小计、趋势图、概况可用资金图表、钻取版本和旧 SQL/旧查询证据 PC 本地保存需求索引
-54. 使用 `docs/workplans/attachment-privacy-plan.md` 作为多附件引用、最后引用待清理、物理清理幂等、哈希校验、扫描/配额/大文件错误和票据凭证生命周期需求索引
+54. 使用 `docs/workplans/attachment-privacy-plan.md` 作为多附件引用、最后引用待清理、隔离区、恢复校验、物理清理幂等、重试耗尽、哈希校验、扫描/配额/大文件错误、云端不得远程删除 PC 本地未同步附件和票据凭证生命周期需求索引
 55. 使用 `docs/workplans/dotnet-sync-api-plan.md`、`docs/workplans/mobile-offline-queue-plan.md` 和 `docs/workplans/settings-preferences-notification-plan.md` 作为同步断点续传、取消、墓碑传播、下载续拉、手机快查失败和远程通知幂等需求索引
 56. 使用 `docs/workplans/backup-import-export-plan.md` 作为旧 XML 21 类数据集、分区预览、覆盖/去重策略、专用账单适配、旧 `.mh8k` 隔离探测和 PC 本地迁移证据保存需求索引
 57. 使用 `docs/workplans/cache-reference-lookup-plan.md` 作为旧缓存只读候选、`_PY/_LIST/_3/_4/_9` 语义、候选版本、未确认中文片段保护和 Web/手机旧缓存隔离需求索引

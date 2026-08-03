@@ -38,28 +38,29 @@
 | `technical-architecture-proposal.md` | `three-client-requirements-analysis.md`、`flutter-pc-local-api-plan.md`、`dotnet-sync-api-plan.md`、`mobile-offline-queue-plan.md`、`flutter-web-online-plan.md` | 三端架构、技术栈、端职责 |
 | `flutter-dotnet-interface-architecture.md` | `dotnet-sync-api-plan.md`、`flutter-web-online-plan.md`、`account-device-ledger-membership-plan.md` | Flutter 与 .NET API 分层、DTO、权限入口 |
 | `sync-protocol-draft.md` | `dotnet-sync-api-plan.md`、`conflict-resolution-plan.md`、`mobile-offline-queue-plan.md`、`data-retention-deletion-recovery-plan.md` | 对象同步、游标、墓碑、冲突；过期手机完整本地库表述按当前架构修正 |
-| `local-storage-and-ledger-architecture.md` | `ledger-lifecycle-storage-plan.md`、`domain-validation-invariants-plan.md`、`amount-currency-exchange-rate-plan.md`、`payroll-income-tax-social-contribution-plan.md` | PC SQLite、分录守恒、投影重建和工资公式 |
-| `runtime-diary-contract.md` | `diary-calendar-richtext-plan.md` | 日记、富文本、搜索、导出和财务日历投影 |
+| `local-storage-and-ledger-architecture.md` | `ledger-lifecycle-storage-plan.md`、`domain-validation-invariants-plan.md`、`amount-currency-exchange-rate-plan.md`、`payroll-income-tax-social-contribution-plan.md` | PC SQLite、账本临时库创建、完整性检查、原子改名、分录守恒、投影重建和工资公式 |
+| `runtime-diary-contract.md` | `diary-calendar-richtext-plan.md` | 日记、富文本、搜索、导出清单、导出快照、HTML/PDF 安全和财务日历投影 |
 | `runtime-birthday-calendar-contract.md` | `diary-calendar-richtext-plan.md`、`master-data-lifecycle-plan.md` | 人员生日真相、公历/农历生日字段、财务日历生日只读投影和旧证据 PC 本地保存 |
-| `runtime-reminder-calendar-contract.md` | `schedule-reminder-occurrence-plan.md` | 普通提醒定义与实例分层、待处理日历投影、跳过动作、提前资格窗口和旧证据 PC 本地保存 |
-| `feature-catalog.md`、`acceptance-criteria.md` 中的财务计算器和价格整理条目 | `financial-calculators-price-maintenance-plan.md` | 19 类财务计算器、公式状态和价格整理高风险删除 |
+| `runtime-reminder-calendar-contract.md` | `schedule-reminder-occurrence-plan.md` | 普通提醒定义与实例分层、今日提醒资格窗口、活动定义开始日兼容投影、跳过动作和旧证据 PC 本地保存 |
+| `feature-catalog.md`、`acceptance-criteria.md` 中的财务计算器和价格整理条目 | `financial-calculators-price-maintenance-plan.md` | 19 类财务计算器、公式状态、价格整理预览版本、受影响快照、墓碑/归档、回滚和高风险删除 |
 | `feature-catalog.md`、`runtime-bonds-ledger-and-maturity-contract.md` 中的净价/清洁价格计算条目 | `financial-calculators-price-maintenance-plan.md`、`market-instruments-trading-valuation-plan.md` | 净价、全价和应计利息计算只回填债券交易草稿，不直接入账 |
 | `runtime-validation-scenarios.md`、`functional-ledger.md` 中的钱包充值/提现条目 | `wallet-recharge-withdrawal-plan.md` | 第三方钱包双边资金流、本金手续费组成和保存并继续 |
 | `runtime-accounts-and-master-data-contract.md`、`runtime-debts-credit-and-amortization-contract.md`、`acceptance-criteria.md`、`functional-ledger.md`、`sqlite-schema-and-query-contract.md` 中的待摊费用条目 | `prepaid-expenses-amortization-plan.md` | 待摊费用主体、初始资金事实、确定金额期次、幂等摊销、计划重算和删除影响 |
 | `feature-catalog.md`、`function-matrix.md`、`requirement-audit-matrix.md` 中的支票簿/票据条目 | `attachment-privacy-plan.md` | 票据、支票簿和银行凭证作为受管凭证或附件引用，不直接改变账务事实 |
-| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的附件生命周期条目 | `attachment-privacy-plan.md`、`data-retention-deletion-recovery-plan.md` | 多附件引用、最后引用待清理、物理清理幂等、哈希校验、扫描/配额/大文件错误和旧来源路径本地化 |
+| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的附件生命周期条目 | `attachment-privacy-plan.md`、`data-retention-deletion-recovery-plan.md` | 多附件引用、最后引用待清理、隔离区、恢复校验、物理清理幂等、重试耗尽、哈希校验、扫描/配额/大文件错误、云端不得远程删除 PC 本地未同步附件和旧来源路径本地化 |
 | `data-exchange-and-persistence-contract.md`、`runtime-securities-ledger-and-valuation-contract.md`、`runtime-command-and-state-evidence.md` 中的证券代码转换和新股关联条目 | `market-instruments-trading-valuation-plan.md` | 稳定工具 ID、代码历史、新股申购流程 ID、交割单导入关联 |
 | `feature-catalog.md`、`runtime-dfm-functional-evidence.md` 中的客户服务条目 | `operations-observability-support-plan.md` | FAQ、官网、服务时间、联系方式和脱敏诊断 ID 支持入口 |
 | `feature-catalog.md`、`coverage-status.md` 中的概况布局条目 | `three-client-ui-navigation-plan.md` | 工作台概况区块、图表摘要、显示偏好和拖动排序只作为 UI 偏好 |
 | `feature-catalog.md`、`data-exchange-and-persistence-contract.md` 中的 XML、CSV、专用账单和回导条目 | `backup-import-export-plan.md` | 编码、版本、列顺序、来源适配器、21 类数据集选择、分区预览、覆盖/去重策略、预览错误和导出格式记录 |
 | `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的旧 `.mh8k`、恢复为新账本、备份损坏和失败回滚条目 | `backup-import-export-plan.md` | 旧 `.mh8k` PC 本地隔离探测、解密校验、内容对比、恢复为新账本、失败回滚和旧迁移证据 PC 本地保存 |
 | `cache-semantics.md`、`cache-and-package-investigation.md`、`code-type-mapping.md`、`domain-mapping-spec.md`、`coverage-status.md`、`open-gaps-register.md` 中的旧缓存和候选检索条目 | `cache-reference-lookup-plan.md` | `MoneyHome8.cache`、`Investment.cache` 只读候选、`_PY/_LIST/_3/_4/_9` 语义、候选版本、未确认中文片段保护和三端旧缓存隔离 |
+| `runtime-shared-ui-contract.md`、`runtime-ai-console-calculator-contract.md`、`runtime-automation-boundaries.md`、`coverage-status.md`、`open-gaps-register.md` 中的共享 UI、AI、控制台和 WebView 条目 | `shared-ui-ai-diagnostics-automation-plan.md` | 共享组件不提交事务、金额计算器回填边界、Web 内容宿主来源/脚本桥限制、AI 默认关闭、控制台命令描述符、风险等级、审计隔离和旧自动化证据 PC 本地保存 |
 | `feature-catalog.md`、`deposits-debts-credit-amortization-plan.md`、`coverage-status.md`、`open-gaps-register.md` 中的账单日管理条目 | `deposits-debts-credit-amortization-plan.md`、`date-time-period-semantics-plan.md` | 固定日、月末模式、相对偏移、短月份策略、账单生成幂等、历史账单规则冻结和领域层标准化 |
 | `feature-catalog.md`、`coverage-status.md` 中的手机快查、远程通知、关于、许可、更新和验证码条目 | `settings-preferences-notification-plan.md`、`auth-session-secret-storage-plan.md`、`operations-observability-support-plan.md` | 外围入口、授权级设置、安全挑战、通知摘要和旧证据 PC 本地保存 |
 | `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的同步、手机快查和远程通知条目 | `dotnet-sync-api-plan.md`、`mobile-offline-queue-plan.md`、`settings-preferences-notification-plan.md`、`conflict-resolution-plan.md` | 批次幂等、分片断点续传、取消、墓碑传播、下载续拉、手机快查失败分类和远程通知幂等 |
 | `feature-catalog.md`、`coverage-status.md`、`open-gaps-register.md` 中的行情更新条目 | `market-instruments-trading-valuation-plan.md` | 行情、净值、汇率、存款利率、交易费率和历史价格更新批次；供应商适配器版本、行级失败、幂等重试、历史无数据、版本发布和旧协议证据 PC 本地保存 |
-| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的账簿结算、恢复点和失败回滚条目 | `ledger-lifecycle-storage-plan.md` | PC 本地结算预览、截止日、恢复点、幂等、防半写和旧结算校准证据 PC 本地保存 |
-| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的旧密码、KDF、换密钥和连续失败条目 | `auth-session-secret-storage-plan.md` | PC 本地账本密码/KDF、安全失败冷却、换密钥中断恢复和密钥材料不入云 |
+| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的账簿创建、结算、恢复点和失败回滚条目 | `ledger-lifecycle-storage-plan.md` | PC 本地新建临时库、同名/磁盘失败、完整性检查、原子改名、结算预览、截止日、恢复点、幂等、防半写和旧结算校准证据 PC 本地保存 |
+| `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的旧密码、KDF、换密钥、创建后密码设置和连续失败条目 | `auth-session-secret-storage-plan.md` | PC 本地账本密码/KDF、创建后密码设置、安全失败冷却、换密钥中断恢复和密钥材料不入云 |
 | `coverage-status.md`、`functional-audit-checklist.md` 中的报表导出、打印、排序和筛选边界条目 | `reporting-planning-plan.md`、`list-query-filter-pagination-plan.md` | 报表/列表快照、查询参数、排序、对象版本、公式状态和旧报表证据 PC 本地保存 |
 | `coverage-status.md`、`functional-audit-checklist.md`、`open-gaps-register.md` 中的系统设置、快捷键、窗口状态、最近账簿和授权协议条目 | `settings-preferences-notification-plan.md` | 旧设置迁移预览、快捷键冲突、窗口边界校验、授权级设置和旧配置证据 PC 本地保存 |
 | `coverage-status.md`、`functional-audit-checklist.md` 中的标签设为首页、拖放排序、批量关系和选择器候选失效条目 | `master-data-lifecycle-plan.md`、`command-form-lifecycle-plan.md` | 标签显示偏好、排序版本、批量关系影响预览、选择器候选版本和失败回滚 |

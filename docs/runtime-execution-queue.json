@@ -63838,10 +63838,10 @@
         "结果已回填功能目录、数据流、PRD 和验收标准"
       ],
       "observation_record": {
-        "path": "artifacts\\runtime-validation\\RT-15-009-20260803T153000+0800.json",
-        "observed_at": "2026-08-03T15:30:00+08:00",
+        "path": "artifacts\\runtime-validation\\RT-15-009-20260803T161000+0800.json",
+        "observed_at": "2026-08-03T16:10:00+08:00",
         "status": "partial",
-        "summary": "已验证普通提醒待处理实例进入财务日历、与交易独立共存，并在跳过后立即退出日历而定义保留为已完成。",
+        "summary": "已验证今日提醒按发生实例和提前资格窗口推进；MoneyHome8旧财务日历则把活动普通提醒定义锚定在开始日，并在定义完成后移除。",
         "resource": "TFINANCIALCALENDARDLG"
       }
     },
