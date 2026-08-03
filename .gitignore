@@ -1,0 +1,13 @@
+.tools/
+target/
+artifacts/
+evidence/
+tools/__pycache__/
+tools/python-deps/
+tools/moneyhome8-runtime/
+*.py[cod]
+*.pyo
+*.pyd
+*.mh8
+*.mh8-*
+*.lck
