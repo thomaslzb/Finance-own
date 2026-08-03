@@ -325,16 +325,23 @@
 - 功能：
   - 数据导入
   - 分类导入
+  - 银行账单导入
+  - 信用卡账单导入
   - 交割单导入
   - 数据导出
 - 验收：
   - 文件格式和 UI 路径形成明确合同
   - `import_field_mappings`, `import_batches`, `import_rows` 支持来源哈希、预览、字段错误、重复判断和提交追溯
+  - 旧 XML 21 类数据集支持选择、节点映射版本、分区级错误、覆盖策略和重复导入预览
+  - 银行账单、信用卡账单和券商交割单校验日期、负数方向、千分位、空行、手续费、税费和重复业务键
+  - 旧来源完整路径、旧原始行、迁移审计、迁移报告和脱敏摘要只保存在 PC 本地
 
 ### Task 6.3 旧格式迁移
 
 - 验收：
   - 明确旧 MoneyHome8 原始文件只在 PC 端本地迁移
+  - 明确旧 `.mh8k` 只能在 PC 本地隔离探测、解密校验、预览或恢复为新账本
+  - 明确旧 `.mh8k` 密码、解密中间文件、内容对比摘要和失败诊断只保存在 PC 本地
   - 明确 PC 迁移审计、迁移报告和脱敏摘要只保存在 PC 本地，不上传云端
   - 明确迁移结果写入 PC SQLite，经用户确认后再同步新系统对象到云端
   - 对认证未打通情形给出降级方案
@@ -427,10 +434,12 @@
 46. 使用 `docs/workplans/amount-currency-exchange-rate-plan.md` 作为本位币切换、自定义币种、在线牌价更新批次、汇率重复键和旧牌价诊断证据 PC 本地保存需求索引
 47. 使用 `docs/workplans/command-form-lifecycle-plan.md` 作为保存并继续、批量模板逐行策略、复制粘贴、改变类型、转计划、退款、冲销、分期和陈旧草稿保护需求索引
 48. 使用 `docs/workplans/deposits-debts-credit-amortization-plan.md` 作为银行理财产品生命周期、持仓本金/实际现金流/收益同快照一致、还款分配、网贷流转和旧证据 PC 本地保存需求索引
-49. 使用 `docs/workplans/market-instruments-trading-valuation-plan.md` 作为基金确认/收费/资金在途/拆分、债券兑付/利息/税务、融资融券候选筛选/超额偿还/担保物划转需求索引
+49. 使用 `docs/workplans/market-instruments-trading-valuation-plan.md` 作为基金确认/收费/资金在途/拆分、债券兑付/利息/税务、融资融券候选筛选/超额偿还/担保物划转、行情供应商适配器、行级失败、幂等重试、历史无数据和批次版本发布需求索引
 50. 使用 `docs/workplans/insurance-social-security-tangible-assets-plan.md` 作为保险返还、分红、退保保留/终止、现金价值输入边界、重大资产多贷款、部分出售、估值删除和家居物品成本公式状态需求索引
 51. 使用 `docs/workplans/financial-goals-planning-input-plan.md` 作为规划推演起始余额组成、通胀/退休/资产增长/分期展开公式版本、清空确认、多币种错误状态和旧规划证据 PC 本地保存需求索引
 52. 使用 `docs/workplans/reporting-planning-plan.md` 作为预算期间、退款冲销、多币种预算、滚动导入、财务诊断指标边界和目标进度多账户估值需求索引
 53. 使用 `docs/workplans/reporting-planning-plan.md` 与 `docs/workplans/list-query-filter-pagination-plan.md` 作为报表排序、分组小计、趋势图、概况可用资金图表、钻取版本和旧 SQL/旧查询证据 PC 本地保存需求索引
 54. 使用 `docs/workplans/attachment-privacy-plan.md` 作为多附件引用、最后引用待清理、物理清理幂等、哈希校验、扫描/配额/大文件错误和票据凭证生命周期需求索引
 55. 使用 `docs/workplans/dotnet-sync-api-plan.md`、`docs/workplans/mobile-offline-queue-plan.md` 和 `docs/workplans/settings-preferences-notification-plan.md` 作为同步断点续传、取消、墓碑传播、下载续拉、手机快查失败和远程通知幂等需求索引
+56. 使用 `docs/workplans/backup-import-export-plan.md` 作为旧 XML 21 类数据集、分区预览、覆盖/去重策略、专用账单适配、旧 `.mh8k` 隔离探测和 PC 本地迁移证据保存需求索引
+57. 使用 `docs/workplans/cache-reference-lookup-plan.md` 作为旧缓存只读候选、`_PY/_LIST/_3/_4/_9` 语义、候选版本、未确认中文片段保护和 Web/手机旧缓存隔离需求索引
