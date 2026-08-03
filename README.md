@@ -1,6 +1,6 @@
 # Finance Own
 
-这是 `MoneyHome8` 的 Rust 重构工程骨架。
+这是 对标 `MoneyHome8` 的重构工程骨架。
 
 当前阶段目标：
 
